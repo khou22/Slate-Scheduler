@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */; };
-		27BDFD7B1E1D9E0500B8C474 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD7A1E1D9E0500B8C474 /* ViewController.swift */; };
+		27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */; };
 		27BDFD7E1E1D9E0500B8C474 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BDFD7C1E1D9E0500B8C474 /* Main.storyboard */; };
 		27BDFD801E1D9E0500B8C474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BDFD7F1E1D9E0500B8C474 /* Assets.xcassets */; };
 		27BDFD831E1D9E0500B8C474 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BDFD811E1D9E0500B8C474 /* LaunchScreen.storyboard */; };
 		27BDFD8E1E1D9E0500B8C474 /* Calendar_Event_Template_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD8D1E1D9E0500B8C474 /* Calendar_Event_Template_AppTests.swift */; };
 		27BDFD991E1D9E0500B8C474 /* Calendar_Event_Template_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD981E1D9E0500B8C474 /* Calendar_Event_Template_AppUITests.swift */; };
 		27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFDA61E1DB4D100B8C474 /* Constants.swift */; };
+		27BDFDAA1E1DBE1700B8C474 /* CategoryCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFDA91E1DBE1700B8C474 /* CategoryCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		27BDFD751E1D9E0500B8C474 /* Calendar Event Template App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calendar Event Template App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27BDFD7A1E1D9E0500B8C474 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelection.swift; sourceTree = "<group>"; };
 		27BDFD7D1E1D9E0500B8C474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27BDFD7F1E1D9E0500B8C474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27BDFD821E1D9E0500B8C474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		27BDFD981E1D9E0500B8C474 /* Calendar_Event_Template_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar_Event_Template_AppUITests.swift; sourceTree = "<group>"; };
 		27BDFD9A1E1D9E0500B8C474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27BDFDA61E1DB4D100B8C474 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27BDFDA91E1DBE1700B8C474 /* CategoryCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */,
-				27BDFD7A1E1D9E0500B8C474 /* ViewController.swift */,
+				27BDFDAB1E1DBE1A00B8C474 /* Extensions */,
+				27BDFDA81E1DB94200B8C474 /* Screens */,
 				27BDFD7C1E1D9E0500B8C474 /* Main.storyboard */,
 				27BDFDA61E1DB4D100B8C474 /* Constants.swift */,
 				27BDFD7F1E1D9E0500B8C474 /* Assets.xcassets */,
@@ -126,6 +129,22 @@
 				27BDFD9A1E1D9E0500B8C474 /* Info.plist */,
 			);
 			path = "Calendar Event Template AppUITests";
+			sourceTree = "<group>";
+		};
+		27BDFDA81E1DB94200B8C474 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		27BDFDAB1E1DBE1A00B8C474 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				27BDFDA91E1DBE1700B8C474 /* CategoryCellCollectionViewCell.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +284,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27BDFD7B1E1D9E0500B8C474 /* ViewController.swift in Sources */,
+				27BDFDAA1E1DBE1700B8C474 /* CategoryCellCollectionViewCell.swift in Sources */,
+				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
 				27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */,
 				27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */,
 			);
@@ -421,6 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AWEXUMS854;
 				INFOPLIST_FILE = "Calendar Event Template App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.Calendar-Event-Template-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -434,6 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AWEXUMS854;
 				INFOPLIST_FILE = "Calendar Event Template App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.Calendar-Event-Template-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -518,6 +540,7 @@
 				27BDFD9F1E1D9E0500B8C474 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27BDFDA01E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Calendar Event Template AppTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +549,7 @@
 				27BDFDA21E1D9E0500B8C474 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27BDFDA31E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Calendar Event Template AppUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +558,7 @@
 				27BDFDA51E1D9E0500B8C474 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
