@@ -11,12 +11,19 @@ import UIKit
 
 class EventDetails: UIViewController {
     
+    // Navigation buttons
     @IBOutlet weak var saveButton: UIButton!
+    
+    // Form inputs
+    @IBOutlet weak var eventNameInput: AutoCompleteTextField!
     
     var category: Category = Category(name: "NA")
     
     override func viewDidLoad() {
         print("Creating event with category: " + self.category.name)
+        
+        // Setting up autocomplete
+        
         
         // Styling
         saveButton.backgroundColor = Colors.blue
@@ -28,9 +35,5 @@ class EventDetails: UIViewController {
     
     @IBAction func saveEvent(_ sender: Any) {
         print("Saving event")
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Preparing for segue")
     }
 }
