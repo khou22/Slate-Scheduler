@@ -70,8 +70,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pick a Category" id="6TB-zI-Qw7">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="Y6C-u9-VUY"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a2k-uz-smW"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="Y6C-u9-VUY">
+                            <connections>
+                                <action selector="clickedSettings:" destination="BYZ-38-t0r" id="Ufd-V9-3NM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="a2k-uz-smW">
+                            <connections>
+                                <action selector="newCategory:" destination="BYZ-38-t0r" id="hoF-jT-HSR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="categoryCollection" destination="My3-jn-8PS" id="5HZ-da-xUw"/>
