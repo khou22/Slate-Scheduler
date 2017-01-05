@@ -176,7 +176,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="U1J-5Y-UmX">
-                                <rect key="frame" x="28" y="243" width="335" height="56.5"/>
+                                <rect key="frame" x="28" y="243" width="343" height="56.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfe-Sq-8M3">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="20.5"/>
@@ -185,7 +185,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlV-Nk-ZVh">
-                                        <rect key="frame" x="0.0" y="26.5" width="335" height="30"/>
+                                        <rect key="frame" x="0.0" y="26.5" width="343" height="30"/>
                                         <state key="normal" title="January 1, 2017 at 4:00 PM">
                                             <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -197,7 +197,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-3w-xpp">
-                                <rect key="frame" x="28" y="319.5" width="335" height="56.5"/>
+                                <rect key="frame" x="28" y="319.5" width="343" height="56.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-e3-JbJ">
                                         <rect key="frame" x="0.0" y="0.0" width="65.5" height="20.5"/>
@@ -205,8 +205,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-mR-KaH">
-                                        <rect key="frame" x="-2" y="26.5" width="339" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-mR-KaH" customClass="StepSlider" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                        <rect key="frame" x="-2" y="26.5" width="347" height="31"/>
+                                        <connections>
+                                            <action selector="finishedDragging:" destination="Pbh-M3-uzF" eventType="touchUpInside" id="3Jo-90-YzZ"/>
+                                        </connections>
                                     </slider>
                                 </subviews>
                                 <constraints>
@@ -242,6 +245,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="WkC-HJ-T0A"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="durationSlider" destination="1ag-mR-KaH" id="kuS-cp-mcY"/>
                         <outlet property="eventNameInput" destination="JFO-c0-Lai" id="icc-dg-mYQ"/>
                         <outlet property="saveButton" destination="857-Bi-Zaw" id="MRy-um-694"/>
                         <segue destination="6mG-Dv-vHT" kind="unwind" identifier="unwind" unwindAction="unwindToVCWithSegue:" id="8ef-sw-I5T"/>

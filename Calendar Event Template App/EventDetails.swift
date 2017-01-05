@@ -16,6 +16,7 @@ class EventDetails: UIViewController {
     
     // Form inputs
     @IBOutlet weak var eventNameInput: UITextField!
+    @IBOutlet weak var durationSlider: StepSlider!
     
     var category: Category = Category(name: "NA")
     
@@ -32,5 +33,10 @@ class EventDetails: UIViewController {
     
     @IBAction func saveEvent(_ sender: Any) {
         print("Saving event")
+    }
+    
+    // User released the slider
+    @IBAction func finishedDragging(_ sender: Any) {
+        self.durationSlider.released() // Animate to rounded value
     }
 }
