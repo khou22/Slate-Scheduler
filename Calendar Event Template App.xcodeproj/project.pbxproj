@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		272455741E1DCCA400F3856F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455731E1DCCA400F3856F /* Category.swift */; };
 		272455771E1DCE3000F3856F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455761E1DCE3000F3856F /* DataManager.swift */; };
-		2724557A1E1E164300F3856F /* AutoCompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455791E1E164300F3856F /* AutoCompleteTextField.swift */; };
 		274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA89B1E1DCBC7008E297C /* EventDetails.swift */; };
 		27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */; };
 		27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		272455731E1DCCA400F3856F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		272455761E1DCE3000F3856F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		272455791E1E164300F3856F /* AutoCompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteTextField.swift; sourceTree = "<group>"; };
 		274FA89B1E1DCBC7008E297C /* EventDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
 		27BDFD751E1D9E0500B8C474 /* Calendar Event Template App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calendar Event Template App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 		2724557B1E1E164600F3856F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				272455791E1E164300F3856F /* AutoCompleteTextField.swift */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -244,17 +241,20 @@
 					27BDFD741E1D9E0500B8C474 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = AWEXUMS854;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					27BDFD881E1D9E0500B8C474 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = AWEXUMS854;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 27BDFD741E1D9E0500B8C474;
 					};
 					27BDFD931E1D9E0500B8C474 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = AWEXUMS854;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 27BDFD741E1D9E0500B8C474;
 					};
@@ -313,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BDFDAA1E1DBE1700B8C474 /* CategoryCollectionCell.swift in Sources */,
-				2724557A1E1E164300F3856F /* AutoCompleteTextField.swift in Sources */,
 				274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */,
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
 				272455771E1DCE3000F3856F /* DataManager.swift in Sources */,

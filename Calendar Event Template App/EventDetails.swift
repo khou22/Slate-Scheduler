@@ -15,15 +15,12 @@ class EventDetails: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     // Form inputs
-    @IBOutlet weak var eventNameInput: AutoCompleteTextField!
+    @IBOutlet weak var eventNameInput: UITextField!
     
     var category: Category = Category(name: "NA")
     
     override func viewDidLoad() {
         print("Creating event with category: " + self.category.name)
-        
-        // Setting up autocomplete
-        
         
         // Styling
         saveButton.backgroundColor = Colors.blue
