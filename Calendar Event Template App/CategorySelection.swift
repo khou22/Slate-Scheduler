@@ -70,11 +70,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     func refreshCollection() {
         // Load data from NSUserDefaults
         self.categoryData = DataManager.getCategories()
-        
-        // Print for debugging
-        print("Retrieved category data")
-        print(self.categoryData)
-        
+                
         // Refresh collection view
         DispatchQueue.main.async {
             self.categoryCollection.reloadData()

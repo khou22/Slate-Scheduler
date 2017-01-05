@@ -14,9 +14,8 @@ struct DataManager {
     static func getCategories() -> [Category] {
         // Get category data if data exists
         if let data = Constants.defaults.object(forKey: Keys.categoryData) { // Data exists
-            print(data)
-            let encoded = data as! NSMutableArray // Retrieve data object
-            return decode(array: encoded) // Unarchive and return
+            let encoded: NSArray = data as! NSArray // Retrieve data object
+            return decode(array: encoded.mutableCopy() as! NSMutableArray) // Decoded items
         } else {
             // If no data logged before
             return []
@@ -28,9 +27,8 @@ struct DataManager {
         // Get category data if data exists
         if let data = Constants.defaults.object(forKey: Keys.categoryData) { // Data exists
             
-            print("Updating...")
-            var encoded = data as! NSMutableArray // Retrieve data object
-            var decoded: [Category] = decode(array: encoded) // Decoded items
+            var encoded: NSArray = data as! NSArray // Retrieve data object
+            var decoded: [Category] = decode(array: encoded.mutableCopy() as! NSMutableArray) // Decoded items
             
             // Update data set
             decoded.append(category) // Append new item
@@ -41,14 +39,11 @@ struct DataManager {
             Constants.defaults.setValue(encoded, forKey: Keys.categoryData)
             Constants.defaults.synchronize()
             
-            print("Updated category data")
         } else {
-            print("Creating...")
             // If no data logged before, add array of single category
             let encodedData = encode(category: [category]) // Encode data
             Constants.defaults.set(encodedData, forKey: Keys.categoryData)
             Constants.defaults.synchronize()
-            print("Updated category data")
         }
     }
     
