@@ -85,7 +85,7 @@
                         <outlet property="categoryCollection" destination="My3-jn-8PS" id="5HZ-da-xUw"/>
                         <outlet property="collectionViewLeft" destination="PKk-hm-YsY" id="iAs-re-B9r"/>
                         <outlet property="collectionViewRight" destination="KgV-rH-glZ" id="N3H-HQ-ogp"/>
-                        <segue destination="Pbh-M3-uzF" kind="showDetail" identifier="CategoryToEventDetail" id="nJx-7m-wfl"/>
+                        <segue destination="Pbh-M3-uzF" kind="presentation" identifier="CategoryToEventDetail" id="nJx-7m-wfl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,7 +126,7 @@
                                         <barButtonItem key="backBarButtonItem" title="Cancel" id="GHi-DT-YLa"/>
                                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="DhN-pQ-inG">
                                             <connections>
-                                                <segue destination="6mG-Dv-vHT" kind="unwind" unwindAction="unwindToVCWithSegue:" id="Lzh-3j-Dnl"/>
+                                                <action selector="cancelEvent:" destination="Pbh-M3-uzF" id="Mxn-oc-jZe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -149,6 +149,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="saveButton" destination="857-Bi-Zaw" id="MRy-um-694"/>
+                        <segue destination="6mG-Dv-vHT" kind="unwind" identifier="unwind" unwindAction="unwindToVCWithSegue:" id="8ef-sw-I5T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUZ-8L-Sj2" userLabel="First Responder" sceneMemberID="firstResponder"/>

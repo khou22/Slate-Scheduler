@@ -22,10 +22,9 @@ class EventDetails: UIViewController {
         saveButton.backgroundColor = Colors.blue
     }
     
-    @IBAction func unwindToVC(segue: UIStoryboardSegue) {
-        print("Unwinding")
+    @IBAction func cancelEvent(_ sender: Any) {
+        dismiss(animated: true, completion: nil) // Exit segue back to category selection
     }
-    
     
     @IBAction func saveEvent(_ sender: Any) {
         print("Saving event")
