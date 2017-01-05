@@ -176,7 +176,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="U1J-5Y-UmX">
-                                <rect key="frame" x="28" y="243" width="319" height="56.5"/>
+                                <rect key="frame" x="28" y="243" width="335" height="56.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date and Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfe-Sq-8M3">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="20.5"/>
@@ -185,7 +185,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlV-Nk-ZVh">
-                                        <rect key="frame" x="0.0" y="26.5" width="319" height="30"/>
+                                        <rect key="frame" x="0.0" y="26.5" width="335" height="30"/>
                                         <state key="normal" title="January 1, 2017 at 4:00 PM">
                                             <color key="titleColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -196,6 +196,24 @@
                                     <constraint firstAttribute="trailing" secondItem="nlV-Nk-ZVh" secondAttribute="trailing" id="tcN-cV-MfY"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-3w-xpp">
+                                <rect key="frame" x="28" y="319.5" width="335" height="56.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-e3-JbJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-mR-KaH">
+                                        <rect key="frame" x="-2" y="26.5" width="339" height="31"/>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1ag-mR-KaH" firstAttribute="leading" secondItem="aGk-3w-xpp" secondAttribute="leading" id="5bd-BN-tH6"/>
+                                    <constraint firstAttribute="trailing" secondItem="1ag-mR-KaH" secondAttribute="trailing" id="Hex-Zw-ySe"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -203,15 +221,18 @@
                             <constraint firstItem="VrQ-eX-OOQ" firstAttribute="top" secondItem="PVp-KG-RBC" secondAttribute="bottom" constant="16" id="5N5-jH-ayz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VrQ-eX-OOQ" secondAttribute="trailing" constant="12" id="5QS-Y9-m8l"/>
                             <constraint firstItem="VrQ-eX-OOQ" firstAttribute="leading" secondItem="pml-km-dNO" secondAttribute="leadingMargin" constant="12" id="KRw-xT-ROm"/>
+                            <constraint firstItem="aGk-3w-xpp" firstAttribute="trailing" secondItem="U1J-5Y-UmX" secondAttribute="trailing" id="LHZ-If-W3L"/>
                             <constraint firstItem="PVp-KG-RBC" firstAttribute="top" secondItem="PTs-TK-Xjq" secondAttribute="bottom" id="MKX-PM-HvE"/>
                             <constraint firstItem="U1J-5Y-UmX" firstAttribute="top" secondItem="sPF-Gr-eH2" secondAttribute="bottom" constant="30" id="MQy-c2-J0U"/>
                             <constraint firstAttribute="trailing" secondItem="PVp-KG-RBC" secondAttribute="trailing" id="NKh-eL-9Ld"/>
                             <constraint firstItem="PTs-TK-Xjq" firstAttribute="leading" secondItem="pml-km-dNO" secondAttribute="leading" id="NZ8-SA-tA3"/>
                             <constraint firstItem="sPF-Gr-eH2" firstAttribute="leading" secondItem="VrQ-eX-OOQ" secondAttribute="leading" id="Pw5-zQ-Dmw"/>
                             <constraint firstItem="PVp-KG-RBC" firstAttribute="leading" secondItem="pml-km-dNO" secondAttribute="leading" id="W0y-f6-Y0S"/>
+                            <constraint firstItem="aGk-3w-xpp" firstAttribute="top" secondItem="U1J-5Y-UmX" secondAttribute="bottom" constant="20" id="WOx-wU-Q3a"/>
                             <constraint firstItem="PTs-TK-Xjq" firstAttribute="top" secondItem="pml-km-dNO" secondAttribute="top" id="WeX-HT-ghc"/>
                             <constraint firstItem="U1J-5Y-UmX" firstAttribute="leading" secondItem="sPF-Gr-eH2" secondAttribute="leading" id="cah-rc-ZMn"/>
                             <constraint firstItem="PVp-KG-RBC" firstAttribute="top" secondItem="yU3-wZ-w76" secondAttribute="bottom" id="fss-0U-jY3"/>
+                            <constraint firstItem="aGk-3w-xpp" firstAttribute="leading" secondItem="U1J-5Y-UmX" secondAttribute="leading" id="jsN-f6-9Iz"/>
                             <constraint firstItem="sPF-Gr-eH2" firstAttribute="top" secondItem="VrQ-eX-OOQ" secondAttribute="bottom" constant="20" id="jx9-56-1q6"/>
                             <constraint firstItem="Dfe-Sq-8M3" firstAttribute="trailing" secondItem="sPF-Gr-eH2" secondAttribute="trailing" id="sgs-jj-LKu"/>
                             <constraint firstItem="sPF-Gr-eH2" firstAttribute="trailing" secondItem="VrQ-eX-OOQ" secondAttribute="trailing" id="wZh-Iv-85t"/>
