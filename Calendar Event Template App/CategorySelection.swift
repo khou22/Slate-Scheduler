@@ -8,23 +8,26 @@
 
 import UIKit
 
-class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var categoryCollection: UICollectionView!
     
+    // Constraints to be modified
+    @IBOutlet weak var collectionViewLeft: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewRight: NSLayoutConstraint!
+    
     var categoryData = ["COS 126", "MAT 104", "PHY 103", "FRS 127", "Other"]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+    let cellsPerRow: CGFloat = 2.0 // Set the number of cells per row
+    let cellInset: CGFloat = ScreenSize.screen_width / 50.0
+    let cellHeight: CGFloat = 80.0 // Default cell height
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Add padding to left and right of collection view
+        self.collectionViewLeft.constant = cellInset
+        self.collectionViewRight.constant = cellInset
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // Number of items in the collection view
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categoryData.count
@@ -35,7 +38,6 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         
         let cell = categoryCollection.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.categoryCell, for: indexPath) as! CategoryCollectionCell
         
-        cell.backgroundColor = Colors.blue
         cell.label.text = categoryData[indexPath.item] // Add label
         
         return cell
@@ -44,6 +46,22 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     // Handle cell selection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Triggered when category item selection
+        print("Selected category: " + categoryData[indexPath.item])
+    }
+    
+    // MARK - Flow layout
+    // Set size of cells
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = (ScreenSize.screen_width - (cellsPerRow * 3 * cellInset)) / cellsPerRow // Set width of cells
+        return CGSize(width: cellWidth, height: cellHeight) // Return size of cell
+    }
+    
+    // Set inset of cells
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        // Set -40 to remove weird top space above collection view
+        // Source: http://stackoverflow.com/questions/23786198/uicollectionview-how-can-i-remove-the-space-on-top-first-cells-row
+        return UIEdgeInsetsMake(-40, cellInset, 0, cellInset)
     }
     
 

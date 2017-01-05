@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="My3-jn-8PS">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ESG-Kf-eCh">
                                     <size key="itemSize" width="50" height="50"/>
@@ -39,15 +38,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaV-ks-hS5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaV-ks-hS5">
                                                     <rect key="frame" x="4" y="15" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="ZaV-ks-hS5" firstAttribute="centerY" secondItem="Zv9-md-FqH" secondAttribute="centerY" id="1l4-2n-m7v"/>
+                                            <constraint firstItem="ZaV-ks-hS5" firstAttribute="centerX" secondItem="Zv9-md-FqH" secondAttribute="centerX" id="HKU-dK-EoM"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="label" destination="ZaV-ks-hS5" id="4Rn-5W-Fht"/>
                                         </connections>
@@ -61,10 +63,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="My3-jn-8PS" secondAttribute="bottom" id="8HW-H5-Eay"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="My3-jn-8PS" secondAttribute="trailing" id="kGo-gd-dNR"/>
-                            <constraint firstItem="My3-jn-8PS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mdb-2T-DRu"/>
-                            <constraint firstItem="My3-jn-8PS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nAC-AT-y6L"/>
+                            <constraint firstAttribute="trailing" secondItem="My3-jn-8PS" secondAttribute="trailing" id="KgV-rH-glZ"/>
+                            <constraint firstItem="My3-jn-8PS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PKk-hm-YsY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="My3-jn-8PS" secondAttribute="bottom" id="mj7-Dn-c4S"/>
+                            <constraint firstItem="My3-jn-8PS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rM8-05-Cvr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pick a Category" id="6TB-zI-Qw7">
@@ -73,6 +75,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="categoryCollection" destination="My3-jn-8PS" id="5HZ-da-xUw"/>
+                        <outlet property="collectionViewLeft" destination="PKk-hm-YsY" id="iAs-re-B9r"/>
+                        <outlet property="collectionViewRight" destination="KgV-rH-glZ" id="N3H-HQ-ogp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
