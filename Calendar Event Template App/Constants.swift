@@ -49,7 +49,7 @@ struct CellIdentifiers {
 
 struct SegueIdentifiers {
     // Segue identifiers
-    static let SettingsToProfile            = "SettingsToProfile"
+    static let createEvent                  = "CategoryToEventDetail"
 }
 
 struct SDK {
@@ -64,7 +64,7 @@ struct Constants {
 
 struct Keys {
     // NSUserDefault keys:
-    static let favoriteContacts             = "favoriteContacts"
+    static let categoryData                 = "categoryData"
     
     // Other keys
 }

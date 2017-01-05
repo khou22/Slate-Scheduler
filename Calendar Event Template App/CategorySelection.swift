@@ -16,11 +16,18 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     @IBOutlet weak var collectionViewLeft: NSLayoutConstraint!
     @IBOutlet weak var collectionViewRight: NSLayoutConstraint!
     
-    var categoryData = ["COS 126", "MAT 104", "PHY 103", "FRS 127", "Other"]
+    var categoryData: [Category] = [Category(name: "NA")]
     
+    // Cell size styling
     let cellsPerRow: CGFloat = 2.0 // Set the number of cells per row
     let cellInset: CGFloat = ScreenSize.screen_width / 50.0
     let cellHeight: CGFloat = 80.0 // Default cell height
+    
+    override func viewDidLoad() {
+        // Load data from NSUserDefaults
+        self.categoryData = DataManager.getCategories()
+        print(self.categoryData)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         // Add padding to left and right of collection view
@@ -38,7 +45,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         
         let cell = categoryCollection.dequeueReusableCell(withReuseIdentifier: CellIdentifiers.categoryCell, for: indexPath) as! CategoryCollectionCell
         
-        cell.label.text = categoryData[indexPath.item] // Add label
+        cell.label.text = categoryData[indexPath.item].name // Add label
         
         return cell
     }
@@ -46,7 +53,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     // Handle cell selection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Triggered when category item selection
-        print("Selected category: " + categoryData[indexPath.item])
+        print("Selected category: " + categoryData[indexPath.item].name)
     }
     
     // MARK - Flow layout
