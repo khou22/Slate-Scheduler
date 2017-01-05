@@ -11,10 +11,9 @@ import UIKit
 
 class EventDetails: UIViewController {
     
-    var categoryName: String = "NA"
     var category: Category = Category(name: "NA")
     
     override func viewDidLoad() {
-        print("Creating event with category: " + self.categoryName)
+        print("Creating event with category: " + self.category.name)
     }
 }
