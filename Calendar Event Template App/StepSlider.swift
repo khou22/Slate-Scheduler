@@ -11,7 +11,7 @@ import UIKit
 
 class StepSlider: UISlider {
     
-    public var stepValue: Float = 2.0 // Default is by 1
+    public var stepValue: Float = 0.5 // Default is by 1
     public var animationTime: Double = 0.25 // Default is 0.25
     
     // Call when released - animate to rounded value
@@ -26,7 +26,7 @@ class StepSlider: UISlider {
         let rounded: Float =  roundf(value / stepValue) * stepValue
         
         // Convert float to human-readable string
-        let format = NSString(format: "%.2f", rounded)
+        let format = NSString(format: "%.1f", rounded) // Return number with one decimal place
         
         return format as String // Return string value
     }

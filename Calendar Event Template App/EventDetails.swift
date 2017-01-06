@@ -54,7 +54,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // User dragging slider
     @IBAction func dragging(_ sender: Any) {
-        self.durationLabel.text = self.durationSlider.roundValue() // Real time rounded value of slider
+        self.durationLabel.text = self.durationSlider.roundValue() + " hours" // Real time rounded value of slider
     }
     
     // MARK - Collection cell calls
