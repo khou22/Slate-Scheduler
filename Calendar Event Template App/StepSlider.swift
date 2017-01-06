@@ -17,10 +17,18 @@ class StepSlider: UISlider {
     // Call when released - animate to rounded value
     public func released() {
         let setTo: Float = roundf(value / stepValue) * stepValue
-        print(setTo)
         UIView.animate(withDuration: animationTime, animations: { () in
             self.setValue(setTo, animated: true)
         })
+    }
+    
+    public func roundValue() -> String {
+        let rounded: Float =  roundf(value / stepValue) * stepValue
+        
+        // Convert float to human-readable string
+        let format = NSString(format: "%.2f", rounded)
+        
+        return format as String // Return string value
     }
 
 }

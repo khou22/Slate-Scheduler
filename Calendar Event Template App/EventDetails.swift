@@ -17,6 +17,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // Form inputs
     @IBOutlet weak var eventNameInput: UITextField!
     @IBOutlet weak var durationSlider: StepSlider!
+    @IBOutlet weak var durationLabel: UILabel!
     
     // Quick day picker
     @IBOutlet weak var quickDayPicker: UICollectionView!
@@ -47,6 +48,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // User released the slider
     @IBAction func finishedDragging(_ sender: Any) {
         self.durationSlider.released() // Animate to rounded value
+    }
+    
+    // User dragging slider
+    @IBAction func dragging(_ sender: Any) {
+        self.durationLabel.text = self.durationSlider.roundValue() // Real time rounded value of slider
     }
     
     // MARK - Collection cell calls
