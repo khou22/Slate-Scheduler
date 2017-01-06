@@ -33,6 +33,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Calculate labels
         self.refreshQuickDay()
         
+        self.hideKeyboardOnTap() // Hide keyboard when tapped away
+        
         // Styling
         saveButton.backgroundColor = Colors.blue
     }
