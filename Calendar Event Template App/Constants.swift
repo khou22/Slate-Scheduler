@@ -45,6 +45,7 @@ struct CellIdentifiers {
     
     // Collection view cell identifiers
     static let categoryCell                 = "CategoryCell"
+    static let quickDayCell                 = "QuickDayPickerCell"
 }
 
 struct SegueIdentifiers {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		270991051E1E289000267071 /* StepSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270991041E1E289000267071 /* StepSlider.swift */; };
+		27190C5B1E1F4147002D3CB4 /* QuickDayPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */; };
 		272455741E1DCCA400F3856F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455731E1DCCA400F3856F /* Category.swift */; };
 		272455771E1DCE3000F3856F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455761E1DCE3000F3856F /* DataManager.swift */; };
 		274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA89B1E1DCBC7008E297C /* EventDetails.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		270991041E1E289000267071 /* StepSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepSlider.swift; sourceTree = "<group>"; };
+		27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickDayPickerCell.swift; sourceTree = "<group>"; };
 		272455731E1DCCA400F3856F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		272455761E1DCE3000F3856F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		274FA89B1E1DCBC7008E297C /* EventDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */,
+				27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */,
 				27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */,
 				272455741E1DCCA400F3856F /* Category.swift in Sources */,
+				27190C5B1E1F4147002D3CB4 /* QuickDayPickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

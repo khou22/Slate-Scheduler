@@ -207,8 +207,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2HI-eM-WmX">
                                 <rect key="frame" x="28" y="226" width="319" height="73"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-3n-RYl">
-                                        <rect key="frame" x="0.0" y="0.0" width="84.5" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-3n-RYl">
+                                        <rect key="frame" x="0.0" y="0.0" width="30.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -226,15 +226,48 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ijQ-BW-Eig">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuickDayPickerCell" id="ijQ-BW-Eig" customClass="QuickDayPickerCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="85W-oP-Lms">
+                                                            <rect key="frame" x="4" y="8" width="82" height="82"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="r1V-78-ZmH">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="30.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMu-h4-bVc">
+                                                                    <rect key="frame" x="0.0" y="30.5" width="50" height="19.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
                                                 </view>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="85W-oP-Lms" secondAttribute="trailing" id="07O-eI-Xv6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="85W-oP-Lms" secondAttribute="bottom" id="FLq-B4-9pF"/>
+                                                    <constraint firstItem="85W-oP-Lms" firstAttribute="top" secondItem="ijQ-BW-Eig" secondAttribute="top" id="vMi-C0-P2n"/>
+                                                    <constraint firstItem="85W-oP-Lms" firstAttribute="leading" secondItem="ijQ-BW-Eig" secondAttribute="leading" id="xwH-zH-GKr"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="dayLabel" destination="xMu-h4-bVc" id="CmS-Pe-2q2"/>
+                                                    <outlet property="weekdayLabel" destination="r1V-78-ZmH" id="oTf-G4-FlU"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Pbh-M3-uzF" id="VpA-Rh-vzC"/>
+                                            <outlet property="delegate" destination="Pbh-M3-uzF" id="onU-81-hAe"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                                 <constraints>
@@ -297,6 +330,7 @@
                     <connections>
                         <outlet property="durationSlider" destination="1ag-mR-KaH" id="kuS-cp-mcY"/>
                         <outlet property="eventNameInput" destination="JFO-c0-Lai" id="icc-dg-mYQ"/>
+                        <outlet property="quickDayPicker" destination="ttk-bO-ra3" id="Xey-AL-hEq"/>
                         <outlet property="saveButton" destination="857-Bi-Zaw" id="MRy-um-694"/>
                         <segue destination="6mG-Dv-vHT" kind="unwind" identifier="unwind" unwindAction="unwindToVCWithSegue:" id="8ef-sw-I5T"/>
                     </connections>
