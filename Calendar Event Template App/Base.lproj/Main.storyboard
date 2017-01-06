@@ -176,7 +176,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-3w-xpp">
-                                <rect key="frame" x="28" y="392" width="319" height="76"/>
+                                <rect key="frame" x="28" y="451" width="319" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqO-e3-JbJ">
                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="17"/>
@@ -206,7 +206,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2HI-eM-WmX">
-                                <rect key="frame" x="28" y="226" width="319" height="73"/>
+                                <rect key="frame" x="28" y="226" width="319" height="132"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-3n-RYl">
                                         <rect key="frame" x="0.0" y="0.0" width="30.5" height="17"/>
@@ -270,14 +270,33 @@
                                             <outlet property="delegate" destination="Pbh-M3-uzF" id="onU-81-hAe"/>
                                         </connections>
                                     </collectionView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="9" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="90P-4b-egX" customClass="StepSlider" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                        <rect key="frame" x="-2" y="79" width="323" height="31"/>
+                                        <connections>
+                                            <action selector="dragging:" destination="Pbh-M3-uzF" eventType="valueChanged" id="uS1-Lf-cyb"/>
+                                            <action selector="finishedDragging:" destination="Pbh-M3-uzF" eventType="touchUpInside" id="yrm-MG-2A0"/>
+                                            <action selector="startTimeDragging:" destination="Pbh-M3-uzF" eventType="valueChanged" id="DDS-c0-WZm"/>
+                                            <action selector="startTimeFinishedDragging:" destination="Pbh-M3-uzF" eventType="touchUpInside" id="nz5-7A-cfn"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-VE-m54">
+                                        <rect key="frame" x="0.0" y="115" width="319" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="90P-4b-egX" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="CD4-CY-vYh"/>
+                                    <constraint firstAttribute="trailing" secondItem="kwv-VE-m54" secondAttribute="trailing" id="KGH-gV-MrA"/>
                                     <constraint firstItem="ttk-bO-ra3" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="RhX-mz-tQj"/>
                                     <constraint firstAttribute="trailing" secondItem="ttk-bO-ra3" secondAttribute="trailing" id="cDY-el-ak9"/>
+                                    <constraint firstAttribute="trailing" secondItem="90P-4b-egX" secondAttribute="trailing" id="vFJ-Mr-WgD"/>
+                                    <constraint firstItem="kwv-VE-m54" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="vJB-br-Nx4"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="U1J-5Y-UmX">
-                                <rect key="frame" x="28" y="319" width="319" height="53"/>
+                                <rect key="frame" x="28" y="378" width="319" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfe-Sq-8M3">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="17"/>
@@ -296,6 +315,10 @@
                                     <constraint firstItem="nlV-Nk-ZVh" firstAttribute="leading" secondItem="U1J-5Y-UmX" secondAttribute="leading" id="DXF-5v-2Um"/>
                                     <constraint firstAttribute="trailing" secondItem="nlV-Nk-ZVh" secondAttribute="trailing" id="tcN-cV-MfY"/>
                                 </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="4Tf-RB-w9E">
+                                <rect key="frame" x="28" y="502" width="61" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -334,6 +357,8 @@
                         <outlet property="eventNameInput" destination="JFO-c0-Lai" id="icc-dg-mYQ"/>
                         <outlet property="quickDayPicker" destination="ttk-bO-ra3" id="Xey-AL-hEq"/>
                         <outlet property="saveButton" destination="857-Bi-Zaw" id="MRy-um-694"/>
+                        <outlet property="startTimeLabel" destination="kwv-VE-m54" id="gyT-0i-jt6"/>
+                        <outlet property="startTimeSlider" destination="90P-4b-egX" id="EN9-kt-rCv"/>
                         <segue destination="6mG-Dv-vHT" kind="unwind" identifier="unwind" unwindAction="unwindToVCWithSegue:" id="8ef-sw-I5T"/>
                     </connections>
                 </viewController>

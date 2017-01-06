@@ -18,6 +18,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var eventNameInput: UITextField!
     @IBOutlet weak var durationSlider: StepSlider!
     @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var startTimeSlider: StepSlider!
+    @IBOutlet weak var startTimeLabel: UILabel!
     
     // Quick day picker
     @IBOutlet weak var quickDayPicker: UICollectionView!
@@ -37,6 +39,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Styling
         saveButton.backgroundColor = Colors.blue
+        
+        // Setup start time slider
+        self.startTimeSlider.stepValue = 0.5 // Every half hour
     }
     
     @IBAction func cancelEvent(_ sender: Any) {
@@ -54,7 +59,19 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // User dragging slider
     @IBAction func dragging(_ sender: Any) {
-        self.durationLabel.text = self.durationSlider.roundValue() + " hours" // Real time rounded value of slider
+        self.durationLabel.text = self.durationSlider.roundString() + " hours" // Real time rounded value of slider
+    }
+    
+    @IBAction func startTimeFinishedDragging(_ sender: Any) {
+        self.startTimeSlider.released()
+    }
+    
+    @IBAction func startTimeDragging(_ sender: Any) {
+        var minutesFromMidnight = self.startTimeSlider.roundValue() * 3600.0 // Minutes from midnight
+        minutesFromMidnight += -Double(NSTimeZone.local.secondsFromGMT()) // Apply time zone shift
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
     }
     
     // MARK - Collection cell calls
