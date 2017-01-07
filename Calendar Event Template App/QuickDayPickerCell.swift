@@ -28,4 +28,23 @@ class QuickDayPickerCell: UICollectionViewCell {
         self.dayLabel.textColor = Colors.black
         self.weekdayLabel.textColor = Colors.black
     }
+    
+    // Called when the value isSelected is changed
+    // Source: http://stackoverflow.com/questions/31329972/trying-to-override-selected-in-uicollectionviewcell-swift-for-custom-selection
+    override var isSelected: Bool {
+        get {
+            return super.isSelected
+        }
+        set {
+            if newValue {
+                super.isSelected = true
+                self.userSelected()
+//                print("Selected")
+            } else if newValue == false {
+                super.isSelected = false
+                self.userUnselected()
+//                print("Unselected")
+            }
+        }
+    }
 }

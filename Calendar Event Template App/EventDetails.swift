@@ -38,7 +38,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     var weekdayLabels: [String] = [String](repeating: "1", count: EventDetailsData.numQuickDays) // Initialize arrays of fixed-length
     var dayLabels: [String] = [String](repeating: "1", count: EventDetailsData.numQuickDays)
     var dateOptions: [Date] = [Date](repeating: Date(), count: EventDetailsData.numQuickDays)
-    var selectedIndex: Int = 0 // Start with today selected
     let cellsPerSection: CGFloat = CGFloat(EventDetailsData.quickDaysShown) // 5 quick days shown
     let cellHeight: CGFloat = 50.0 // Constant cell height (50 is default)
     
@@ -53,6 +52,13 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         let horizontalScroll = UICollectionViewFlowLayout() // Initialize
         horizontalScroll.scrollDirection = .horizontal // Horizontal
         self.quickDayPicker.collectionViewLayout = horizontalScroll // Apply to view
+        
+        // Set initial selection for quick day picker view
+        self.quickDayPicker.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.left)
+        // Refresh collection view
+        DispatchQueue.main.async {
+            self.quickDayPicker.reloadData()
+        }
         
         // Styling
         saveButton.backgroundColor = Colors.blue
@@ -110,31 +116,13 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         cell.dayLabel.text = dayLabels[index]
         cell.weekdayLabel.text = weekdayLabels[index]
         
-        // If this cell is the one selected
-        if (self.selectedIndex == index) {
-            // Styling for a selected date
-            cell.userSelected()
-        } else { // If not selected
-            cell.userUnselected()
-        }
-        
         return cell
     }
     
     // Handle cell selection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
-        let previousSelection = self.selectedIndex // Store previous selection
-        self.selectedIndex = index // Update what is selected
-        self.eventDate = self.dateOptions[index] // Change the event date
-        
-        // Always QuickDayPickerCell types
-        let previousSelected = self.quickDayPicker.cellForItem(at: IndexPath(item: previousSelection, section: indexPath.section)) as! QuickDayPickerCell
-        let selectedCell = self.quickDayPicker.cellForItem(at: indexPath) as! QuickDayPickerCell
-        
-        // Update styling
-        previousSelected.userUnselected()
-        selectedCell.userSelected()
+        self.eventDate = self.dateOptions[index] // Update the event date
     }
     
     func styleTextInput() {
