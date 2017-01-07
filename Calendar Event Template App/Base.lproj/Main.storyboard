@@ -285,20 +285,31 @@
                                             <action selector="startTimeFinishedDragging:" destination="Pbh-M3-uzF" eventType="touchUpInside" id="nz5-7A-cfn"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-VE-m54">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fOV-sa-9ka">
                                         <rect key="frame" x="0.0" y="115" width="319" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBr-Ol-OnL">
+                                                <rect key="frame" x="0.0" y="0.0" width="157" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwv-VE-m54">
+                                                <rect key="frame" x="162" y="0.0" width="157" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fOV-sa-9ka" secondAttribute="trailing" id="0Vo-Wg-aEd"/>
+                                    <constraint firstItem="fOV-sa-9ka" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="7qL-t1-8hL"/>
                                     <constraint firstItem="90P-4b-egX" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="CD4-CY-vYh"/>
-                                    <constraint firstAttribute="trailing" secondItem="kwv-VE-m54" secondAttribute="trailing" id="KGH-gV-MrA"/>
                                     <constraint firstItem="ttk-bO-ra3" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="RhX-mz-tQj"/>
                                     <constraint firstAttribute="trailing" secondItem="ttk-bO-ra3" secondAttribute="trailing" id="cDY-el-ak9"/>
                                     <constraint firstAttribute="trailing" secondItem="90P-4b-egX" secondAttribute="trailing" id="vFJ-Mr-WgD"/>
-                                    <constraint firstItem="kwv-VE-m54" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="vJB-br-Nx4"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="U1J-5Y-UmX">
@@ -358,6 +369,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="WkC-HJ-T0A"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateLabel" destination="kBr-Ol-OnL" id="gNz-ZY-frc"/>
                         <outlet property="durationLabel" destination="BLf-Df-vAq" id="uAL-C3-575"/>
                         <outlet property="durationSlider" destination="1ag-mR-KaH" id="kuS-cp-mcY"/>
                         <outlet property="eventNameInput" destination="JFO-c0-Lai" id="icc-dg-mYQ"/>

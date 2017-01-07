@@ -27,6 +27,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var startTimeSlider: StepSlider!
     @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     // Form data
     var eventDate: Date = Date().dateWithoutTime() // Today, but no time
@@ -54,6 +55,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.quickDayPicker.collectionViewLayout = horizontalScroll // Apply to view
         
         // Set initial selection for quick day picker view
+        self.updateDateLabel() // Update for initial frontend
         self.quickDayPicker.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.left)
         // Refresh collection view
         DispatchQueue.main.async {
@@ -123,6 +125,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
         self.eventDate = self.dateOptions[index] // Update the event date
+        
+        self.updateDateLabel() // Update frontend
     }
     
     func styleTextInput() {

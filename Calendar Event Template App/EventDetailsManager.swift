@@ -53,4 +53,11 @@ extension EventDetails {
             self.quickDayPicker.reloadData()
         }
     }
+    
+    func updateDateLabel() {
+        // Change frontend label
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d" // Format
+        self.dateLabel.text = dateFormatter.string(from: self.eventDate) + " at" // Update label
+    }
 }
