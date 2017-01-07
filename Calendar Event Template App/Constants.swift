@@ -41,7 +41,7 @@ struct Storyboard {
 
 struct CellIdentifiers {
     // Table view cell identifiers
-    static let settingsCell                 = "SettingsCell"
+    static let eventListCell                = "EventListCell"
     
     // Collection view cell identifiers
     static let categoryCell                 = "CategoryCell"

@@ -314,6 +314,53 @@
                                     <constraint firstAttribute="trailing" secondItem="90P-4b-egX" secondAttribute="trailing" id="vFJ-Mr-WgD"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d1N-LA-6dL">
+                                <rect key="frame" x="28" y="348" width="319" height="165"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventListCell" id="6Sv-r7-lcJ" customClass="EventListCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="319" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Sv-r7-lcJ" id="XOb-QL-ZmB">
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0j7-hv-Vkw">
+                                                    <rect key="frame" x="8" y="0.0" width="303" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tM0-0l-ykW">
+                                                            <rect key="frame" x="0.0" y="0.0" width="151.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Time" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="80" translatesAutoresizingMaskIntoConstraints="NO" id="6mi-G5-TSG">
+                                                            <rect key="frame" x="151.5" y="0.0" width="151.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0j7-hv-Vkw" secondAttribute="trailing" id="BeV-8q-f4G"/>
+                                                <constraint firstItem="0j7-hv-Vkw" firstAttribute="leading" secondItem="XOb-QL-ZmB" secondAttribute="leadingMargin" id="fxo-OK-Hre"/>
+                                                <constraint firstAttribute="bottom" secondItem="0j7-hv-Vkw" secondAttribute="bottom" id="hf1-Eb-Of8"/>
+                                                <constraint firstItem="0j7-hv-Vkw" firstAttribute="top" secondItem="XOb-QL-ZmB" secondAttribute="top" id="uOw-Wm-zxi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventName" destination="tM0-0l-ykW" id="9et-kW-eUV"/>
+                                            <outlet property="eventTime" destination="6mi-G5-TSG" id="eJJ-In-n0P"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pbh-M3-uzF" id="uSO-0p-mrc"/>
+                                    <outlet property="delegate" destination="Pbh-M3-uzF" id="CPb-JC-CdA"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -335,9 +382,13 @@
                             <constraint firstAttribute="trailing" secondItem="857-Bi-Zaw" secondAttribute="trailing" id="WAg-KM-BcC"/>
                             <constraint firstItem="PTs-TK-Xjq" firstAttribute="top" secondItem="pml-km-dNO" secondAttribute="top" id="WeX-HT-ghc"/>
                             <constraint firstItem="2HI-eM-WmX" firstAttribute="trailing" secondItem="sPF-Gr-eH2" secondAttribute="trailing" id="WrN-cG-YSn"/>
+                            <constraint firstItem="d1N-LA-6dL" firstAttribute="top" secondItem="2HI-eM-WmX" secondAttribute="bottom" constant="8" id="eWb-zW-fXT"/>
                             <constraint firstItem="PVp-KG-RBC" firstAttribute="top" secondItem="yU3-wZ-w76" secondAttribute="bottom" id="fss-0U-jY3"/>
+                            <constraint firstItem="d1N-LA-6dL" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="gZY-ga-REj"/>
                             <constraint firstItem="sPF-Gr-eH2" firstAttribute="top" secondItem="VrQ-eX-OOQ" secondAttribute="bottom" constant="20" id="jx9-56-1q6"/>
                             <constraint firstItem="857-Bi-Zaw" firstAttribute="top" secondItem="aGk-3w-xpp" secondAttribute="bottom" constant="20" id="lve-Lf-pGP"/>
+                            <constraint firstItem="aGk-3w-xpp" firstAttribute="top" secondItem="d1N-LA-6dL" secondAttribute="bottom" constant="8" id="pv4-uh-Or2"/>
+                            <constraint firstItem="d1N-LA-6dL" firstAttribute="trailing" secondItem="2HI-eM-WmX" secondAttribute="trailing" id="rab-DU-puw"/>
                             <constraint firstItem="sPF-Gr-eH2" firstAttribute="trailing" secondItem="VrQ-eX-OOQ" secondAttribute="trailing" id="wZh-Iv-85t"/>
                         </constraints>
                     </view>
@@ -348,6 +399,7 @@
                         <outlet property="dateLabel" destination="kBr-Ol-OnL" id="gNz-ZY-frc"/>
                         <outlet property="durationLabel" destination="BLf-Df-vAq" id="uAL-C3-575"/>
                         <outlet property="durationSlider" destination="1ag-mR-KaH" id="kuS-cp-mcY"/>
+                        <outlet property="eventListTable" destination="d1N-LA-6dL" id="kmL-ic-NBe"/>
                         <outlet property="eventNameInput" destination="JFO-c0-Lai" id="icc-dg-mYQ"/>
                         <outlet property="locationInput" destination="iWU-UH-lk1" id="8vD-x9-6CK"/>
                         <outlet property="quickDayPicker" destination="ttk-bO-ra3" id="Xey-AL-hEq"/>

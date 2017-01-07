@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EventKit
 
 // Global variables
 struct EventDetailsData {
@@ -15,7 +16,7 @@ struct EventDetailsData {
     static let quickDaysShown: Int = 5 // Number shown initially, no scroll
 }
 
-class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout {
+class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     
     // Navigation buttons
     @IBOutlet weak var saveButton: UIButton!
@@ -42,6 +43,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     let cellsPerSection: CGFloat = CGFloat(EventDetailsData.quickDaysShown) // 5 quick days shown
     let cellHeight: CGFloat = 50.0 // Constant cell height (50 is default)
     
+    // Calendar list view
+    @IBOutlet weak var eventListTable: UITableView!
+    var daysEvents: [EKEvent] = [] // Empty
     
     var category: Category = Category(name: "NA")
     
@@ -125,7 +129,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
         self.eventDate = self.dateOptions[index] // Update the event date
-        
+        self.refreshDaysEvents() // Update event list
         self.updateDateLabel() // Update frontend
     }
     
@@ -150,6 +154,30 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth: CGFloat = ScreenSize.screen_width / (self.cellsPerSection + 2) // Add 2 for spacing
         return CGSize(width: cellWidth, height: self.cellHeight)
+    }
+    
+    // MARK - UITableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.daysEvents.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Cell for each index
+        let cell = eventListTable.dequeueReusableCell(withIdentifier: CellIdentifiers.eventListCell, for: indexPath) as! EventListCell
+        
+        let index = indexPath.item
+        cell.eventName.text = self.daysEvents[index].title
+        
+        // Time string
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a" // Format
+        let startDate: Date = self.daysEvents[index].startDate
+        let endDate: Date = self.daysEvents[index].endDate
+        cell.eventTime.text = dateFormatter.string(from: startDate) + " - \n" + dateFormatter.string(from: endDate) // Concatinate string
+        
+        print(self.daysEvents[index].title)
+        
+        return cell
     }
     
 }

@@ -24,4 +24,24 @@ class CalendarManager {
             }
         })
     }
+    
+    func saveEvent(event: EKEvent) {
+        do {
+            try self.eventStore.save(event, span: .thisEvent) // Try to add to calendar
+            
+            print("Event added successfully")
+        } catch {
+            print("Event could not be added")
+        }
+    }
+    
+    func getEvents(day: Date) -> [EKEvent] {
+        let start: Date = day.dateWithoutTime() // Current day
+        let end: Date = start.addingTimeInterval(24.0 * 60.0 * 60.0) // Exactly one day after
+        let calendars: [EKCalendar] = eventStore.calendars(for: .event) // For all calendars
+        let predicate: NSPredicate = eventStore.predicateForEvents(withStart: start, end: end, calendars: calendars)
+        let events: [EKEvent] = self.eventStore.events(matching: predicate) // Return events
+        print("Retrieved \(events.count) events")
+        return events
+    }
 }

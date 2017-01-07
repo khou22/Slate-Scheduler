@@ -10,9 +10,9 @@
 
 import Foundation
 import UIKit
+import EventKit
 
 extension EventDetails {
-    
     
     // Calculate the labels for the quick day picker and update global variables
     func calcQuickDays() {
@@ -54,10 +54,35 @@ extension EventDetails {
         }
     }
     
+    func refreshDaysEvents() {
+        self.daysEvents = CalendarManager().getEvents(day: eventDate.dateWithoutTime())
+        
+        // Refresh the table
+        DispatchQueue.main.async {
+            self.eventListTable.reloadData()
+        }
+        
+        
+    }
+    
     func updateDateLabel() {
         // Change frontend label
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d" // Format
         self.dateLabel.text = dateFormatter.string(from: self.eventDate) + " at" // Update label
+    }
+    
+    func createEvent() {
+        let event: EKEvent = EKEvent(eventStore: CalendarManager().eventStore)
+        event.title = self.eventNameInput.text!
+        event.location = self.locationInput.text
+        
+        // Date and time
+        let startDate: Date = self.eventDate.addingTimeInterval(self.eventTime) // Create start date
+        event.startDate = startDate
+        event.endDate = startDate.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Convert hours to time interval
+        event.isAllDay = false // Not all day
+        
+        CalendarManager().saveEvent(event: event) // Save event
     }
 }
