@@ -266,8 +266,8 @@
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
-                                            <outlet property="dataSource" destination="Pbh-M3-uzF" id="VpA-Rh-vzC"/>
-                                            <outlet property="delegate" destination="Pbh-M3-uzF" id="onU-81-hAe"/>
+                                            <outlet property="dataSource" destination="Pbh-M3-uzF" id="LMY-Jo-WPr"/>
+                                            <outlet property="delegate" destination="Pbh-M3-uzF" id="h9C-Kq-Ite"/>
                                         </connections>
                                     </collectionView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="9" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="90P-4b-egX" customClass="StepSlider" customModule="Calendar_Event_Template_App" customModuleProvider="target">

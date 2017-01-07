@@ -17,8 +17,6 @@ class QuickDayPickerCell: UICollectionViewCell {
         // Initalizer for styling
     }
     
-    
-    
     // Styling for when option is selected
     func userSelected() {
         self.dayLabel.textColor = Colors.blue

@@ -103,18 +103,17 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
             cell.userUnselected()
         }
         
-//        print(dayLabels[index] + ": " + weekdayLabels[index])
+        print(dayLabels[index] + ": " + weekdayLabels[index])
         
         return cell
     }
     
+    // Handle cell selection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
-        print(index)
         let previousSelection = self.selectedIndex // Store previous selection
         self.selectedIndex = index // Update what is selected
         self.eventDate = self.dateOptions[index] // Change the event date
-        print("Selected item: " + self.weekdayLabels[index])
         
         // Always QuickDayPickerCell types
         let previousSelected = self.quickDayPicker.cellForItem(at: IndexPath(item: previousSelection, section: indexPath.section)) as! QuickDayPickerCell
@@ -123,12 +122,5 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Update styling
         previousSelected.userUnselected()
         selectedCell.userSelected()
-        
-        print("update styling")
-        
-        // Reload to show user feedback
-        DispatchQueue.main.async {
-            self.quickDayPicker.reloadData()
-        }
     }
 }

@@ -19,6 +19,7 @@ extension UIViewController {
         // When UIViewController (not keyboard) is tapped, dismiss keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         
+        tap.cancelsTouchesInView = false // Won't override UICollection View
         view.addGestureRecognizer(tap) // Add gesture to view
     }
     
