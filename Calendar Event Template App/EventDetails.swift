@@ -154,10 +154,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if (textField == self.eventNameInput) {
+        if (textField == self.eventNameInput) { // Pressed next
             self.locationInput.becomeFirstResponder() // Move to next input
-        } else if (textField == self.locationInput) {
-            print("Pressed done")
+        } else if (textField == self.locationInput) { // Pressed done
             self.dismissKeyboard() // Hide keyboard
         }
         return true
@@ -189,7 +188,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         let endDate: Date = self.daysEvents[index].endDate
         cell.eventTime.text = dateFormatter.string(from: startDate) + " - \n" + dateFormatter.string(from: endDate) // Concatinate string
         
-        print(self.daysEvents[index].title)
+//        print(self.daysEvents[index].title)
         
         return cell
     }

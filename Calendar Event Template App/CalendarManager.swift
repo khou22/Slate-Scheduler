@@ -41,7 +41,7 @@ class CalendarManager {
         let calendars: [EKCalendar] = eventStore.calendars(for: .event) // For all calendars
         let predicate: NSPredicate = eventStore.predicateForEvents(withStart: start, end: end, calendars: calendars)
         let events: [EKEvent] = self.eventStore.events(matching: predicate) // Return events
-        print("Retrieved \(events.count) events")
+//        print("Retrieved \(events.count) events")
         return events
     }
 }
