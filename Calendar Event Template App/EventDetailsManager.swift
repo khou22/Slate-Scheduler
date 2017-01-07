@@ -85,4 +85,8 @@ extension EventDetails {
         
         CalendarManager().saveEvent(event: event) // Save event
     }
+    
+    func generateCard() {
+        <#function body#>
+    }
 }
