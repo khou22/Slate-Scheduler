@@ -47,6 +47,15 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var eventListTable: UITableView!
     var daysEvents: [EKEvent] = [] // Empty
     
+    // Card view
+    @IBOutlet weak var summaryCard: UIView!
+    @IBOutlet weak var summaryTitle: UILabel!
+    @IBOutlet weak var summaryLocation: UILabel!
+    @IBOutlet weak var summaryDateTime: UILabel!
+    @IBOutlet weak var summaryCardTopConstraint: NSLayoutConstraint!
+    var blackFade: UIView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenSize.screen_width, height: ScreenSize.screen_height)) // Covers full screen
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
+    
     var category: Category = Category(name: "NA")
     
     override func viewDidLoad() {
@@ -73,6 +82,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.startTimeSlider.stepValue = 0.5 // Every half hour
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        // Setup summary card view
+        self.setupSummaryCard()
+    }
+    
     override func viewDidLayoutSubviews() {
         self.styleTextInput() // Must be called after autolayout complete
     }
@@ -82,7 +96,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     @IBAction func saveEvent(_ sender: Any) {
-        print("Saving event")
+        self.generateCard()
     }
     
     // User released the slider

@@ -28,7 +28,7 @@ struct Files {
 
 struct Images {
     // Image names
-    static let tabBarFire                   = "white-geo-flame"
+    static let calendarIcon                 = "calendar-icon"
 }
 
 struct Storyboard {

@@ -86,7 +86,50 @@ extension EventDetails {
         CalendarManager().saveEvent(event: event) // Save event
     }
     
+    func setupSummaryCard() {
+        // Summary card initial positioning
+        self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant + ScreenSize.screen_height // Move it off screen
+        self.view.layoutIfNeeded() // Update frontend
+        
+        // Summary card styling
+        self.summaryCard.layer.cornerRadius = 10.0
+        self.summaryCard.layer.shadowColor = Colors.grey.cgColor
+        self.summaryCard.layer.shadowRadius = 10.0
+        self.summaryCard.layer.shadowOffset = CGSize.zero
+        self.summaryCard.layer.shadowOpacity = 0.75
+        self.summaryCard.clipsToBounds = true
+        
+        // Setup black fade
+        self.blackFade.backgroundColor = Colors.black
+        self.blackFade.layer.opacity = 0.0 // Transparent
+        self.view.insertSubview(self.blackFade, belowSubview: self.summaryCard) // Insert behind summary card
+        
+        // Hide loading spinner
+        self.loadingSpinner.layer.opacity = 0.0
+    }
+    
     func generateCard() {
-        <#function body#>
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.blackFade.layer.opacity = 0.75 // Black backdrop
+            self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant - ScreenSize.screen_height // Move it back on screen
+            self.view.layoutIfNeeded() // Animate update position
+        }, completion: { finished in
+            // Start loading spinner
+            self.loadingSpinner.layer.opacity = 1.0
+            self.loadingSpinner.startAnimating()
+            self.cardExit()
+        })
+    }
+    
+    func cardExit() {
+        UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseIn, animations: {
+            self.blackFade.layer.opacity = 0 // Transparent
+            self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant - ScreenSize.screen_height // Move it off screen up
+            self.view.layoutIfNeeded() // Animate update position
+        }, completion: { finished in
+            // Adding event complete
+            self.summaryCard.layer.opacity = 0.0 // Make transparent
+            self.dismiss(animated: true, completion: nil) // Exit segue back to category selection
+        })
     }
 }
