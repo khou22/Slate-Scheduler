@@ -40,6 +40,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.refreshQuickDay() // Calculate labels
         self.hideKeyboardOnTap() // Initialize hide keyboard when tapped away
         
+        // Setup horizontal scrolling
+        let horizontalScroll = UICollectionViewFlowLayout() // Initialize
+        horizontalScroll.scrollDirection = .horizontal // Horizontal
+        self.quickDayPicker.collectionViewLayout = horizontalScroll // Apply to view
+        
         // Styling
         saveButton.backgroundColor = Colors.blue
         
@@ -103,8 +108,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         } else { // If not selected
             cell.userUnselected()
         }
-        
-        print(dayLabels[index] + ": " + weekdayLabels[index])
         
         return cell
     }
