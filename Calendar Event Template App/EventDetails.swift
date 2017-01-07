@@ -21,11 +21,17 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var startTimeSlider: StepSlider!
     @IBOutlet weak var startTimeLabel: UILabel!
     
+    // Form data
+    var eventDate: Date = Date().dateWithoutTime() // Today, but no time
+    var eventTime: Double = 11 * 3600.0 // Minutes from midnight
+    
     // Quick day picker
     @IBOutlet weak var quickDayPicker: UICollectionView!
     let numQuickDays: Int = 5 // Can quickly pick 5 days
     var weekdayLabels: [String] = ["Today", "Tomorrow", "Monday", "Tuesday", "Wednesday"] // Starting values, only modify last three
     var dayLabels: [String] = ["1", "2", "3", "4", "5"] // Starting values, modify all
+    var dateOptions: [Date] = [Date(), Date(), Date(), Date(), Date()] // Initialize array of length 5
+    var selectedIndex: Int = 0 // Start with today selected
     
     var category: Category = Category(name: "NA")
     
@@ -68,6 +74,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     @IBAction func startTimeDragging(_ sender: Any) {
         var minutesFromMidnight = self.startTimeSlider.roundValue() * 3600.0 // Minutes from midnight
+        self.eventTime = minutesFromMidnight // Change global variable
         minutesFromMidnight += -Double(NSTimeZone.local.secondsFromGMT()) // Apply time zone shift
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
@@ -88,47 +95,40 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         cell.dayLabel.text = dayLabels[index]
         cell.weekdayLabel.text = weekdayLabels[index]
         
-        print(dayLabels[index] + ": " + weekdayLabels[index])
+        // If this cell is the one selected
+        if (self.selectedIndex == index) {
+            // Styling for a selected date
+            cell.userSelected()
+        } else { // If not selected
+            cell.userUnselected()
+        }
+        
+//        print(dayLabels[index] + ": " + weekdayLabels[index])
         
         return cell
     }
     
-    // Calculate the labels for the quick day picker and update global variables
-    func calcQuickDays() {
-        let today: Date = Date()
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.item
+        print(index)
+        let previousSelection = self.selectedIndex // Store previous selection
+        self.selectedIndex = index // Update what is selected
+        self.eventDate = self.dateOptions[index] // Change the event date
+        print("Selected item: " + self.weekdayLabels[index])
         
-        // Date formatter to just get date number
-        let dayNumberFormatter = DateFormatter()
-        dayNumberFormatter.dateFormat = "d" // Day number ie. '2/1/17' -> '1'
+        // Always QuickDayPickerCell types
+        let previousSelected = self.quickDayPicker.cellForItem(at: IndexPath(item: previousSelection, section: indexPath.section)) as! QuickDayPickerCell
+        let selectedCell = self.quickDayPicker.cellForItem(at: indexPath) as! QuickDayPickerCell
         
-        // Date formatter to just get day of week
-        let dayOfWeekFormatter = DateFormatter()
-        dayOfWeekFormatter.dateFormat = "EEE" // 3 letter abbreviation of weekday
+        // Update styling
+        previousSelected.userUnselected()
+        selectedCell.userSelected()
         
-        for index in 0..<numQuickDays {
-            let currentDate = today.addingTimeInterval(24 * 60 * 60 * Double(index)) // Add x number of days
-            
-            self.dayLabels[index] = dayNumberFormatter.string(from: currentDate) // Set date number
-            
-            if (index > 1) { // Exclude the first two days
-                self.weekdayLabels[index] = dayOfWeekFormatter.string(from: currentDate) // Set day of week
-            }
-        }
+        print("update styling")
         
-        print("Calculated quick days")
-    }
-    
-    func refreshQuickDay() {
-        self.calcQuickDays() // Calculate quick days
-        
-        // Refresh collection view
+        // Reload to show user feedback
         DispatchQueue.main.async {
             self.quickDayPicker.reloadData()
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let index = indexPath.item
-        print("Selected item: " + self.weekdayLabels[index])
     }
 }

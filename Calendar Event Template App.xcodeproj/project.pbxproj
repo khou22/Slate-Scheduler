@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2707362B1E20609E003E8B72 /* EventDetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2707362A1E20609E003E8B72 /* EventDetailsManager.swift */; };
 		270991051E1E289000267071 /* StepSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270991041E1E289000267071 /* StepSlider.swift */; };
 		27190C5B1E1F4147002D3CB4 /* QuickDayPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */; };
 		272455741E1DCCA400F3856F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455731E1DCCA400F3856F /* Category.swift */; };
@@ -22,6 +23,7 @@
 		27BDFD991E1D9E0500B8C474 /* Calendar_Event_Template_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD981E1D9E0500B8C474 /* Calendar_Event_Template_AppUITests.swift */; };
 		27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFDA61E1DB4D100B8C474 /* Constants.swift */; };
 		27BDFDAA1E1DBE1700B8C474 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */; };
+		27DC4E7E1E2061B700F510D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC4E7D1E2061B700F510D3 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2707362A1E20609E003E8B72 /* EventDetailsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsManager.swift; sourceTree = "<group>"; };
 		270991041E1E289000267071 /* StepSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepSlider.swift; sourceTree = "<group>"; };
 		27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickDayPickerCell.swift; sourceTree = "<group>"; };
 		272455731E1DCCA400F3856F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		27BDFD9A1E1D9E0500B8C474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27BDFDA61E1DB4D100B8C474 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
+		27DC4E7D1E2061B700F510D3 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			children = (
 				272455731E1DCCA400F3856F /* Category.swift */,
 				270991041E1E289000267071 /* StepSlider.swift */,
+				27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */,
+				27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -167,6 +173,7 @@
 			children = (
 				27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */,
 				274FA89B1E1DCBC7008E297C /* EventDetails.swift */,
+				2707362A1E20609E003E8B72 /* EventDetailsManager.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -174,9 +181,8 @@
 		27BDFDAB1E1DBE1A00B8C474 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */,
-				27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */,
 				279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */,
+				27DC4E7D1E2061B700F510D3 /* DateExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -322,12 +328,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BDFDAA1E1DBE1700B8C474 /* CategoryCollectionCell.swift in Sources */,
+				27DC4E7E1E2061B700F510D3 /* DateExtension.swift in Sources */,
 				274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */,
 				279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */,
 				270991051E1E289000267071 /* StepSlider.swift in Sources */,
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
 				272455771E1DCE3000F3856F /* DataManager.swift in Sources */,
 				27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */,
+				2707362B1E20609E003E8B72 /* EventDetailsManager.swift in Sources */,
 				27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */,
 				272455741E1DCCA400F3856F /* Category.swift in Sources */,
 				27190C5B1E1F4147002D3CB4 /* QuickDayPickerCell.swift in Sources */,
