@@ -74,7 +74,7 @@ extension EventDetails {
     
     func createEvent() {
         let event: EKEvent = EKEvent(eventStore: CalendarManager().eventStore)
-        event.title = self.eventNameInput.text!
+        event.title = "[" + category.name + "] " + self.eventNameInput.text!
         event.location = self.locationInput.text
         
         // Date and time
@@ -109,6 +109,21 @@ extension EventDetails {
     }
     
     func generateCard() {
+        // Populate information
+        self.summaryTitle.text = "[" + category.name + "] " + self.eventNameInput.text!
+        self.summaryLocation.text = self.locationInput.text
+        
+        // Format summary time
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d" // Date only
+        let dateStr: String = dateFormatter.string(from: self.eventDate)
+        
+        dateFormatter.dateFormat = "h:mm a" // Time only
+        let startTime: Date = self.eventDate.addingTimeInterval(self.eventTime) // Calculate starting time
+        let endTime: Date = startTime.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Calculate end time
+        let timeStr: String = dateFormatter.string(from: startTime) + " - " + dateFormatter.string(from: endTime) // Concatinate string
+        self.summaryDateTime.text = dateStr + " \n " + timeStr // Add to card view
+        
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             self.blackFade.layer.opacity = 0.75 // Black backdrop
             self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant - ScreenSize.screen_height // Move it back on screen
@@ -122,7 +137,7 @@ extension EventDetails {
     }
     
     func cardExit() {
-        UIView.animate(withDuration: 0.5, delay: 1.0, options: .curveEaseIn, animations: {
+        UIView.animate(withDuration: 0.5, delay: 1.5, options: .curveEaseIn, animations: {
             self.blackFade.layer.opacity = 0 // Transparent
             self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant - ScreenSize.screen_height // Move it off screen up
             self.view.layoutIfNeeded() // Animate update position
