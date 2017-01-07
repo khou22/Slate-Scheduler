@@ -24,6 +24,7 @@
 		27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFDA61E1DB4D100B8C474 /* Constants.swift */; };
 		27BDFDAA1E1DBE1700B8C474 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */; };
 		27DC4E7E1E2061B700F510D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC4E7D1E2061B700F510D3 /* DateExtension.swift */; };
+		27DC4E801E20758500F510D3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC4E7F1E20758500F510D3 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		27BDFDA61E1DB4D100B8C474 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
 		27DC4E7D1E2061B700F510D3 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		27DC4E7F1E20758500F510D3 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			children = (
 				279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */,
 				27DC4E7D1E2061B700F510D3 /* DateExtension.swift */,
+				27DC4E7F1E20758500F510D3 /* CustomTextField.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27DC4E801E20758500F510D3 /* CustomTextField.swift in Sources */,
 				27BDFDAA1E1DBE1700B8C474 /* CategoryCollectionCell.swift in Sources */,
 				27DC4E7E1E2061B700F510D3 /* DateExtension.swift in Sources */,
 				274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */,

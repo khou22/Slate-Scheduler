@@ -9,13 +9,14 @@
 import Foundation
 import UIKit
 
-class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
     // Navigation buttons
     @IBOutlet weak var saveButton: UIButton!
     
     // Form inputs
     @IBOutlet weak var eventNameInput: UITextField!
+    @IBOutlet weak var locationInput: UITextField!
     @IBOutlet weak var durationSlider: StepSlider!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var startTimeSlider: StepSlider!
@@ -27,27 +28,27 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // Quick day picker
     @IBOutlet weak var quickDayPicker: UICollectionView!
-    let numQuickDays: Int = 5 // Can quickly pick 5 days
-    var weekdayLabels: [String] = ["Today", "Tomorrow", "Monday", "Tuesday", "Wednesday"] // Starting values, only modify last three
-    var dayLabels: [String] = ["1", "2", "3", "4", "5"] // Starting values, modify all
-    var dateOptions: [Date] = [Date(), Date(), Date(), Date(), Date()] // Initialize array of length 5
+    let numQuickDays: Int = 6 // Can quickly pick 5 days
+    var weekdayLabels: [String] = ["Today", "Tomorrow", "Monday", "Tuesday", "Wednesday", "Thursday"] // Starting values, only modify last three
+    var dayLabels: [String] = ["1", "2", "3", "4", "5", "6"] // Starting values, modify all
+    var dateOptions: [Date] = [Date(), Date(), Date(), Date(), Date(), Date()] // Initialize array of length 5
     var selectedIndex: Int = 0 // Start with today selected
     
     var category: Category = Category(name: "NA")
     
     override func viewDidLoad() {
-        print("Creating event with category: " + self.category.name)
-        
-        // Calculate labels
-        self.refreshQuickDay()
-        
-        self.hideKeyboardOnTap() // Hide keyboard when tapped away
+        self.refreshQuickDay() // Calculate labels
+        self.hideKeyboardOnTap() // Initialize hide keyboard when tapped away
         
         // Styling
         saveButton.backgroundColor = Colors.blue
         
         // Setup start time slider
         self.startTimeSlider.stepValue = 0.5 // Every half hour
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.styleTextInput() // Must be called after autolayout complete
     }
     
     @IBAction func cancelEvent(_ sender: Any) {
@@ -123,4 +124,22 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         previousSelected.userUnselected()
         selectedCell.userSelected()
     }
+    
+    func styleTextInput() {
+        // Just bottom border
+        self.eventNameInput.addBottomBorder()
+        self.locationInput.addBottomBorder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField == self.eventNameInput) {
+            self.locationInput.becomeFirstResponder() // Move to next input
+        } else if (textField == self.locationInput) {
+            print("Pressed done")
+            self.dismissKeyboard() // Hide keyboard
+        }
+        return true
+    }
+    
+    
 }
