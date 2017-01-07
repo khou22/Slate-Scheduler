@@ -26,6 +26,8 @@ extension EventDetails {
         let dayOfWeekFormatter = DateFormatter()
         dayOfWeekFormatter.dateFormat = "EEE" // 3 letter abbreviation of weekday
         
+        let firstTwoStrings: [String] = ["Today", "Tomorrow"] // First two labels
+        
         for index in 0..<numQuickDays {
             let currentDate = today.addingTimeInterval(24 * 60 * 60 * Double(index)) // Add x number of days
             
@@ -35,10 +37,12 @@ extension EventDetails {
             
             if (index > 1) { // Exclude the first two days
                 self.weekdayLabels[index] = dayOfWeekFormatter.string(from: currentDate) // Set day of week
+            } else {
+                self.weekdayLabels[index] = firstTwoStrings[index] // Set "Today" and "Tomorrow"
             }
         }
         
-        print("Calculated quick days")
+//        print("Calculated quick days")
     }
     
     func refreshQuickDay() {

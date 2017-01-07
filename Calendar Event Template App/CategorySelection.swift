@@ -96,7 +96,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Triggered when category item selection
         self.selectedItem = indexPath.item // Update selected index
-        print("Selected category: " + categoryData[self.selectedItem].name)
+//        print("Selected category: " + categoryData[self.selectedItem].name)
         
         // Perform segue and pass on category data
         self.performSegue(withIdentifier: SegueIdentifiers.createEvent, sender: self)
@@ -107,7 +107,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         // Creating new event segue
         if(segue.identifier == SegueIdentifiers.createEvent) {
             let eventDetailsVC = segue.destination as! EventDetails
-            print("performing segue with data: " + self.categoryData[self.selectedItem].name)
+//            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
             eventDetailsVC.category = self.categoryData[self.selectedItem] // Pass on category data
         }
     }

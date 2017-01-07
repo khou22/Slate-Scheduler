@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
-class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
+// Global variables
+struct EventDetailsData {
+    static let numQuickDays: Int = 10 // Total number available
+    static let quickDaysShown: Int = 5 // Number shown initially, no scroll
+}
+
+class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout {
     
     // Navigation buttons
     @IBOutlet weak var saveButton: UIButton!
@@ -28,11 +34,14 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // Quick day picker
     @IBOutlet weak var quickDayPicker: UICollectionView!
-    let numQuickDays: Int = 6 // Can quickly pick 5 days
-    var weekdayLabels: [String] = ["Today", "Tomorrow", "Monday", "Tuesday", "Wednesday", "Thursday"] // Starting values, only modify last three
-    var dayLabels: [String] = ["1", "2", "3", "4", "5", "6"] // Starting values, modify all
-    var dateOptions: [Date] = [Date(), Date(), Date(), Date(), Date(), Date()] // Initialize array of length 5
+    let numQuickDays: Int = EventDetailsData.numQuickDays // Can quickly pick 5 days
+    var weekdayLabels: [String] = [String](repeating: "1", count: EventDetailsData.numQuickDays) // Initialize arrays of fixed-length
+    var dayLabels: [String] = [String](repeating: "1", count: EventDetailsData.numQuickDays)
+    var dateOptions: [Date] = [Date](repeating: Date(), count: EventDetailsData.numQuickDays)
     var selectedIndex: Int = 0 // Start with today selected
+    let cellsPerSection: CGFloat = CGFloat(EventDetailsData.quickDaysShown) // 5 quick days shown
+    let cellHeight: CGFloat = 50.0 // Constant cell height (50 is default)
+    
     
     var category: Category = Category(name: "NA")
     
@@ -144,5 +153,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         return true
     }
     
+    // MARK - UICollectionViewDelegateFlowLayout
+    // Declare size of quick day picker cells
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth: CGFloat = ScreenSize.screen_width / (self.cellsPerSection + 2) // Add 2 for spacing
+        return CGSize(width: cellWidth, height: self.cellHeight)
+    }
     
 }
