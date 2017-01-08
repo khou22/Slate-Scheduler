@@ -12,7 +12,7 @@ import EventKit
 
 class CalendarManager {
     
-    var eventStore: EKEventStore = EKEventStore()
+    let eventStore: EKEventStore = EKEventStore()
     
     // Request access to read and add calendar events
     func requestAccess() {
@@ -30,8 +30,9 @@ class CalendarManager {
             try self.eventStore.save(event, span: .thisEvent) // Try to add to calendar
             
             print("Event added successfully")
-        } catch {
+        } catch let err as NSError {
             print("Event could not be added")
+            print("An error occured \(err.localizedDescription)")
         }
     }
     

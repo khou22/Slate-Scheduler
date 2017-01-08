@@ -41,8 +41,6 @@ extension EventDetails {
                 self.weekdayLabels[index] = firstTwoStrings[index] // Set "Today" and "Tomorrow"
             }
         }
-        
-//        print("Calculated quick days")
     }
     
     func refreshQuickDay() {
@@ -55,7 +53,7 @@ extension EventDetails {
     }
     
     func refreshDaysEvents() {
-        self.daysEvents = CalendarManager().getEvents(day: eventDate.dateWithoutTime())
+        self.daysEvents = self.calendarManager.getEvents(day: eventDate.dateWithoutTime())
         
         // Refresh the table
         DispatchQueue.main.async {
@@ -73,9 +71,14 @@ extension EventDetails {
     }
     
     func createEvent() {
-        let event: EKEvent = EKEvent(eventStore: CalendarManager().eventStore)
+        let event: EKEvent = EKEvent(eventStore: self.calendarManager.eventStore)
+        
+        // Populate information
         event.title = "[" + category.name + "] " + self.eventNameInput.text!
         event.location = self.locationInput.text
+        
+        // Set the calendar
+        event.calendar = self.calendarManager.eventStore.defaultCalendarForNewEvents // Default calendar
         
         // Date and time
         let startDate: Date = self.eventDate.addingTimeInterval(self.eventTime) // Create start date
@@ -83,7 +86,7 @@ extension EventDetails {
         event.endDate = startDate.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Convert hours to time interval
         event.isAllDay = false // Not all day
         
-        CalendarManager().saveEvent(event: event) // Save event
+        self.calendarManager.saveEvent(event: event) // Save event
     }
     
     func setupSummaryCard() {
@@ -132,6 +135,7 @@ extension EventDetails {
             // Start loading spinner
             self.loadingSpinner.layer.opacity = 1.0
             self.loadingSpinner.startAnimating()
+            self.createEvent()
             self.cardExit()
         })
     }

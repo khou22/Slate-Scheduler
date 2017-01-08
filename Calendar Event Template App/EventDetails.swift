@@ -56,7 +56,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     var blackFade: UIView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenSize.screen_width, height: ScreenSize.screen_height)) // Covers full screen
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     
+    // Category data
     var category: Category = Category(name: "NA")
+    
+    // Instance of calendar manager
+    let calendarManager: CalendarManager = CalendarManager()
     
     override func viewDidLoad() {
         self.refreshQuickDay() // Calculate labels
