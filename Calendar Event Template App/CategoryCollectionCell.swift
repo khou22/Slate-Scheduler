@@ -16,8 +16,8 @@ class CategoryCollectionCell: UICollectionViewCell {
         // Initiate cell
         
         // Styling that applies to all cells
-        self.backgroundColor = Colors.lightGrey
-        self.layer.borderColor = Colors.grey.cgColor
+        self.backgroundColor = Colors.red.withAlphaComponent(0.10) // 10% transparency
+        self.layer.borderColor = Colors.red.cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 5.0
     }

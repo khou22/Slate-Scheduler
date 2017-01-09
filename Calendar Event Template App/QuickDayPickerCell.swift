@@ -13,14 +13,16 @@ class QuickDayPickerCell: UICollectionViewCell {
     @IBOutlet weak var weekdayLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     
+    let selectedColor: UIColor = Colors.red // Color when selected
+    
     override func awakeFromNib() {
         // Initalizer for styling
     }
     
     // Styling for when option is selected
     func userSelected() {
-        self.dayLabel.textColor = Colors.blue
-        self.weekdayLabel.textColor = Colors.blue
+        self.dayLabel.textColor = self.selectedColor
+        self.weekdayLabel.textColor = self.selectedColor
     }
     
     // Styling for when option is unselected
