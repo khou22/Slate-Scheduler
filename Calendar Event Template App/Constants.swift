@@ -29,6 +29,7 @@ struct Files {
 struct Images {
     // Image names
     static let calendarIcon                 = "calendar-icon"
+    static let submitConfirmation           = "submit-confirmation"
 }
 
 struct Storyboard {

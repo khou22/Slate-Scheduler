@@ -140,7 +140,7 @@ extension EventDetails {
             self.loadingSpinner.layer.opacity = 1.0
             self.loadingSpinner.startAnimating()
             
-//            self.createEvent() // Create and save event to calendar
+            self.createEvent() // Create and save event to calendar
             
             // Exit animations
             self.saveConfirmation()
