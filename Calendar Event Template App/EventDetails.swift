@@ -85,9 +85,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
             self.quickDayPicker.reloadData()
         }
         
-        // Styling
-        saveButton.backgroundColor = Colors.blue
-        
         // Setup start time slider
         self.startTimeSlider.stepValue = 0.5 // Every half hour
     }
