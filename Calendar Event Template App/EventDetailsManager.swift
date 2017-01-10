@@ -107,8 +107,10 @@ extension EventDetails {
         self.blackFade.layer.opacity = 0.0 // Transparent
         self.view.insertSubview(self.blackFade, belowSubview: self.summaryCard) // Insert behind summary card
         
-        // Hide loading spinner
+        // Hide loading spinner and submit confirmation
         self.loadingSpinner.layer.opacity = 0.0
+        self.submitConfirmation.layer.opacity = 0.0
+        self.submitStatusLabel.layer.opacity = 0.0
     }
     
     func generateCard() {
@@ -131,24 +133,51 @@ extension EventDetails {
             self.blackFade.layer.opacity = 0.75 // Black backdrop
             self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant - ScreenSize.screen_height // Move it back on screen
             self.view.layoutIfNeeded() // Animate update position
+            
+            self.submitStatusLabel.layer.opacity = 1.0 // Make status label visible
         }, completion: { finished in
             // Start loading spinner
             self.loadingSpinner.layer.opacity = 1.0
             self.loadingSpinner.startAnimating()
-            self.createEvent()
+            
+//            self.createEvent() // Create and save event to calendar
+            
+            // Exit animations
+            self.saveConfirmation()
             self.cardExit()
         })
     }
     
     func cardExit() {
         UIView.animate(withDuration: 0.5, delay: 1.5, options: .curveEaseIn, animations: {
+            // Animate out
             self.blackFade.layer.opacity = 0 // Transparent
             self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant - ScreenSize.screen_height // Move it off screen up
             self.view.layoutIfNeeded() // Animate update position
         }, completion: { finished in
             // Adding event complete
-            self.summaryCard.layer.opacity = 0.0 // Make transparent
-            self.dismiss(animated: true, completion: nil) // Exit segue back to category selection
+            
+            // Make transparent to prevent user from seeing it
+            self.summaryCard.layer.opacity = 0.0
+            self.submitConfirmation.layer.opacity = 0.0
+            
+            // Exit segue back to category selection
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
+    
+    func saveConfirmation() {
+        UIView.animate(withDuration: 0.15, delay: 0.75, options: .curveLinear, animations: {
+            // Animate the save confirmation icon
+            self.submitConfirmation.layer.opacity = 1.0
+            
+            // Enlarge
+            self.submitConfirmationWidth.constant = 20.0 // Only change width because aspect fit
+            
+            self.view.layoutIfNeeded() // Update view
+        }, completion: { finished in
+            // Change label to reflect status
+            self.submitStatusLabel.text = "Added to Calendar"
         })
     }
 }

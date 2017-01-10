@@ -441,10 +441,20 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="48k-Jh-yKE">
                                 <rect key="frame" x="169" y="410" width="37" height="37"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="submit-confirmation" translatesAutoresizingMaskIntoConstraints="NO" id="qA9-jB-0b0">
+                                <rect key="frame" x="169" y="410" width="37" height="57"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding to Calendar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBi-YA-Dte">
+                                <rect key="frame" x="36" y="497" width="303" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="857-Bi-Zaw" firstAttribute="leading" secondItem="pml-km-dNO" secondAttribute="leading" id="07a-z9-jjE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bBi-YA-Dte" secondAttribute="trailing" constant="20" id="0gv-tf-TQK"/>
                             <constraint firstAttribute="trailing" secondItem="PTs-TK-Xjq" secondAttribute="trailing" id="3j7-5N-d4B"/>
                             <constraint firstItem="VrQ-eX-OOQ" firstAttribute="top" secondItem="PVp-KG-RBC" secondAttribute="bottom" constant="16" id="5N5-jH-ayz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VrQ-eX-OOQ" secondAttribute="trailing" constant="12" id="5QS-Y9-m8l"/>
@@ -452,21 +462,27 @@
                             <constraint firstItem="qsh-b2-hZD" firstAttribute="top" secondItem="857-Bi-Zaw" secondAttribute="bottom" id="7tZ-Eh-Wnn"/>
                             <constraint firstItem="zKd-dG-sFF" firstAttribute="top" secondItem="yU3-wZ-w76" secondAttribute="bottom" constant="70" id="AEZ-TZ-MMN"/>
                             <constraint firstItem="2HI-eM-WmX" firstAttribute="leading" secondItem="sPF-Gr-eH2" secondAttribute="leading" id="C4W-TI-5GN"/>
+                            <constraint firstItem="bBi-YA-Dte" firstAttribute="centerX" secondItem="pml-km-dNO" secondAttribute="centerX" id="DUl-zl-9Sl"/>
                             <constraint firstItem="48k-Jh-yKE" firstAttribute="centerX" secondItem="pml-km-dNO" secondAttribute="centerX" id="Evd-0o-gCo"/>
                             <constraint firstItem="aGk-3w-xpp" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="Gy8-jL-CKu"/>
+                            <constraint firstItem="qA9-jB-0b0" firstAttribute="top" secondItem="48k-Jh-yKE" secondAttribute="top" id="Hsg-D1-iA0"/>
                             <constraint firstItem="VrQ-eX-OOQ" firstAttribute="leading" secondItem="pml-km-dNO" secondAttribute="leadingMargin" constant="12" id="KRw-xT-ROm"/>
                             <constraint firstItem="PVp-KG-RBC" firstAttribute="top" secondItem="PTs-TK-Xjq" secondAttribute="bottom" id="MKX-PM-HvE"/>
+                            <constraint firstItem="qA9-jB-0b0" firstAttribute="centerX" secondItem="pml-km-dNO" secondAttribute="centerX" id="Mft-wC-55N"/>
                             <constraint firstAttribute="trailing" secondItem="PVp-KG-RBC" secondAttribute="trailing" id="NKh-eL-9Ld"/>
                             <constraint firstItem="PTs-TK-Xjq" firstAttribute="leading" secondItem="pml-km-dNO" secondAttribute="leading" id="NZ8-SA-tA3"/>
                             <constraint firstItem="2HI-eM-WmX" firstAttribute="top" secondItem="sPF-Gr-eH2" secondAttribute="bottom" constant="20" id="Ny1-gv-GG1"/>
                             <constraint firstItem="sPF-Gr-eH2" firstAttribute="leading" secondItem="VrQ-eX-OOQ" secondAttribute="leading" id="Pw5-zQ-Dmw"/>
+                            <constraint firstItem="bBi-YA-Dte" firstAttribute="leading" secondItem="pml-km-dNO" secondAttribute="leadingMargin" constant="20" id="R00-uu-Rqg"/>
                             <constraint firstItem="aGk-3w-xpp" firstAttribute="trailing" secondItem="2HI-eM-WmX" secondAttribute="trailing" id="TkU-6u-FCd"/>
                             <constraint firstItem="PVp-KG-RBC" firstAttribute="leading" secondItem="pml-km-dNO" secondAttribute="leading" id="W0y-f6-Y0S"/>
                             <constraint firstAttribute="trailing" secondItem="857-Bi-Zaw" secondAttribute="trailing" id="WAg-KM-BcC"/>
                             <constraint firstItem="PTs-TK-Xjq" firstAttribute="top" secondItem="pml-km-dNO" secondAttribute="top" id="WeX-HT-ghc"/>
                             <constraint firstItem="2HI-eM-WmX" firstAttribute="trailing" secondItem="sPF-Gr-eH2" secondAttribute="trailing" id="WrN-cG-YSn"/>
                             <constraint firstItem="zKd-dG-sFF" firstAttribute="leading" secondItem="pml-km-dNO" secondAttribute="leadingMargin" id="X5m-2n-1rK"/>
+                            <constraint firstItem="bBi-YA-Dte" firstAttribute="top" secondItem="qA9-jB-0b0" secondAttribute="bottom" constant="30" id="ZNf-uM-H0r"/>
                             <constraint firstItem="d1N-LA-6dL" firstAttribute="top" secondItem="2HI-eM-WmX" secondAttribute="bottom" constant="8" id="eWb-zW-fXT"/>
+                            <constraint firstItem="qA9-jB-0b0" firstAttribute="width" secondItem="48k-Jh-yKE" secondAttribute="width" id="fgy-fj-FuW"/>
                             <constraint firstItem="PVp-KG-RBC" firstAttribute="top" secondItem="yU3-wZ-w76" secondAttribute="bottom" id="fss-0U-jY3"/>
                             <constraint firstItem="48k-Jh-yKE" firstAttribute="top" secondItem="zKd-dG-sFF" secondAttribute="bottom" constant="110" id="gHW-7D-hnx"/>
                             <constraint firstItem="d1N-LA-6dL" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="gZY-ga-REj"/>
@@ -475,6 +491,7 @@
                             <constraint firstItem="aGk-3w-xpp" firstAttribute="top" secondItem="d1N-LA-6dL" secondAttribute="bottom" constant="16" id="pv4-uh-Or2"/>
                             <constraint firstItem="d1N-LA-6dL" firstAttribute="trailing" secondItem="2HI-eM-WmX" secondAttribute="trailing" id="rab-DU-puw"/>
                             <constraint firstItem="sPF-Gr-eH2" firstAttribute="trailing" secondItem="VrQ-eX-OOQ" secondAttribute="trailing" id="wZh-Iv-85t"/>
+                            <constraint firstItem="qA9-jB-0b0" firstAttribute="height" secondItem="48k-Jh-yKE" secondAttribute="height" constant="20" id="yc9-2c-fao"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Event Details" id="Kkq-RH-xOD">
@@ -492,6 +509,10 @@
                         <outlet property="saveButton" destination="857-Bi-Zaw" id="MRy-um-694"/>
                         <outlet property="startTimeLabel" destination="kwv-VE-m54" id="gyT-0i-jt6"/>
                         <outlet property="startTimeSlider" destination="90P-4b-egX" id="EN9-kt-rCv"/>
+                        <outlet property="submitConfirmation" destination="qA9-jB-0b0" id="L85-o6-Bsg"/>
+                        <outlet property="submitConfirmationHeight" destination="yc9-2c-fao" id="yWI-5c-5Um"/>
+                        <outlet property="submitConfirmationWidth" destination="fgy-fj-FuW" id="Fj0-fX-2uf"/>
+                        <outlet property="submitStatusLabel" destination="bBi-YA-Dte" id="hA4-Rt-z61"/>
                         <outlet property="summaryCard" destination="zKd-dG-sFF" id="hCJ-6Q-o6j"/>
                         <outlet property="summaryCardTopConstraint" destination="AEZ-TZ-MMN" id="6g1-fq-DgY"/>
                         <outlet property="summaryDateTime" destination="bVW-uW-l1U" id="Aep-uz-MQ8"/>
@@ -524,5 +545,6 @@
     </scenes>
     <resources>
         <image name="calendar-icon" width="50" height="55"/>
+        <image name="submit-confirmation" width="70" height="70"/>
     </resources>
 </document>

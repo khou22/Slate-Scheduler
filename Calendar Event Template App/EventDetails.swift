@@ -56,6 +56,12 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     var blackFade: UIView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenSize.screen_width, height: ScreenSize.screen_height)) // Covers full screen
     @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     
+    // Other UI Elements
+    @IBOutlet weak var submitConfirmation: UIImageView!
+    @IBOutlet weak var submitConfirmationWidth: NSLayoutConstraint!
+    @IBOutlet weak var submitConfirmationHeight: NSLayoutConstraint!
+    @IBOutlet weak var submitStatusLabel: UILabel!
+    
     // Category data
     var category: Category = Category(name: "NA")
     
@@ -89,6 +95,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     override func viewWillAppear(_ animated: Bool) {
         // Setup summary card view
         self.setupSummaryCard()
+        
+        // Auto focus on event name input
+        self.eventNameInput.becomeFirstResponder()
     }
     
     override func viewDidLayoutSubviews() {
