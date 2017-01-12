@@ -59,8 +59,6 @@ extension EventDetails {
         DispatchQueue.main.async {
             self.eventListTable.reloadData()
         }
-        
-        
     }
     
     func updateDateLabel() {

@@ -117,11 +117,13 @@
                                 <items>
                                     <navigationItem title="Edit Categories" id="LVH-PW-62v">
                                         <barButtonItem key="leftBarButtonItem" title="Edit" id="38X-bh-1OW">
+                                            <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="pressedEditing:" destination="c4k-Cp-UWn" id="h36-cQ-8Xv"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Close" id="7T4-Mf-QBA">
+                                            <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="closeEditing:" destination="c4k-Cp-UWn" id="FTN-ZJ-rk3"/>
                                             </connections>
@@ -136,17 +138,59 @@
                                     <constraint firstAttribute="height" constant="20" id="ZWJ-QO-Bjl"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yFa-Iv-aIq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryEditCell" id="HHb-Eg-GDU" customClass="CategoryEditCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
+                                                    <rect key="frame" x="10" y="0.0" width="322" height="43.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Ii5-o0-YwQ" secondAttribute="bottom" id="6vJ-7m-qAS"/>
+                                                <constraint firstItem="Ii5-o0-YwQ" firstAttribute="top" secondItem="0I1-Bm-1Rf" secondAttribute="top" id="bFo-hh-oKP"/>
+                                                <constraint firstItem="Ii5-o0-YwQ" firstAttribute="leading" secondItem="0I1-Bm-1Rf" secondAttribute="leading" constant="10" id="ceJ-o0-N54"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ii5-o0-YwQ" secondAttribute="trailing" constant="10" id="csw-ib-g9y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryName" destination="Ii5-o0-YwQ" id="nac-uB-WAq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="c4k-Cp-UWn" id="mdB-HO-w59"/>
+                                    <outlet property="delegate" destination="c4k-Cp-UWn" id="0TV-KP-hHn"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yFa-Iv-aIq" firstAttribute="top" secondItem="t7l-Lr-Z5S" secondAttribute="bottom" id="1Gm-aV-nDi"/>
                             <constraint firstItem="t7l-Lr-Z5S" firstAttribute="top" secondItem="4oo-4h-msO" secondAttribute="bottom" id="37o-Jn-ewz"/>
                             <constraint firstAttribute="trailing" secondItem="t7l-Lr-Z5S" secondAttribute="trailing" id="9NU-iD-NCd"/>
+                            <constraint firstItem="yFa-Iv-aIq" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" id="Iwo-XQ-jpG"/>
+                            <constraint firstItem="GYA-0g-cSC" firstAttribute="top" secondItem="yFa-Iv-aIq" secondAttribute="bottom" id="YoI-rE-cVK"/>
                             <constraint firstItem="t7l-Lr-Z5S" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" id="a9b-mN-jeq"/>
                             <constraint firstItem="D0a-8e-ONe" firstAttribute="top" secondItem="fdY-FQ-suL" secondAttribute="top" id="fSU-gV-0lH"/>
                             <constraint firstItem="D0a-8e-ONe" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" id="mfn-EJ-J1L"/>
+                            <constraint firstAttribute="trailing" secondItem="yFa-Iv-aIq" secondAttribute="trailing" id="mmS-Pr-UQI"/>
                             <constraint firstAttribute="trailing" secondItem="D0a-8e-ONe" secondAttribute="trailing" id="yfl-dI-OHP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryTable" destination="yFa-Iv-aIq" id="O0O-HZ-cyl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIs-CC-77f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

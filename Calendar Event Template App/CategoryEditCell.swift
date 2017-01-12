@@ -10,6 +10,6 @@ import UIKit
 
 class CategoryEditCell: UITableViewCell {
 
-    
+    @IBOutlet weak var categoryName: UILabel!
 
 }

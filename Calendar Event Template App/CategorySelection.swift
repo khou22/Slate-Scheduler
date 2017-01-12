@@ -24,12 +24,10 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     let cellInset: CGFloat = ScreenSize.screen_width / 50.0
     let cellHeight: CGFloat = 80.0 // Default cell height
     
-    override func viewDidLoad() {
-        // Load data
-        refreshCollection()
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
+        // Load data every time someone enters view
+        refreshCollection()
+        
         // Add padding to left and right of collection view
         self.collectionViewLeft.constant = cellInset
         self.collectionViewRight.constant = cellInset
@@ -74,6 +72,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     func refreshCollection() {
+        print("Refreshed collection")
         // Load data from NSUserDefaults
         self.categoryData = DataManager.getCategories()
                 

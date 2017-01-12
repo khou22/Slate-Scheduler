@@ -47,6 +47,15 @@ struct DataManager {
         }
     }
     
+    // For when you need to update the order, delete item, etc.
+    static func refreshData(with set: [Category]) {
+        let encoded = encode(category: set) // Archive
+        
+        // Complete new set of data
+        Constants.defaults.setValue(encoded, forKey: Keys.categoryData)
+        Constants.defaults.synchronize()
+    }
+    
     // Delete all current categories
     static func deleteAllCategories() {
         Constants.defaults.set([], forKey: Keys.categoryData)
