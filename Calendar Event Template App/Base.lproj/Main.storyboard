@@ -72,7 +72,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pick a Category" id="6TB-zI-Qw7">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="Y6C-u9-VUY">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Y6C-u9-VUY">
                             <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="clickedSettings:" destination="BYZ-38-t0r" id="Ufd-V9-3NM"/>
@@ -90,11 +90,67 @@
                         <outlet property="collectionViewLeft" destination="PKk-hm-YsY" id="iAs-re-B9r"/>
                         <outlet property="collectionViewRight" destination="KgV-rH-glZ" id="N3H-HQ-ogp"/>
                         <segue destination="Pbh-M3-uzF" kind="presentation" identifier="CategoryToEventDetail" id="nJx-7m-wfl"/>
+                        <segue destination="c4k-Cp-UWn" kind="presentation" identifier="CategorySelectionToEdit" id="Cfi-rR-U88"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="447" y="124"/>
+        </scene>
+        <!--Category Editing-->
+        <scene sceneID="NIN-sE-BVn">
+            <objects>
+                <viewController id="c4k-Cp-UWn" customClass="CategoryEditing" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4oo-4h-msO"/>
+                        <viewControllerLayoutGuide type="bottom" id="GYA-0g-cSC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fdY-FQ-suL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7l-Lr-Z5S">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="kau-V1-CO8"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Edit Categories" id="LVH-PW-62v">
+                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="38X-bh-1OW">
+                                            <connections>
+                                                <action selector="pressedEditing:" destination="c4k-Cp-UWn" id="h36-cQ-8Xv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Close" id="7T4-Mf-QBA">
+                                            <connections>
+                                                <action selector="closeEditing:" destination="c4k-Cp-UWn" id="FTN-ZJ-rk3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0a-8e-ONe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.97648286819999996" green="0.97646188739999995" blue="0.9764660597" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ZWJ-QO-Bjl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t7l-Lr-Z5S" firstAttribute="top" secondItem="4oo-4h-msO" secondAttribute="bottom" id="37o-Jn-ewz"/>
+                            <constraint firstAttribute="trailing" secondItem="t7l-Lr-Z5S" secondAttribute="trailing" id="9NU-iD-NCd"/>
+                            <constraint firstItem="t7l-Lr-Z5S" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" id="a9b-mN-jeq"/>
+                            <constraint firstItem="D0a-8e-ONe" firstAttribute="top" secondItem="fdY-FQ-suL" secondAttribute="top" id="fSU-gV-0lH"/>
+                            <constraint firstItem="D0a-8e-ONe" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" id="mfn-EJ-J1L"/>
+                            <constraint firstAttribute="trailing" secondItem="D0a-8e-ONe" secondAttribute="trailing" id="yfl-dI-OHP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cIs-CC-77f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="446" y="877"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="hjX-F2-KRZ">

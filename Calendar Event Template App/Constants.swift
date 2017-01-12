@@ -52,6 +52,7 @@ struct CellIdentifiers {
 struct SegueIdentifiers {
     // Segue identifiers
     static let createEvent                  = "CategoryToEventDetail"
+    static let editCategories               = "CategorySelectionToEdit"
 }
 
 struct SDK {

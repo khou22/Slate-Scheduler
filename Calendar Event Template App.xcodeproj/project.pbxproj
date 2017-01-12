@@ -13,6 +13,8 @@
 		272455741E1DCCA400F3856F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455731E1DCCA400F3856F /* Category.swift */; };
 		272455771E1DCE3000F3856F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455761E1DCE3000F3856F /* DataManager.swift */; };
 		274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA89B1E1DCBC7008E297C /* EventDetails.swift */; };
+		2757074B1E2733B3002A3060 /* CategoryEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074A1E2733B3002A3060 /* CategoryEditCell.swift */; };
+		2757074D1E27340A002A3060 /* CategoryEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074C1E27340A002A3060 /* CategoryEditing.swift */; };
 		279022631E209BF10062FFE8 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279022621E209BF10062FFE8 /* EventListCell.swift */; };
 		279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */; };
 		27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */; };
@@ -53,6 +55,8 @@
 		272455731E1DCCA400F3856F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		272455761E1DCE3000F3856F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		274FA89B1E1DCBC7008E297C /* EventDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
+		2757074A1E2733B3002A3060 /* CategoryEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEditCell.swift; sourceTree = "<group>"; };
+		2757074C1E27340A002A3060 /* CategoryEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEditing.swift; sourceTree = "<group>"; };
 		279022621E209BF10062FFE8 /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		27BDFD751E1D9E0500B8C474 /* Calendar Event Template App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calendar Event Template App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +110,7 @@
 				272455731E1DCCA400F3856F /* Category.swift */,
 				270991041E1E289000267071 /* StepSlider.swift */,
 				27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */,
+				2757074A1E2733B3002A3060 /* CategoryEditCell.swift */,
 				27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */,
 				279022621E209BF10062FFE8 /* EventListCell.swift */,
 			);
@@ -180,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */,
+				2757074C1E27340A002A3060 /* CategoryEditing.swift */,
 				274FA89B1E1DCBC7008E297C /* EventDetails.swift */,
 				2707362A1E20609E003E8B72 /* EventDetailsManager.swift */,
 			);
@@ -341,6 +347,7 @@
 				27DC4E7E1E2061B700F510D3 /* DateExtension.swift in Sources */,
 				27DC4E821E2089EA00F510D3 /* CalendarManager.swift in Sources */,
 				274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */,
+				2757074B1E2733B3002A3060 /* CategoryEditCell.swift in Sources */,
 				279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */,
 				270991051E1E289000267071 /* StepSlider.swift in Sources */,
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
@@ -349,6 +356,7 @@
 				2707362B1E20609E003E8B72 /* EventDetailsManager.swift in Sources */,
 				27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */,
 				272455741E1DCCA400F3856F /* Category.swift in Sources */,
+				2757074D1E27340A002A3060 /* CategoryEditing.swift in Sources */,
 				279022631E209BF10062FFE8 /* EventListCell.swift in Sources */,
 				27190C5B1E1F4147002D3CB4 /* QuickDayPickerCell.swift in Sources */,
 			);

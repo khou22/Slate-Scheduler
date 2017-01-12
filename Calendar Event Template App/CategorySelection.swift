@@ -36,8 +36,10 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     @IBAction func clickedSettings(_ sender: Any) {
-        DataManager.deleteAllCategories() // Reset categories
-        self.refreshCollection()
+//        DataManager.deleteAllCategories() // Reset categories
+//        self.refreshCollection()
+        
+        self.performSegue(withIdentifier: SegueIdentifiers.editCategories, sender: self) // Go to edit screen
     }
     
     // Create new category
@@ -58,7 +60,8 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
             let textField = newCategoryAlert?.textFields![0] // Force unwrapping because we know it exists
             let categoryName: String = (textField?.text)! // Get category name from input
             
-            DataManager.newCategory(category: Category(name: categoryName)) // Create new category and push to data set
+            let category: Category = Category(name: categoryName) // Create new category
+            DataManager.newCategory(category: category) // Push to data set
             
             // Refresh collection view
             self.refreshCollection()
@@ -105,9 +108,9 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Creating new event segue
-        if(segue.identifier == SegueIdentifiers.createEvent) {
+        if (segue.identifier == SegueIdentifiers.createEvent) {
             let eventDetailsVC = segue.destination as! EventDetails
-//            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
+            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
             eventDetailsVC.category = self.categoryData[self.selectedItem] // Pass on category data
         }
     }
