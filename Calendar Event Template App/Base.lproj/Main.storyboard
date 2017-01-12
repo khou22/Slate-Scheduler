@@ -100,7 +100,7 @@
         <!--Edit Categories-->
         <scene sceneID="NIN-sE-BVn">
             <objects>
-                <viewController id="c4k-Cp-UWn" customClass="CategoryEditing" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Categories" id="c4k-Cp-UWn" customClass="CategoryEditing" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4oo-4h-msO"/>
                         <viewControllerLayoutGuide type="bottom" id="GYA-0g-cSC"/>
@@ -124,7 +124,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
@@ -181,16 +181,34 @@
                         <outlet property="categoryTable" destination="yFa-Iv-aIq" id="O0O-HZ-cyl"/>
                         <outlet property="closeButton" destination="7T4-Mf-QBA" id="2qG-dM-jZm"/>
                         <outlet property="editButton" destination="38X-bh-1OW" id="yeX-PX-H2q"/>
+                        <segue destination="ofc-Ei-ISN" kind="show" identifier="CategoryDetailEdit" id="Ons-2K-Mg7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIs-CC-77f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1169" y="877"/>
         </scene>
+        <!--Category Details Edit-->
+        <scene sceneID="sig-tp-Qco">
+            <objects>
+                <viewController id="ofc-Ei-ISN" customClass="CategoryDetailsEdit" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iNK-SB-Sx5"/>
+                        <viewControllerLayoutGuide type="bottom" id="xva-yt-vf8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rof-3p-imy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xGf-V7-fjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1881" y="877"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mXt-mZ-vVz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yc3-2p-JoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="CnZ-f8-Her" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5tf-yk-UA0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -200,6 +218,7 @@
                         <segue destination="c4k-Cp-UWn" kind="relationship" relationship="rootViewController" id="zdj-ET-hbS"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yc3-2p-JoY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="446" y="877"/>
         </scene>

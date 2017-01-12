@@ -65,9 +65,7 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Cell for each index
         let cell = categoryTable.dequeueReusableCell(withIdentifier: CellIdentifiers.categoryEditCell, for: indexPath) as! CategoryEditCell
-        
         let index = indexPath.item // Get index
-        
         cell.categoryName.text = self.categories[index].name // Populate name
         
         return cell
@@ -86,6 +84,8 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.item // Get index
         print("Selected index: \(index)")
+        
+        self.performSegue(withIdentifier: SegueIdentifiers.categoryDetailEdit, sender: self) // Go to detailed edit screen
     }
     
     // Functionality for when editing cells

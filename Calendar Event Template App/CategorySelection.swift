@@ -36,9 +36,6 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     @IBAction func clickedSettings(_ sender: Any) {
-//        DataManager.deleteAllCategories() // Reset categories
-//        self.refreshCollection()
-        
         self.performSegue(withIdentifier: SegueIdentifiers.editCategories, sender: self) // Go to edit screen
     }
     

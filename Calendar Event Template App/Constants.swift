@@ -54,6 +54,7 @@ struct SegueIdentifiers {
     // Segue identifiers
     static let createEvent                  = "CategoryToEventDetail"
     static let editCategories               = "CategorySelectionToEdit"
+    static let categoryDetailEdit           = "CategoryDetailEdit"
 }
 
 struct SDK {
