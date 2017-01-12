@@ -116,16 +116,16 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Edit Categories" id="LVH-PW-62v">
-                                        <barButtonItem key="leftBarButtonItem" title="Edit" id="38X-bh-1OW">
-                                            <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <connections>
-                                                <action selector="pressedEditing:" destination="c4k-Cp-UWn" id="h36-cQ-8Xv"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Close" id="7T4-Mf-QBA">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="7T4-Mf-QBA">
                                             <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
                                                 <action selector="closeEditing:" destination="c4k-Cp-UWn" id="FTN-ZJ-rk3"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="38X-bh-1OW">
+                                            <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="pressedEditing:" destination="c4k-Cp-UWn" id="h36-cQ-8Xv"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -190,6 +190,8 @@
                     </view>
                     <connections>
                         <outlet property="categoryTable" destination="yFa-Iv-aIq" id="O0O-HZ-cyl"/>
+                        <outlet property="closeButton" destination="7T4-Mf-QBA" id="2qG-dM-jZm"/>
+                        <outlet property="editButton" destination="38X-bh-1OW" id="yeX-PX-H2q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIs-CC-77f" userLabel="First Responder" sceneMemberID="firstResponder"/>

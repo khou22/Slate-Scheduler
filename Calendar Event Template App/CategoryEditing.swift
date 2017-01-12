@@ -13,12 +13,9 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     var categories: [Category] = [] // Category data
     
-    override func viewDidLoad() {
-        getCollection() // Get category data
-        
-        self.categoryTable.allowsMultipleSelection = false // Don't allow multiple selection of cells
-    }
-    
+    // UI Elements
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var categoryTable: UITableView!
     
     @IBAction func closeEditing(_ sender: Any) {
@@ -29,8 +26,21 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
         self.categoryTable.isEditing = !self.categoryTable.isEditing // Flip
         
         if (!self.categoryTable.isEditing) { // If no longer editing
+            // Update labels
+            editButton.title = "Edit"
+            closeButton.title = "Close"
+            
             refreshPersistData() // Update persist data
+        } else { // If now editing
+            editButton.title = "Save" // Update labels
+            closeButton.title = "Cancel"
         }
+    }
+    
+    override func viewDidLoad() {
+        getCollection() // Get category data
+        
+        self.categoryTable.allowsMultipleSelection = false // Don't allow multiple selection of cells
     }
     
     func getCollection() {
