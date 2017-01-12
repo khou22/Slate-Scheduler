@@ -12,6 +12,7 @@ import UIKit
 class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var categories: [Category] = [] // Category data
+    var lastSelected: Int = 0 // Last selected item
     
     // UI Elements
     @IBOutlet weak var editButton: UIBarButtonItem!
@@ -57,6 +58,13 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
         DataManager.refreshData(with: self.categories) // Refresh entire data set
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == SegueIdentifiers.categoryDetailEdit) { // If going to detail edit screen
+            let categoryDetailsEditVC = segue.destination as! CategoryDetailsEdit
+            categoryDetailsEditVC.selectedIndex = self.lastSelected // Pass on this specific category data
+        }
+    }
+    
     // MARK - Table View Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
@@ -83,7 +91,9 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.item // Get index
-        print("Selected index: \(index)")
+        self.lastSelected = index // Store as last selected
+        
+        self.categoryTable.deselectRow(at: indexPath, animated: true) // Ensure that it not highlighted when return
         
         self.performSegue(withIdentifier: SegueIdentifiers.categoryDetailEdit, sender: self) // Go to detailed edit screen
     }
