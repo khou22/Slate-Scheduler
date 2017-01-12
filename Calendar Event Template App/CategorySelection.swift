@@ -54,7 +54,10 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
             textField.text = "" // No placeholder
         }
         
-        // Add action
+        // Add cancel action
+        newCategoryAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil)) // No action if cancelled
+        
+        // Add submit action
         newCategoryAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak newCategoryAlert] (_) in
             // Get text field content
             let textField = newCategoryAlert?.textFields![0] // Force unwrapping because we know it exists
