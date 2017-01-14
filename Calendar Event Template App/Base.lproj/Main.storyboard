@@ -62,9 +62,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UdB-tN-T7O"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the plus button to add your first event!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-OW-RIp">
+                                <rect key="frame" x="50" y="214" width="275" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="GBN-Za-T2Z"/>
+                                    <constraint firstAttribute="height" constant="60" id="h4R-fK-9ug"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="5k7-OW-RIp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Qd-Qm-QB6"/>
+                            <constraint firstItem="5k7-OW-RIp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="2tm-Qq-A4p"/>
                             <constraint firstAttribute="trailing" secondItem="My3-jn-8PS" secondAttribute="trailing" id="KgV-rH-glZ"/>
                             <constraint firstItem="My3-jn-8PS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PKk-hm-YsY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="My3-jn-8PS" secondAttribute="bottom" id="mj7-Dn-c4S"/>
@@ -89,13 +101,14 @@
                         <outlet property="categoryCollection" destination="My3-jn-8PS" id="5HZ-da-xUw"/>
                         <outlet property="collectionViewLeft" destination="PKk-hm-YsY" id="iAs-re-B9r"/>
                         <outlet property="collectionViewRight" destination="KgV-rH-glZ" id="N3H-HQ-ogp"/>
+                        <outlet property="noCategoriesLabel" destination="5k7-OW-RIp" id="vhR-Of-pDT"/>
                         <segue destination="Pbh-M3-uzF" kind="presentation" identifier="CategoryToEventDetail" id="nJx-7m-wfl"/>
                         <segue destination="CnZ-f8-Her" kind="presentation" identifier="CategorySelectionToEdit" id="6wB-kl-4SO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="447" y="124"/>
+            <point key="canvasLocation" x="445.60000000000002" y="123.68815592203899"/>
         </scene>
         <!--Edit Categories-->
         <scene sceneID="NIN-sE-BVn">

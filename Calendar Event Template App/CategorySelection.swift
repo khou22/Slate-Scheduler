@@ -10,7 +10,11 @@ import UIKit
 
 class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    // Main collection view
     @IBOutlet weak var categoryCollection: UICollectionView!
+    
+    // UI Elements
+    @IBOutlet weak var noCategoriesLabel: UILabel!
     
     // Constraints to be modified
     @IBOutlet weak var collectionViewLeft: NSLayoutConstraint!
@@ -23,6 +27,11 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     let cellsPerRow: CGFloat = 2.0 // Set the number of cells per row
     let cellInset: CGFloat = ScreenSize.screen_width / 50.0
     let cellHeight: CGFloat = 80.0 // Default cell height
+    
+    // Styling before view appears
+    override func viewDidLoad() {
+        self.noCategoriesLabel.alpha = 0.0 // Make transparent
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         // Add padding to left and right of collection view
@@ -74,6 +83,13 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         print("Refreshed collection")
         // Load data from NSUserDefaults
         self.categoryData = DataManager.getCategories()
+        
+        // Check if data is empty
+        if (self.categoryData.count == 0) {
+            self.noCategoriesLabel.alpha = 1.0 // Make message visible
+        } else { // If there is data
+            self.noCategoriesLabel.alpha = 0.0 // Make transparent
+        }
                 
         // Refresh collection view
         DispatchQueue.main.async {
