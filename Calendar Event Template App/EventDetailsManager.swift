@@ -87,6 +87,23 @@ extension EventDetails {
         self.calendarManager.saveEvent(event: event) // Save event
     }
     
+    // Check all the form elements to make sure filled
+    func validateParameters() -> Bool {
+        // Only need to make sure event name and location text inputs are filled
+        let nameFilled: Bool = (self.eventNameInput.text != "")
+        let locationFilled: Bool = (self.locationInput.text != "")
+        
+        if !locationFilled { // Not an error if event doesn't have a location
+            print("Location was not filled")
+        }
+        
+        if !nameFilled { // Return false if no event name
+            return false
+        }
+        
+        return true // All parameters valid
+    }
+    
     func setupSummaryCard() {
         // Summary card initial positioning
         self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant + ScreenSize.screen_height // Move it off screen

@@ -106,7 +106,18 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     @IBAction func saveEvent(_ sender: Any) {
-        self.generateCard()
+        let validInputs: Bool = self.validateParameters() // Ensure that form was filled out correctly
+        
+        if !validInputs { // If not filled out correctly
+            let alert = UIAlertController(title: "Form Incomplete", message: "Please enter an event name", preferredStyle: .alert) // Create alert message
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self.eventNameInput.becomeFirstResponder() // Programmably launch keyboard to edit event name
+            })) // Add button to dismiss
+            self.present(alert, animated: true, completion: nil) // Present alert
+        } else {
+            // If neccessary inputs filled out correctly
+            self.generateCard() // Begin process to add event to calendar
+        }
     }
     
     // User released the slider
