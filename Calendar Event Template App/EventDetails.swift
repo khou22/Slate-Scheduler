@@ -177,6 +177,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.eventNameInput.addBottomBorder()
         self.locationInput.addBottomBorder()
         self.roomInput.addBottomBorder()
+        self.roomInput.addDoneButtonOnKeyboard()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
