@@ -24,6 +24,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // Form inputs
     @IBOutlet weak var eventNameInput: UITextField!
     @IBOutlet weak var locationInput: UITextField!
+    @IBOutlet weak var roomInput: UITextField!
     @IBOutlet weak var durationSlider: StepSlider!
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var startTimeSlider: StepSlider!
@@ -172,12 +173,15 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Just bottom border
         self.eventNameInput.addBottomBorder()
         self.locationInput.addBottomBorder()
+        self.roomInput.addBottomBorder()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == self.eventNameInput) { // Pressed next
-            self.locationInput.becomeFirstResponder() // Move to next input
-        } else if (textField == self.locationInput) { // Pressed done
+            self.locationInput.becomeFirstResponder() // Move to location input
+        } else if (textField == self.locationInput) { // Pressed next
+            self.roomInput.becomeFirstResponder() // Move to room input
+        } else { // On room number
             self.dismissKeyboard() // Hide keyboard
         }
         return true
