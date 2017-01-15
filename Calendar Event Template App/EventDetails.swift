@@ -64,7 +64,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var submitStatusLabel: UILabel!
     
     // Category data
-    var category: Category = Category(name: StringIdentifiers.noCategory, eventNameFreq: [ : ])
+    var category: Category = Category(name: StringIdentifiers.noCategory, eventNameFreq: [ : ]) // Category object
+    var categoryIndex: Int = 0 // Category index in array
     var noCategory: Bool = false // Default is associated with category
     
     // Instance of calendar manager
@@ -82,6 +83,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Set initial selection for quick day picker view
         self.updateDateLabel() // Update for initial frontend
         self.quickDayPicker.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.left)
+        
         // Refresh collection view
         DispatchQueue.main.async {
             self.quickDayPicker.reloadData()

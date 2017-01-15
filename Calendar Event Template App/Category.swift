@@ -20,7 +20,7 @@ class Category: NSObject, NSCoding {
     // Constructor
     init(name: String, eventNameFreq: [ String : Int ]) {
         self.name = name
-        self.eventNameFreq = [:] // Starts empty
+        self.eventNameFreq = eventNameFreq
     }
     
     /*

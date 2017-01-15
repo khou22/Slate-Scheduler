@@ -47,6 +47,30 @@ struct DataManager {
         }
     }
     
+    // For when you need to update just one category item (must retain same name) — meant for updating markov models
+    static func updateOneCategory(with category: Category, index: Int) {
+        
+        if let data = Constants.defaults.object(forKey: Keys.categoryData) { // Data exists
+            
+            var encoded: NSArray = data as! NSArray // Retrieve data object
+            var decoded: [Category] = decode(array: encoded.mutableCopy() as! NSMutableArray) // Decoded items
+            
+            if (decoded[index].name == category.name) { // Make sure index is right
+                decoded[index] = category // Update
+                print("Updated category object's data")
+            } else {
+                print("Category name and index didn't match")
+            }
+            
+            encoded = encode(category: decoded) // Archive
+            
+            // Store updated data
+            Constants.defaults.setValue(encoded, forKey: Keys.categoryData)
+            Constants.defaults.synchronize()
+            
+        }
+    }
+    
     // For when you need to update the order, delete item, etc.
     static func refreshData(with set: [Category]) {
         let encoded = encode(category: set) // Archive

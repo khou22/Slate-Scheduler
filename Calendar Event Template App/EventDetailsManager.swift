@@ -78,7 +78,7 @@ extension EventDetails {
             event.title = "[" + category.name + "] " + self.eventNameInput.text!
         }
         
-        event.location = self.locationInput.text
+        event.location = self.roomInput.text! + " " + self.locationInput.text!
         
         // Set the calendar
         event.calendar = self.calendarManager.eventStore.defaultCalendarForNewEvents // Default calendar
@@ -142,7 +142,7 @@ extension EventDetails {
             self.summaryTitle.text = "[" + category.name + "] " + self.eventNameInput.text!
         }
         
-        self.summaryLocation.text = self.locationInput.text
+        self.summaryLocation.text = self.roomInput.text! + " " + self.locationInput.text! // Concatinate
         
         // Format summary time
         let dateFormatter = DateFormatter()
@@ -155,6 +155,7 @@ extension EventDetails {
         let timeStr: String = dateFormatter.string(from: startTime) + " - " + dateFormatter.string(from: endTime) // Concatinate string
         self.summaryDateTime.text = dateStr + " \n " + timeStr // Add to card view
         
+        // Card entrance
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             self.blackFade.layer.opacity = 0.75 // Black backdrop
             self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant - ScreenSize.screen_height // Move it back on screen
@@ -166,7 +167,10 @@ extension EventDetails {
             self.loadingSpinner.layer.opacity = 1.0
             self.loadingSpinner.startAnimating()
             
-            self.createEvent() // Create and save event to calendar
+//            self.createEvent() // Create and save event to calendar
+            
+            // Update markov models
+            self.logEventData()
             
             // Exit animations
             self.saveConfirmation()
@@ -210,9 +214,15 @@ extension EventDetails {
     /************ Log to predictive analytics ************/
     func logEventData() {
         // Markov model with category to event name
-        
+        if let count = self.category.eventNameFreq[self.eventNameInput.text!] { // If it has been logged before
+            print("Updated frequency for \(self.eventNameInput.text): \(count + 1)")
+            self.category.eventNameFreq[self.eventNameInput.text!] = count + 1 // Increment counter
+        } else {
+            print("New frequency entry for \(self.eventNameInput.text)")
+            self.category.eventNameFreq[self.eventNameInput.text!] = 1 // Create a dictionary reference with frequency of 1
+        }
         
         // Markov model with event name to location
-        
+        DataManager.updateOneCategory(with: self.category, index: self.categoryIndex)
     }
 }
