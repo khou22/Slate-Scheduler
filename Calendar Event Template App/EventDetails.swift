@@ -65,6 +65,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // Category data
     var category: Category = Category(name: StringIdentifiers.noCategory)
+    var noCategory: Bool = false // Default is associated with category
     
     // Instance of calendar manager
     let calendarManager: CalendarManager = CalendarManager()

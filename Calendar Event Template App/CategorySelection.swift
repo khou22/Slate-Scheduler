@@ -140,7 +140,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
             eventDetailsVC.category = self.categoryData[self.selectedItem] // Pass on category data
         } else if (segue.identifier == SegueIdentifiers.newEventNoCategory) { // New event no category
             let eventDetailsVC = segue.destination as! EventDetails
-            eventDetailsVC.category = Category(name: StringIdentifiers.noCategory) // Signify no category
+            eventDetailsVC.noCategory = true // Signify no category
         }
     }
     

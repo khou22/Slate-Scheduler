@@ -72,7 +72,7 @@ extension EventDetails {
         let event: EKEvent = EKEvent(eventStore: self.calendarManager.eventStore)
         
         // Determine even name
-        if (self.category.name == StringIdentifiers.noCategory) { // If no category
+        if self.noCategory { // If no category
             event.title = self.eventNameInput.text!
         } else { // Connected to category
             event.title = "[" + category.name + "] " + self.eventNameInput.text!
@@ -136,7 +136,7 @@ extension EventDetails {
     func generateCard() {
         // Populate information
         
-        if (self.category.name == StringIdentifiers.noCategory) { // If no category
+        if self.noCategory { // If no category
             self.summaryTitle.text = self.eventNameInput.text!
         } else { // Connected to category
             self.summaryTitle.text = "[" + category.name + "] " + self.eventNameInput.text!
