@@ -63,7 +63,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var submitStatusLabel: UILabel!
     
     // Category data
-    var category: Category = Category(name: "NA")
+    var category: Category = Category(name: StringIdentifiers.noCategory)
     
     // Instance of calendar manager
     let calendarManager: CalendarManager = CalendarManager()

@@ -71,8 +71,13 @@ extension EventDetails {
     func createEvent() {
         let event: EKEvent = EKEvent(eventStore: self.calendarManager.eventStore)
         
-        // Populate information
-        event.title = "[" + category.name + "] " + self.eventNameInput.text!
+        // Determine even name
+        if (self.category.name == StringIdentifiers.noCategory) { // If no category
+            event.title = self.eventNameInput.text!
+        } else { // Connected to category
+            event.title = "[" + category.name + "] " + self.eventNameInput.text!
+        }
+        
         event.location = self.locationInput.text
         
         // Set the calendar
@@ -130,7 +135,13 @@ extension EventDetails {
     
     func generateCard() {
         // Populate information
-        self.summaryTitle.text = "[" + category.name + "] " + self.eventNameInput.text!
+        
+        if (self.category.name == StringIdentifiers.noCategory) { // If no category
+            self.summaryTitle.text = self.eventNameInput.text!
+        } else { // Connected to category
+            self.summaryTitle.text = "[" + category.name + "] " + self.eventNameInput.text!
+        }
+        
         self.summaryLocation.text = self.locationInput.text
         
         // Format summary time

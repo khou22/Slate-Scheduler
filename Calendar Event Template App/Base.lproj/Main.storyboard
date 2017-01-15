@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="My3-jn-8PS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ESG-Kf-eCh">
                                     <size key="itemSize" width="50" height="50"/>
@@ -72,15 +72,34 @@
                                 <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98B-ok-inu">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4zg-9A-Ts5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="New Event Without Category">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="newEventNoCategory:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i0C-II-7RF"/>
+                                    <action selector="saveEvent:" destination="Pbh-M3-uzF" eventType="touchUpInside" id="f5R-4E-D6C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="98B-ok-inu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0pm-br-25p"/>
                             <constraint firstItem="5k7-OW-RIp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Qd-Qm-QB6"/>
                             <constraint firstItem="5k7-OW-RIp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="2tm-Qq-A4p"/>
+                            <constraint firstItem="98B-ok-inu" firstAttribute="top" secondItem="My3-jn-8PS" secondAttribute="bottom" id="9HM-59-QKM"/>
+                            <constraint firstAttribute="trailing" secondItem="98B-ok-inu" secondAttribute="trailing" id="JIL-aB-PAF"/>
                             <constraint firstAttribute="trailing" secondItem="My3-jn-8PS" secondAttribute="trailing" id="KgV-rH-glZ"/>
                             <constraint firstItem="My3-jn-8PS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PKk-hm-YsY"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="My3-jn-8PS" secondAttribute="bottom" id="mj7-Dn-c4S"/>
                             <constraint firstItem="My3-jn-8PS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rM8-05-Cvr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="98B-ok-inu" secondAttribute="bottom" id="zYK-PF-J2f"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pick a Category" id="6TB-zI-Qw7">
@@ -104,6 +123,7 @@
                         <outlet property="noCategoriesLabel" destination="5k7-OW-RIp" id="vhR-Of-pDT"/>
                         <segue destination="Pbh-M3-uzF" kind="presentation" identifier="CategoryToEventDetail" id="nJx-7m-wfl"/>
                         <segue destination="CnZ-f8-Her" kind="presentation" identifier="CategorySelectionToEdit" id="6wB-kl-4SO"/>
+                        <segue destination="Pbh-M3-uzF" kind="presentation" identifier="NewEventNoCategory" id="nPH-XH-X7k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -686,4 +706,7 @@
         <image name="calendar-icon" width="50" height="55"/>
         <image name="submit-confirmation" width="70" height="70"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nPH-XH-X7k"/>
+    </inferredMetricsTieBreakers>
 </document>

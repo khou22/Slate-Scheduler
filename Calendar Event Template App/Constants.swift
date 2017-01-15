@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+struct StringIdentifiers {
+    static let noCategory                   = "!#No#Category#!" // To signify a new event with no category
+}
+
 struct Colors {
     // Project colors
     static let red                          = UIColor(red: 226.0/255.0, green: 111.0/255.0, blue: 80.0/255.0, alpha: 1.0) // Custom color scheme
@@ -55,6 +59,7 @@ struct SegueIdentifiers {
     static let createEvent                  = "CategoryToEventDetail"
     static let editCategories               = "CategorySelectionToEdit"
     static let categoryDetailEdit           = "CategoryDetailEdit"
+    static let newEventNoCategory           = "NewEventNoCategory"
 }
 
 struct SDK {

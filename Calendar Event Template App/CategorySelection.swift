@@ -79,6 +79,15 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         self.present(newCategoryAlert, animated: true, completion: nil) // Present the alert
     }
     
+    // New event that's not assigned to a category
+    @IBAction func newEventNoCategory(_ sender: Any) {
+        // Triggered when category item selection
+        print("New uncategorized category")
+        
+        // Perform segue and pass on blank category data
+        self.performSegue(withIdentifier: SegueIdentifiers.newEventNoCategory, sender: self)
+    }
+    
     func refreshCollection() {
         print("Refreshed collection")
         // Load data from NSUserDefaults
@@ -129,6 +138,9 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
             let eventDetailsVC = segue.destination as! EventDetails
             print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
             eventDetailsVC.category = self.categoryData[self.selectedItem] // Pass on category data
+        } else if (segue.identifier == SegueIdentifiers.newEventNoCategory) { // New event no category
+            let eventDetailsVC = segue.destination as! EventDetails
+            eventDetailsVC.category = Category(name: StringIdentifiers.noCategory) // Signify no category
         }
     }
     
