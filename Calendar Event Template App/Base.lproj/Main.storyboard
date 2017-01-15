@@ -62,6 +62,15 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UdB-tN-T7O"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or add an event without a category attached to it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="puf-dc-6kU">
+                                <rect key="frame" x="50.5" y="512" width="275" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="JNl-1m-mOJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the plus button to add your first event!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-OW-RIp">
                                 <rect key="frame" x="50.5" y="214" width="275" height="60"/>
                                 <constraints>
@@ -98,6 +107,9 @@
                             <constraint firstAttribute="trailing" secondItem="98B-ok-inu" secondAttribute="trailing" id="JIL-aB-PAF"/>
                             <constraint firstAttribute="trailing" secondItem="My3-jn-8PS" secondAttribute="trailing" id="KgV-rH-glZ"/>
                             <constraint firstItem="My3-jn-8PS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PKk-hm-YsY"/>
+                            <constraint firstItem="puf-dc-6kU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a9y-dO-oRD"/>
+                            <constraint firstItem="98B-ok-inu" firstAttribute="top" secondItem="puf-dc-6kU" secondAttribute="bottom" constant="40" id="bZj-aa-cAZ"/>
+                            <constraint firstItem="puf-dc-6kU" firstAttribute="width" secondItem="5k7-OW-RIp" secondAttribute="width" id="clV-BM-JIb"/>
                             <constraint firstItem="My3-jn-8PS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rM8-05-Cvr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="98B-ok-inu" secondAttribute="bottom" id="zYK-PF-J2f"/>
                         </constraints>
@@ -120,7 +132,8 @@
                         <outlet property="categoryCollection" destination="My3-jn-8PS" id="5HZ-da-xUw"/>
                         <outlet property="collectionViewLeft" destination="PKk-hm-YsY" id="iAs-re-B9r"/>
                         <outlet property="collectionViewRight" destination="KgV-rH-glZ" id="N3H-HQ-ogp"/>
-                        <outlet property="noCategoriesLabel" destination="5k7-OW-RIp" id="vhR-Of-pDT"/>
+                        <outletCollection property="noCategoriesLabels" destination="5k7-OW-RIp" collectionClass="NSMutableArray" id="gVg-6p-66x"/>
+                        <outletCollection property="noCategoriesLabels" destination="puf-dc-6kU" collectionClass="NSMutableArray" id="fhJ-5b-u37"/>
                         <segue destination="Pbh-M3-uzF" kind="presentation" identifier="CategoryToEventDetail" id="nJx-7m-wfl"/>
                         <segue destination="CnZ-f8-Her" kind="presentation" identifier="CategorySelectionToEdit" id="6wB-kl-4SO"/>
                         <segue destination="Pbh-M3-uzF" kind="presentation" identifier="NewEventNoCategory" id="nPH-XH-X7k"/>

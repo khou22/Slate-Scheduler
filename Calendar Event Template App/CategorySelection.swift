@@ -14,7 +14,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     @IBOutlet weak var categoryCollection: UICollectionView!
     
     // UI Elements
-    @IBOutlet weak var noCategoriesLabel: UILabel!
+    @IBOutlet var noCategoriesLabels: [UILabel]!
     
     // Constraints to be modified
     @IBOutlet weak var collectionViewLeft: NSLayoutConstraint!
@@ -30,7 +30,11 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     
     // Styling before view appears
     override func viewDidLoad() {
-        self.noCategoriesLabel.alpha = 0.0 // Make transparent
+        
+        // Labels when no categories present
+        for label in self.noCategoriesLabels {
+            label.alpha = 0.0 // Make transparent
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,9 +99,13 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         
         // Check if data is empty
         if (self.categoryData.count == 0) {
-            self.noCategoriesLabel.alpha = 1.0 // Make message visible
+            for label in self.noCategoriesLabels {
+                label.alpha = 1.0 // Make messages visible
+            }
         } else { // If there is data
-            self.noCategoriesLabel.alpha = 0.0 // Make transparent
+            for label in self.noCategoriesLabels {
+                label.alpha = 0.0 // Make transparent
+            }
         }
                 
         // Refresh collection view
