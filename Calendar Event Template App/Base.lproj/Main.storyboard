@@ -170,7 +170,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
@@ -209,7 +209,7 @@
                             <constraint firstAttribute="trailing" secondItem="D0a-8e-ONe" secondAttribute="trailing" id="yfl-dI-OHP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Categories" id="9wO-3y-a1T">
+                    <navigationItem key="navigationItem" title="Categories" id="9wO-3y-a1T">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="7T4-Mf-QBA">
                             <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
@@ -256,9 +256,10 @@
         <scene sceneID="mXt-mZ-vVz">
             <objects>
                 <navigationController id="CnZ-f8-Her" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5tf-yk-UA0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5tf-yk-UA0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <connections>
                         <segue destination="c4k-Cp-UWn" kind="relationship" relationship="rootViewController" id="zdj-ET-hbS"/>
