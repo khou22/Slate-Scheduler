@@ -206,4 +206,13 @@ extension EventDetails {
             self.submitStatusLabel.text = "Added to Calendar"
         })
     }
+    
+    /************ Log to predictive analytics ************/
+    func logEventData() {
+        // Markov model with category to event name
+        
+        
+        // Markov model with event name to location
+        
+    }
 }

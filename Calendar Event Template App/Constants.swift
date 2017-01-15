@@ -77,6 +77,9 @@ struct Keys {
     static let categoryData                 = "categoryData"
     
     // Other keys
+    static let categoryName                 = "categoryName"
+    static let eventNameFreq                = "nameFrequency"
+    static let eventNameToLocation          = "eventNameToLocation"
 }
 
 struct Urls {
