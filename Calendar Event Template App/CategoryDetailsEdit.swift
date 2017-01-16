@@ -14,12 +14,22 @@ class CategoryDetailsEdit: UIViewController {
     var categories: [Category] = [] // Storing all categories
     var selectedIndex: Int = 0 // The index of the category you are editing
     
+    // UI Elements
+    @IBOutlet weak var categoryNameInput: UITextField!
+    
     override func viewWillAppear(_ animated: Bool) {
         // Load data from NSUserDefaults
         self.categories = DataManager.getCategories()
-        print("Selected index: \(self.categories[self.selectedIndex].name)")
+        let categoryName = self.categories[self.selectedIndex].name
+        print("Selected index: \(categoryName)")
         
         // Title changes
-        self.navigationItem.title = self.categories[self.selectedIndex].name
+        self.navigationItem.title = categoryName
+        
+        // Styling changes
+        self.categoryNameInput.addBottomBorder()
+        
+        // Populate category name input
+        self.categoryNameInput.text = categoryName
     }
 }

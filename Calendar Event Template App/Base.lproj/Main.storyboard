@@ -170,7 +170,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
@@ -297,7 +297,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j1z-lA-vpT" id="OCF-Fi-Trs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -320,6 +320,9 @@
                             <constraint firstItem="hrb-6U-o4t" firstAttribute="top" secondItem="dQE-Ph-VZM" secondAttribute="bottom" constant="16" id="tbO-Ue-9rp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="categoryNameInput" destination="KYH-vy-UK2" id="LtR-Ea-WNO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGf-V7-fjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -329,7 +332,7 @@
         <scene sceneID="mXt-mZ-vVz">
             <objects>
                 <navigationController id="CnZ-f8-Her" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5tf-yk-UA0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5tf-yk-UA0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
