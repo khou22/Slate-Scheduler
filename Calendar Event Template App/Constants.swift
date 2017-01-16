@@ -48,6 +48,7 @@ struct CellIdentifiers {
     // Table view cell identifiers
     static let eventListCell                = "EventListCell"
     static let categoryEditCell             = "CategoryEditCell"
+    static let nameLocationCell             = "NameLocationCell"
     
     // Collection view cell identifiers
     static let categoryCell                 = "CategoryCell"
