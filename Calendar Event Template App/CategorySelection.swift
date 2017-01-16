@@ -57,7 +57,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         // Create alert controller
         // Source: http://stackoverflow.com/questions/26567413/get-input-value-from-textfield-in-ios-alert-in-swift
         // Answer by: Andy Ibanez
-        let newCategoryAlert = UIAlertController(title: "Enter Category", message: "Enter category name", preferredStyle: .alert)
+        let newCategoryAlert = UIAlertController(title: "Enter Category Name", message: "You can change the category name at any time by pressing \"Manage\" on the homescreen.", preferredStyle: .alert)
         
         // Add text field item
         newCategoryAlert.addTextField { (textField) in
