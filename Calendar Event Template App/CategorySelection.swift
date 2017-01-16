@@ -143,7 +143,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         // Creating new event segue
         if (segue.identifier == SegueIdentifiers.createEvent) {
             let eventDetailsVC = segue.destination as! EventDetails
-            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
+//            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
             eventDetailsVC.category = self.categoryData[self.selectedItem] // Pass on category data
             
         } else if (segue.identifier == SegueIdentifiers.newEventNoCategory) { // New event no category
