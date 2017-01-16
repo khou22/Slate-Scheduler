@@ -33,6 +33,9 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         
         // Populate category name input
         self.categoryNameInput.text = categoryName
+        
+        // Automatic row height
+        self.predictedNameLocationTable.rowHeight = UITableViewAutomaticDimension
     }
     
     // Retrieve and prepare data
