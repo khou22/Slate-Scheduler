@@ -13,7 +13,5 @@ class NameLocationFrequencyCell: UITableViewCell {
     // UI Elements
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventNameFreq: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var locationFreq: UILabel!
     
 }
