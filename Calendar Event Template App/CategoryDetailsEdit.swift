@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var categories: [Category] = [] // Storing all categories
     var currentCategory: Category = Category(name: StringIdentifiers.noCategory, eventNameFreq: [ : ]) // Initially empty category
@@ -23,13 +23,16 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(_ animated: Bool) {
         self.refreshData() // Update data
         let categoryName = self.currentCategory.name
-        print("Selected index: \(categoryName)")
+//        print("Selected index: \(categoryName)")
         
         // Title changes
         self.navigationItem.title = categoryName
         
         // Styling changes
         self.categoryNameInput.addBottomBorder()
+        
+        // Add keyboard hide gesture
+        self.hideKeyboardOnTap()
         
         // Populate category name input
         self.categoryNameInput.text = categoryName
@@ -47,6 +50,7 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         self.currentCategory = self.categories[self.selectedIndex]
         
         // Set keys
+        print(self.currentCategory.name)
         print(self.currentCategory.eventNameFreq.count)
         for (eventName, _) in self.currentCategory.eventNameFreq {
             self.eventKeys.append(eventName) // Add keys
@@ -56,6 +60,22 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         DispatchQueue.main.async {
             self.predictedNameLocationTable.reloadData()
         }
+    }
+    
+    // When pressed done on category name input
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (textField == self.categoryNameInput) { // Pressed save
+            // Update and save the category name
+            currentCategory.name = self.categoryNameInput.text! // Save new name
+            self.navigationItem.title = self.categoryNameInput.text! // Update screen title
+            
+            DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Update persist data
+            
+            self.refreshData()
+            self.dismissKeyboard() // Hide keyboard
+        }
+        
+        return true
     }
     
     // MARK - Table View Functions
@@ -70,9 +90,9 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         let key = self.eventKeys[index] // Get key for dictionary
         
         // Populate cell
-        print("Populating cell")
+//        print("Populating cell")
         if let eventNameFreq = self.currentCategory.eventNameFreq[key] {
-            print("Event name: \(key) with frequency: \(eventNameFreq)")
+//            print("Event name: \(key) with frequency: \(eventNameFreq)")
             cell.eventName.text = key // Event name
             cell.eventNameFreq.text = String(eventNameFreq)
         }

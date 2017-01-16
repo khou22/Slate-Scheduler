@@ -39,9 +39,11 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     override func viewDidLoad() {
-        getCollection() // Get category data
-        
         self.categoryTable.allowsMultipleSelection = false // Don't allow multiple selection of cells
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.getCollection() // Get category data
     }
     
     func getCollection() {

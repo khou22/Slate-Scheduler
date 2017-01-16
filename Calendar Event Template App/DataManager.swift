@@ -55,12 +55,12 @@ struct DataManager {
             var encoded: NSArray = data as! NSArray // Retrieve data object
             var decoded: [Category] = decode(array: encoded.mutableCopy() as! NSMutableArray) // Decoded items
             
-            if (decoded[index].name == category.name) { // Make sure index is right
-                decoded[index] = category // Update
-                print("Updated category object's data")
-            } else {
-                print("Category name and index didn't match")
+            if (decoded[index].name != category.name) { // Warning if index didn't match
+                print("Updated category name")
             }
+            
+            decoded[index] = category // Update
+//            print("Updated category object's data")
             
             encoded = encode(category: decoded) // Archive
             
