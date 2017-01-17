@@ -49,6 +49,7 @@ struct CellIdentifiers {
     static let eventListCell                = "EventListCell"
     static let categoryEditCell             = "CategoryEditCell"
     static let nameLocationCell             = "NameLocationCell"
+    static let autcompleteCell              = "AutcompleteCell"
     
     // Collection view cell identifiers
     static let categoryCell                 = "CategoryCell"

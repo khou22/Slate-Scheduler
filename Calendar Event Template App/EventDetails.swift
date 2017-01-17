@@ -22,7 +22,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var saveButton: UIButton!
     
     // Form inputs
-    @IBOutlet weak var eventNameInput: UITextField!
+    @IBOutlet weak var eventNameInput: AutocompleteTextField!
     @IBOutlet weak var locationInput: UITextField!
     @IBOutlet weak var roomInput: UITextField!
     @IBOutlet weak var durationSlider: StepSlider!
@@ -178,6 +178,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.locationInput.addBottomBorder()
         self.roomInput.addBottomBorder()
         self.roomInput.addDoneButtonOnKeyboard()
+        
+        print(self.eventNameInput.frame.maxY)
+        self.eventNameInput.setupTableView(view: self.view)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
