@@ -31,6 +31,7 @@
 		27DC4E7E1E2061B700F510D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC4E7D1E2061B700F510D3 /* DateExtension.swift */; };
 		27DC4E801E20758500F510D3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC4E7F1E20758500F510D3 /* CustomTextField.swift */; };
 		27DC4E821E2089EA00F510D3 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC4E811E2089EA00F510D3 /* CalendarManager.swift */; };
+		27F4D5CF1E2EADD4005EDD36 /* AutcompleteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4D5CE1E2EADD4005EDD36 /* AutcompleteTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		27DC4E7D1E2061B700F510D3 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		27DC4E7F1E20758500F510D3 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		27DC4E811E2089EA00F510D3 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		27F4D5CE1E2EADD4005EDD36 /* AutcompleteTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutcompleteTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */,
 				27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */,
 				279022621E209BF10062FFE8 /* EventListCell.swift */,
+				27F4D5CE1E2EADD4005EDD36 /* AutcompleteTextField.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */,
 				272455741E1DCCA400F3856F /* Category.swift in Sources */,
 				2757074D1E27340A002A3060 /* CategoryEditing.swift in Sources */,
+				27F4D5CF1E2EADD4005EDD36 /* AutcompleteTextField.swift in Sources */,
 				279022631E209BF10062FFE8 /* EventListCell.swift in Sources */,
 				27190C5B1E1F4147002D3CB4 /* QuickDayPickerCell.swift in Sources */,
 			);
