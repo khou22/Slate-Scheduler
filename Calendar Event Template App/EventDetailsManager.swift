@@ -169,8 +169,10 @@ extension EventDetails {
             
             self.createEvent() // Create and save event to calendar
             
-            // Update markov models
-            self.logEventData()
+            // Update markov models if there's a category
+            if (!self.noCategory) {
+                self.logEventData()
+            }
             
             // Exit animations
             self.saveConfirmation()
