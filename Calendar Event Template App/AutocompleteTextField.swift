@@ -18,6 +18,7 @@ class AutocompleteTextField: UITextField {
     
     // Styling
     public var tableHeight: CGFloat = 100.0
+    public var padding: CGFloat = 0.0
     
     override init(frame: CGRect) {
         super.init(frame: frame) // Initialize text field
@@ -37,10 +38,9 @@ class AutocompleteTextField: UITextField {
     public func setupTableView(view: UIView) {
         // Starts below text input, same width
         print("Setting up table view")
-        print(self.frame.origin.y)
-        print(self.frame.height)
-        print(self.frame.maxY)
-        let frame = CGRect(x: self.frame.minX, y: self.frame.maxY, width: self.frame.width, height: self.tableHeight)
+        let lowerLeftCorner: CGPoint = CGPoint(x: self.frame.origin.x, y: self.frame.maxY)
+        let transformedOrigin: CGPoint = (self.superview?.convert(lowerLeftCorner, to: view))!
+        let frame = CGRect(x: transformedOrigin.x, y: transformedOrigin.y + self.padding, width: self.frame.width, height: self.tableHeight)
         self.autocompleteTableView = UITableView(frame: frame)
         
         // Set data source and delegate
@@ -56,10 +56,12 @@ class AutocompleteTextField: UITextField {
 extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Cell for each index
-        let cell = self.autocompleteTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.autcompleteCell, for: indexPath)
+//        var cell = self.autocompleteTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.autcompleteCell, for: indexPath)
+        let cell = UITableViewCell(style: .default, reuseIdentifier: CellIdentifiers.autcompleteCell)
         
         let index = indexPath.item
         
+        cell.detailTextLabel?.text = "Yo"
         cell.textLabel?.text = self.validSuggestsions[index] // Populate suggestion label
         
         return cell

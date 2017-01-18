@@ -179,7 +179,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.roomInput.addBottomBorder()
         self.roomInput.addDoneButtonOnKeyboard()
         
-        print(self.eventNameInput.frame.maxY)
         self.eventNameInput.setupTableView(view: self.view)
     }
     
