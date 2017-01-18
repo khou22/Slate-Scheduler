@@ -9,12 +9,15 @@
 
 import UIKit
 
-class AutocompleteTextField: UITextField {
+class AutocompleteTextField: UITextField, UITextFieldDelegate {
 
     public var autocompleteSuggestions: [String] = [] // All possible suggestions
     fileprivate var validSuggestsions: [String] = ["Test", "Hello", "World"] // Matches text field's value
     
     fileprivate var autocompleteTableView: UITableView = UITableView()
+    
+    // Next text field after user presses return
+    public var nextTextField: UITextField = UITextField()
     
     // Styling
     public var tableHeight: CGFloat = 100.0
@@ -31,7 +34,9 @@ class AutocompleteTextField: UITextField {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        print("Init")
+//        print("Init")
+        
+        self.delegate = self
     }
     
     // Setup autcomplete table view
@@ -48,7 +53,11 @@ class AutocompleteTextField: UITextField {
         self.autocompleteTableView.dataSource = self
         
         view.addSubview(autocompleteTableView)
-        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.nextTextField.becomeFirstResponder() // Next responder
+        return true
     }
 
 }
@@ -68,7 +77,8 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.autocompleteSuggestions.count
+//        return self.autocompleteSuggestions.count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

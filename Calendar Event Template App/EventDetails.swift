@@ -179,7 +179,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.roomInput.addBottomBorder()
         self.roomInput.addDoneButtonOnKeyboard()
         
-        self.eventNameInput.setupTableView(view: self.view)
+//        self.eventNameInput.setupTableView(view: self.view)
+        self.eventNameInput.nextTextField = self.locationInput
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
