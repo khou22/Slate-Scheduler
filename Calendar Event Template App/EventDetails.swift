@@ -179,14 +179,13 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.roomInput.addBottomBorder()
         self.roomInput.addDoneButtonOnKeyboard()
         
+        // Setup table view
         self.eventNameInput.setupTableView(view: self.view)
-        self.eventNameInput.nextTextField = self.locationInput
+        self.eventNameInput.nextTextField = self.locationInput // Setup next input
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if (textField == self.eventNameInput) { // Pressed next
-            self.locationInput.becomeFirstResponder() // Move to location input
-        } else if (textField == self.locationInput) { // Pressed next
+        if (textField == self.locationInput) { // Pressed next on location input
             self.roomInput.becomeFirstResponder() // Move to room input
         } else { // On room number
             self.dismissKeyboard() // Hide keyboard

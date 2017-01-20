@@ -20,21 +20,18 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     public var nextTextField: UITextField = UITextField()
     
     // Styling
-    public var tableHeight: CGFloat = 100.0
+    public var cellHeight: CGFloat = 40.0
+    public var numCellsVisible: Int = 3
     public var padding: CGFloat = 0.0
     
+    // Not sure what this does
     override init(frame: CGRect) {
-        super.init(frame: frame) // Initialize text field
-        
-        print(frame)
-        
+        super.init(frame: frame) // Initialize text field?
     }
     
-    // Required?
+    // Initializer
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-//        print("Init")
         
         self.delegate = self
     }
@@ -43,17 +40,35 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
         self.nextTextField.becomeFirstResponder() // Next responder
         return true
     }
+    
+    // Entrance animation for suggestion box
+    func showSuggestions() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.autocompleteTableView.isHidden = false // Show animation box
+        })
+    }
+    
+    // Exit animation for suggestion box
+    func hideSuggestions() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.autocompleteTableView.isHidden = true // Hide animation box
+        })
+    }
 
 }
 
+
+// Everything relating to the suggestion table view frontend
 extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
+    
     // Setup autcomplete table view
     public func setupTableView(view: UIView) {
         // Starts below text input, same width
-        print("Setting up table view")
-        let lowerLeftCorner: CGPoint = CGPoint(x: self.frame.origin.x, y: self.frame.maxY)
-        let transformedOrigin: CGPoint = (self.superview?.convert(lowerLeftCorner, to: view))!
-        let frame = CGRect(x: transformedOrigin.x, y: transformedOrigin.y + self.padding, width: self.frame.width, height: self.tableHeight)
+        let tableHeight: CGFloat = self.cellHeight * CGFloat(self.numCellsVisible) // Calculate height
+        
+        let lowerLeftCorner: CGPoint = CGPoint(x: self.frame.minX, y: self.frame.maxY) // Get coordinate of text input
+        let transformedOrigin: CGPoint = (self.superview?.convert(lowerLeftCorner, to: view))! // Transform point into view frame
+        let frame = CGRect(x: transformedOrigin.x, y: transformedOrigin.y + self.padding, width: self.frame.width, height: tableHeight)
         self.autocompleteTableView = UITableView(frame: frame)
         
         // Set data source and delegate
@@ -64,15 +79,17 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
         self.autocompleteTableView.register(UITableViewCell.self, forCellReuseIdentifier: CellIdentifiers.autcompleteCell)
         
         // Styling and options
-        self.autocompleteTableView.rowHeight = 44.0 // Row height
-        self.autocompleteTableView.isScrollEnabled = false // No scrolling
+        self.autocompleteTableView.rowHeight = self.cellHeight // Row height
+        self.autocompleteTableView.isScrollEnabled = true // Allow scrolling
         
-        view.addSubview(autocompleteTableView)
-        print(self.autocompleteTableView.rowHeight)
+        view.addSubview(autocompleteTableView) // Add to view
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = self.autocompleteTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.autcompleteCell, for: indexPath)
+        
+        // Styling
+        cell.textLabel?.font = cell.textLabel?.font.withSize(12.0) // Set font size
         
         // Populate information
         cell.textLabel?.text = self.validSuggestions[indexPath.item] // Populate cell label
@@ -81,7 +98,7 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0
+        return self.cellHeight
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
