@@ -12,7 +12,7 @@ import UIKit
 class AutocompleteTextField: UITextField, UITextFieldDelegate {
 
     public var autocompleteSuggestions: [String] = [] // All possible suggestions
-    fileprivate var validSuggestsions: [String] = ["Test", "Hello", "World"] // Matches text field's value
+    fileprivate var validSuggestions: [String] = ["Test", "Hello", "World"] // Matches text field's value
     
     fileprivate var autocompleteTableView: UITableView = UITableView()
     
@@ -39,6 +39,14 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
         self.delegate = self
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.nextTextField.becomeFirstResponder() // Next responder
+        return true
+    }
+
+}
+
+extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
     // Setup autcomplete table view
     public func setupTableView(view: UIView) {
         // Starts below text input, same width
@@ -52,33 +60,32 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
         self.autocompleteTableView.delegate = self
         self.autocompleteTableView.dataSource = self
         
+        // Register cell
+        self.autocompleteTableView.register(UITableViewCell.self, forCellReuseIdentifier: CellIdentifiers.autcompleteCell)
+        
+        // Styling and options
+        self.autocompleteTableView.rowHeight = 44.0 // Row height
+        self.autocompleteTableView.isScrollEnabled = false // No scrolling
+        
         view.addSubview(autocompleteTableView)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.nextTextField.becomeFirstResponder() // Next responder
-        return true
+        print(self.autocompleteTableView.rowHeight)
     }
 
-}
-
-extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Cell for each index
-//        var cell = self.autocompleteTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.autcompleteCell, for: indexPath)
-        let cell = UITableViewCell(style: .default, reuseIdentifier: CellIdentifiers.autcompleteCell)
+        let cell: UITableViewCell = self.autocompleteTableView.dequeueReusableCell(withIdentifier: CellIdentifiers.autcompleteCell, for: indexPath)
         
-        let index = indexPath.item
-        
-        cell.detailTextLabel?.text = "Yo"
-        cell.textLabel?.text = self.validSuggestsions[index] // Populate suggestion label
+        // Populate information
+        cell.textLabel?.text = self.validSuggestions[indexPath.item] // Populate cell label
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.autocompleteSuggestions.count
-        return 0
+        return self.validSuggestions.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
