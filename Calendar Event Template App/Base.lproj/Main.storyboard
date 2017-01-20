@@ -447,6 +447,10 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                                        <connections>
+                                            <action selector="beginEditingEventName:" destination="Pbh-M3-uzF" eventType="editingDidBegin" id="Vns-fa-z0V"/>
+                                            <action selector="finishedEditingEventName:" destination="Pbh-M3-uzF" eventType="editingDidEnd" id="Y0N-qc-nmY"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>

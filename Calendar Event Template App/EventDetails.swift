@@ -91,6 +91,10 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Setup start time slider
         self.startTimeSlider.stepValue = 0.5 // Every half hour
+        
+        // Setup table view
+        self.eventNameInput.setupTableView(view: self.view)
+        self.eventNameInput.nextTextField = self.locationInput // Setup next input
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -147,6 +151,17 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
     }
     
+    // Began editing event name — text box is focused
+    @IBAction func beginEditingEventName(_ sender: Any) {
+        self.eventNameInput.showSuggestions() // Show autocomplete suggestions
+    }
+    
+    // Clicked away/not focused on editing
+    @IBAction func finishedEditingEventName(_ sender: Any) {
+        self.eventNameInput.hideSuggestions() // Hide autocomplete suggestions
+    }
+    
+    
     // MARK - Collection cell calls
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.numQuickDays
@@ -178,10 +193,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.locationInput.addBottomBorder()
         self.roomInput.addBottomBorder()
         self.roomInput.addDoneButtonOnKeyboard()
-        
-        // Setup table view
-        self.eventNameInput.setupTableView(view: self.view)
-        self.eventNameInput.nextTextField = self.locationInput // Setup next input
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

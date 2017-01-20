@@ -22,7 +22,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     // Styling
     public var cellHeight: CGFloat = 40.0
     public var numCellsVisible: Int = 3
-    public var padding: CGFloat = 0.0
+    public var padding: CGFloat = 7.0
     
     // Not sure what this does
     override init(frame: CGRect) {
@@ -43,15 +43,22 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     
     // Entrance animation for suggestion box
     func showSuggestions() {
-        UIView.animate(withDuration: 0.25, animations: {
-            self.autocompleteTableView.isHidden = false // Show animation box
+        print("Displaying autocomplete suggestions")
+        let tableHeight: CGFloat = self.cellHeight * CGFloat(self.numCellsVisible) // Calculate height
+        let oldFrame = self.autocompleteTableView.frame // Store old frame
+        UIView.animate(withDuration: 0.2, animations: {
+            self.autocompleteTableView.alpha = 1.0 // Show animation box
+            self.autocompleteTableView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: tableHeight) // Animate expand
         })
     }
     
     // Exit animation for suggestion box
     func hideSuggestions() {
-        UIView.animate(withDuration: 0.25, animations: {
-            self.autocompleteTableView.isHidden = true // Hide animation box
+        print("Hiding autocomplete suggestions")
+        let oldFrame = self.autocompleteTableView.frame // Store old frame
+        UIView.animate(withDuration: 0.2, animations: {
+            self.autocompleteTableView.alpha = 0.25 // Doesn't have to be 0
+            self.autocompleteTableView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: 0.0) // Animate shrink
         })
     }
 
@@ -81,6 +88,14 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
         // Styling and options
         self.autocompleteTableView.rowHeight = self.cellHeight // Row height
         self.autocompleteTableView.isScrollEnabled = true // Allow scrolling
+        self.autocompleteTableView.alpha = 0.0 // Start transparent when initialized (must be 0)
+        self.autocompleteTableView.separatorColor = Colors.lightGrey // Seperator color
+        self.autocompleteTableView.separatorInset = .zero // No seperator line inset
+        
+        // Set border
+        self.autocompleteTableView.layer.borderWidth = 1 // Set border
+        self.autocompleteTableView.layer.cornerRadius = 5 // Set border radius
+        self.autocompleteTableView.layer.borderColor = Colors.grey.cgColor // Border color
         
         view.addSubview(autocompleteTableView) // Add to view
     }
@@ -90,6 +105,7 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
         
         // Styling
         cell.textLabel?.font = cell.textLabel?.font.withSize(12.0) // Set font size
+        cell.textLabel?.textColor = Colors.black
         
         // Populate information
         cell.textLabel?.text = self.validSuggestions[indexPath.item] // Populate cell label
