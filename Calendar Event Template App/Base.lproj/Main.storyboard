@@ -449,6 +449,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                                         <connections>
                                             <action selector="beginEditingEventName:" destination="Pbh-M3-uzF" eventType="editingDidBegin" id="Vns-fa-z0V"/>
+                                            <action selector="eventNameChanged:" destination="Pbh-M3-uzF" eventType="editingChanged" id="L3b-nP-AWd"/>
                                             <action selector="finishedEditingEventName:" destination="Pbh-M3-uzF" eventType="editingDidEnd" id="Y0N-qc-nmY"/>
                                         </connections>
                                     </textField>

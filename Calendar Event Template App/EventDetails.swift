@@ -95,6 +95,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Setup table view
         self.eventNameInput.setupTableView(view: self.view)
         self.eventNameInput.nextTextField = self.locationInput // Setup next input
+        self.eventNameInput.updateSuggestions(prioritized: ["Test", "Hello", "World"]) // Load autocomplete suggestions
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -161,6 +162,10 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.eventNameInput.hideSuggestions() // Hide autocomplete suggestions
     }
     
+    // Event name has changed
+    @IBAction func eventNameChanged(_ sender: Any) {
+        self.eventNameInput.updateValid() // Updates the autocomplete suggestions
+    }
     
     // MARK - Collection cell calls
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

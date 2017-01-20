@@ -10,9 +10,10 @@
 import UIKit
 
 class AutocompleteTextField: UITextField, UITextFieldDelegate {
-
-    public var autocompleteSuggestions: [String] = [] // All possible suggestions
-    fileprivate var validSuggestions: [String] = ["Test", "Hello", "World"] // Matches text field's value
+    
+    // Relevant data
+    fileprivate var autocompleteSuggestions: [String] = [] // All possible suggestions in order of priority
+    fileprivate var validSuggestions: [String] = [] // Matches textfield's value
     
     fileprivate var autocompleteTableView: UITableView = UITableView()
     
@@ -60,6 +61,35 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
             self.autocompleteTableView.alpha = 0.25 // Doesn't have to be 0
             self.autocompleteTableView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: 0.0) // Animate shrink
         })
+    }
+    
+    // Update possible suggestions
+    func updateSuggestions(prioritized suggestions: [String]) {
+        self.autocompleteSuggestions = suggestions // Update data source
+    }
+    
+    // Update the valid/matching suggestions
+    func updateValid() {
+        let currentQuery: String = self.text!
+        
+        if (currentQuery == "") { // If the textbox is empty
+            print("Displaying all")
+            self.validSuggestions = self.autocompleteSuggestions // Load all as potentially valid
+        } else { // If the user has typed something into the text box
+            self.validSuggestions.removeAll() // Clear array
+            // Cycle through all possible and search for matches
+            for potential in self.autocompleteSuggestions {
+                if (potential.contains(currentQuery)) { // If contains that substring
+                    self.validSuggestions.append(potential) // Add to the secondary array
+                }
+            }
+
+        }
+        
+        // Refresh table view
+        DispatchQueue.main.async {
+            self.autocompleteTableView.reloadData()
+        }
     }
 
 }
