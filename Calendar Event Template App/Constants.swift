@@ -19,8 +19,8 @@ struct Colors {
     static let orange                       = UIColor(red: 218.0/255.0, green: 141.0/255.0, blue: 15.0/255.0, alpha: 1.0)
     static let green                        = UIColor(red: 128.0/255.0, green: 164.0/255.0, blue: 84.0/255.0, alpha: 1.0)
     static let blue                         = UIColor(red: 0.0/255.0, green: 118.0/255.0, blue: 255.0/255.0, alpha: 1.0) // iOS default blue
-    static let lightGrey                    = UIColor(red: 239.0/255.0, green: 239.0/255.0, blue: 244.0/255.0, alpha: 1.0)
-    static let grey                         = UIColor(red: 199.0/255.0, green: 199.0/255.0, blue: 205.0/255.0, alpha: 1.0)
+    static let lightGrey                    = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1.0) // Light grey form labels
+    static let grey                         = UIColor(red: 199.0/255.0, green: 199.0/255.0, blue: 205.0/255.0, alpha: 1.0) // Summary card background
     static let white                        = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     static let black                        = UIColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
     static let clear                        = UIColor.clear
@@ -49,6 +49,7 @@ struct CellIdentifiers {
     static let eventListCell                = "EventListCell"
     static let categoryEditCell             = "CategoryEditCell"
     static let nameLocationCell             = "NameLocationCell"
+    static let autcompleteCell              = "AutcompleteCell"
     
     // Collection view cell identifiers
     static let categoryCell                 = "CategoryCell"

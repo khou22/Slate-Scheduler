@@ -170,11 +170,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
-                                                    <rect key="frame" x="10" y="0.0" width="322" height="43.5"/>
+                                                    <rect key="frame" x="10" y="0.0" width="322" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -300,20 +300,20 @@
                                                 <rect key="frame" x="0.0" y="28" width="319" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j1z-lA-vpT" id="OCF-Fi-Trs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="39"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="39.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-XV-dkF">
-                                                            <rect key="frame" x="0.0" y="3" width="319" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="3" width="319" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxk-Cw-Ru9">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYA-0l-AOW">
-                                                                    <rect key="frame" x="311" y="0.0" width="8" height="20.5"/>
+                                                                    <rect key="frame" x="311" y="0.0" width="8" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="8" id="00H-Yw-9pf"/>
                                                                     </constraints>
@@ -442,14 +442,11 @@
                                         <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-c0-Lai">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-c0-Lai" customClass="AutocompleteTextField" customModule="Calendar_Event_Template_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="23" width="319" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="Pbh-M3-uzF" id="B4l-kd-QHM"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -820,7 +817,7 @@
                         <outlet property="durationLabel" destination="BLf-Df-vAq" id="uAL-C3-575"/>
                         <outlet property="durationSlider" destination="1ag-mR-KaH" id="kuS-cp-mcY"/>
                         <outlet property="eventListTable" destination="d1N-LA-6dL" id="kmL-ic-NBe"/>
-                        <outlet property="eventNameInput" destination="JFO-c0-Lai" id="icc-dg-mYQ"/>
+                        <outlet property="eventNameInput" destination="JFO-c0-Lai" id="3xc-Oc-ASB"/>
                         <outlet property="loadingSpinner" destination="48k-Jh-yKE" id="rM3-i7-8gZ"/>
                         <outlet property="locationInput" destination="iWU-UH-lk1" id="8vD-x9-6CK"/>
                         <outlet property="quickDayPicker" destination="ttk-bO-ra3" id="Xey-AL-hEq"/>

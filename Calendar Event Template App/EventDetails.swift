@@ -22,7 +22,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var saveButton: UIButton!
     
     // Form inputs
-    @IBOutlet weak var eventNameInput: UITextField!
+    @IBOutlet weak var eventNameInput: AutocompleteTextField!
     @IBOutlet weak var locationInput: UITextField!
     @IBOutlet weak var roomInput: UITextField!
     @IBOutlet weak var durationSlider: StepSlider!
@@ -73,7 +73,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     override func viewDidLoad() {
         self.refreshQuickDay() // Calculate labels
-        self.hideKeyboardOnTap() // Initialize hide keyboard when tapped away
+        self.hideKeyboardOnSwipe() // Initialize hide keyboard when tapped away
         
         // Setup horizontal scrolling
         let horizontalScroll = UICollectionViewFlowLayout() // Initialize
@@ -91,6 +91,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Setup start time slider
         self.startTimeSlider.stepValue = 0.5 // Every half hour
+        
+        // Setup table view
+        self.eventNameInput.setupTableView(view: self.view)
+        self.eventNameInput.nextTextField = self.locationInput // Setup next input
+        self.eventNameInput.updateSuggestions(prioritized: self.category.orderedEventNames()) // Load autocomplete suggestions
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -145,6 +150,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
         self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
+        
+        self.dismissKeyboard() // Dismiss keyboard if sliding
     }
     
     // MARK - Collection cell calls
@@ -170,6 +177,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.eventDate = self.dateOptions[index] // Update the event date
         self.refreshDaysEvents() // Update event list
         self.updateDateLabel() // Update frontend
+        
+        self.dismissKeyboard() // Dismiss keyboard if press a day
     }
     
     func styleTextInput() {
@@ -181,9 +190,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if (textField == self.eventNameInput) { // Pressed next
-            self.locationInput.becomeFirstResponder() // Move to location input
-        } else if (textField == self.locationInput) { // Pressed next
+        if (textField == self.locationInput) { // Pressed next on location input
             self.roomInput.becomeFirstResponder() // Move to room input
         } else { // On room number
             self.dismissKeyboard() // Hide keyboard

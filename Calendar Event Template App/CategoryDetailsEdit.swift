@@ -32,7 +32,7 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         self.categoryNameInput.addBottomBorder()
         
         // Add keyboard hide gesture
-        self.hideKeyboardOnTap()
+        self.hideKeyboardOnSwipe()
         
         // Populate category name input
         self.categoryNameInput.text = categoryName
