@@ -73,7 +73,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     override func viewDidLoad() {
         self.refreshQuickDay() // Calculate labels
-        self.hideKeyboardOnTap() // Initialize hide keyboard when tapped away
+        self.hideKeyboardOnSwipe() // Initialize hide keyboard when tapped away
         
         // Setup horizontal scrolling
         let horizontalScroll = UICollectionViewFlowLayout() // Initialize

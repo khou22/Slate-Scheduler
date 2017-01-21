@@ -153,6 +153,7 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
         // Styling
         cell.textLabel?.font = cell.textLabel?.font.withSize(12.0) // Set font size
         cell.textLabel?.textColor = Colors.black
+        cell.backgroundColor = Colors.white
         
         // Populate information
         cell.textLabel?.text = self.validSuggestions[indexPath.item] // Populate cell label
@@ -169,6 +170,7 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected autocomplete suggestion at row \(indexPath.item)")
+        self.text = self.validSuggestions[indexPath.item] // Push suggestion to text box value
+        self.nextTextField.becomeFirstResponder() // Next responder
     }
 }

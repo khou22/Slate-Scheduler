@@ -15,12 +15,13 @@ import UIKit
 // Extends all UIViewControllers
 extension UIViewController {
     
-    func hideKeyboardOnTap() {
-        // When UIViewController (not keyboard) is tapped, dismiss keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+    func hideKeyboardOnSwipe() {
+        // When UIViewController (not keyboard) is swiped down, dismiss keyboard
+        let swipeDown: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        swipeDown.direction = .down // Swipe down
+        swipeDown.cancelsTouchesInView = false // Won't override UICollection/UITableView View selection
         
-        tap.cancelsTouchesInView = false // Won't override UICollection View selection
-        view.addGestureRecognizer(tap) // Add gesture to view
+        view.addGestureRecognizer(swipeDown) // Add gesture to view
     }
     
     // Dismiss keyboard
