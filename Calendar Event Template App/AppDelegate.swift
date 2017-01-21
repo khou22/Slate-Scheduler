@@ -19,7 +19,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         CalendarManager().requestAccess() // Request calendar access
         
+        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            _ = handleShortcut(shortcutItem: shortcutItem)
+            return false
+        }
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(handleShortcut(shortcutItem: shortcutItem))
+    }
+    
+    // Handle a shortcut
+    private func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        switch shortcutItem.type  {
+            case "kevinhou.Calendar-Event-Template-App.newUncategorizedEvent":
+                // Handle shortcut for new uncategorized event
+                launchInitialVC(viewController: Storyboard.editEventDetails)
+                break
+            default:
+                return false
+        }
+    
+        return true
+    }
+    
+    // Launch a specific screen as initial VC
+    private func launchInitialVC(viewController identifier: String) {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+        
+        // Perform required segues and navigations
+        if (identifier == Storyboard.editEventDetails) { // If launching edit details screen
+            initialViewController.pushViewController(storyboard.instantiateViewController(withIdentifier: Storyboard.categorySelection), animated: false)
+            let categorySelection = initialViewController.topViewController as! CategorySelection
+            categorySelection.newEventNoCategory(self)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

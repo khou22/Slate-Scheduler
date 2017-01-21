@@ -14,7 +14,7 @@
         <!--Category Selection-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Category Selection" id="BYZ-38-t0r" customClass="CategorySelection" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="categorySelection" title="Category Selection" id="BYZ-38-t0r" customClass="CategorySelection" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -304,16 +304,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-XV-dkF">
-                                                            <rect key="frame" x="0.0" y="3" width="319" height="21"/>
+                                                            <rect key="frame" x="0.0" y="3" width="319" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxk-Cw-Ru9">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYA-0l-AOW">
-                                                                    <rect key="frame" x="311" y="0.0" width="8" height="21"/>
+                                                                    <rect key="frame" x="311" y="0.0" width="8" height="20.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="8" id="00H-Yw-9pf"/>
                                                                     </constraints>
@@ -392,7 +392,7 @@
         <!--Event Details-->
         <scene sceneID="hjX-F2-KRZ">
             <objects>
-                <viewController id="Pbh-M3-uzF" customClass="EventDetails" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editNewEventDetails" id="Pbh-M3-uzF" customClass="EventDetails" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yU3-wZ-w76"/>
                         <viewControllerLayoutGuide type="bottom" id="qsh-b2-hZD"/>

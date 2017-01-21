@@ -34,6 +34,17 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>kevinhou.Calendar-Event-Template-App.newUncategorizedEvent</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>New Uncategorized Event</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>compose</string>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

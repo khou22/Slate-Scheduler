@@ -38,10 +38,8 @@ struct Images {
 
 struct Storyboard {
     // Storyboard identifiers
-    static let favorites                    = "favoritesStoryboardScreen"
-    static let historyPageOne               = "historyPageOne"
-    static let historyPageTwo               = "historyPageTwo"
-    static let historyPageThree             = "historyPageThree"
+    static let categorySelection            = "categorySelection"
+    static let editEventDetails             = "editNewEventDetails"
 }
 
 struct CellIdentifiers {

@@ -5,7 +5,7 @@
 //  Created by Kevin Hou on 1/17/17.
 //  Copyright © 2017 Kevin Hou. All rights reserved.
 //
-//  Autocomplete table view
+//  Autocomplete table view for any UITextField
 
 import UIKit
 
