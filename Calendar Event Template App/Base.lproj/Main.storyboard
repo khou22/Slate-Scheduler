@@ -170,11 +170,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
-                                                    <rect key="frame" x="10" y="0.0" width="322" height="43.5"/>
+                                                    <rect key="frame" x="10" y="0.0" width="322" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -300,20 +300,20 @@
                                                 <rect key="frame" x="0.0" y="28" width="319" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j1z-lA-vpT" id="OCF-Fi-Trs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="39.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-XV-dkF">
-                                                            <rect key="frame" x="0.0" y="3" width="319" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="3" width="319" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxk-Cw-Ru9">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="20.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYA-0l-AOW">
-                                                                    <rect key="frame" x="311" y="0.0" width="8" height="20.5"/>
+                                                                    <rect key="frame" x="311" y="0.0" width="8" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="8" id="00H-Yw-9pf"/>
                                                                     </constraints>
@@ -447,11 +447,6 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
-                                        <connections>
-                                            <action selector="beginEditingEventName:" destination="Pbh-M3-uzF" eventType="editingDidBegin" id="Vns-fa-z0V"/>
-                                            <action selector="eventNameChanged:" destination="Pbh-M3-uzF" eventType="editingChanged" id="L3b-nP-AWd"/>
-                                            <action selector="finishedEditingEventName:" destination="Pbh-M3-uzF" eventType="editingDidEnd" id="Y0N-qc-nmY"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>

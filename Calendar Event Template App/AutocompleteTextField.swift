@@ -35,6 +35,9 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
         super.init(coder: aDecoder)
         
         self.delegate = self
+        
+        // Setup function triggers on events
+        self.addTarget(self, action: #selector(self.valueChanged), for: .editingChanged)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -44,7 +47,6 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     
     // Entrance animation for suggestion box
     func showSuggestions() {
-        print("Displaying autocomplete suggestions")
         let tableHeight: CGFloat = self.cellHeight * CGFloat(self.numCellsVisible) // Calculate height
         let oldFrame = self.autocompleteTableView.frame // Store old frame
         UIView.animate(withDuration: 0.2, animations: {
@@ -55,7 +57,6 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     
     // Exit animation for suggestion box
     func hideSuggestions() {
-        print("Hiding autocomplete suggestions")
         let oldFrame = self.autocompleteTableView.frame // Store old frame
         UIView.animate(withDuration: 0.2, animations: {
             self.autocompleteTableView.alpha = 0.25 // Doesn't have to be 0
@@ -73,7 +74,6 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
         let currentQuery: String = self.text!
         
         if (currentQuery == "") { // If the textbox is empty
-            print("Displaying all")
             self.validSuggestions = self.autocompleteSuggestions // Load all as potentially valid
         } else { // If the user has typed something into the text box
             self.validSuggestions.removeAll() // Clear array
@@ -91,7 +91,22 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
             self.autocompleteTableView.reloadData()
         }
     }
-
+    
+    // Began editing event name — text box is focused
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.updateValid() // Updates autocomplete suggestions
+        self.showSuggestions() // Show autocomplete suggestions
+    }
+    
+    // Clicked away/not focused on editing
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.hideSuggestions() // Hide autocomplete suggestions
+    }
+    
+    // Text field value changed
+    func valueChanged() {
+        self.updateValid() // Update autocomplete suggestions when value changed
+    }
 }
 
 
@@ -115,12 +130,14 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
         // Register cell
         self.autocompleteTableView.register(UITableViewCell.self, forCellReuseIdentifier: CellIdentifiers.autcompleteCell)
         
-        // Styling and options
+        // Styling
         self.autocompleteTableView.rowHeight = self.cellHeight // Row height
-        self.autocompleteTableView.isScrollEnabled = true // Allow scrolling
         self.autocompleteTableView.alpha = 0.0 // Start transparent when initialized (must be 0)
         self.autocompleteTableView.separatorColor = Colors.lightGrey // Seperator color
         self.autocompleteTableView.separatorInset = .zero // No seperator line inset
+        
+        // Options
+        self.autocompleteTableView.isScrollEnabled = true // Allow scrolling
         
         // Set border
         self.autocompleteTableView.layer.borderWidth = 1 // Set border
