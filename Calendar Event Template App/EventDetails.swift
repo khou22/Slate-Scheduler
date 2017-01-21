@@ -95,7 +95,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Setup table view
         self.eventNameInput.setupTableView(view: self.view)
         self.eventNameInput.nextTextField = self.locationInput // Setup next input
-        self.eventNameInput.updateSuggestions(prioritized: ["Test", "Hello", "World"]) // Load autocomplete suggestions
+        self.eventNameInput.updateSuggestions(prioritized: self.category.orderedEventNames()) // Load autocomplete suggestions
     }
     
     override func viewWillAppear(_ animated: Bool) {

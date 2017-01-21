@@ -43,4 +43,39 @@ class Category: NSObject, NSCoding {
         aCoder.encode(name, forKey: Keys.categoryName)
         aCoder.encode(eventNameFreq, forKey: Keys.eventNameFreq)
     }
+    
+    func orderedEventNames() -> [String] {
+        var orderedEventNames: [String] = []
+        
+        // Convert to arrays
+        var keys: [String] = []
+        var values: [Int] = []
+        for (key, value) in self.eventNameFreq {
+            keys.append(key)
+            values.append(value)
+        }
+        
+        // Sort by frequency
+        while (keys.count != 0) {
+            
+            // Track highest frequency then add to master list
+            var highest: Int = 0
+            var highestIndex: Int = 0
+            for (index, _) in keys.enumerated() {
+                let currentFreq = values[index]
+                if (currentFreq > highest) {
+                    // Set a new high
+                    highest = currentFreq
+                    highestIndex = index
+                }
+            }
+            
+            // Add to master list and remove from originals
+            orderedEventNames.append(keys[highestIndex]) // Add to master list
+            keys.remove(at: highestIndex) // Remove so won't be used again
+            values.remove(at: highestIndex) // Remove so won't be used again
+        }
+        
+        return orderedEventNames // Return the master list
+    }
 }
