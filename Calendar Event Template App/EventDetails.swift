@@ -92,10 +92,12 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Setup start time slider
         self.startTimeSlider.stepValue = 0.5 // Every half hour
         
-        // Setup table view
-        self.eventNameInput.setupTableView(view: self.view)
-        self.eventNameInput.nextTextField = self.locationInput // Setup next input
-        self.eventNameInput.updateSuggestions(prioritized: self.category.orderedEventNames()) // Load autocomplete suggestions
+        // Setup table view if for category
+        if (!self.noCategory) {
+            self.eventNameInput.setupTableView(view: self.view)
+            self.eventNameInput.nextTextField = self.locationInput // Setup next input
+            self.eventNameInput.updateSuggestions(prioritized: self.category.orderedEventNames()) // Load autocomplete suggestions
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
