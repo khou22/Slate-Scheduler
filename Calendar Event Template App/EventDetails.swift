@@ -150,6 +150,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
         self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
+        
+        self.dismissKeyboard() // Dismiss keyboard if sliding
     }
     
     // MARK - Collection cell calls
@@ -175,6 +177,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.eventDate = self.dateOptions[index] // Update the event date
         self.refreshDaysEvents() // Update event list
         self.updateDateLabel() // Update frontend
+        
+        self.dismissKeyboard() // Dismiss keyboard if press a day
     }
     
     func styleTextInput() {
