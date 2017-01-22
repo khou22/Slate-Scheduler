@@ -128,4 +128,20 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
+    
+    // Functionality for when editing cells
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            // When delete an item
+            let index = indexPath.item
+            self.currentCategory.eventNameFreq.removeValue(forKey: self.eventKeys[index]) // Remove frequency data for specific event name
+            
+            DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Refresh category data
+            
+            // Refresh table view to show updated category data
+            DispatchQueue.main.async {
+                self.predictedNameLocationTable.reloadData()
+            }
+        }
+    }
 }
