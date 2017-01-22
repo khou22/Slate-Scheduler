@@ -26,6 +26,9 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     public var padding: CGFloat = 7.0
     fileprivate var tableHeight: CGFloat = 40.0 * 3 // Default value is three cell heights
     
+    // Options
+    public var characterError: Int = 2 // Degree of error you're allowed to be off by using Levenshtein algorithm
+    
     // Not sure what this does
     override init(frame: CGRect) {
         super.init(frame: frame) // Initialize text field?
@@ -81,7 +84,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
             for potential in self.autocompleteSuggestions {
                 let partialCurrent: String = potential.substring(to: currentQuery.endIndex) // Only compare substrings of the same length
 //                print("Comparing: \(partialCurrent) and \(currentQuery)") // Debugging
-                if (partialCurrent.getLevenshtein(target: currentQuery) <= 3) { // If Levenshtein distance is within 3
+                if (partialCurrent.getLevenshtein(target: currentQuery) <= self.characterError) { // If Levenshtein distance is within 3
                     self.validSuggestions.append(potential) // Add to the secondary array
                 }
             }
@@ -120,6 +123,10 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
             self.tableHeight = self.cellHeight * CGFloat(self.numCellsVisible) // Calculate height
             self.autocompleteTableView.isScrollEnabled = true // Allow scrolling to rest of cells
         }
+        
+        // Refresh table height
+        let oldFrame = self.autocompleteTableView.frame // Store old frame
+        self.autocompleteTableView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: self.tableHeight) // Update table height
     }
 }
 
