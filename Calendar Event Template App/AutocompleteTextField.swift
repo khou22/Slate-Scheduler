@@ -74,7 +74,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     
     // Update the valid/matching suggestions
     func updateValid() {
-        let currentQuery: String = self.text!
+        let currentQuery: String = self.text!.uppercased() // Make uppercase so not case sensitive
         
         if (currentQuery == "") { // If the textbox is empty
             self.validSuggestions = self.autocompleteSuggestions // Load all as potentially valid
@@ -82,9 +82,25 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
             self.validSuggestions.removeAll() // Clear array
             // Cycle through all possible and search for matches
             for potential in self.autocompleteSuggestions {
-                let partialCurrent: String = potential.substring(to: currentQuery.endIndex) // Only compare substrings of the same length
-//                print("Comparing: \(partialCurrent) and \(currentQuery)") // Debugging
-                if (partialCurrent.getLevenshtein(target: currentQuery) <= self.characterError) { // If Levenshtein distance is within 3
+                var potentialCaseFree: String = potential.uppercased() // Uppercase so not case sensitive
+                
+                var valid = false // Track if valid
+                
+                if currentQuery.characters.count <= 2 { // If only one letter in search query
+                    valid = potentialCaseFree.contains(currentQuery) // If exact match, set true
+                    
+                } else { // If more than one letter in search query
+                    if (currentQuery.characters.count < potentialCaseFree.characters.count) { // If the query is less than the result
+                        potentialCaseFree = potentialCaseFree.substring(to: currentQuery.endIndex) // Only compare substrings of the same length
+                    }
+                    
+//                    print("Comparing: \(potentialCaseFree) and \(currentQuery)") // Debugging
+                    
+                    // If Levenshtein distance is within specified range
+                    valid = potentialCaseFree.getLevenshtein(target: currentQuery) <= self.characterError
+                }
+                
+                if valid { // If valid autocomplete suggestion
                     self.validSuggestions.append(potential) // Add to the secondary array
                 }
             }
