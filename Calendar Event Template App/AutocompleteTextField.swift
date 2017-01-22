@@ -24,6 +24,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     public var cellHeight: CGFloat = 40.0
     public var numCellsVisible: Int = 3
     public var padding: CGFloat = 7.0
+    fileprivate var tableHeight: CGFloat = 40.0 * 3 // Default value is three cell heights
     
     // Not sure what this does
     override init(frame: CGRect) {
@@ -47,11 +48,10 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     
     // Entrance animation for suggestion box
     func showSuggestions() {
-        let tableHeight: CGFloat = self.cellHeight * CGFloat(self.numCellsVisible) // Calculate height
         let oldFrame = self.autocompleteTableView.frame // Store old frame
         UIView.animate(withDuration: 0.2, animations: {
             self.autocompleteTableView.alpha = 1.0 // Show animation box
-            self.autocompleteTableView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: tableHeight) // Animate expand
+            self.autocompleteTableView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: self.tableHeight) // Animate expand
         })
     }
     
@@ -85,6 +85,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
             }
 
         }
+        self.updateTableViewHeight() // Update table height to sync with number of suggestions
         
         // Refresh table view
         DispatchQueue.main.async {
@@ -107,6 +108,16 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     func valueChanged() {
         self.updateValid() // Update autocomplete suggestions when value changed
     }
+    
+    func updateTableViewHeight() {
+        if (self.validSuggestions.count < self.numCellsVisible) { // If fewer suggestions than cells visible
+            self.tableHeight = self.cellHeight * CGFloat(self.validSuggestions.count) // Calculate height
+            self.autocompleteTableView.isScrollEnabled = false // Turn off scrolling if less cells than max
+        } else { // Only display max amount, but allow scrolling
+            self.tableHeight = self.cellHeight * CGFloat(self.numCellsVisible) // Calculate height
+            self.autocompleteTableView.isScrollEnabled = true // Allow scrolling to rest of cells
+        }
+    }
 }
 
 
@@ -116,11 +127,9 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
     // Setup autcomplete table view
     public func setupTableView(view: UIView) {
         // Starts below text input, same width
-        let tableHeight: CGFloat = self.cellHeight * CGFloat(self.numCellsVisible) // Calculate height
-        
         let lowerLeftCorner: CGPoint = CGPoint(x: self.frame.minX, y: self.frame.maxY) // Get coordinate of text input
         let transformedOrigin: CGPoint = (self.superview?.convert(lowerLeftCorner, to: view))! // Transform point into view frame
-        let frame = CGRect(x: transformedOrigin.x, y: transformedOrigin.y + self.padding, width: self.frame.width, height: tableHeight)
+        let frame = CGRect(x: transformedOrigin.x, y: transformedOrigin.y + self.padding, width: self.frame.width, height: self.tableHeight)
         self.autocompleteTableView = UITableView(frame: frame)
         
         // Set data source and delegate
