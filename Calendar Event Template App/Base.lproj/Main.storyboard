@@ -286,12 +286,27 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dQE-Ph-VZM">
                                 <rect key="frame" x="28" y="144" width="319" height="435"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predicted Names and Locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-kp-r7T">
-                                        <rect key="frame" x="0.0" y="0.0" width="205" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-4Z-8Uf">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="17"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predicted Names and Locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-kp-r7T">
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCi-S0-I5V">
+                                                <rect key="frame" x="302" y="0.0" width="17" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TCi-S0-I5V" secondAttribute="height" multiplier="1:1" id="o33-jd-HN6"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <action selector="addEventNamePrediction:" destination="ofc-Ei-ISN" eventType="touchUpInside" id="B7U-SY-oOP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CDh-z7-QAt">
                                         <rect key="frame" x="0.0" y="27" width="319" height="408"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -346,6 +361,8 @@
                                     <constraint firstAttribute="bottom" secondItem="CDh-z7-QAt" secondAttribute="bottom" id="BbZ-9D-7To"/>
                                     <constraint firstItem="CDh-z7-QAt" firstAttribute="leading" secondItem="dQE-Ph-VZM" secondAttribute="leading" id="K1h-Be-dXG"/>
                                     <constraint firstAttribute="trailing" secondItem="CDh-z7-QAt" secondAttribute="trailing" id="KsG-ZS-mM0"/>
+                                    <constraint firstItem="fcy-4Z-8Uf" firstAttribute="leading" secondItem="dQE-Ph-VZM" secondAttribute="leading" id="M7k-4m-AVZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fcy-4Z-8Uf" secondAttribute="trailing" id="mTY-Lv-JR4"/>
                                 </constraints>
                             </stackView>
                         </subviews>
