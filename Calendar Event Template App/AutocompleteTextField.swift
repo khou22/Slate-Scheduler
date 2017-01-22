@@ -79,12 +79,15 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
             self.validSuggestions.removeAll() // Clear array
             // Cycle through all possible and search for matches
             for potential in self.autocompleteSuggestions {
-                if (potential.contains(currentQuery)) { // If contains that substring
+                let partialCurrent: String = potential.substring(to: currentQuery.endIndex) // Only compare substrings of the same length
+//                print("Comparing: \(partialCurrent) and \(currentQuery)") // Debugging
+                if (partialCurrent.getLevenshtein(target: currentQuery) <= 3) { // If Levenshtein distance is within 3
                     self.validSuggestions.append(potential) // Add to the secondary array
                 }
             }
 
         }
+        
         self.updateTableViewHeight() // Update table height to sync with number of suggestions
         
         // Refresh table view
@@ -182,4 +185,144 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
         self.text = self.validSuggestions[indexPath.item] // Push suggestion to text box value
         self.nextTextField.becomeFirstResponder() // Next responder
     }
+}
+
+
+/*************** Levenshtein Difference ***************/
+//  Levenshtein difference between two strings
+//  Source: https://gist.github.com/TheDarkCode/341ec5b84c078a0be1887c2c58f6d929
+//  Reference: https://en.wikipedia.org/wiki/Levenshtein_distance
+//
+//  I updated the code from Swift 2 to Swift 3
+
+import Foundation
+
+fileprivate extension String {
+    
+    func getLevenshtein(target: String) -> Int {
+        return levenshtein(sourceString: self, target: target)
+    }
+    
+}
+
+// Minimize 3
+fileprivate func min3(a: Int, b: Int, c: Int) -> Int {
+    
+    return min( min(a, c), min(b, c))
+    
+}
+
+fileprivate extension String {
+    
+    subscript(index: Int) -> Character {
+        
+        return self[index]
+        
+    }
+    
+    subscript(range: Range<Int>) -> String {
+        
+        return self[range.lowerBound..<range.upperBound]
+        
+    }
+    
+}
+
+fileprivate struct Array2D {
+    
+    var columns: Int
+    var rows: Int
+    var matrix: [Int]
+    
+    
+    init(columns: Int, rows: Int) {
+        
+        self.columns = columns
+        
+        self.rows = rows
+        
+        matrix = Array(repeating:0, count:columns*rows)
+        
+    }
+    
+    subscript(column: Int, row: Int) -> Int {
+        
+        get {
+            
+            return matrix[columns * row + column]
+            
+        }
+        
+        set {
+            
+            matrix[columns * row + column] = newValue
+            
+        }
+        
+    }
+    
+    func columnCount() -> Int {
+        
+        return self.columns
+        
+    }
+    
+    func rowCount() -> Int {
+        
+        return self.rows
+        
+    }
+}
+
+fileprivate func levenshtein(sourceString: String, target targetString: String) -> Int {
+    
+    let source = Array(sourceString.unicodeScalars)
+    let target = Array(targetString.unicodeScalars)
+    
+    let (sourceLength, targetLength) = (source.count, target.count)
+    
+    var distance = Array2D(columns: sourceLength + 1, rows: targetLength + 1)
+    
+    for x in 1...sourceLength {
+        
+        distance[x, 0] = x
+        
+    }
+    
+    for y in 1...targetLength {
+        
+        distance[0, y] = y
+        
+    }
+    
+    for x in 1...sourceLength {
+        
+        for y in 1...targetLength {
+            
+            if source[x - 1] == target[y - 1] {
+                
+                // no difference
+                distance[x, y] = distance[x - 1, y - 1]
+                
+            } else {
+                
+                distance[x, y] = min3(
+                    
+                    // deletions
+                    a: distance[x - 1, y] + 1,
+                    // insertions
+                    b: distance[x, y - 1] + 1,
+                    // substitutions
+                    c: distance[x - 1, y - 1] + 1
+                    
+                )
+                
+            }
+            
+        }
+        
+    }
+    
+    return distance[source.count, target.count]
+    
 }
