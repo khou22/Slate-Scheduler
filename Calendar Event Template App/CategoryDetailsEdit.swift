@@ -43,8 +43,6 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
             // Update category data with new markov model
             DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex)
             
-            print("Updated")
-            
             // Refresh the table view on this page
             self.refreshData()
         }))
@@ -86,8 +84,6 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         for (eventName, _) in self.currentCategory.eventNameFreq {
             self.eventKeys.append(eventName) // Add keys
         }
-        
-        print(self.eventKeys.count)
         
         // Refresh table view
         DispatchQueue.main.async {
