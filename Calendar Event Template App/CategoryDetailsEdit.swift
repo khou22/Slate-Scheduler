@@ -28,6 +28,7 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         // Add text field item
         newCategoryAlert.addTextField { (textField) in
             textField.text = "" // No placeholder
+            textField.autocapitalizationType = UITextAutocapitalizationType.words // Capitalization rules
         }
         
         // Add cancel action

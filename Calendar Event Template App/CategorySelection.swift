@@ -59,9 +59,10 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         let newCategoryAlert = UIAlertController(title: "Enter Category Name", message: "You can change the category name at any time by pressing \"Manage\" on the homescreen.", preferredStyle: .alert)
         
         // Add text field item
-        newCategoryAlert.addTextField { (textField) in
+        newCategoryAlert.addTextField(configurationHandler: { (textField: UITextField) in
             textField.text = "" // No placeholder
-        }
+            textField.autocapitalizationType = UITextAutocapitalizationType.words // Capitalization rules
+        })
         
         // Add cancel action
         newCategoryAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil)) // No action if cancelled
