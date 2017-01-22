@@ -113,6 +113,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     @IBAction func cancelEvent(_ sender: Any) {
+        view.endEditing(true) // Force keyboard to close
         dismiss(animated: true, completion: nil) // Exit segue back to category selection
     }
     
