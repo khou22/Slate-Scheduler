@@ -40,6 +40,10 @@ struct Storyboard {
     // Storyboard identifiers
     static let categorySelection            = "categorySelection"
     static let editEventDetails             = "editNewEventDetails"
+    
+    // Onboarding identifiers
+    static let onboardingPageOne            = "OnboardingPageOne"
+    static let onboardingPageTwo            = "OnboardingPageTwo"
 }
 
 struct CellIdentifiers {
