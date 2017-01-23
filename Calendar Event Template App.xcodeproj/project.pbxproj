@@ -31,6 +31,7 @@
 		27CBC4FF1E35C4B4001CE9DA /* OnboardingPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBC4FE1E35C4B4001CE9DA /* OnboardingPager.swift */; };
 		27CBC5021E35C4FF001CE9DA /* OnboardingPageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBC5011E35C4FF001CE9DA /* OnboardingPageOne.swift */; };
 		27CBC5041E35C5E8001CE9DA /* OnboardingPageTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBC5031E35C5E8001CE9DA /* OnboardingPageTwo.swift */; };
+		27CBC5081E35C6DD001CE9DA /* OnboardingPageThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBC5071E35C6DD001CE9DA /* OnboardingPageThree.swift */; };
 		27DC4E7E1E2061B700F510D3 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC4E7D1E2061B700F510D3 /* DateExtension.swift */; };
 		27DC4E801E20758500F510D3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC4E7F1E20758500F510D3 /* CustomTextField.swift */; };
 		27DC4E821E2089EA00F510D3 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DC4E811E2089EA00F510D3 /* CalendarManager.swift */; };
@@ -85,6 +86,7 @@
 		27CBC4FE1E35C4B4001CE9DA /* OnboardingPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPager.swift; sourceTree = "<group>"; };
 		27CBC5011E35C4FF001CE9DA /* OnboardingPageOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageOne.swift; sourceTree = "<group>"; };
 		27CBC5031E35C5E8001CE9DA /* OnboardingPageTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageTwo.swift; sourceTree = "<group>"; };
+		27CBC5071E35C6DD001CE9DA /* OnboardingPageThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageThree.swift; sourceTree = "<group>"; };
 		27DC4E7D1E2061B700F510D3 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		27DC4E7F1E20758500F510D3 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		27DC4E811E2089EA00F510D3 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				27CBC4FE1E35C4B4001CE9DA /* OnboardingPager.swift */,
 				27CBC5011E35C4FF001CE9DA /* OnboardingPageOne.swift */,
 				27CBC5031E35C5E8001CE9DA /* OnboardingPageTwo.swift */,
+				27CBC5071E35C6DD001CE9DA /* OnboardingPageThree.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				27CBC4FF1E35C4B4001CE9DA /* OnboardingPager.swift in Sources */,
 				27BA98041E2C937B0055AA54 /* NameLocationFrequencyCell.swift in Sources */,
 				270991051E1E289000267071 /* StepSlider.swift in Sources */,
+				27CBC5081E35C6DD001CE9DA /* OnboardingPageThree.swift in Sources */,
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
 				272455771E1DCE3000F3856F /* DataManager.swift in Sources */,
 				27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */,

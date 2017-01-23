@@ -13,6 +13,8 @@ class OnboardingPageOne: UIViewController {
     
     override func viewDidLoad() {
         print("Onboarding page one loaded")
+        
+        view.backgroundColor = Colors.blue
     }
     
 }

@@ -867,7 +867,7 @@
         <!--Onboarding Pager-->
         <scene sceneID="6XE-Qq-CNi">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="I2C-vX-COO" customClass="OnboardingPager" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="OnboardingPager" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="I2C-vX-COO" customClass="OnboardingPager" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ux2-Lw-X1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-303" y="-651"/>
@@ -893,7 +893,7 @@
         <!--Onboarding Page Two-->
         <scene sceneID="5o1-YE-SbW">
             <objects>
-                <viewController id="8zU-Vz-ZRH" customClass="OnboardingPageTwo" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingPageTwo" id="8zU-Vz-ZRH" customClass="OnboardingPageTwo" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aDb-xk-RwT"/>
                         <viewControllerLayoutGuide type="bottom" id="VQE-f3-dsL"/>
@@ -907,6 +907,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yea-os-0JB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1169" y="-653"/>
+        </scene>
+        <!--Onboarding Page Three-->
+        <scene sceneID="a78-og-PvO">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingPageThree" id="cne-eY-2Tp" customClass="OnboardingPageThree" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6vA-av-lYs"/>
+                        <viewControllerLayoutGuide type="bottom" id="RU1-ol-kmH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IXM-4y-d9X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGH-jB-tPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="-652"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I0Z-Yt-6bU">
