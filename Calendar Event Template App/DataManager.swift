@@ -15,6 +15,7 @@ struct DataManager {
         // Get category data if data exists
         if let data = Constants.defaults.object(forKey: Keys.categoryData) { // Data exists
             let encoded: NSArray = data as! NSArray // Retrieve data object
+            print("Category count: \(encoded.count)")
             return decode(array: encoded.mutableCopy() as! NSMutableArray) // Decoded items
         } else {
             // If no data logged before

@@ -15,6 +15,16 @@ class OnboardingPageOne: UIViewController {
         print("Onboarding page one loaded")
         
         view.backgroundColor = Colors.blue
+        
+        let doubleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.skipOnboarding)) // Initalize and set handler
+        doubleTap.numberOfTapsRequired = 2 // Double tap
+        view.addGestureRecognizer(doubleTap) // Add to view
+    }
+    
+    // Segue past onboarding
+    func skipOnboarding() {
+        print("Skipping onboarding via segue")
+        self.performSegue(withIdentifier: SegueIdentifiers.skipOnboarding, sender: self)
     }
     
 }

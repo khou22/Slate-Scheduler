@@ -65,6 +65,7 @@ struct SegueIdentifiers {
     static let editCategories               = "CategorySelectionToEdit"
     static let categoryDetailEdit           = "CategoryDetailEdit"
     static let newEventNoCategory           = "NewEventNoCategory"
+    static let skipOnboarding               = "SkipOnboarding"
 }
 
 struct SDK {
