@@ -89,6 +89,12 @@ extension EventDetails {
         event.endDate = startDate.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Convert hours to time interval
         event.isAllDay = false // Not all day
         
+        // Set event alert
+        let secondsBefore: TimeInterval = -1 * 30 * 60 // Half an hour time interval before
+        let defaultAlert: EKAlarm = EKAlarm(relativeOffset: secondsBefore) // Set alert before event time
+        event.addAlarm(defaultAlert) // Add default alert
+        
+        
         self.calendarManager.saveEvent(event: event) // Save event
     }
     
