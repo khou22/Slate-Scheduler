@@ -983,12 +983,62 @@
                     <view key="view" contentMode="scaleToFill" id="B2z-us-AAE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please allow us to read and schedule events in your calendar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Kk3-vc-V4F">
+                                <rect key="frame" x="20" y="32" width="335" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="vuW-d5-f27"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1o-CH-28W">
+                                <rect key="frame" x="116" y="602" width="143" height="45"/>
+                                <color key="backgroundColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ESU-wH-fFm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Got It"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We do not and will never collect your personal data, nor do we have the ability to delete your existing events." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bFM-ZP-hJh">
+                                <rect key="frame" x="24" y="501" width="327" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="cX3-Bv-kIR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone-wireframe" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-RJ-qTi">
+                                <rect key="frame" x="96.5" y="104" width="181" height="367"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Feh-RJ-qTi" secondAttribute="height" multiplier="47:95" id="Ehd-gx-qnh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bFM-ZP-hJh" firstAttribute="leading" secondItem="B2z-us-AAE" secondAttribute="leadingMargin" constant="8" id="1Im-vg-T3H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bFM-ZP-hJh" secondAttribute="trailing" constant="8" id="3Ix-kr-bVD"/>
+                            <constraint firstItem="VQE-f3-dsL" firstAttribute="top" secondItem="r1o-CH-28W" secondAttribute="bottom" constant="20" id="AgE-vs-8ug"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kk3-vc-V4F" secondAttribute="trailing" constant="4" id="AhD-OG-TJi"/>
+                            <constraint firstItem="Kk3-vc-V4F" firstAttribute="leading" secondItem="B2z-us-AAE" secondAttribute="leadingMargin" constant="4" id="E8x-cc-AjA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r1o-CH-28W" secondAttribute="trailing" constant="100" id="IfN-op-AL1"/>
+                            <constraint firstItem="bFM-ZP-hJh" firstAttribute="top" secondItem="Feh-RJ-qTi" secondAttribute="bottom" constant="30" id="ME3-b6-P6A"/>
+                            <constraint firstItem="Feh-RJ-qTi" firstAttribute="centerX" secondItem="B2z-us-AAE" secondAttribute="centerX" id="MIZ-oL-Jge"/>
+                            <constraint firstItem="r1o-CH-28W" firstAttribute="top" secondItem="bFM-ZP-hJh" secondAttribute="bottom" constant="28" id="OCG-gs-ZNl"/>
+                            <constraint firstItem="Feh-RJ-qTi" firstAttribute="top" secondItem="Kk3-vc-V4F" secondAttribute="bottom" constant="20" id="StB-0D-ljS"/>
+                            <constraint firstItem="Kk3-vc-V4F" firstAttribute="top" secondItem="aDb-xk-RwT" secondAttribute="bottom" constant="12" id="jLt-WE-VjO"/>
+                            <constraint firstItem="r1o-CH-28W" firstAttribute="leading" secondItem="B2z-us-AAE" secondAttribute="leadingMargin" constant="100" id="rpp-WT-ajh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yea-os-0JB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="-653"/>
+            <point key="canvasLocation" x="1168.8" y="-653.52323838080963"/>
         </scene>
         <!--Onboarding Page Three-->
         <scene sceneID="a78-og-PvO">
@@ -1030,6 +1080,7 @@
         <image name="google_calendar_icon" width="200" height="200"/>
         <image name="icloud_icon" width="200" height="200"/>
         <image name="ios_calendar_icon" width="200" height="200"/>
+        <image name="iphone-wireframe" width="740" height="1520"/>
         <image name="outlook_icon" width="200" height="200"/>
         <image name="submit-confirmation" width="70" height="70"/>
         <image name="yahoo_icon" width="200" height="200"/>
