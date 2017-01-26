@@ -1091,6 +1091,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gzb-tQ-aco">
                                         <rect key="frame" x="214" y="0.0" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -1126,6 +1127,9 @@
                             <constraint firstItem="5Gd-s9-mOY" firstAttribute="leading" secondItem="IXM-4y-d9X" secondAttribute="leadingMargin" constant="40" id="pfe-ng-lgS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="summaryCard" destination="RjY-7g-hg7" id="KbX-0l-WBz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGH-jB-tPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
