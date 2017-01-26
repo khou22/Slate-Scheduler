@@ -12,6 +12,7 @@ import UIKit
 class OnboardingPageTwo: UIViewController {
     
     override func viewDidLoad() {
+        onboardingBackground() // Setup background gradient
         print("Onboarding page two loaded")
     }
     

@@ -13,6 +13,6 @@ class OnboardingPageThree: UIViewController {
     override func viewDidLoad() {
         print("Onboarding page three loaded")
         
-        view.backgroundColor = Colors.green
+        onboardingBackground() // Setup background gradient
     }
 }

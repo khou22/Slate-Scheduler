@@ -19,6 +19,8 @@ class OnboardingPager: UIPageViewController {
         
         // Set background color
         self.view.backgroundColor = Colors.black
+        
+        onboardingBackground()
     }
     
     func getPageOne() -> OnboardingPageOne {
@@ -67,12 +69,11 @@ extension OnboardingPager: UIPageViewControllerDataSource {
         }
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        // The number of dots in the page control dots
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return 3
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         // On the first dot when you first load the OnboardingPager
         // Swift automatically handles switching pages and updating the page control dots
         // Updates when setViewControllers is called

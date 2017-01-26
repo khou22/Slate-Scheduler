@@ -26,6 +26,11 @@ struct Colors {
     static let clear                        = UIColor.clear
 }
 
+struct Gradients {
+    // Project gradients
+    
+}
+
 struct Files {
     // Useful for movie files
 }
@@ -81,6 +86,8 @@ struct Constants {
 struct Keys {
     // NSUserDefault keys:
     static let categoryData                 = "categoryData"
+    static let completedOnboarding          = "completedOnboarding"
+    static let eventsWithCategory           = "eventsWithCategoryLabel"
     
     // Other keys
     static let categoryName                 = "categoryName"

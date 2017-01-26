@@ -16,6 +16,7 @@
 		2757074B1E2733B3002A3060 /* CategoryEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074A1E2733B3002A3060 /* CategoryEditCell.swift */; };
 		2757074D1E27340A002A3060 /* CategoryEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074C1E27340A002A3060 /* CategoryEditing.swift */; };
 		2757074F1E2741E2002A3060 /* CategoryDetailsEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074E1E2741E2002A3060 /* CategoryDetailsEdit.swift */; };
+		2770E12D1E3A8876003AA5F4 /* OnboardingPageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770E12C1E3A8876003AA5F4 /* OnboardingPageExtensions.swift */; };
 		279022631E209BF10062FFE8 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279022621E209BF10062FFE8 /* EventListCell.swift */; };
 		279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */; };
 		27BA98041E2C937B0055AA54 /* NameLocationFrequencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */; };
@@ -65,6 +66,7 @@
 		2757074A1E2733B3002A3060 /* CategoryEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEditCell.swift; sourceTree = "<group>"; };
 		2757074C1E27340A002A3060 /* CategoryEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEditing.swift; sourceTree = "<group>"; };
 		2757074E1E2741E2002A3060 /* CategoryDetailsEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailsEdit.swift; sourceTree = "<group>"; };
+		2770E12C1E3A8876003AA5F4 /* OnboardingPageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageExtensions.swift; sourceTree = "<group>"; };
 		279022621E209BF10062FFE8 /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameLocationFrequencyCell.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */,
 				27DC4E7D1E2061B700F510D3 /* DateExtension.swift */,
 				27DC4E7F1E20758500F510D3 /* CustomTextField.swift */,
+				2770E12C1E3A8876003AA5F4 /* OnboardingPageExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				279022631E209BF10062FFE8 /* EventListCell.swift in Sources */,
 				27CBC5021E35C4FF001CE9DA /* OnboardingPageOne.swift in Sources */,
 				27190C5B1E1F4147002D3CB4 /* QuickDayPickerCell.swift in Sources */,
+				2770E12D1E3A8876003AA5F4 /* OnboardingPageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

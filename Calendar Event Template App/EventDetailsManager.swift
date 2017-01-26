@@ -94,7 +94,6 @@ extension EventDetails {
         let defaultAlert: EKAlarm = EKAlarm(relativeOffset: secondsBefore) // Set alert before event time
         event.addAlarm(defaultAlert) // Add default alert
         
-        
         self.calendarManager.saveEvent(event: event) // Save event
     }
     

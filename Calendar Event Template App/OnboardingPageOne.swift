@@ -12,9 +12,7 @@ import UIKit
 class OnboardingPageOne: UIViewController {
     
     override func viewDidLoad() {
-        print("Onboarding page one loaded")
-        
-        view.backgroundColor = Colors.blue
+        onboardingBackground() // Setup background gradient
         
         let doubleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.skipOnboarding)) // Initalize and set handler
         doubleTap.numberOfTapsRequired = 2 // Double tap
