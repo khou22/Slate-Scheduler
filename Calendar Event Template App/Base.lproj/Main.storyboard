@@ -884,16 +884,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ios_calendar_icon" translatesAutoresizingMaskIntoConstraints="NO" id="At9-aO-Qaa">
-                                <rect key="frame" x="282" y="107" width="55" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar-icon" translatesAutoresizingMaskIntoConstraints="NO" id="N6X-hK-mrF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-icon" translatesAutoresizingMaskIntoConstraints="NO" id="N6X-hK-mrF">
                                 <rect key="frame" x="117" y="194" width="140" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="6ci-YA-S6z"/>
+                                    <constraint firstAttribute="height" constant="160" id="7tn-cp-Oxe"/>
+                                </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_calendar_icon" translatesAutoresizingMaskIntoConstraints="NO" id="At9-aO-Qaa">
+                                <rect key="frame" x="294" y="134" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="uk4-0C-jnM"/>
+                                    <constraint firstAttribute="width" constant="55" id="zEA-ZX-ZXt"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outlook_icon" translatesAutoresizingMaskIntoConstraints="NO" id="0R9-Jk-Rqa">
+                                <rect key="frame" x="196" y="41" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="czx-oy-NaM"/>
+                                    <constraint firstAttribute="width" constant="55" id="k5K-AF-cIM"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yahoo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="gJu-k7-dXQ">
+                                <rect key="frame" x="31" y="109" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="ZAf-cb-hfj"/>
+                                    <constraint firstAttribute="height" constant="55" id="eaT-C0-b01"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icloud_icon" translatesAutoresizingMaskIntoConstraints="NO" id="DWU-rQ-uPV">
+                                <rect key="frame" x="67" y="400" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="QsR-3h-2d5"/>
+                                    <constraint firstAttribute="height" constant="55" id="Rzu-Cl-vtA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google_calendar_icon" translatesAutoresizingMaskIntoConstraints="NO" id="CnD-JX-zP4">
+                                <rect key="frame" x="252" y="429" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="45h-eo-OUp"/>
+                                    <constraint firstAttribute="height" constant="55" id="q14-d9-W5q"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quickly Add Calendar Events" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hk7-ig-NYo">
+                                <rect key="frame" x="26" y="557" width="323" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="B2V-Vp-sYT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add calendar events with less taps than any calendar app — say goobye to scroll wheels" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBw-h0-a75">
+                                <rect key="frame" x="31" y="586" width="313" height="61"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CnD-JX-zP4" firstAttribute="leading" secondItem="N6X-hK-mrF" secondAttribute="trailing" constant="-5" id="2ba-oH-UKl"/>
+                            <constraint firstItem="QBw-h0-a75" firstAttribute="leading" secondItem="Lfc-cT-HJG" secondAttribute="leadingMargin" constant="15" id="2jy-0T-Ixv"/>
+                            <constraint firstItem="N6X-hK-mrF" firstAttribute="top" secondItem="At9-aO-Qaa" secondAttribute="bottom" constant="5" id="4EJ-Uf-wee"/>
+                            <constraint firstItem="0R9-Jk-Rqa" firstAttribute="trailing" secondItem="N6X-hK-mrF" secondAttribute="trailing" constant="-6" id="6ZO-VC-KgB"/>
+                            <constraint firstItem="DWU-rQ-uPV" firstAttribute="top" secondItem="N6X-hK-mrF" secondAttribute="bottom" constant="46" id="9Y6-pC-jR4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hk7-ig-NYo" secondAttribute="trailing" constant="10" id="DKj-pp-MWW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QBw-h0-a75" secondAttribute="trailing" constant="15" id="IlJ-Vw-53W"/>
+                            <constraint firstItem="Azc-1q-ue8" firstAttribute="top" secondItem="QBw-h0-a75" secondAttribute="bottom" constant="20" id="TOm-eB-uSI"/>
+                            <constraint firstItem="N6X-hK-mrF" firstAttribute="top" secondItem="gJu-k7-dXQ" secondAttribute="bottom" constant="30" id="Tl5-G0-Rsd"/>
+                            <constraint firstItem="CnD-JX-zP4" firstAttribute="top" secondItem="N6X-hK-mrF" secondAttribute="bottom" constant="75" id="UWc-Zf-EKD"/>
+                            <constraint firstItem="N6X-hK-mrF" firstAttribute="top" secondItem="0R9-Jk-Rqa" secondAttribute="bottom" constant="98" id="Wqj-Uo-TTc"/>
+                            <constraint firstItem="N6X-hK-mrF" firstAttribute="centerX" secondItem="Lfc-cT-HJG" secondAttribute="centerX" id="bWn-wh-E2S"/>
+                            <constraint firstItem="N6X-hK-mrF" firstAttribute="leading" secondItem="DWU-rQ-uPV" secondAttribute="trailing" constant="-5" id="btN-Sc-x6g"/>
+                            <constraint firstItem="QBw-h0-a75" firstAttribute="top" secondItem="hk7-ig-NYo" secondAttribute="bottom" constant="8" id="hb8-Y2-5rk"/>
+                            <constraint firstItem="hk7-ig-NYo" firstAttribute="leading" secondItem="Lfc-cT-HJG" secondAttribute="leadingMargin" constant="10" id="jJm-wp-1AX"/>
+                            <constraint firstItem="At9-aO-Qaa" firstAttribute="leading" secondItem="N6X-hK-mrF" secondAttribute="trailing" constant="37" id="n4h-RC-tAg"/>
+                            <constraint firstItem="N6X-hK-mrF" firstAttribute="leading" secondItem="gJu-k7-dXQ" secondAttribute="trailing" constant="31" id="w1U-61-GKg"/>
+                            <constraint firstItem="N6X-hK-mrF" firstAttribute="centerY" secondItem="Lfc-cT-HJG" secondAttribute="centerY" constant="-60" id="xat-B8-heR"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="mvn-QH-rzQ" kind="show" identifier="SkipOnboarding" id="3rR-zz-ire"/>
@@ -901,7 +970,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbC-kU-JXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="446" y="-652"/>
+            <point key="canvasLocation" x="445.60000000000002" y="-652.62368815592208"/>
         </scene>
         <!--Onboarding Page Two-->
         <scene sceneID="5o1-YE-SbW">
@@ -958,8 +1027,12 @@
     </scenes>
     <resources>
         <image name="calendar-icon" width="600" height="660"/>
+        <image name="google_calendar_icon" width="200" height="200"/>
+        <image name="icloud_icon" width="200" height="200"/>
         <image name="ios_calendar_icon" width="200" height="200"/>
+        <image name="outlook_icon" width="200" height="200"/>
         <image name="submit-confirmation" width="70" height="70"/>
+        <image name="yahoo_icon" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nPH-XH-X7k"/>
