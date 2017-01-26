@@ -1019,9 +1019,9 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-permission-alert" translatesAutoresizingMaskIntoConstraints="NO" id="bKu-9L-Ygi">
-                                <rect key="frame" x="94" y="247" width="186" height="74"/>
+                                <rect key="frame" x="114" y="219" width="146" height="83"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="Zdo-Wx-e9g"/>
+                                    <constraint firstAttribute="width" secondItem="bKu-9L-Ygi" secondAttribute="height" multiplier="146:83" id="czl-6l-xiL"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -1037,11 +1037,11 @@
                             <constraint firstItem="Feh-RJ-qTi" firstAttribute="centerX" secondItem="B2z-us-AAE" secondAttribute="centerX" id="MIZ-oL-Jge"/>
                             <constraint firstItem="r1o-CH-28W" firstAttribute="top" secondItem="bFM-ZP-hJh" secondAttribute="bottom" constant="20" id="OCG-gs-ZNl"/>
                             <constraint firstItem="Feh-RJ-qTi" firstAttribute="top" secondItem="Kk3-vc-V4F" secondAttribute="bottom" constant="20" id="StB-0D-ljS"/>
-                            <constraint firstItem="Feh-RJ-qTi" firstAttribute="top" secondItem="bKu-9L-Ygi" secondAttribute="bottom" constant="-217" id="beN-6r-Zwe"/>
-                            <constraint firstItem="bKu-9L-Ygi" firstAttribute="trailing" secondItem="Feh-RJ-qTi" secondAttribute="trailing" id="cQP-lP-EsB"/>
+                            <constraint firstItem="bKu-9L-Ygi" firstAttribute="trailing" secondItem="Feh-RJ-qTi" secondAttribute="trailing" constant="-20" id="cQP-lP-EsB"/>
                             <constraint firstItem="Kk3-vc-V4F" firstAttribute="top" secondItem="aDb-xk-RwT" secondAttribute="bottom" constant="12" id="jLt-WE-VjO"/>
-                            <constraint firstItem="bKu-9L-Ygi" firstAttribute="leading" secondItem="Feh-RJ-qTi" secondAttribute="leading" id="pS2-qV-gka"/>
+                            <constraint firstItem="bKu-9L-Ygi" firstAttribute="leading" secondItem="Feh-RJ-qTi" secondAttribute="leading" constant="20" id="pS2-qV-gka"/>
                             <constraint firstItem="r1o-CH-28W" firstAttribute="leading" secondItem="B2z-us-AAE" secondAttribute="leadingMargin" constant="100" id="rpp-WT-ajh"/>
+                            <constraint firstItem="bKu-9L-Ygi" firstAttribute="top" secondItem="Feh-RJ-qTi" secondAttribute="top" constant="115" id="vg4-xS-wtb"/>
                         </constraints>
                     </view>
                 </viewController>
