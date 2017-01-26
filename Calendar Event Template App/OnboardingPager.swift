@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+struct ScrollData {
+    // Global variable for percentage scrolled
+    static var value: Float = 0.0
+}
+
 class OnboardingPager: UIPageViewController {
     
     override func viewDidLoad() {
@@ -21,6 +26,15 @@ class OnboardingPager: UIPageViewController {
         self.view.backgroundColor = Colors.black
         
         onboardingBackground()
+        
+        // Setup scrolling progress delegate
+        // Scrolling progress - source: http://stackoverflow.com/questions/22577929/progress-of-uipageviewcontroller
+        for subView in view.subviews {
+            if subView is UIScrollView {
+                (subView as! UIScrollView).delegate = self
+                // This allows panning recognition
+            }
+        }
     }
     
     func getPageOne() -> OnboardingPageOne {
@@ -78,5 +92,15 @@ extension OnboardingPager: UIPageViewControllerDataSource {
         // Swift automatically handles switching pages and updating the page control dots
         // Updates when setViewControllers is called
         return 0
+    }
+}
+
+// Track the percentage of the scroll complete
+extension OnboardingPager: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let point = scrollView.contentOffset // Get pixels offset by scroll
+        let percentComplete: CGFloat = fabs(point.x - view.frame.size.width)/view.frame.size.width // Calc percentage complete
+        print("Percentage scrolled \(percentComplete)") // Debugging
+        ScrollData.value = Float(percentComplete) // Set global
     }
 }
