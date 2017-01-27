@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+struct PageOneData {
+    @available(iOS 10.0, *)
+    static var scrollingAnimations: UIViewPropertyAnimator = UIViewPropertyAnimator(duration: 2.0, timingParameters: UISpringTimingParameters(mass: 2.5, stiffness: 70, damping: 55, initialVelocity: CGVector(dx: 0, dy: 0)))
+}
+
 class OnboardingPageOne: UIViewController {
     
     @IBOutlet weak var outlookIcon: UIImageView!
@@ -23,6 +28,7 @@ class OnboardingPageOne: UIViewController {
         onboardingBackground() // Setup background gradient
         
         self.styleIcons() // Add styling to the icons
+        self.initializeScrollAnimations() // Initialize interactive scrolling animations
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +46,26 @@ class OnboardingPageOne: UIViewController {
     func updateScrollPercentage() {
         let percentage = CGFloat(ScrollData.value)
 //        print("Page one registered scroll percentage: \(percentage)")
+        
+        // Update animation percentage complete
+        if #available(iOS 10.0, *) {
+            PageOneData.scrollingAnimations.fractionComplete = percentage * 0.95
+        }
+    }
+    
+    func initializeScrollAnimations() {
+        if #available(iOS 10.0, *) {
+            PageOneData.scrollingAnimations.addAnimations({
+                // Fast moving icon translation
+                self.outlookIcon.transform = CGAffineTransform(translationX: -350, y: 0)
+                self.iOSCalendarIcon.transform = CGAffineTransform(translationX: -850, y: 0)
+                self.yahooIcon.transform = CGAffineTransform(translationX: -450, y: 0)
+                self.iCloudIcon.transform = CGAffineTransform(translationX: -250, y: 0)
+                self.googleCalendarIcon.transform = CGAffineTransform(translationX: -600, y: 0)
+            })
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     func resetAnimations() {

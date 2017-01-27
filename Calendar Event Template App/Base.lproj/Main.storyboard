@@ -899,7 +899,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outlook_icon" translatesAutoresizingMaskIntoConstraints="NO" id="0R9-Jk-Rqa">
-                                <rect key="frame" x="196" y="53" width="55" height="55"/>
+                                <rect key="frame" x="196" y="63" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="czx-oy-NaM"/>
                                     <constraint firstAttribute="width" constant="55" id="k5K-AF-cIM"/>
@@ -954,7 +954,7 @@
                             <constraint firstItem="Azc-1q-ue8" firstAttribute="top" secondItem="QBw-h0-a75" secondAttribute="bottom" constant="20" id="TOm-eB-uSI"/>
                             <constraint firstItem="N6X-hK-mrF" firstAttribute="top" secondItem="gJu-k7-dXQ" secondAttribute="bottom" constant="24" id="Tl5-G0-Rsd"/>
                             <constraint firstItem="CnD-JX-zP4" firstAttribute="top" secondItem="N6X-hK-mrF" secondAttribute="bottom" constant="67" id="UWc-Zf-EKD"/>
-                            <constraint firstItem="N6X-hK-mrF" firstAttribute="top" secondItem="0R9-Jk-Rqa" secondAttribute="bottom" constant="86" id="Wqj-Uo-TTc"/>
+                            <constraint firstItem="N6X-hK-mrF" firstAttribute="top" secondItem="0R9-Jk-Rqa" secondAttribute="bottom" constant="76" id="Wqj-Uo-TTc"/>
                             <constraint firstItem="N6X-hK-mrF" firstAttribute="centerX" secondItem="Lfc-cT-HJG" secondAttribute="centerX" id="bWn-wh-E2S"/>
                             <constraint firstItem="N6X-hK-mrF" firstAttribute="leading" secondItem="DWU-rQ-uPV" secondAttribute="trailing" constant="5" id="btN-Sc-x6g"/>
                             <constraint firstItem="QBw-h0-a75" firstAttribute="top" secondItem="hk7-ig-NYo" secondAttribute="bottom" constant="10" id="hb8-Y2-5rk"/>
