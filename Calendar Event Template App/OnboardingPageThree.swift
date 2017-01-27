@@ -58,7 +58,7 @@ class OnboardingPageThree: UIViewController {
     
     func animateSummaryCards() {
         // Animate positions
-        UIView.animate(withDuration: 1.5, delay: 0.25, usingSpringWithDamping: 1.0, initialSpringVelocity: 3.0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1.2, delay: 0.05, usingSpringWithDamping: 1.0, initialSpringVelocity: 15.0, options: .curveEaseOut, animations: {
             // Copy and create summary cards from original
             self.summaryCardBottom.frame = self.summaryCard.frame.applying(CGAffineTransform(translationX: -10.0, y: 34.0)) // Update frame
             let transformBottom: CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(Angles.radians(12.0))) // Rotate rights
@@ -80,6 +80,7 @@ class OnboardingPageThree: UIViewController {
         self.summaryCardBottom.transform = CGAffineTransform.identity
         self.summaryCardTop.transform = CGAffineTransform.identity
         
+        // Reset frame to main frame
         self.summaryCardBottom.frame = self.summaryCard.frame
         self.summaryCardTop.frame = self.summaryCard.frame
         

@@ -49,7 +49,7 @@ struct Storyboard {
     // Onboarding identifiers
     static let onboardingPageOne            = "OnboardingPageOne"
     static let onboardingPageTwo            = "OnboardingPageTwo"
-    static let onboardingPageThree            = "OnboardingPageThree"
+    static let onboardingPageThree          = "OnboardingPageThree"
 }
 
 struct CellIdentifiers {

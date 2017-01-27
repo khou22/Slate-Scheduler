@@ -965,6 +965,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="googleCalendarIcon" destination="CnD-JX-zP4" id="Esj-Rk-G8N"/>
+                        <outlet property="iCloudIcon" destination="DWU-rQ-uPV" id="oJa-55-3CF"/>
+                        <outlet property="iOSCalendarIcon" destination="At9-aO-Qaa" id="fUr-of-M4z"/>
+                        <outlet property="outlookIcon" destination="0R9-Jk-Rqa" id="iP5-sr-fXS"/>
+                        <outlet property="yahooIcon" destination="gJu-k7-dXQ" id="hp1-bC-bM7"/>
                         <segue destination="mvn-QH-rzQ" kind="show" identifier="SkipOnboarding" id="3rR-zz-ire"/>
                     </connections>
                 </viewController>
@@ -1198,6 +1203,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nPH-XH-X7k"/>
-        <segue reference="cM2-aC-gnK"/>
+        <segue reference="3rR-zz-ire"/>
     </inferredMetricsTieBreakers>
 </document>
