@@ -15,12 +15,14 @@ class CalendarManager {
     let eventStore: EKEventStore = EKEventStore()
     
     // Request access to read and add calendar events
-    func requestAccess() {
+    func requestAccess(completion: @escaping (_ success: Bool) -> Void) {
         self.eventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (error != nil) {
                 print("Error \(error)")
+                completion(false)
             } else {
-                print("Granted access \(granted)")
+//                print("Granted access \(granted)")
+                completion(true)
             }
         })
     }
