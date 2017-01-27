@@ -16,6 +16,8 @@ class OnboardingPageThree: UIViewController {
     var summaryCardBottom: UIImageView = UIImageView() // Bottom summary card (rotated right)
     var summaryCardTop: UIImageView = UIImageView() // Top summary card (rotated left)
     
+    var cardsAnimated: Bool = false // If cards are in the animated position
+    
     override func viewDidLoad() {
         onboardingBackground() // Setup background gradient
         setupSummaryCards() // Create the other two summary cards
@@ -25,27 +27,63 @@ class OnboardingPageThree: UIViewController {
         ScrollData.setCurrentPage(index: 3)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if !self.cardsAnimated {
+            self.animateSummaryCards() // Start animations
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.resetSummaryCardAnimation() // Reset animations
+    }
+    
     func updateScrollPercentage() {
         let percentage = CGFloat(ScrollData.value)
 //        print("Page three registered scroll percentage: \(percentage)")
     }
     
     func setupSummaryCards() {
-        // Copy and create summary cards from original
-        self.summaryCardBottom = UIImageView(frame: self.summaryCard.frame.applying(CGAffineTransform(translationX: -10.0, y: 34.0))) // Bottom summary card with transform
+        // Superimpose on summary card
+        self.summaryCardBottom = UIImageView(frame: self.summaryCard.frame)
+        self.summaryCardTop = UIImageView(frame: self.summaryCard.frame)
+        
+        // Set image
         self.summaryCardBottom.image = self.summaryCard.image // Add image
-        let transformBottom: CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(Angles.radians(12.0))) // Rotate rights
-        transformBottom.translatedBy(x: -2.0, y: -10.0) // Shift left and down
-        self.summaryCardBottom.transform = transformBottom // Apply transformation
-        
-        self.summaryCardTop = UIImageView(frame: self.summaryCard.frame.applying(CGAffineTransform(translationX: 3.0, y: -45.0))) // Top summary card with transform
         self.summaryCardTop.image = self.summaryCard.image // Add image
-        let transformTop: CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(Angles.radians(-12.0))) // Rotate left
-        transformTop.translatedBy(x: 2.0, y: 50.0) // Shift right and up
-        self.summaryCardTop.transform = transformTop // Apply transformation
         
+        // Insert views
         view.insertSubview(self.summaryCardBottom, belowSubview: self.summaryCard) // Insert below original
         view.insertSubview(self.summaryCardTop, aboveSubview: self.summaryCard) // Insert above original
+    }
+    
+    func animateSummaryCards() {
+        // Animate positions
+        UIView.animate(withDuration: 1.5, delay: 0.25, usingSpringWithDamping: 1.0, initialSpringVelocity: 3.0, options: .curveEaseOut, animations: {
+            // Copy and create summary cards from original
+            self.summaryCardBottom.frame = self.summaryCard.frame.applying(CGAffineTransform(translationX: -10.0, y: 34.0)) // Update frame
+            let transformBottom: CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(Angles.radians(12.0))) // Rotate rights
+            
+            self.summaryCardTop.frame = self.summaryCard.frame.applying(CGAffineTransform(translationX: 3.0, y: -45.0)) // Top summary card with transform
+            let transformTop: CGAffineTransform = CGAffineTransform(rotationAngle: CGFloat(Angles.radians(-12.0))) // Rotate left
+//            transformTop.translatedBy(x: 2.0, y: 50.0) // Shift right and up
+
+            self.summaryCardBottom.transform = transformBottom // Apply transformation
+            self.summaryCardTop.transform = transformTop // Apply transformation
+        }, completion: { (completion) in
+            print("Cards finished animating")
+            self.cardsAnimated = true // Positions in animated state
+        })
+    }
+    
+    func resetSummaryCardAnimation() {
+        // Reset the translations for summary cards
+        self.summaryCardBottom.transform = CGAffineTransform.identity
+        self.summaryCardTop.transform = CGAffineTransform.identity
+        
+        self.summaryCardBottom.frame = self.summaryCard.frame
+        self.summaryCardTop.frame = self.summaryCard.frame
+        
+        self.cardsAnimated = false // Positions reset
     }
     
     @IBAction func getStarted(_ sender: Any) {
