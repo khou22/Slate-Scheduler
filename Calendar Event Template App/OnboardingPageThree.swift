@@ -47,4 +47,8 @@ class OnboardingPageThree: UIViewController {
         view.insertSubview(self.summaryCardBottom, belowSubview: self.summaryCard) // Insert below original
         view.insertSubview(self.summaryCardTop, aboveSubview: self.summaryCard) // Insert above original
     }
+    
+    @IBAction func getStarted(_ sender: Any) {
+        self.performSegue(withIdentifier: SegueIdentifiers.completeOnboarding, sender: self)
+    }
 }

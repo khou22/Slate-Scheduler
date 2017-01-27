@@ -21,7 +21,7 @@ class OnboardingPageTwo: UIViewController {
     
     override func viewDidLoad() {
         onboardingBackground() // Setup background gradient
-        print("Onboarding page two loaded")
+//        print("Onboarding page two loaded")
         
         self.permissionGranted.layer.opacity = 0.0 // Start invisible
     }
@@ -42,7 +42,7 @@ class OnboardingPageTwo: UIViewController {
             } // Get url location for Settings app
             if UIApplication.shared.canOpenURL(settingsUrl) {
                 UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                    print("Settings opened: \(success)") // Prints true
+//                    print("Settings opened: \(success)") // Prints true
                 })
             }
             return // Terminate function
@@ -61,15 +61,20 @@ class OnboardingPageTwo: UIViewController {
             if authorized { // If authorized the calendar
                 print("Success")
                 DispatchQueue.main.async {
-                    self.activityIndicator.layer.opacity = 0.0 // Hide spinner
-                    self.permissionGranted.layer.opacity = 1.0 // Show permission granted checkmark
+                    UIView.animate(withDuration: 0.25, animations: {
+                        self.activityIndicator.layer.opacity = 0.0 // Hide spinner
+                        self.permissionGranted.layer.opacity = 1.0 // Show permission granted checkmark
+                    })
                 }
             } else { // If didn't authorize calendar
                 DispatchQueue.main.async {
-                    self.activityIndicator.layer.opacity = 0.0 // Hide spinner
-                    self.lowerLabel.text = "Please enable calendar access in the Settings app. Without it this app cannot do its job."
-                    self.failedAccessGrant = true // User denied access
-                    self.calendarPermissionButton.isHidden = false
+                    UIView.animate(withDuration: 0.25, animations: {
+                        self.activityIndicator.layer.opacity = 0.0 // Hide spinner
+                        self.lowerLabel.text = "Please enable calendar access in the Settings app. Without it this app cannot do its job."
+                        self.calendarPermissionButton.setTitle("Go to Settings", for: .normal)
+                        self.failedAccessGrant = true // User denied access
+                        self.calendarPermissionButton.isHidden = false
+                    })
                 }
             }
         })

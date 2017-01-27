@@ -1023,7 +1023,7 @@
                                 <color key="color" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1o-CH-28W">
-                                <rect key="frame" x="116" y="602" width="143" height="45"/>
+                                <rect key="frame" x="96" y="602" width="183" height="45"/>
                                 <color key="backgroundColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ESU-wH-fFm"/>
@@ -1051,7 +1051,7 @@
                             <constraint firstItem="VQE-f3-dsL" firstAttribute="top" secondItem="r1o-CH-28W" secondAttribute="bottom" constant="20" id="AgE-vs-8ug"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kk3-vc-V4F" secondAttribute="trailing" constant="4" id="AhD-OG-TJi"/>
                             <constraint firstItem="Kk3-vc-V4F" firstAttribute="leading" secondItem="B2z-us-AAE" secondAttribute="leadingMargin" constant="4" id="E8x-cc-AjA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="r1o-CH-28W" secondAttribute="trailing" constant="100" id="IfN-op-AL1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r1o-CH-28W" secondAttribute="trailing" constant="80" id="IfN-op-AL1"/>
                             <constraint firstItem="bFM-ZP-hJh" firstAttribute="top" secondItem="Feh-RJ-qTi" secondAttribute="bottom" constant="30" id="ME3-b6-P6A"/>
                             <constraint firstItem="Feh-RJ-qTi" firstAttribute="centerX" secondItem="B2z-us-AAE" secondAttribute="centerX" id="MIZ-oL-Jge"/>
                             <constraint firstItem="zzu-vc-t1V" firstAttribute="centerX" secondItem="B2z-us-AAE" secondAttribute="centerX" id="NTm-4e-WMk"/>
@@ -1061,7 +1061,7 @@
                             <constraint firstItem="xcV-CV-1eB" firstAttribute="bottom" secondItem="r1o-CH-28W" secondAttribute="bottom" constant="2" id="hMO-id-M59"/>
                             <constraint firstItem="Kk3-vc-V4F" firstAttribute="top" secondItem="aDb-xk-RwT" secondAttribute="bottom" constant="16" id="jLt-WE-VjO"/>
                             <constraint firstItem="bKu-9L-Ygi" firstAttribute="leading" secondItem="Feh-RJ-qTi" secondAttribute="leading" constant="20" id="pS2-qV-gka"/>
-                            <constraint firstItem="r1o-CH-28W" firstAttribute="leading" secondItem="B2z-us-AAE" secondAttribute="leadingMargin" constant="100" id="rpp-WT-ajh"/>
+                            <constraint firstItem="r1o-CH-28W" firstAttribute="leading" secondItem="B2z-us-AAE" secondAttribute="leadingMargin" constant="80" id="rpp-WT-ajh"/>
                             <constraint firstItem="bKu-9L-Ygi" firstAttribute="top" secondItem="Feh-RJ-qTi" secondAttribute="top" constant="115" id="vg4-xS-wtb"/>
                             <constraint firstItem="zzu-vc-t1V" firstAttribute="centerY" secondItem="xcV-CV-1eB" secondAttribute="centerY" id="vtU-Wi-kyT"/>
                         </constraints>
@@ -1098,6 +1098,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Get Started"/>
+                                <connections>
+                                    <action selector="getStarted:" destination="cne-eY-2Tp" eventType="touchUpInside" id="ZoV-HO-aSM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’re good to go!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="E8R-Vt-d5B">
                                 <rect key="frame" x="20" y="36" width="335" height="42"/>
@@ -1157,6 +1160,7 @@
                     </view>
                     <connections>
                         <outlet property="summaryCard" destination="RjY-7g-hg7" id="KbX-0l-WBz"/>
+                        <segue destination="mvn-QH-rzQ" kind="show" identifier="CompleteOnboarding" id="cM2-aC-gnK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGH-jB-tPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1194,5 +1198,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nPH-XH-X7k"/>
+        <segue reference="cM2-aC-gnK"/>
     </inferredMetricsTieBreakers>
 </document>
