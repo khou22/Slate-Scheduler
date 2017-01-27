@@ -12,6 +12,15 @@ import UIKit
 struct ScrollData {
     // Global variable for percentage scrolled
     static var value: Float = 0.0
+    
+    // Store which page
+    static var previousPage: Int = 0
+    static var currentPage: Int = 0
+    static func setCurrentPage(index: Int) {
+        previousPage = currentPage
+        print("Moving from page \(previousPage) to page \(index)")
+        currentPage = index
+    }
 }
 
 class OnboardingPager: UIPageViewController {
@@ -100,7 +109,22 @@ extension OnboardingPager: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let point = scrollView.contentOffset // Get pixels offset by scroll
         let percentComplete: CGFloat = fabs(point.x - view.frame.size.width)/view.frame.size.width // Calc percentage complete
-        print("Percentage scrolled \(percentComplete)") // Debugging
+//        print("Percentage scrolled \(percentComplete)") // Debugging
         ScrollData.value = Float(percentComplete) // Set global
+        
+        // Update within the view controllers
+        // To prevent glitches, lag, memory management, only use one at a time
+        // Use scroll animations for entrance animations only
+        switch ScrollData.previousPage {
+        case 1:
+            getPageOne().updateScrollPercentage()
+        case 2:
+            getPageTwo().updateScrollPercentage()
+        case 3:
+            getPageThree().updateScrollPercentage()
+        default:
+            break
+        }
+
     }
 }

@@ -21,6 +21,15 @@ class OnboardingPageThree: UIViewController {
         setupSummaryCards() // Create the other two summary cards
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        ScrollData.setCurrentPage(index: 3)
+    }
+    
+    func updateScrollPercentage() {
+        let percentage = CGFloat(ScrollData.value)
+//        print("Page three registered scroll percentage: \(percentage)")
+    }
+    
     func setupSummaryCards() {
         // Copy and create summary cards from original
         self.summaryCardBottom = UIImageView(frame: self.summaryCard.frame.applying(CGAffineTransform(translationX: -10.0, y: 34.0))) // Bottom summary card with transform

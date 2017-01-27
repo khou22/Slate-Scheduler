@@ -16,4 +16,12 @@ class OnboardingPageTwo: UIViewController {
         print("Onboarding page two loaded")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        ScrollData.setCurrentPage(index: 2)
+    }
+    
+    func updateScrollPercentage() {
+        let percentage = CGFloat(ScrollData.value)
+//        print("Page two registered scroll percentage: \(percentage)")
+    }
 }
