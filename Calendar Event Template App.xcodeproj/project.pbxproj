@@ -18,6 +18,11 @@
 		2757074F1E2741E2002A3060 /* CategoryDetailsEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074E1E2741E2002A3060 /* CategoryDetailsEdit.swift */; };
 		2770E12D1E3A8876003AA5F4 /* OnboardingPageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770E12C1E3A8876003AA5F4 /* OnboardingPageExtensions.swift */; };
 		2770E12F1E3AAB80003AA5F4 /* AngleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */; };
+		2770E1741E3C6B00003AA5F4 /* CategoryModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2770E1721E3C6B00003AA5F4 /* CategoryModel.xcdatamodeld */; };
+		2770E1761E3C6B6D003AA5F4 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770E1751E3C6B6D003AA5F4 /* CoreDataManager.swift */; };
+		2770E1851E3C6F30003AA5F4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2770E1841E3C6F30003AA5F4 /* CoreData.framework */; };
+		2783D4871E3C70B100024AAC /* CategoryEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2783D4851E3C70B100024AAC /* CategoryEntry+CoreDataClass.swift */; };
+		2783D4881E3C70B100024AAC /* CategoryEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2783D4861E3C70B100024AAC /* CategoryEntry+CoreDataProperties.swift */; };
 		279022631E209BF10062FFE8 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279022621E209BF10062FFE8 /* EventListCell.swift */; };
 		279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */; };
 		27BA98041E2C937B0055AA54 /* NameLocationFrequencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */; };
@@ -69,6 +74,11 @@
 		2757074E1E2741E2002A3060 /* CategoryDetailsEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailsEdit.swift; sourceTree = "<group>"; };
 		2770E12C1E3A8876003AA5F4 /* OnboardingPageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageExtensions.swift; sourceTree = "<group>"; };
 		2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleHelper.swift; sourceTree = "<group>"; };
+		2770E1731E3C6B00003AA5F4 /* CategoryModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CategoryModel.xcdatamodel; sourceTree = "<group>"; };
+		2770E1751E3C6B6D003AA5F4 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		2770E1841E3C6F30003AA5F4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2783D4851E3C70B100024AAC /* CategoryEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoryEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2783D4861E3C70B100024AAC /* CategoryEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoryEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		279022621E209BF10062FFE8 /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameLocationFrequencyCell.swift; sourceTree = "<group>"; };
@@ -102,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2770E1851E3C6F30003AA5F4 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,13 +148,24 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		2770E1831E3C6F30003AA5F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2770E1841E3C6F30003AA5F4 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		27BDFD6C1E1D9E0500B8C474 = {
 			isa = PBXGroup;
 			children = (
+				2783D4851E3C70B100024AAC /* CategoryEntry+CoreDataClass.swift */,
+				2783D4861E3C70B100024AAC /* CategoryEntry+CoreDataProperties.swift */,
 				27BDFD771E1D9E0500B8C474 /* Calendar Event Template App */,
 				27BDFD8C1E1D9E0500B8C474 /* Calendar Event Template AppTests */,
 				27BDFD971E1D9E0500B8C474 /* Calendar Event Template AppUITests */,
 				27BDFD761E1D9E0500B8C474 /* Products */,
+				2770E1831E3C6F30003AA5F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +184,7 @@
 			children = (
 				27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */,
 				272455761E1DCE3000F3856F /* DataManager.swift */,
+				2770E1751E3C6B6D003AA5F4 /* CoreDataManager.swift */,
 				27DC4E811E2089EA00F510D3 /* CalendarManager.swift */,
 				272455751E1DCCA900F3856F /* Classes */,
 				27BDFDAB1E1DBE1A00B8C474 /* Extensions */,
@@ -171,6 +194,7 @@
 				27BDFD7F1E1D9E0500B8C474 /* Assets.xcassets */,
 				27BDFD811E1D9E0500B8C474 /* LaunchScreen.storyboard */,
 				27BDFD841E1D9E0500B8C474 /* Info.plist */,
+				2770E1721E3C6B00003AA5F4 /* CategoryModel.xcdatamodeld */,
 			);
 			path = "Calendar Event Template App";
 			sourceTree = "<group>";
@@ -369,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2783D4881E3C70B100024AAC /* CategoryEntry+CoreDataProperties.swift in Sources */,
 				27DC4E801E20758500F510D3 /* CustomTextField.swift in Sources */,
 				27BDFDAA1E1DBE1700B8C474 /* CategoryCollectionCell.swift in Sources */,
 				27CBC5041E35C5E8001CE9DA /* OnboardingPageTwo.swift in Sources */,
@@ -384,6 +409,7 @@
 				27CBC5081E35C6DD001CE9DA /* OnboardingPageThree.swift in Sources */,
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
 				272455771E1DCE3000F3856F /* DataManager.swift in Sources */,
+				2783D4871E3C70B100024AAC /* CategoryEntry+CoreDataClass.swift in Sources */,
 				2770E12F1E3AAB80003AA5F4 /* AngleHelper.swift in Sources */,
 				27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */,
 				2707362B1E20609E003E8B72 /* EventDetailsManager.swift in Sources */,
@@ -392,8 +418,10 @@
 				2757074D1E27340A002A3060 /* CategoryEditing.swift in Sources */,
 				27F4D5CF1E2EADD4005EDD36 /* AutocompleteTextField.swift in Sources */,
 				279022631E209BF10062FFE8 /* EventListCell.swift in Sources */,
+				2770E1741E3C6B00003AA5F4 /* CategoryModel.xcdatamodeld in Sources */,
 				27CBC5021E35C4FF001CE9DA /* OnboardingPageOne.swift in Sources */,
 				27190C5B1E1F4147002D3CB4 /* QuickDayPickerCell.swift in Sources */,
+				2770E1761E3C6B6D003AA5F4 /* CoreDataManager.swift in Sources */,
 				2770E12D1E3A8876003AA5F4 /* OnboardingPageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,6 +701,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2770E1721E3C6B00003AA5F4 /* CategoryModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2770E1731E3C6B00003AA5F4 /* CategoryModel.xcdatamodel */,
+			);
+			currentVersion = 2770E1731E3C6B00003AA5F4 /* CategoryModel.xcdatamodel */;
+			path = CategoryModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 27BDFD6D1E1D9E0500B8C474 /* Project object */;
 }

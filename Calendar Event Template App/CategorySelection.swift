@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -34,6 +35,21 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         for label in self.noCategoriesLabels {
             label.alpha = 0.0 // Make transparent
         }
+        
+        // Testing out core data
+        let moc = DataController().managedObjectContext
+        
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "CategoryEntry", into: moc) as! CategoryEntry
+        
+        entity.setValue("Core Data Test", forKey: "name")
+        
+        // Save entry
+        do {
+            try moc.save()
+            print("Saved")
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,6 +64,16 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     @IBAction func clickedSettings(_ sender: Any) {
+        let moc = DataController().managedObjectContext
+        let categoryFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "CategoryEntry")
+        
+        do {
+            let fetchedCategory = try moc.fetch(categoryFetch) as! [CategoryEntry]
+            print(fetchedCategory.first?.name)
+        } catch {
+            fatalError("Failed to fetch person: \(error)")
+        }
+        
         self.performSegue(withIdentifier: SegueIdentifiers.editCategories, sender: self) // Go to edit screen
     }
     
