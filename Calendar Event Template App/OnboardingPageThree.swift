@@ -52,14 +52,24 @@ class OnboardingPageThree: UIViewController {
 //        print("Page three registered scroll percentage: \(percentage)")
     }
     
+    // Triggered when category label switch is flipped
+    @IBAction func categoryLabelSwitchUpdated(_ sender: Any) {
+        if self.categoryLabelSwitch.isOn { // If category
+            self.summaryCardTop.image = UIImage(named: Images.eventSummaryCard) // Set most visible image
+        } else { // If user has opted for no category label
+            self.summaryCardTop.image = UIImage(named: Images.eventSummaryCardNoCategory) // Set most visible image
+        }
+    }
+    
     func setupSummaryCards() {
         // Superimpose on summary card
         self.summaryCardBottom = UIImageView(frame: self.summaryCard.frame)
         self.summaryCardTop = UIImageView(frame: self.summaryCard.frame)
         
-        // Set image
-        self.summaryCardBottom.image = self.summaryCard.image // Add image
-        self.summaryCardTop.image = self.summaryCard.image // Add image
+        // Set images
+        self.summaryCardTop.image = self.summaryCard.image // Set most visible
+        self.summaryCardBottom.image = UIImage(named: Images.eventSummaryCardAlt2)
+        self.summaryCard.image = UIImage(named: Images.eventSummaryCardAlt1)
         
         // Insert views
         view.insertSubview(self.summaryCardBottom, belowSubview: self.summaryCard) // Insert below original

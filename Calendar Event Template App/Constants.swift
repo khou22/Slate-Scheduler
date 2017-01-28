@@ -40,6 +40,10 @@ struct Images {
     // Image names
     static let calendarIcon                 = "calendar-icon"
     static let submitConfirmation           = "submit-confirmation"
+    static let eventSummaryCard             = "event-summary-card"
+    static let eventSummaryCardNoCategory   = "event-summary-card-no-category"
+    static let eventSummaryCardAlt1         = "event-summary-card-alt-1"
+    static let eventSummaryCardAlt2         = "event-summary-card-alt-2"
 }
 
 struct Storyboard {
