@@ -84,10 +84,10 @@ class OnboardingPageOne: UIViewController {
         self.setupIconForEntrance(icon: self.iCloudIcon, xDisplacement: -self.entranceDistance)
         self.setupIconForEntrance(icon: self.googleCalendarIcon, xDisplacement: self.entranceDistance)
         
-        UIView.animate(withDuration: 0.4, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseInOut, animations: {
             self.resetIcon(icon: self.outlookIcon) // Animate in
         }, completion: { (completion) in
-            UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 30.0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 10.0, options: .curveEaseInOut, animations: {
                 self.resetIcon(icon: self.yahooIcon) // Animate in
             }, completion: { (completion) in
                 print("Finished all animations")
@@ -95,11 +95,11 @@ class OnboardingPageOne: UIViewController {
             })
         })
         
-        UIView.animate(withDuration: 0.3, delay: 0.05, usingSpringWithDamping: 1.5, initialSpringVelocity: 10.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.00, usingSpringWithDamping: 0.5, initialSpringVelocity: 10.0, options: .curveEaseInOut, animations: {
             self.resetIcon(icon: self.iOSCalendarIcon) // Animate in
             self.resetIcon(icon: self.iCloudIcon) // Animate in
         }, completion: { (completion) in
-            UIView.animate(withDuration: 0.3, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 20.0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 15.0, options: .curveEaseInOut, animations: {
                 self.resetIcon(icon: self.googleCalendarIcon) // Animate in
             }, completion: { (completion) in
             })

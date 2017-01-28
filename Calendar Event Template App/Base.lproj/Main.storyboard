@@ -1073,6 +1073,9 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="zzu-vc-t1V" id="1Zh-a5-Kwo"/>
+                        <outlet property="alertPromptImage" destination="bKu-9L-Ygi" id="vDT-Be-Cqy"/>
+                        <outlet property="alertPromptImageLeading" destination="pS2-qV-gka" id="0N6-0G-R18"/>
+                        <outlet property="alertPromptImageTrailing" destination="cQP-lP-EsB" id="xuW-BF-uhX"/>
                         <outlet property="calendarPermissionButton" destination="r1o-CH-28W" id="bwl-no-9Fh"/>
                         <outlet property="lowerLabel" destination="bFM-ZP-hJh" id="VbT-gJ-VtJ"/>
                         <outlet property="permissionGranted" destination="xcV-CV-1eB" id="4rd-Gj-dRj"/>
@@ -1164,6 +1167,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="getStartedButton" destination="0Is-T3-7xu" id="gaG-wr-MJ5"/>
                         <outlet property="summaryCard" destination="RjY-7g-hg7" id="KbX-0l-WBz"/>
                         <segue destination="mvn-QH-rzQ" kind="show" identifier="CompleteOnboarding" id="cM2-aC-gnK"/>
                     </connections>
@@ -1203,6 +1207,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nPH-XH-X7k"/>
-        <segue reference="3rR-zz-ire"/>
+        <segue reference="cM2-aC-gnK"/>
     </inferredMetricsTieBreakers>
 </document>

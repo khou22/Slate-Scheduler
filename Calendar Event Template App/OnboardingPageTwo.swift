@@ -17,6 +17,11 @@ class OnboardingPageTwo: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var lowerLabel: UILabel!
     
+    // UI elements to animate
+    @IBOutlet weak var alertPromptImage: UIImageView!
+    @IBOutlet weak var alertPromptImageLeading: NSLayoutConstraint!
+    @IBOutlet weak var alertPromptImageTrailing: NSLayoutConstraint!
+    
     var failedAccessGrant = false // If user denied calendar access permission
     
     override func viewDidLoad() {
@@ -28,7 +33,13 @@ class OnboardingPageTwo: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        ScrollData.setCurrentPage(index: 2)
+        ScrollData.setCurrentPage(index: 2) // Set current page
+        
+        self.prepareAnimation() // Make alert prompt image small
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.entranceAnimation() // Trigger entrance animation
     }
     
     func updateScrollPercentage() {
@@ -79,5 +90,27 @@ class OnboardingPageTwo: UIViewController {
                 }
             }
         })
+    }
+    
+    func entranceAnimation() {
+        self.prepareAnimation()
+        
+        UIView.animate(withDuration: 0.2, delay: 0.2, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+            // Set to original autolayout constraints
+            self.alertPromptImage.alpha = 1.0
+            self.alertPromptImageLeading.constant = 20.0
+            self.alertPromptImageTrailing.constant = -20.0
+            self.view.layoutIfNeeded() // Update layout
+        }, completion: nil)
+    }
+    
+    func prepareAnimation() {
+        // Decrease size of prompt image
+        self.alertPromptImageLeading.constant = 40.0
+        self.alertPromptImageTrailing.constant = -40.0
+        view.layoutIfNeeded()
+        
+        // Set transparent
+        self.alertPromptImage.alpha = 0.0
     }
 }
