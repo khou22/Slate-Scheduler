@@ -90,7 +90,7 @@ class OnboardingPageThree: UIViewController {
             self.summaryCardBottom.transform = transformBottom // Apply transformation
             self.summaryCardTop.transform = transformTop // Apply transformation
         }, completion: { (completion) in
-            print("Cards finished animating")
+//            print("Cards finished animating")
             self.cardsAnimated = true // Positions in animated state
         })
     }

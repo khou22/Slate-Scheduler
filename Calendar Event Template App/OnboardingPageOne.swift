@@ -102,7 +102,7 @@ class OnboardingPageOne: UIViewController {
             UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 10.0, options: .curveEaseInOut, animations: {
                 self.resetIcon(icon: self.yahooIcon) // Animate in
             }, completion: { (completion) in
-                print("Finished all animations")
+                // This animation finished last - all animations complete
                 self.resetAnimations() // Ensure all in default positions
             })
         })
@@ -114,8 +114,7 @@ class OnboardingPageOne: UIViewController {
         }, completion: { (completion) in
             UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 15.0, options: .curveEaseInOut, animations: {
                 self.resetIcon(icon: self.googleCalendarIcon) // Animate in
-            }, completion: { (completion) in
-            })
+            }, completion: nil)
         })
         
         // Animate calendar image transparency

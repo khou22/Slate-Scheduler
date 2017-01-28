@@ -18,7 +18,7 @@ struct ScrollData {
     static var currentPage: Int = 0
     static func setCurrentPage(index: Int) {
         previousPage = currentPage
-        print("Moving from page \(previousPage) to page \(index)")
+//        print("Moving from page \(previousPage) to page \(index)") // Debugging
         currentPage = index
     }
 }
