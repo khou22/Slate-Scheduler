@@ -16,11 +16,15 @@ class OnboardingPageThree: UIViewController {
     var summaryCardBottom: UIImageView = UIImageView() // Bottom summary card (rotated right)
     var summaryCardTop: UIImageView = UIImageView() // Top summary card (rotated left)
     
+    @IBOutlet weak var getStartedButton: UIButton!
+    
     var cardsAnimated: Bool = false // If cards are in the animated position
     
     override func viewDidLoad() {
         onboardingBackground() // Setup background gradient
         setupSummaryCards() // Create the other two summary cards
+        
+        self.getStartedButton.setTitleColor(Colors.lightGrey, for: .selected) // Set button text color when pressed
     }
     
     override func viewWillAppear(_ animated: Bool) {
