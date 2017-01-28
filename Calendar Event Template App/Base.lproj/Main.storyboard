@@ -1169,6 +1169,7 @@
                     </view>
                     <connections>
                         <outlet property="getStartedButton" destination="0Is-T3-7xu" id="gaG-wr-MJ5"/>
+                        <outlet property="pageTitle" destination="E8R-Vt-d5B" id="ixv-OR-OiH"/>
                         <outlet property="summaryCard" destination="RjY-7g-hg7" id="KbX-0l-WBz"/>
                         <segue destination="mvn-QH-rzQ" kind="show" identifier="CompleteOnboarding" id="cM2-aC-gnK"/>
                     </connections>
@@ -1208,6 +1209,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nPH-XH-X7k"/>
-        <segue reference="3rR-zz-ire"/>
+        <segue reference="cM2-aC-gnK"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EventKit
 
 class OnboardingPageThree: UIViewController {
     
@@ -15,6 +16,7 @@ class OnboardingPageThree: UIViewController {
     @IBOutlet weak var summaryCard: UIImageView! // Main event summary card image
     var summaryCardBottom: UIImageView = UIImageView() // Bottom summary card (rotated right)
     var summaryCardTop: UIImageView = UIImageView() // Top summary card (rotated left)
+    @IBOutlet weak var pageTitle: UILabel!
     
     @IBOutlet weak var getStartedButton: UIButton!
     
@@ -93,5 +95,21 @@ class OnboardingPageThree: UIViewController {
     
     @IBAction func getStarted(_ sender: Any) {
         self.performSegue(withIdentifier: SegueIdentifiers.completeOnboarding, sender: self)
+    }
+    
+    func checkCalendarAuth() {
+        CalendarManager().requestAccess(completion: { (success) in
+            let calendarPermission = EKEventStore.authorizationStatus(for: EKEntityType.event)
+            let authorized = (success && calendarPermission == .authorized)
+            if !authorized { // If not authorized the calendar
+                DispatchQueue.main.async {
+                    self.pageTitle.text = "Calendar permission is required for this app."
+                }
+            } else { // If calendar is authorized
+                DispatchQueue.main.async {
+                    self.pageTitle.text = "You’re good to go!"
+                }
+            }
+        })
     }
 }
