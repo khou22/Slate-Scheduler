@@ -30,6 +30,7 @@ class OnboardingPageTwo: UIViewController {
         
         self.permissionGranted.layer.opacity = 0.0 // Start invisible
         self.calendarPermissionButton.setTitleColor(Colors.lightGrey, for: .selected) // Set button text color when pressed
+        self.calendarPermissionButton.showsTouchWhenHighlighted = true // Show a button press
     }
     
     override func viewWillAppear(_ animated: Bool) {

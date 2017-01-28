@@ -27,6 +27,9 @@ class OnboardingPageThree: UIViewController {
         setupSummaryCards() // Create the other two summary cards
         
         self.getStartedButton.setTitleColor(Colors.lightGrey, for: .selected) // Set button text color when pressed
+        self.getStartedButton.showsTouchWhenHighlighted = true // Show a button press
+        
+        self.checkCalendarAuth() // Check for calendar authorization
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,10 +107,16 @@ class OnboardingPageThree: UIViewController {
             if !authorized { // If not authorized the calendar
                 DispatchQueue.main.async {
                     self.pageTitle.text = "Calendar permission is required for this app."
+                    self.getStartedButton.setTitle("Swipe back to authorize", for: .normal) // Button feedback
+                    self.getStartedButton.isEnabled = false // Disable button
+                    self.getStartedButton.backgroundColor = Colors.lightGrey // Change color
                 }
             } else { // If calendar is authorized
                 DispatchQueue.main.async {
                     self.pageTitle.text = "You’re good to go!"
+                    self.getStartedButton.setTitle("Get started", for: .normal) // Button feedback
+                    self.getStartedButton.isEnabled = true // Enable button
+                    self.getStartedButton.backgroundColor = Colors.red // Change color to original
                 }
             }
         })
