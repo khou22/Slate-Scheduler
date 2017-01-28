@@ -108,13 +108,15 @@ class OnboardingPageThree: UIViewController {
                 DispatchQueue.main.async {
                     self.pageTitle.text = "Calendar permission is required for this app."
                     self.getStartedButton.setTitle("Swipe back to authorize", for: .normal) // Button feedback
+                    self.getStartedButton.setTitleColor(Colors.white, for: .normal) // Button text color
                     self.getStartedButton.isEnabled = false // Disable button
-                    self.getStartedButton.backgroundColor = Colors.lightGrey // Change color
+                    self.getStartedButton.backgroundColor = Colors.lightRed // Change color
                 }
             } else { // If calendar is authorized
                 DispatchQueue.main.async {
                     self.pageTitle.text = "You’re good to go!"
                     self.getStartedButton.setTitle("Get started", for: .normal) // Button feedback
+                    self.getStartedButton.setTitleColor(Colors.white, for: .normal) // Button text color
                     self.getStartedButton.isEnabled = true // Enable button
                     self.getStartedButton.backgroundColor = Colors.red // Change color to original
                 }

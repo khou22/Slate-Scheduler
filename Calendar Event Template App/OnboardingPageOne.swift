@@ -112,7 +112,7 @@ class OnboardingPageOne: UIViewController {
             self.resetIcon(icon: self.iOSCalendarIcon) // Animate in
             self.resetIcon(icon: self.iCloudIcon) // Animate in
         }, completion: { (completion) in
-            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 15.0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 15.0, options: .curveEaseInOut, animations: {
                 self.resetIcon(icon: self.googleCalendarIcon) // Animate in
             }, completion: { (completion) in
             })

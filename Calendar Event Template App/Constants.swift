@@ -16,6 +16,7 @@ struct StringIdentifiers {
 struct Colors {
     // Project colors
     static let red                          = UIColor(red: 226.0/255.0, green: 111.0/255.0, blue: 80.0/255.0, alpha: 1.0) // Custom color scheme
+    static let lightRed                     = UIColor(red: 238.0/255.0, green: 189.0/255.0, blue: 175.0/255.0, alpha: 1.0) // Custom color scheme - light version
     static let orange                       = UIColor(red: 218.0/255.0, green: 141.0/255.0, blue: 15.0/255.0, alpha: 1.0)
     static let green                        = UIColor(red: 128.0/255.0, green: 164.0/255.0, blue: 84.0/255.0, alpha: 1.0)
     static let blue                         = UIColor(red: 0.0/255.0, green: 118.0/255.0, blue: 255.0/255.0, alpha: 1.0) // iOS default blue

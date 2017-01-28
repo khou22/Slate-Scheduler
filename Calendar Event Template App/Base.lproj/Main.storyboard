@@ -1121,16 +1121,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5Gd-s9-mOY">
-                                <rect key="frame" x="56" y="492" width="263" height="31"/>
+                                <rect key="frame" x="56" y="466" width="263" height="50.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add events by category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s5n-zP-oQ0">
-                                        <rect key="frame" x="0.0" y="0.0" width="194" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="6wk-zG-Dmo">
+                                        <rect key="frame" x="0.0" y="0.0" width="194" height="50.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add events by category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s5n-zP-oQ0">
+                                                <rect key="frame" x="0.0" y="0.0" width="194" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category name appears at the beginning of each event name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pw1-ap-aQN">
+                                                <rect key="frame" x="0.0" y="20.5" width="194" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="wE2-L0-GUP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gzb-tQ-aco">
-                                        <rect key="frame" x="214" y="0.0" width="51" height="31"/>
+                                        <rect key="frame" x="214" y="0.0" width="51" height="50.5"/>
                                         <color key="onTintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </switch>
                                 </subviews>
@@ -1158,7 +1172,7 @@
                             <constraint firstItem="RU1-ol-kmH" firstAttribute="top" secondItem="0Is-T3-7xu" secondAttribute="bottom" constant="20" id="Kiz-Bj-V5l"/>
                             <constraint firstItem="E8R-Vt-d5B" firstAttribute="top" secondItem="6vA-av-lYs" secondAttribute="bottom" constant="16" id="Lnu-aC-Lg1"/>
                             <constraint firstItem="0Is-T3-7xu" firstAttribute="top" secondItem="Ydd-Z8-AJR" secondAttribute="bottom" constant="25" id="PNn-qL-7gK"/>
-                            <constraint firstItem="Ydd-Z8-AJR" firstAttribute="top" secondItem="5Gd-s9-mOY" secondAttribute="bottom" constant="34" id="RTo-r4-lQB"/>
+                            <constraint firstItem="Ydd-Z8-AJR" firstAttribute="top" secondItem="5Gd-s9-mOY" secondAttribute="bottom" constant="40" id="RTo-r4-lQB"/>
                             <constraint firstItem="RjY-7g-hg7" firstAttribute="leading" secondItem="IXM-4y-d9X" secondAttribute="leadingMargin" constant="25" id="a0m-vb-GtJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Gd-s9-mOY" secondAttribute="trailing" constant="40" id="arU-33-ceY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RjY-7g-hg7" secondAttribute="trailing" constant="25" id="c7N-Tg-rgR"/>
