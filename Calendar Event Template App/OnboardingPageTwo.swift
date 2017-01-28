@@ -108,7 +108,7 @@ class OnboardingPageTwo: UIViewController {
     func entranceAnimation() {
         self.prepareAnimation()
         
-        UIView.animate(withDuration: 0.2, delay: 0.2, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.05, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
             // Set to original autolayout constraints
             self.alertPromptImage.alpha = 1.0
             self.alertPromptImageLeading.constant = 20.0
