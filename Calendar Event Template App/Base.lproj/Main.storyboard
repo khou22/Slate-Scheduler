@@ -1044,16 +1044,16 @@
                                 <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone-wireframe" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-RJ-qTi">
-                                <rect key="frame" x="95" y="108" width="184" height="371"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Feh-RJ-qTi" secondAttribute="height" multiplier="47:95" id="Ehd-gx-qnh"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar-permission-alert" translatesAutoresizingMaskIntoConstraints="NO" id="bKu-9L-Ygi">
                                 <rect key="frame" x="115" y="223" width="144" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bKu-9L-Ygi" secondAttribute="height" multiplier="146:83" id="czl-6l-xiL"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone-wireframe" translatesAutoresizingMaskIntoConstraints="NO" id="Feh-RJ-qTi">
+                                <rect key="frame" x="95" y="108" width="184" height="371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Feh-RJ-qTi" secondAttribute="height" multiplier="47:95" id="Ehd-gx-qnh"/>
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zzu-vc-t1V">
