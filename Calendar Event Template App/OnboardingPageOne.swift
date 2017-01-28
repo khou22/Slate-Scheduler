@@ -16,12 +16,17 @@ struct PageOneData {
 
 class OnboardingPageOne: UIViewController {
     
+    // Calendar client icons
     @IBOutlet weak var outlookIcon: UIImageView!
     @IBOutlet weak var yahooIcon: UIImageView!
     @IBOutlet weak var iOSCalendarIcon: UIImageView!
     @IBOutlet weak var iCloudIcon: UIImageView!
     @IBOutlet weak var googleCalendarIcon: UIImageView!
     
+    // UI Elements
+    @IBOutlet weak var calendarImage: UIImageView!
+    
+    // Animation options
     var entranceDistance: CGFloat = 100.0
     
     override func viewDidLoad() {
@@ -29,6 +34,9 @@ class OnboardingPageOne: UIViewController {
         
         self.styleIcons() // Add styling to the icons
         self.initializeScrollAnimations() // Initialize interactive scrolling animations
+        
+        // Prepare entrance animations
+        self.calendarImage.alpha = 0.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,6 +92,10 @@ class OnboardingPageOne: UIViewController {
         self.setupIconForEntrance(icon: self.iCloudIcon, xDisplacement: -self.entranceDistance)
         self.setupIconForEntrance(icon: self.googleCalendarIcon, xDisplacement: self.entranceDistance)
         
+        // Make calendar image transparent
+        self.calendarImage.alpha = 0.0
+        
+        // Animate icons set 1
         UIView.animate(withDuration: 0.3, delay: 0.1, usingSpringWithDamping: 1.0, initialSpringVelocity: 5.0, options: .curveEaseInOut, animations: {
             self.resetIcon(icon: self.outlookIcon) // Animate in
         }, completion: { (completion) in
@@ -95,6 +107,7 @@ class OnboardingPageOne: UIViewController {
             })
         })
         
+        // Animate icons set 2
         UIView.animate(withDuration: 0.2, delay: 0.00, usingSpringWithDamping: 0.5, initialSpringVelocity: 10.0, options: .curveEaseInOut, animations: {
             self.resetIcon(icon: self.iOSCalendarIcon) // Animate in
             self.resetIcon(icon: self.iCloudIcon) // Animate in
@@ -103,6 +116,11 @@ class OnboardingPageOne: UIViewController {
                 self.resetIcon(icon: self.googleCalendarIcon) // Animate in
             }, completion: { (completion) in
             })
+        })
+        
+        // Animate calendar image transparency
+        UIView.animate(withDuration: 0.25, animations: {
+            self.calendarImage.alpha = 1.0
         })
     }
     

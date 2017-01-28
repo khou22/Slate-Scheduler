@@ -965,6 +965,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="calendarImage" destination="N6X-hK-mrF" id="MBU-FL-DIg"/>
                         <outlet property="googleCalendarIcon" destination="CnD-JX-zP4" id="Esj-Rk-G8N"/>
                         <outlet property="iCloudIcon" destination="DWU-rQ-uPV" id="oJa-55-3CF"/>
                         <outlet property="iOSCalendarIcon" destination="At9-aO-Qaa" id="fUr-of-M4z"/>
@@ -1207,6 +1208,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nPH-XH-X7k"/>
-        <segue reference="cM2-aC-gnK"/>
+        <segue reference="3rR-zz-ire"/>
     </inferredMetricsTieBreakers>
 </document>
