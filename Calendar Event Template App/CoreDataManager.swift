@@ -30,7 +30,7 @@ class DataController: NSObject {
         self.managedObjectContext.persistentStoreCoordinator = psc
     
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        var docURL = urls[urls.endIndex-1]
+        var docURL = urls[urls.endIndex - 1]
         
         /* The directory the application uses to store the Core Data store file.
          This code uses a file named "DataModel.sqlite" in the application's documents directory.
@@ -41,13 +41,11 @@ class DataController: NSObject {
         } catch {
             fatalError("Error migrating store: \(error)")
         }
-        
     }
     
     func saveCategory(entry: CategoryEntry) {
         // Testing out core data
         let moc = DataController().managedObjectContext
-        
         let entity = NSEntityDescription.insertNewObject(forEntityName: "CategoryEntry", into: moc) as! CategoryEntry
         
         entity.setValue(entry.name, forKey: "name")
@@ -61,6 +59,7 @@ class DataController: NSObject {
         }
     }
     
+    // Get all categories
     func getCategories() -> [CategoryEntry] {
         let moc = DataController().managedObjectContext
         let categoryFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "CategoryEntry")
@@ -70,6 +69,55 @@ class DataController: NSObject {
             return fetchedCategory
         } catch {
             fatalError("Failed to fetch person: \(error)")
+        }
+    }
+    
+    // Get specific category
+    func getCategory(withName: String) -> CategoryEntry {
+        let moc = DataController().managedObjectContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CategoryEntry")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", withName)
+        
+        do {
+            let response = try moc.fetch(fetchRequest) as! [CategoryEntry]
+            if response.count != 0 {
+                return response.first!
+            } else { // If no matching category entries
+                fatalError("No matches")
+            }
+        } catch {
+            fatalError("Failed to fetch person: \(error)")
+        }
+    }
+    
+    // Delete all category entries
+    func deleteAllCategories() {
+        let moc = DataController().managedObjectContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CategoryEntry")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest) // Delete request
+        
+        do {
+            try moc.execute(deleteRequest)
+        } catch {
+            fatalError("Failed to fetch person: \(error)")
+        }
+    }
+    
+    // For when you need to update just one category item (must retain same name) — meant for updating markov models
+    func updateOneCategory(with category: CategoryEntry, index: Int) {
+        let moc = DataController().managedObjectContext
+        
+        let categoryToUpdate = getCategory(withName: category.name!)
+        
+        categoryToUpdate.setValue(category.name, forKey: "name")
+        print("Updated category entry")
+        
+        // Save entry
+        do {
+            try moc.save()
+            print("Updated entry")
+        } catch {
+            fatalError("Failure to save context: \(error)")
         }
     }
 }

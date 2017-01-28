@@ -35,9 +35,6 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         for label in self.noCategoriesLabels {
             label.alpha = 0.0 // Make transparent
         }
-        
-        // Test
-        print(DataController().getCategories().count)
     }
     
     override func viewDidAppear(_ animated: Bool) {
