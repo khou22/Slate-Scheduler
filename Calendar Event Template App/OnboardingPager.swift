@@ -107,24 +107,28 @@ extension OnboardingPager: UIPageViewControllerDataSource {
 // Track the percentage of the scroll complete
 extension OnboardingPager: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let point = scrollView.contentOffset // Get pixels offset by scroll
-        let percentComplete: CGFloat = fabs(point.x - view.frame.size.width)/view.frame.size.width // Calc percentage complete
-//        print("Percentage scrolled \(percentComplete)") // Debugging
-        ScrollData.value = Float(percentComplete) // Set global
         
-        // Update within the view controllers
-        // To prevent glitches, lag, memory management, only use one at a time
-        // Use scroll animations for entrance animations only
-        switch ScrollData.previousPage {
-        case 1:
-            getPageOne().updateScrollPercentage()
-        case 2:
-            getPageTwo().updateScrollPercentage()
-        case 3:
-            getPageThree().updateScrollPercentage()
-        default:
-            break
+        // Only execute scrolling animations on iOS 10
+        if #available(iOS 10.0, *) {
+            
+            let point = scrollView.contentOffset // Get pixels offset by scroll
+            let percentComplete: CGFloat = fabs(point.x - view.frame.size.width)/view.frame.size.width // Calc percentage complete
+            //        print("Percentage scrolled \(percentComplete)") // Debugging
+            ScrollData.value = Float(percentComplete) // Set global
+            
+            // Update within the view controllers
+            // To prevent glitches, lag, memory management, only use one at a time
+            // Use scroll animations for entrance animations only
+            switch ScrollData.previousPage {
+            case 1:
+                getPageOne().updateScrollPercentage()
+            case 2:
+                getPageTwo().updateScrollPercentage()
+            case 3:
+                getPageThree().updateScrollPercentage()
+            default:
+                break
+            }
         }
-
     }
 }

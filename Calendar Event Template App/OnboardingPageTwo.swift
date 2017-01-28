@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 import EventKit
 
+struct PageTwoData {
+    @available(iOS 10.0, *)
+    static var scrollingAnimations: UIViewPropertyAnimator = UIViewPropertyAnimator(duration: 2.0, timingParameters: UISpringTimingParameters(mass: 2.5, stiffness: 70, damping: 55, initialVelocity: CGVector(dx: 0, dy: 0)))
+}
+
 class OnboardingPageTwo: UIViewController {
     
     @IBOutlet weak var calendarPermissionButton: UIButton!
@@ -26,7 +31,8 @@ class OnboardingPageTwo: UIViewController {
     
     override func viewDidLoad() {
         onboardingBackground() // Setup background gradient
-//        print("Onboarding page two loaded")
+        
+        self.initializeScrollAnimations() // Setup scrolling percentage
         
         self.permissionGranted.layer.opacity = 0.0 // Start invisible
         self.calendarPermissionButton.setTitleColor(Colors.lightGrey, for: .selected) // Set button text color when pressed
@@ -36,16 +42,22 @@ class OnboardingPageTwo: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         ScrollData.setCurrentPage(index: 2) // Set current page
         
-        self.prepareAnimation() // Make alert prompt image small
+        self.prepareAnimation() // Prepare entance animation - make alert prompt image small
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.entranceAnimation() // Trigger entrance animation
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.resetAnimations() // Reset scrolling animations
+    }
+    
     func updateScrollPercentage() {
-//        let percentage = CGFloat(ScrollData.value)
-//        print("Page two registered scroll percentage: \(percentage)")
+        let percentage = CGFloat(ScrollData.value)
+        if #available(iOS 10.0, *) {
+            PageTwoData.scrollingAnimations.fractionComplete = percentage * 0.95 // Update animation percentage
+        }
     }
     
     @IBAction func promptCalendarPermission(_ sender: Any) {
@@ -113,5 +125,19 @@ class OnboardingPageTwo: UIViewController {
         
         // Set transparent
         self.alertPromptImage.alpha = 0.0
+    }
+    
+    // Scrolling animations
+    func initializeScrollAnimations() {
+        if #available(iOS 10.0, *) {
+            PageTwoData.scrollingAnimations.addAnimations({
+                self.alertPromptImage.transform = CGAffineTransform(translationX: 20.0, y: 0.0) // Parallax effect
+            })
+        }
+    }
+    
+    // Reset scrolling animations
+    func resetAnimations() {
+        self.alertPromptImage.transform = .identity // Restore to original
     }
 }

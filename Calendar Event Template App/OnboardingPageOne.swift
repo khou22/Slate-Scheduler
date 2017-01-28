@@ -64,7 +64,7 @@ class OnboardingPageOne: UIViewController {
     func initializeScrollAnimations() {
         if #available(iOS 10.0, *) {
             PageOneData.scrollingAnimations.addAnimations({
-                // Fast moving icon translation
+                // Icon translations
                 self.outlookIcon.transform = CGAffineTransform(translationX: -350, y: 0)
                 self.iOSCalendarIcon.transform = CGAffineTransform(translationX: -850, y: 0)
                 self.yahooIcon.transform = CGAffineTransform(translationX: -450, y: 0)
