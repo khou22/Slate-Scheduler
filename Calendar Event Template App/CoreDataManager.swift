@@ -42,6 +42,34 @@ class DataController: NSObject {
             fatalError("Error migrating store: \(error)")
         }
         
+    }
+    
+    func saveCategory(entry: CategoryEntry) {
+        // Testing out core data
+        let moc = DataController().managedObjectContext
         
+        let entity = NSEntityDescription.insertNewObject(forEntityName: "CategoryEntry", into: moc) as! CategoryEntry
+        
+        entity.setValue(entry.name, forKey: "name")
+        
+        // Save entry
+        do {
+            try moc.save()
+            print("Saved entry: \(entry.name)")
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
+    }
+    
+    func getCategories() -> [CategoryEntry] {
+        let moc = DataController().managedObjectContext
+        let categoryFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "CategoryEntry")
+        
+        do {
+            let fetchedCategory = try moc.fetch(categoryFetch) as! [CategoryEntry]
+            return fetchedCategory
+        } catch {
+            fatalError("Failed to fetch person: \(error)")
+        }
     }
 }
