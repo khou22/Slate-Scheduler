@@ -109,6 +109,7 @@ class OnboardingPageThree: UIViewController {
     
     @IBAction func getStarted(_ sender: Any) {
         DataManager.setCategoryLabelSetting(value: self.categoryLabelSwitch.isOn) // Set user preference
+        DataManager.userCompletedOnboarding() // Store that user completed onboarding
         self.performSegue(withIdentifier: SegueIdentifiers.completeOnboarding, sender: self)
     }
     

@@ -113,6 +113,15 @@ struct DataManager {
         return decodedItems
     }
     
+    /************ User Details ************/
+    static func userCompletedOnboarding() {
+        Constants.defaults.set(true, forKey: Keys.completedOnboarding)
+    }
+    
+    static func onboardingStatus() -> Bool {
+        return Constants.defaults.bool(forKey: Keys.completedOnboarding) // If key doesn't exist, false
+    }
+    
     /************ User Settings ************/
     static func setCategoryLabelSetting(value: Bool) {
         Constants.defaults.set(value, forKey: Keys.categoryLabelOnEvents)

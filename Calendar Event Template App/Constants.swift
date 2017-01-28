@@ -52,6 +52,7 @@ struct Storyboard {
     static let editEventDetails             = "editNewEventDetails"
     
     // Onboarding identifiers
+    static let onboardingPager              = "OnboardingPager"
     static let onboardingPageOne            = "OnboardingPageOne"
     static let onboardingPageTwo            = "OnboardingPageTwo"
     static let onboardingPageThree          = "OnboardingPageThree"
@@ -75,7 +76,6 @@ struct SegueIdentifiers {
     static let editCategories               = "CategorySelectionToEdit"
     static let categoryDetailEdit           = "CategoryDetailEdit"
     static let newEventNoCategory           = "NewEventNoCategory"
-    static let skipOnboarding               = "SkipOnboarding"
     static let completeOnboarding           = "CompleteOnboarding"
 }
 

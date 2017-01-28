@@ -17,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Launch onboarding if user hasn't completed onboarding
+        if !DataManager.onboardingStatus() {
+            launchInitialVC(viewController: Storyboard.onboardingPager) // Launch onboarding pager as initial vc
+        }
+        
+        // Handle shortcuts
         if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             _ = handleShortcut(shortcutItem: shortcutItem)
             return false
@@ -56,6 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             initialViewController.pushViewController(storyboard.instantiateViewController(withIdentifier: Storyboard.categorySelection), animated: false)
             let categorySelection = initialViewController.topViewController as! CategorySelection
             categorySelection.newEventNoCategory(self)
+        } else if (identifier == Storyboard.onboardingPager) { // If launching onboarding
+            let onboardingPager = storyboard.instantiateViewController(withIdentifier: Storyboard.onboardingPager) // Launch onboarding pager as initial vc
+            self.window?.rootViewController = onboardingPager
+            self.window?.makeKeyAndVisible()
         }
     }
 
