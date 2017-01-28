@@ -18,6 +18,7 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var categoryTable: UITableView!
+    @IBOutlet weak var categoryLabelSwitch: UISwitch!
     
     @IBAction func closeEditing(_ sender: Any) {
         dismiss(animated: true, completion: nil) // Exit segue back to category selection
@@ -40,10 +41,17 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         self.categoryTable.allowsMultipleSelection = false // Don't allow multiple selection of cells
+        
+        // Set initial value of categoyr label switch
+        self.categoryLabelSwitch.isOn = DataManager.includeCategoryLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.getCollection() // Get category data
+    }
+    
+    @IBAction func updatedCategoryLabelSetting(_ sender: Any) {
+        DataManager.setCategoryLabelSetting(value: self.categoryLabelSwitch.isOn)
     }
     
     func getCollection() {
