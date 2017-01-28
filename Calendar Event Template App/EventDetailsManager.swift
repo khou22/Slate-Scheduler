@@ -75,7 +75,11 @@ extension EventDetails {
         if self.noCategory { // If no category
             event.title = self.eventNameInput.text!
         } else { // Connected to category
-            event.title = "[" + category.name + "] " + self.eventNameInput.text!
+            if DataManager.includeCategoryLabel() { // If including category name
+                event.title = "[" + category.name + "] " + self.eventNameInput.text!
+            } else { // If not including cateogyr name
+                event.title = self.eventNameInput.text!
+            }
         }
         
         event.location = self.roomInput.text! + " " + self.locationInput.text!
@@ -144,7 +148,11 @@ extension EventDetails {
         if self.noCategory { // If no category
             self.summaryTitle.text = self.eventNameInput.text!
         } else { // Connected to category
-            self.summaryTitle.text = "[" + category.name + "] " + self.eventNameInput.text!
+            if DataManager.includeCategoryLabel() { // If user wants to include category name
+                self.summaryTitle.text = "[" + category.name + "] " + self.eventNameInput.text!
+            } else { // If not including cateogyr name
+                self.summaryTitle.text = self.eventNameInput.text!
+            }
         }
         
         self.summaryLocation.text = self.roomInput.text! + " " + self.locationInput.text! // Concatinate
@@ -172,7 +180,7 @@ extension EventDetails {
             self.loadingSpinner.layer.opacity = 1.0
             self.loadingSpinner.startAnimating()
             
-            self.createEvent() // Create and save event to calendar
+//            self.createEvent() // Create and save event to calendar
             
             // Update markov models if there's a category
             if (!self.noCategory) {

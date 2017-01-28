@@ -112,4 +112,13 @@ struct DataManager {
         return decodedItems
     }
     
+    /************ User Settings ************/
+    static func setCategoryLabelSetting(value: Bool) {
+        Constants.defaults.set(value, forKey: Keys.categoryLabelOnEvents)
+    }
+    
+    static func includeCategoryLabel() -> Bool {
+        let value = Constants.defaults.bool(forKey: Keys.categoryLabelOnEvents) // If key doesn't exist, it's false
+        return value
+    }
 }

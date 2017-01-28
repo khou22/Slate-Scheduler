@@ -1182,6 +1182,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryLabelSwitch" destination="Gzb-tQ-aco" id="xTr-WZ-ZMl"/>
                         <outlet property="getStartedButton" destination="0Is-T3-7xu" id="gaG-wr-MJ5"/>
                         <outlet property="pageTitle" destination="E8R-Vt-d5B" id="ixv-OR-OiH"/>
                         <outlet property="summaryCard" destination="RjY-7g-hg7" id="KbX-0l-WBz"/>

@@ -18,6 +18,7 @@ class OnboardingPageThree: UIViewController {
     var summaryCardTop: UIImageView = UIImageView() // Top summary card (rotated left)
     @IBOutlet weak var pageTitle: UILabel!
     
+    @IBOutlet weak var categoryLabelSwitch: UISwitch!
     @IBOutlet weak var getStartedButton: UIButton!
     
     var cardsAnimated: Bool = false // If cards are in the animated position
@@ -97,6 +98,7 @@ class OnboardingPageThree: UIViewController {
     }
     
     @IBAction func getStarted(_ sender: Any) {
+        DataManager.setCategoryLabelSetting(value: self.categoryLabelSwitch.isOn) // Set user preference
         self.performSegue(withIdentifier: SegueIdentifiers.completeOnboarding, sender: self)
     }
     

@@ -89,7 +89,7 @@ struct Keys {
     // NSUserDefault keys:
     static let categoryData                 = "categoryData"
     static let completedOnboarding          = "completedOnboarding"
-    static let eventsWithCategory           = "eventsWithCategoryLabel"
+    static let categoryLabelOnEvents        = "categoryLabelOnEvents"
     
     // Other keys
     static let categoryName                 = "categoryName"
