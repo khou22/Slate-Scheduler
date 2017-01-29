@@ -316,6 +316,7 @@ extension EventDetails {
         }
         
         // Markov model with event name to location
+//        print("Updating \(self.category.name) with index \(self.categoryIndex)")
         DataManager.updateOneCategory(with: self.category, index: self.categoryIndex)
     }
 }

@@ -152,6 +152,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
             let eventDetailsVC = segue.destination as! EventDetails
 //            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
             eventDetailsVC.category = self.categoryData[self.selectedItem] // Pass on category data
+            eventDetailsVC.categoryIndex = self.selectedItem // Pass on category index
             
         } else if (segue.identifier == SegueIdentifiers.newEventNoCategory) { // New event no category
             let eventDetailsVC = segue.destination as! EventDetails
@@ -188,7 +189,7 @@ extension CategorySelection: CLLocationManagerDelegate {
     
     // Called when location is looked up
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Location updated")
+//        print("Location updated")
         let location: CLLocationCoordinate2D = manager.location!.coordinate // Get coordinates of location
         print("Location = \(location.latitude) \(location.longitude)") // Feedback
         
