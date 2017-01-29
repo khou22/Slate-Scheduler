@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct DataManager {
     
@@ -120,6 +121,37 @@ struct DataManager {
     
     static func onboardingStatus() -> Bool {
         return Constants.defaults.bool(forKey: Keys.completedOnboarding) // If key doesn't exist, false
+    }
+    
+    static func setLatestLocation(coordinates: CLLocationCoordinate2D) { // Store user's location
+        let lat = coordinates.latitude
+        let long = coordinates.longitude
+        
+        // Store values
+        Constants.defaults.set(lat, forKey: Keys.userLatitude)
+        Constants.defaults.set(long, forKey: Keys.userLongitude)
+    }
+    
+    static func getLatestLocation() -> CLLocationCoordinate2D { // Return user's most recent location
+        let lat = Constants.defaults.float(forKey: Keys.userLatitude) // Retrieve values
+        let long = Constants.defaults.float(forKey: Keys.userLongitude)
+        
+        if (lat != 0.0 && long != 0.0) { // If logged a location before
+            return CLLocationCoordinate2D(latitude: CLLocationDegrees(lat), longitude: CLLocationDegrees(long)) // Return current location
+        } else { // Otherwise use default location constant
+            return Constants.defaultLocation
+        }
+    }
+    
+    static func locationServicesEnabled() -> Bool { // Determine if location services enabled
+        switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied: // Not allowed
+                print("Location services not enabled")
+                return false
+            case .authorizedAlways, .authorizedWhenInUse: // Allowed
+                print("Location services enabled")
+                return true
+        }
     }
     
     /************ User Settings ************/

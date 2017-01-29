@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 struct StringIdentifiers {
     static let noCategory                   = "!#No#Category#!" // To signify a new event with no category
@@ -87,6 +88,9 @@ struct SDK {
 struct Constants {
     // NSUserDefaults initializer
     static let defaults                     = UserDefaults.standard
+    
+    // Default location if user hasn't allowed location services
+    static let defaultLocation              = CLLocationCoordinate2D(latitude: 40.3440, longitude: -74.6514)
 }
 
 struct Keys {
@@ -94,6 +98,8 @@ struct Keys {
     static let categoryData                 = "categoryData"
     static let completedOnboarding          = "completedOnboarding"
     static let categoryLabelOnEvents        = "categoryLabelOnEvents"
+    static let userLatitude                 = "userLatitude"
+    static let userLongitude                = "userLongitude"
     
     // Other keys
     static let categoryName                 = "categoryName"

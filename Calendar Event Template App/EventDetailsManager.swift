@@ -21,7 +21,7 @@ extension EventDetails {
         mapSearchRequest.naturalLanguageQuery = query
         
         // Simulate current location
-        let defaultLocation = CLLocationCoordinate2D(latitude: 40.3440, longitude: -74.6514)
+        let defaultLocation = DataManager.getLatestLocation() // Get most recent location or default location
         let regionSpan = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
         mapSearchRequest.region = MKCoordinateRegion(center: defaultLocation, span: regionSpan) // For providing an area to search
         

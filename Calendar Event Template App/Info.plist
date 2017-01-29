@@ -6,6 +6,8 @@
 	<string>en</string>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Allows user to quickly read and write calendar events from this app.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allows user to search for addresses when providing a location for an event.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
