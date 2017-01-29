@@ -100,11 +100,12 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         if (!self.noCategory) {
             self.eventNameInput.setupTableView(view: self.view)
             self.eventNameInput.updateSuggestions(prioritized: self.category.orderedEventNames()) // Load autocomplete suggestions
+            
+            self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations()) // Load previous locations
         }
         
         // Setup autocomplete table view for location search
         self.locationInput.setupTableView(view: self.view)
-        self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations()) // Load previous locations
     }
     
     override func viewWillAppear(_ animated: Bool) {

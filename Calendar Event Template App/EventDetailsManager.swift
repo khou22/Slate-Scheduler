@@ -48,7 +48,9 @@ extension EventDetails {
             if self.locationInput.text! != "" { // If text box has a query
                 self.locationInput.updateSuggestions(prioritized: locationResults)
             } else { // If text box empty
-                self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations())
+                if (!self.noCategory) { // If there is a category
+                    self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations())
+                }
             }
             
             self.locationInput.updateValid()
