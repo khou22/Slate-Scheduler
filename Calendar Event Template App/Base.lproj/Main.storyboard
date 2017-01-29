@@ -1433,6 +1433,9 @@
                             <constraint firstItem="Fu2-s6-GMS" firstAttribute="top" secondItem="b7J-dt-Tjg" secondAttribute="bottom" constant="20" id="ycb-5m-vJp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapPinBottomConstraint" destination="fLu-0v-WAH" id="6Ui-Fy-jQE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ObS-h4-RgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
