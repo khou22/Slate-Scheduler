@@ -170,7 +170,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
@@ -323,16 +323,16 @@
                                 <rect key="frame" x="28" y="144" width="319" height="435"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-4Z-8Uf">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="16"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predicted Names and Locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-kp-r7T">
-                                                <rect key="frame" x="0.0" y="0.0" width="302" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predicted Names" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aj5-kp-r7T">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCi-S0-I5V">
-                                                <rect key="frame" x="302" y="0.0" width="17" height="17"/>
+                                                <rect key="frame" x="303" y="0.0" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="TCi-S0-I5V" secondAttribute="height" multiplier="1:1" id="o33-jd-HN6"/>
                                                 </constraints>
@@ -342,9 +342,12 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="RfO-Rm-G4C"/>
+                                        </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CDh-z7-QAt">
-                                        <rect key="frame" x="0.0" y="32" width="319" height="403"/>
+                                        <rect key="frame" x="0.0" y="26" width="319" height="186.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <prototypes>
@@ -356,7 +359,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-XV-dkF">
-                                                            <rect key="frame" x="0.0" y="9.5" width="311" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="10.5" width="311" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fxk-Cw-Ru9">
                                                                     <rect key="frame" x="0.0" y="0.0" width="296" height="20.5"/>
@@ -393,17 +396,94 @@
                                             <outlet property="delegate" destination="ofc-Ei-ISN" id="Hd0-Mk-g8j"/>
                                         </connections>
                                     </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-fs-uhI">
+                                        <rect key="frame" x="0.0" y="222.5" width="319" height="16"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predicted Locations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YnK-lT-QQf">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfw-kZ-VuL">
+                                                <rect key="frame" x="303" y="0.0" width="16" height="16"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Mfw-kZ-VuL" secondAttribute="height" multiplier="1:1" id="ZQP-cd-dUT"/>
+                                                </constraints>
+                                                <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <action selector="addEventNamePrediction:" destination="ofc-Ei-ISN" eventType="touchUpInside" id="jtD-cS-7eE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="fD8-N9-5aH"/>
+                                        </constraints>
+                                    </stackView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Sq-OR-xOd">
+                                        <rect key="frame" x="0.0" y="248.5" width="319" height="186.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationListCell" id="V7l-4G-Mbz" customClass="LocationListCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="319" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7l-4G-Mbz" id="K4g-0v-vFr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOn-LF-L3e">
+                                                            <rect key="frame" x="8" y="11.5" width="295" height="20.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qSO-Gk-POk">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q57-cT-aPQ">
+                                                                    <rect key="frame" x="280" y="0.0" width="15" height="20.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="15" id="6RQ-Xk-N6A"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="gOn-LF-L3e" firstAttribute="centerY" secondItem="K4g-0v-vFr" secondAttribute="centerY" id="21g-2S-ej8"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="gOn-LF-L3e" secondAttribute="trailing" constant="8" id="4ML-Ta-uv0"/>
+                                                        <constraint firstItem="gOn-LF-L3e" firstAttribute="leading" secondItem="K4g-0v-vFr" secondAttribute="leadingMargin" id="Qi4-qy-FN5"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="frequencyLabel" destination="Q57-cT-aPQ" id="aga-UK-Di5"/>
+                                                    <outlet property="locationLabel" destination="qSO-Gk-POk" id="Ibm-CE-VYY"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="ofc-Ei-ISN" id="iyY-Aa-SSY"/>
+                                            <outlet property="delegate" destination="ofc-Ei-ISN" id="aj6-ij-wRk"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="CDh-z7-QAt" firstAttribute="leading" secondItem="dQE-Ph-VZM" secondAttribute="leading" id="1qD-CP-aU3"/>
-                                    <constraint firstAttribute="bottom" secondItem="CDh-z7-QAt" secondAttribute="bottom" id="BbZ-9D-7To"/>
-                                    <constraint firstItem="CDh-z7-QAt" firstAttribute="top" secondItem="fcy-4Z-8Uf" secondAttribute="bottom" constant="15" id="ETa-ml-h6x"/>
+                                    <constraint firstItem="Ykj-fs-uhI" firstAttribute="leading" secondItem="dQE-Ph-VZM" secondAttribute="leading" id="849-MT-4Pw"/>
+                                    <constraint firstItem="0Sq-OR-xOd" firstAttribute="leading" secondItem="dQE-Ph-VZM" secondAttribute="leading" id="DSw-TO-cB4"/>
                                     <constraint firstItem="CDh-z7-QAt" firstAttribute="leading" secondItem="dQE-Ph-VZM" secondAttribute="leading" id="K1h-Be-dXG"/>
                                     <constraint firstAttribute="trailing" secondItem="CDh-z7-QAt" secondAttribute="trailing" id="Keg-k2-r0H"/>
                                     <constraint firstAttribute="trailing" secondItem="CDh-z7-QAt" secondAttribute="trailing" id="KsG-ZS-mM0"/>
                                     <constraint firstItem="fcy-4Z-8Uf" firstAttribute="leading" secondItem="dQE-Ph-VZM" secondAttribute="leading" id="M7k-4m-AVZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ykj-fs-uhI" secondAttribute="trailing" id="PMX-em-HSR"/>
+                                    <constraint firstItem="CDh-z7-QAt" firstAttribute="top" secondItem="fcy-4Z-8Uf" secondAttribute="bottom" constant="10" id="XEG-xa-Dms"/>
+                                    <constraint firstItem="0Sq-OR-xOd" firstAttribute="height" secondItem="CDh-z7-QAt" secondAttribute="height" id="c7c-4d-7S3"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Sq-OR-xOd" secondAttribute="bottom" id="irB-Fb-isE"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Sq-OR-xOd" secondAttribute="trailing" id="jQt-iB-dRl"/>
                                     <constraint firstAttribute="trailing" secondItem="fcy-4Z-8Uf" secondAttribute="trailing" id="mTY-Lv-JR4"/>
-                                    <constraint firstAttribute="bottom" secondItem="CDh-z7-QAt" secondAttribute="bottom" id="nPt-Ux-2lr"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -423,7 +503,8 @@
                     </view>
                     <connections>
                         <outlet property="categoryNameInput" destination="KYH-vy-UK2" id="LtR-Ea-WNO"/>
-                        <outlet property="predictedNameLocationTable" destination="CDh-z7-QAt" id="s0M-CJ-6XA"/>
+                        <outlet property="predictedLocationTable" destination="0Sq-OR-xOd" id="CCt-et-lbQ"/>
+                        <outlet property="predictedNameTable" destination="CDh-z7-QAt" id="ljD-9k-b7e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGf-V7-fjg" userLabel="First Responder" sceneMemberID="firstResponder"/>

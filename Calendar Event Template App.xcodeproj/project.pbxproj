@@ -20,6 +20,7 @@
 		2770E12F1E3AAB80003AA5F4 /* AngleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */; };
 		279022631E209BF10062FFE8 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279022621E209BF10062FFE8 /* EventListCell.swift */; };
 		279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */; };
+		27AAE8B81E3D8A37006D2173 /* LocationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AAE8B71E3D8A37006D2173 /* LocationListCell.swift */; };
 		27BA98041E2C937B0055AA54 /* NameLocationFrequencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */; };
 		27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */; };
 		27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */; };
@@ -71,6 +72,7 @@
 		2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleHelper.swift; sourceTree = "<group>"; };
 		279022621E209BF10062FFE8 /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
+		27AAE8B71E3D8A37006D2173 /* LocationListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListCell.swift; sourceTree = "<group>"; };
 		27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameLocationFrequencyCell.swift; sourceTree = "<group>"; };
 		27BDFD751E1D9E0500B8C474 /* Calendar Event Template App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calendar Event Template App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */,
 				27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */,
 				279022621E209BF10062FFE8 /* EventListCell.swift */,
+				27AAE8B71E3D8A37006D2173 /* LocationListCell.swift */,
 				27F4D5CE1E2EADD4005EDD36 /* AutocompleteTextField.swift */,
 			);
 			name = Classes;
@@ -387,6 +390,7 @@
 				2770E12F1E3AAB80003AA5F4 /* AngleHelper.swift in Sources */,
 				27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */,
 				2707362B1E20609E003E8B72 /* EventDetailsManager.swift in Sources */,
+				27AAE8B81E3D8A37006D2173 /* LocationListCell.swift in Sources */,
 				27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */,
 				272455741E1DCCA400F3856F /* Category.swift in Sources */,
 				2757074D1E27340A002A3060 /* CategoryEditing.swift in Sources */,

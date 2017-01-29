@@ -14,11 +14,13 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
     var categories: [Category] = [] // Storing all categories
     var currentCategory: Category = Constants.emptyCategory // Initially empty category
     var eventKeys: [String] = []
+    var locationKeys: [String] = []
     var selectedIndex: Int = 0 // The index of the category you are editing
     
     // UI Elements
     @IBOutlet weak var categoryNameInput: UITextField!
-    @IBOutlet weak var predictedNameLocationTable: UITableView!
+    @IBOutlet weak var predictedNameTable: UITableView!
+    @IBOutlet weak var predictedLocationTable: UITableView!
     
     // Manually add an event name prediction
     @IBAction func addEventNamePrediction(_ sender: Any) {
@@ -69,7 +71,8 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         self.categoryNameInput.text = categoryName
         
         // Automatic row height
-        self.predictedNameLocationTable.rowHeight = UITableViewAutomaticDimension
+        self.predictedNameTable.rowHeight = UITableViewAutomaticDimension
+        self.predictedLocationTable.rowHeight = UITableViewAutomaticDimension
     }
     
     // Retrieve and prepare data
@@ -84,10 +87,14 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         for (eventName, _) in self.currentCategory.eventNameFreq {
             self.eventKeys.append(eventName) // Add keys
         }
+        for (location, _) in self.currentCategory.locationFreq {
+            self.locationKeys.append(location) // Add location key
+        }
         
         // Refresh table view
         DispatchQueue.main.async {
-            self.predictedNameLocationTable.reloadData()
+            self.predictedNameTable.reloadData()
+            self.predictedLocationTable.reloadData()
         }
     }
     
@@ -109,24 +116,42 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK - Table View Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.currentCategory.eventNameFreq.count
+        if (tableView == self.predictedNameTable) { // Names
+            return self.currentCategory.eventNameFreq.count
+        } else { // Locations
+            return self.currentCategory.locationFreq.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Cell for each index
-        let cell = self.predictedNameLocationTable.dequeueReusableCell(withIdentifier: CellIdentifiers.nameLocationCell, for: indexPath) as! NameLocationFrequencyCell
-        let index = indexPath.item // Get index
-        let key = self.eventKeys[index] // Get key for dictionary
-        
-        // Populate cell
-//        print("Populating cell")
-        if let eventNameFreq = self.currentCategory.eventNameFreq[key] {
-//            print("Event name: \(key) with frequency: \(eventNameFreq)")
-            cell.eventName.text = key // Event name
-            cell.eventNameFreq.text = String(eventNameFreq)
+        if (tableView == self.predictedNameTable) { // Names
+            // Cell for each index
+            let cell = self.predictedNameTable.dequeueReusableCell(withIdentifier: CellIdentifiers.nameLocationCell, for: indexPath) as! NameLocationFrequencyCell
+            let index = indexPath.item // Get index
+            let key = self.eventKeys[index] // Get key for dictionary
+            
+            // Populate cell
+            if let eventNameFreq = self.currentCategory.eventNameFreq[key] {
+                //            print("Event name: \(key) with frequency: \(eventNameFreq)")
+                cell.eventName.text = key // Event name
+                cell.eventNameFreq.text = String(eventNameFreq)
+            }
+            
+            return cell
+        } else { // Locations
+            // Cell for each index
+            let cell = self.predictedLocationTable.dequeueReusableCell(withIdentifier: CellIdentifiers.locationListCell, for: indexPath) as! LocationListCell
+            let index = indexPath.item // Get index
+            let key = self.locationKeys[index] // Get key for dictionary
+            
+            // Populate cell
+            if let locationFreq = self.currentCategory.locationFreq[key] {
+                cell.locationLabel.text = key // Event name
+                cell.frequencyLabel.text = String(locationFreq)
+            }
+            
+            return cell
         }
-        
-        return cell
     }
     
     // Functionality for when editing cells
@@ -134,13 +159,25 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         if (editingStyle == .delete) {
             // When delete an item
             let index = indexPath.item
-            self.currentCategory.eventNameFreq.removeValue(forKey: self.eventKeys[index]) // Remove frequency data for specific event name
             
-            DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Refresh category data
-            
-            // Refresh table view to show updated category data
-            DispatchQueue.main.async {
-                self.predictedNameLocationTable.reloadData()
+            if (tableView == self.predictedNameTable) { // Event names
+                self.currentCategory.eventNameFreq.removeValue(forKey: self.eventKeys[index]) // Remove frequency data for specific event name
+                
+                DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Refresh category data
+                
+                // Refresh table view to show updated category data
+                DispatchQueue.main.async {
+                    self.predictedNameTable.reloadData()
+                }
+            } else { // Locations
+                self.currentCategory.locationFreq.removeValue(forKey: self.locationKeys[index]) // Remove frequency data for specific event name
+                
+                DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Refresh category data
+                
+                // Refresh table view to show updated category data
+                DispatchQueue.main.async {
+                    self.predictedLocationTable.reloadData()
+                }
             }
         }
     }

@@ -62,6 +62,7 @@ struct Storyboard {
 struct CellIdentifiers {
     // Table view cell identifiers
     static let eventListCell                = "EventListCell"
+    static let locationListCell             = "LocationListCell"
     static let categoryEditCell             = "CategoryEditCell"
     static let nameLocationCell             = "NameLocationCell"
     static let autcompleteCell              = "AutcompleteCell"
