@@ -19,9 +19,12 @@ extension EventDetails {
     func updateLocationSearchResults(query: String) {
         let mapSearchRequest = MKLocalSearchRequest()
         mapSearchRequest.naturalLanguageQuery = query
+        
+        // Simulate current location
         let defaultLocation = CLLocationCoordinate2D(latitude: 40.3440, longitude: -74.6514)
-        var regionSpan = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
+        let regionSpan = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
         mapSearchRequest.region = MKCoordinateRegion(center: defaultLocation, span: regionSpan) // For providing an area to search
+        
         let search = MKLocalSearch(request: mapSearchRequest)
         search.start(completionHandler: { (response, _) in
             guard let response = response else {
@@ -33,15 +36,12 @@ extension EventDetails {
                 locationResultCount = response.mapItems.count // Max is number of responses
             }
             
-            print(response.mapItems.count)
-            
             var locationResults: [String] = [] // Store suggestions
             
-            for (index, mapLocation) in response.mapItems.enumerated() {
-                if (index < locationResultCount) { // Only store certain number
-                    let readableAddress: String = mapLocation.name! + " - " + self.parseAddress(selectedItem: mapLocation.placemark) // Create human-readable address
-                    locationResults.append(readableAddress) // Append name
-                }
+            for index in 0..<locationResultCount {
+                let mapLocation: MKMapItem = response.mapItems[index] // Current map item
+                let readableAddress: String = mapLocation.name! + " - " + self.parseAddress(selectedItem: mapLocation.placemark) // Create human-readable address
+                locationResults.append(readableAddress) // Append name
             }
             
             // Populate autocomplete
