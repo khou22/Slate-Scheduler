@@ -29,6 +29,13 @@ class OnboardingPageFour: UIViewController {
         
         self.getStartedButton.setTitleColor(Colors.lightGrey, for: .selected) // Set button text color when pressed
         self.getStartedButton.showsTouchWhenHighlighted = true // Show a button press
+        
+        // Set initial state of category label switch
+        if (DataManager.onboardingStatus()) { // If user has already been through onbaording
+            self.categoryLabelSwitch.isOn = DataManager.includeCategoryLabel() // Use preference
+        } else { // If user's first time going through onboarding
+            self.categoryLabelSwitch.isOn = true // Default is on
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

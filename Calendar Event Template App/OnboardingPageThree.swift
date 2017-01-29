@@ -56,7 +56,7 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
     
     // User is requesting location permission
     @IBAction func pressedLocationPermissionButton(_ sender: Any) {
-        print("Pressed location access button")
+//        print("Pressed location access button")
         
         // If already asked and failed
         if self.failedAccessGrant {

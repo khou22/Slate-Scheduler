@@ -83,7 +83,7 @@ class OnboardingPageTwo: UIViewController {
         // Request calendar access
         DataManager.didAskForCalendarAccess() // Store that asked for calendar access
         self.calendarManager.requestAccess(completion: { (success) in
-            print("Requested calendar access \(success)")
+//            print("Requested calendar access \(success)")
             if success {
                 self.checkCalendarPermissions() // Check location status and update permissions
             }
