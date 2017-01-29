@@ -60,19 +60,25 @@ class OnboardingPager: UIPageViewController {
         // Retrieve the view
         return storyboard!.instantiateViewController(withIdentifier: Storyboard.onboardingPageThree) as! OnboardingPageThree
     }
+    
+    func getPageFour() -> OnboardingPageFour {
+        // Retrieve the view
+        return storyboard!.instantiateViewController(withIdentifier: Storyboard.onboardingPageFour) as! OnboardingPageFour
+    }
 }
 
 extension OnboardingPager: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         // Swiping forward
-        if viewController.isKind(of: OnboardingPageOne.self) { // If you're on page one
-            // We want to swipe to page two
+        if viewController.isKind(of: OnboardingPageOne.self) { // 1 -> 2
             return getPageTwo()
-        } else if viewController.isKind(of: OnboardingPageTwo.self) { // If on page two
+        } else if viewController.isKind(of: OnboardingPageTwo.self) { // 2 -> 3
             // Want page three
             return getPageThree()
-        } else { // If on page three
+        } else if viewController.isKind(of: OnboardingPageThree.self) { // 3 -> 4
+            return getPageFour()
+        } else { // If on page four
             // End of all pages
             return nil
         }
@@ -80,11 +86,12 @@ extension OnboardingPager: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         // Swiping backward
         
-        if viewController.isKind(of: OnboardingPageThree.self) {
+        if viewController.isKind(of: OnboardingPageFour.self) { // 4 -> 3
             // If on page three, can swipe back to page two
+            return getPageThree()
+        } else if viewController.isKind(of: OnboardingPageThree.self) { // 3 -> 2
             return getPageTwo()
-        } else if viewController.isKind(of: OnboardingPageTwo.self) { // If on page two
-            // Want page one
+        } else if viewController.isKind(of: OnboardingPageTwo.self) { // 2 -> 1
             return getPageOne()
         } else {
             // If on the first page, can't swipe back
@@ -93,7 +100,7 @@ extension OnboardingPager: UIPageViewControllerDataSource {
     }
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return 3
+        return 4
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {

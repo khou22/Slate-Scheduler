@@ -1248,10 +1248,10 @@
             </objects>
             <point key="canvasLocation" x="1168.8" y="-653.52323838080963"/>
         </scene>
-        <!--Onboarding Page Three-->
+        <!--Onboarding Page Four-->
         <scene sceneID="a78-og-PvO">
             <objects>
-                <viewController storyboardIdentifier="OnboardingPageThree" id="cne-eY-2Tp" customClass="OnboardingPageThree" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingPageFour" id="cne-eY-2Tp" customClass="OnboardingPageFour" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6vA-av-lYs"/>
                         <viewControllerLayoutGuide type="bottom" id="RU1-ol-kmH"/>
@@ -1356,7 +1356,87 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGH-jB-tPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="-652.62368815592208"/>
+            <point key="canvasLocation" x="2582" y="-652"/>
+        </scene>
+        <!--Onboarding Page Three-->
+        <scene sceneID="HUy-Hm-tpy">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingPageThree" id="rzh-tQ-OMg" customClass="OnboardingPageThree" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QXJ-87-tia"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fu2-s6-GMS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2cE-1q-V38">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please allow us to access your location to give you accurate location searching for your events." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aWc-lU-aI4">
+                                <rect key="frame" x="16" y="36" width="343" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="FLM-P3-7kG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b7J-dt-Tjg">
+                                <rect key="frame" x="96" y="602" width="183" height="45"/>
+                                <color key="backgroundColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Lvt-Rr-ESV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sounds Good"/>
+                                <connections>
+                                    <action selector="promptCalendarPermission:" destination="8zU-Vz-ZRH" eventType="touchUpInside" id="gC7-Xs-bzr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will never track your location — we only need it so you can easily add locations to your events." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="y9K-l8-D0n">
+                                <rect key="frame" x="32" y="509" width="311" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="vPc-PH-dj2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" translatesAutoresizingMaskIntoConstraints="NO" id="5XY-sz-Kf5">
+                                <rect key="frame" x="87" y="264" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="cJh-Hf-vDj"/>
+                                    <constraint firstAttribute="width" secondItem="5XY-sz-Kf5" secondAttribute="height" multiplier="1:1" id="duL-T2-Q5t"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-pin" translatesAutoresizingMaskIntoConstraints="NO" id="mbY-t4-ci7">
+                                <rect key="frame" x="122" y="160" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mbY-t4-ci7" secondAttribute="height" multiplier="1:1" id="iPd-Jn-PVk"/>
+                                    <constraint firstAttribute="width" constant="130" id="zbh-E1-GOh"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y9K-l8-D0n" firstAttribute="top" secondItem="5XY-sz-Kf5" secondAttribute="bottom" constant="45" id="7DB-Wn-gWK"/>
+                            <constraint firstItem="mbY-t4-ci7" firstAttribute="centerX" secondItem="2cE-1q-V38" secondAttribute="centerX" id="B3h-V2-pT3"/>
+                            <constraint firstItem="5XY-sz-Kf5" firstAttribute="centerX" secondItem="2cE-1q-V38" secondAttribute="centerX" id="C2A-QV-5Sz"/>
+                            <constraint firstItem="y9K-l8-D0n" firstAttribute="leading" secondItem="2cE-1q-V38" secondAttribute="leadingMargin" constant="16" id="G1t-Yd-6IO"/>
+                            <constraint firstItem="b7J-dt-Tjg" firstAttribute="leading" secondItem="2cE-1q-V38" secondAttribute="leadingMargin" constant="80" id="d8v-sS-qke"/>
+                            <constraint firstAttribute="trailing" secondItem="aWc-lU-aI4" secondAttribute="trailing" constant="16" id="dTP-lT-uTp"/>
+                            <constraint firstItem="aWc-lU-aI4" firstAttribute="leading" secondItem="2cE-1q-V38" secondAttribute="leading" constant="16" id="doO-Eo-UHI"/>
+                            <constraint firstItem="5XY-sz-Kf5" firstAttribute="top" secondItem="mbY-t4-ci7" secondAttribute="bottom" constant="-26" id="fLu-0v-WAH"/>
+                            <constraint firstItem="aWc-lU-aI4" firstAttribute="top" secondItem="QXJ-87-tia" secondAttribute="bottom" constant="16" id="guq-1S-k5f"/>
+                            <constraint firstItem="b7J-dt-Tjg" firstAttribute="top" secondItem="y9K-l8-D0n" secondAttribute="bottom" constant="20" id="jlD-FW-H8I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b7J-dt-Tjg" secondAttribute="trailing" constant="80" id="jpH-gp-aM0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y9K-l8-D0n" secondAttribute="trailing" constant="16" id="sdd-zV-qyC"/>
+                            <constraint firstItem="Fu2-s6-GMS" firstAttribute="top" secondItem="b7J-dt-Tjg" secondAttribute="bottom" constant="20" id="ycb-5m-vJp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ObS-h4-RgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880.8" y="-654.42278860569718"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I0Z-Yt-6bU">
@@ -1379,11 +1459,13 @@
         <image name="calendar-icon" width="600" height="660"/>
         <image name="calendar-permission-alert" width="560" height="320"/>
         <image name="event-summary-card" width="2744" height="1664"/>
+        <image name="globe" width="892" height="896"/>
         <image name="google_calendar_icon" width="200" height="200"/>
         <image name="help-button" width="160" height="160"/>
         <image name="icloud_icon" width="200" height="200"/>
         <image name="ios_calendar_icon" width="200" height="200"/>
         <image name="iphone-wireframe" width="740" height="1520"/>
+        <image name="map-pin" width="472" height="632"/>
         <image name="outlook_icon" width="200" height="200"/>
         <image name="submit-confirmation" width="70" height="70"/>
         <image name="yahoo_icon" width="200" height="200"/>
