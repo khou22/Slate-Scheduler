@@ -38,7 +38,6 @@ class OnboardingPageTwo: UIViewController {
         
         self.permissionGranted.layer.opacity = 0.0 // Start invisible
         self.calendarPermissionButton.setTitleColor(Colors.lightGrey, for: .selected) // Set button text color when pressed
-        self.calendarPermissionButton.showsTouchWhenHighlighted = true // Show a button press
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +48,8 @@ class OnboardingPageTwo: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.entranceAnimation() // Trigger entrance animation
+        
+        self.checkCalendarPermissions() // Check location status and update permissions
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -83,18 +84,27 @@ class OnboardingPageTwo: UIViewController {
         DataManager.didAskForCalendarAccess() // Store that asked for calendar access
         self.calendarManager.requestAccess(completion: { (success) in
             print("Requested calendar access \(success)")
-            let calendarPermission = EKEventStore.authorizationStatus(for: EKEntityType.event)
-            let authorized = (success && calendarPermission == .authorized)
-            self.activityIndicator.isHidden = true // Hide and turn off spinner
-            if authorized { // If authorized the calendar
-                print("Success")
-                DispatchQueue.main.async {
-                    UIView.animate(withDuration: 0.25, animations: {
-                        self.activityIndicator.layer.opacity = 0.0 // Hide spinner
-                        self.permissionGranted.layer.opacity = 1.0 // Show permission granted checkmark
-                    })
-                }
-            } else { // If didn't authorize calendar
+            if success {
+                self.checkCalendarPermissions() // Check location status and update permissions
+            }
+        })
+    }
+    
+    // Check calendar permission and update frontend
+    func checkCalendarPermissions() {
+        let calendarPermission = EKEventStore.authorizationStatus(for: EKEntityType.event)
+        let authorized = (calendarPermission == .authorized)
+        self.activityIndicator.isHidden = true // Hide and turn off spinner
+        if authorized { // If authorized the calendar
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.calendarPermissionButton.isHidden = true // Hide button if not already hidden
+                    self.activityIndicator.layer.opacity = 0.0 // Hide spinner
+                    self.permissionGranted.layer.opacity = 1.0 // Show permission granted checkmark
+                })
+            }
+        } else { // If didn't authorize calendar
+            if (!self.failedAccessGrant && calendarPermission != .notDetermined) { // Only show alerts if already asked user
                 DispatchQueue.main.async {
                     UIView.animate(withDuration: 0.25, animations: {
                         self.activityIndicator.layer.opacity = 0.0 // Hide spinner
@@ -105,7 +115,7 @@ class OnboardingPageTwo: UIViewController {
                     })
                 }
             }
-        })
+        }
     }
     
     func entranceAnimation() {

@@ -46,6 +46,10 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
         self.entranceAnimations() // Start animations before screen appears
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.checkLocationPermissions() // Check status and update frontend
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         self.resetAnimations() // Reset scrolling animations
     }
@@ -77,12 +81,18 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
 
     // If authorization status changed
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        print("Location access changed")
+//        print("Location access changed")
+        self.checkLocationPermissions() // Check status and update frontend
+    }
+    
+    func checkLocationPermissions() {
+        let status: CLAuthorizationStatus = CLLocationManager.authorizationStatus() // Get authorization status
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
                 if CLLocationManager.isRangingAvailable() {
                     // Success
                     UIView.animate(withDuration: 0.25, animations: {
+                        self.locationPermissionButton.isHidden = true // Hide button if not already hidden
                         self.activityIndicator.layer.opacity = 0.0 // Hide spinner
                         self.permissionGranted.layer.opacity = 1.0 // Show permission granted checkmark
                         self.lowerLabel.text = "We will never track your location — we only need it so you can easily add locations to your events."
@@ -90,13 +100,15 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
                 }
             }
         } else { // Didn't authorize
-            UIView.animate(withDuration: 0.25, animations: {
-                self.activityIndicator.layer.opacity = 0.0 // Hide spinner
-                self.lowerLabel.text = "For the best experience, please enable location access in the Settings app."
-                self.locationPermissionButton.setTitle("Go to Settings", for: .normal)
-                self.failedAccessGrant = true // User denied access
-                self.locationPermissionButton.isHidden = false
-            })
+            if (status != .notDetermined) { // Only show alerts if access denied
+                UIView.animate(withDuration: 0.25, animations: {
+                    self.activityIndicator.layer.opacity = 0.0 // Hide spinner
+                    self.lowerLabel.text = "For the best experience, please enable location access in the Settings app."
+                    self.locationPermissionButton.setTitle("Go to Settings", for: .normal)
+                    self.failedAccessGrant = true // User denied access
+                    self.locationPermissionButton.isHidden = false
+                })
+            }
         }
     }
 
