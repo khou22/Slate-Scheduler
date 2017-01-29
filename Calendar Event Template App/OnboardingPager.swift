@@ -124,8 +124,6 @@ extension OnboardingPager: UIScrollViewDelegate {
                 getPageOne().updateScrollPercentage()
             case 2:
                 getPageTwo().updateScrollPercentage()
-            case 3:
-                getPageThree().updateScrollPercentage()
             default:
                 break
             }

@@ -29,6 +29,8 @@ class OnboardingPageTwo: UIViewController {
     
     var failedAccessGrant = false // If user denied calendar access permission
     
+    let calendarManager: CalendarManager = CalendarManager() // Store
+    
     override func viewDidLoad() {
         onboardingBackground() // Setup background gradient
         
@@ -78,7 +80,8 @@ class OnboardingPageTwo: UIViewController {
         self.activityIndicator.layer.opacity = 1.0 // Show and animate spinner
         
         // Request calendar access
-        CalendarManager().requestAccess(completion: { (success) in
+        DataManager.didAskForCalendarAccess() // Store that asked for calendar access
+        self.calendarManager.requestAccess(completion: { (success) in
             print("Requested calendar access \(success)")
             let calendarPermission = EKEventStore.authorizationStatus(for: EKEntityType.event)
             let authorized = (success && calendarPermission == .authorized)

@@ -154,6 +154,15 @@ struct DataManager {
         }
     }
     
+    static func didAskForCalendarAccess() { // Store that asked for calendar access
+        Constants.defaults.set(true, forKey: Keys.askedCalendarAccess) // Set as true
+    }
+    
+    static func askedForCalendarAccess() -> Bool { // Return whether asked user for calendar permission yet
+        // If never asked, will return false
+        return Constants.defaults.bool(forKey: Keys.askedCalendarAccess)
+    }
+    
     /************ User Settings ************/
     static func setCategoryLabelSetting(value: Bool) {
         Constants.defaults.set(value, forKey: Keys.categoryLabelOnEvents)

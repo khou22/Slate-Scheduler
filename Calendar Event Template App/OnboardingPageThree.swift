@@ -29,12 +29,12 @@ class OnboardingPageThree: UIViewController {
         
         self.getStartedButton.setTitleColor(Colors.lightGrey, for: .selected) // Set button text color when pressed
         self.getStartedButton.showsTouchWhenHighlighted = true // Show a button press
-        
-        self.checkCalendarAuth() // Check for calendar authorization
     }
     
     override func viewWillAppear(_ animated: Bool) {
         ScrollData.setCurrentPage(index: 3)
+        
+        self.checkCalendarAuth() // Check for calendar authorization
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,11 +45,6 @@ class OnboardingPageThree: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         self.resetSummaryCardAnimation() // Reset animations
-    }
-    
-    func updateScrollPercentage() {
-        let percentage = CGFloat(ScrollData.value)
-//        print("Page three registered scroll percentage: \(percentage)")
     }
     
     // Triggered when category label switch is flipped
@@ -114,26 +109,23 @@ class OnboardingPageThree: UIViewController {
     }
     
     func checkCalendarAuth() {
-        CalendarManager().requestAccess(completion: { (success) in
-            let calendarPermission = EKEventStore.authorizationStatus(for: EKEntityType.event)
-            let authorized = (success && calendarPermission == .authorized)
-            if !authorized { // If not authorized the calendar
-                DispatchQueue.main.async {
-                    self.pageTitle.text = "Calendar permission is required for this app."
-                    self.getStartedButton.setTitle("Swipe back to authorize", for: .normal) // Button feedback
-                    self.getStartedButton.setTitleColor(Colors.white, for: .normal) // Button text color
-                    self.getStartedButton.isEnabled = false // Disable button
-                    self.getStartedButton.backgroundColor = Colors.lightRed // Change color
-                }
-            } else { // If calendar is authorized
-                DispatchQueue.main.async {
-                    self.pageTitle.text = "You’re good to go!"
-                    self.getStartedButton.setTitle("Get started", for: .normal) // Button feedback
-                    self.getStartedButton.setTitleColor(Colors.white, for: .normal) // Button text color
-                    self.getStartedButton.isEnabled = true // Enable button
-                    self.getStartedButton.backgroundColor = Colors.red // Change color to original
-                }
+        let calendarPermission = EKEventStore.authorizationStatus(for: EKEntityType.event)
+        if calendarPermission != .authorized { // If not authorized the calendar
+            DispatchQueue.main.async {
+                self.pageTitle.text = "Calendar permission is required for this app."
+                self.getStartedButton.setTitle("Swipe back to authorize", for: .normal) // Button feedback
+                self.getStartedButton.setTitleColor(Colors.white, for: .normal) // Button text color
+                self.getStartedButton.isEnabled = false // Disable button
+                self.getStartedButton.backgroundColor = Colors.lightRed // Change color
             }
-        })
+        } else { // If calendar is authorized
+            DispatchQueue.main.async {
+                self.pageTitle.text = "You’re good to go!"
+                self.getStartedButton.setTitle("Get started", for: .normal) // Button feedback
+                self.getStartedButton.setTitleColor(Colors.white, for: .normal) // Button text color
+                self.getStartedButton.isEnabled = true // Enable button
+                self.getStartedButton.backgroundColor = Colors.red // Change color to original
+            }
+        }
     }
 }

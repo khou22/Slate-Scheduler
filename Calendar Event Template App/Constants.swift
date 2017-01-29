@@ -102,6 +102,7 @@ struct Keys {
     // NSUserDefault keys:
     static let categoryData                 = "categoryData"
     static let completedOnboarding          = "completedOnboarding"
+    static let askedCalendarAccess          = "askedForCalendarAccess"
     static let categoryLabelOnEvents        = "categoryLabelOnEvents"
     static let userLatitude                 = "userLatitude"
     static let userLongitude                = "userLongitude"
