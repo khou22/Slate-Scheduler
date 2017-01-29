@@ -23,7 +23,8 @@ extension UITextField {
         self.layer.masksToBounds = true
     }
     
-    // Add done button to number keyboard
+    
+    // MARK - Add done button to number keyboard
     // Source: https://gist.github.com/jplazcano87/8b5d3bc89c3578e45c3e
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50)) // Create keyboard toolbar

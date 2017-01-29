@@ -105,7 +105,6 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
                     self.validSuggestions.append(potential) // Add to the secondary array
                 }
             }
-
         }
         
         self.updateTableViewHeight() // Update table height to sync with number of suggestions

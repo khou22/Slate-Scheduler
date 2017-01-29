@@ -140,7 +140,13 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // Location input changed
     @IBAction func locationInputChanged(_ sender: Any) {
-        self.updateLocationSearchResults(query: self.locationInput.text!) // Update autocomplete
+        let query: String = self.locationInput.text!
+        if (query != "") { // If text exists
+            self.updateLocationSearchResults(query: query) // Update autocomplete
+        } else { // If no text
+            self.locationInput.updateSuggestions(prioritized: [])
+            self.locationInput.valueChanged() // Force update
+        }
     }
     
     // User released the slider

@@ -45,8 +45,10 @@ extension EventDetails {
             }
             
             // Populate autocomplete
-            self.locationInput.updateSuggestions(prioritized: locationResults)
-            self.locationInput.updateValid()
+            if self.locationInput.text! != "" { // If there's still contents in the text box
+                self.locationInput.updateSuggestions(prioritized: locationResults)
+                self.locationInput.updateValid()
+            }
         })
     }
     
