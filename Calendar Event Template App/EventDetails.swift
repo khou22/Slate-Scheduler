@@ -104,6 +104,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Setup autocomplete table view for location search
         self.locationInput.setupTableView(view: self.view)
+        self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations()) // Load previous locations
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -144,7 +145,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         if (query != "") { // If text exists
             self.updateLocationSearchResults(query: query) // Update autocomplete
         } else { // If no text
-            self.locationInput.updateSuggestions(prioritized: [])
+            self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations()) // Use previous locations
             self.locationInput.valueChanged() // Force update
         }
     }

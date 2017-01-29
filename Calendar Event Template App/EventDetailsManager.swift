@@ -36,7 +36,7 @@ extension EventDetails {
                 locationResultCount = response.mapItems.count // Max is number of responses
             }
             
-            var locationResults: [String] = [] // Store suggestions
+            var locationResults: [String] = self.category.orderedLocations() // Store suggestions including predictive history
             
             for index in 0..<locationResultCount {
                 let mapLocation: MKMapItem = response.mapItems[index] // Current map item
@@ -45,10 +45,13 @@ extension EventDetails {
             }
             
             // Populate autocomplete
-            if self.locationInput.text! != "" { // If there's still contents in the text box
+            if self.locationInput.text! != "" { // If text box has a query
                 self.locationInput.updateSuggestions(prioritized: locationResults)
-                self.locationInput.updateValid()
+            } else { // If text box empty
+                self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations())
             }
+            
+            self.locationInput.updateValid()
         })
     }
     
