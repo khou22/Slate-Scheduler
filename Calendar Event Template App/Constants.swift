@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 struct StringIdentifiers {
     static let noCategory                   = "!#No#Category#!" // To signify a new event with no category
@@ -61,6 +62,7 @@ struct Storyboard {
 struct CellIdentifiers {
     // Table view cell identifiers
     static let eventListCell                = "EventListCell"
+    static let locationListCell             = "LocationListCell"
     static let categoryEditCell             = "CategoryEditCell"
     static let nameLocationCell             = "NameLocationCell"
     static let autcompleteCell              = "AutcompleteCell"
@@ -87,6 +89,12 @@ struct SDK {
 struct Constants {
     // NSUserDefaults initializer
     static let defaults                     = UserDefaults.standard
+    
+    // Empty category
+    static let emptyCategory                = Category(name: StringIdentifiers.noCategory, eventNameFreq: [ : ], locationFreq: [ : ])
+    
+    // Default location if user hasn't allowed location services
+    static let defaultLocation              = CLLocationCoordinate2D(latitude: 40.3440, longitude: -74.6514)
 }
 
 struct Keys {
@@ -94,11 +102,13 @@ struct Keys {
     static let categoryData                 = "categoryData"
     static let completedOnboarding          = "completedOnboarding"
     static let categoryLabelOnEvents        = "categoryLabelOnEvents"
+    static let userLatitude                 = "userLatitude"
+    static let userLongitude                = "userLongitude"
     
     // Other keys
     static let categoryName                 = "categoryName"
     static let eventNameFreq                = "nameFrequency"
-    static let eventNameToLocation          = "eventNameToLocation"
+    static let locationFrequency            = "locationFrequency"
 }
 
 struct Urls {

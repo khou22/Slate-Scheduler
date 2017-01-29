@@ -104,7 +104,6 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
                     self.validSuggestions.append(potential) // Add to the secondary array
                 }
             }
-
         }
         
         self.updateTableViewHeight() // Update table height to sync with number of suggestions
@@ -127,7 +126,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     }
     
     // Text field value changed
-    func valueChanged() {
+    public func valueChanged() {
         self.updateValid() // Update autocomplete suggestions when value changed
     }
     

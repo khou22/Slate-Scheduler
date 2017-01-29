@@ -10,9 +10,76 @@
 
 import Foundation
 import UIKit
-import EventKit
+import EventKit // For creating/reading calendar data
+import MapKit // For providing location suggestions
 
 extension EventDetails {
+    
+    // Update location search results
+    func updateLocationSearchResults(query: String) {
+        let mapSearchRequest = MKLocalSearchRequest()
+        mapSearchRequest.naturalLanguageQuery = query
+        
+        // Simulate current location
+        let defaultLocation = DataManager.getLatestLocation() // Get most recent location or default location
+        let regionSpan = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+        mapSearchRequest.region = MKCoordinateRegion(center: defaultLocation, span: regionSpan) // For providing an area to search
+        
+        let search = MKLocalSearch(request: mapSearchRequest)
+        search.start(completionHandler: { (response, _) in
+            guard let response = response else {
+                return
+            }
+            
+            var locationResultCount: Int = 10 // Show top x number
+            if (locationResultCount > response.mapItems.count) { // If fewer results than max
+                locationResultCount = response.mapItems.count // Max is number of responses
+            }
+            
+            var locationResults: [String] = self.category.orderedLocations() // Store suggestions including predictive history
+            
+            for index in 0..<locationResultCount {
+                let mapLocation: MKMapItem = response.mapItems[index] // Current map item
+                let readableAddress: String = mapLocation.name! + ", " + self.parseAddress(selectedItem: mapLocation.placemark) // Create human-readable address
+                locationResults.append(readableAddress) // Append name
+            }
+            
+            // Populate autocomplete
+            if self.locationInput.text! != "" { // If text box has a query
+                self.locationInput.updateSuggestions(prioritized: locationResults)
+            } else { // If text box empty
+                self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations())
+            }
+            
+            self.locationInput.updateValid()
+        })
+    }
+    
+    // Returns human readable address string
+    // Source: https://www.thorntech.com/2016/01/how-to-search-for-location-using-apples-mapkit/
+    func parseAddress(selectedItem: MKPlacemark) -> String {
+        // put a space between "4" and "Melrose Place"
+        let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
+        // put a comma between street and city/state
+        let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) && (selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
+        // put a space between "Washington" and "DC"
+        let secondSpace = (selectedItem.subAdministrativeArea != nil && selectedItem.administrativeArea != nil) ? " " : ""
+        let addressLine = String(
+            format:"%@%@%@%@%@%@%@",
+            // street number
+            selectedItem.subThoroughfare ?? "",
+            firstSpace,
+            // street name
+            selectedItem.thoroughfare ?? "",
+            comma,
+            // city
+            selectedItem.locality ?? "",
+            secondSpace,
+            // state
+            selectedItem.administrativeArea ?? ""
+        )
+        return addressLine
+    }
     
     // Calculate the labels for the quick day picker and update global variables
     func calcQuickDays() {
@@ -230,11 +297,20 @@ extension EventDetails {
     func logEventData() {
         // Markov model with category to event name
         if let count = self.category.eventNameFreq[self.eventNameInput.text!] { // If it has been logged before
-            print("Updated frequency for \(self.eventNameInput.text): \(count + 1)")
+//            print("Updated frequency for \(self.eventNameInput.text): \(count + 1)")
             self.category.eventNameFreq[self.eventNameInput.text!] = count + 1 // Increment counter
         } else {
-            print("New frequency entry for \(self.eventNameInput.text)")
+//            print("New frequency entry for \(self.eventNameInput.text)")
             self.category.eventNameFreq[self.eventNameInput.text!] = 1 // Create a dictionary reference with frequency of 1
+        }
+        
+        // Markov model with category to location
+        if let count = self.category.locationFreq[self.locationInput.text!] { // If it has been logged before
+//            print("Updated frequency for \(self.locationInput.text): \(count + 1)")
+            self.category.locationFreq[self.locationInput.text!] = count + 1 // Increment counter
+        } else {
+//            print("New frequency entry for \(self.locationInput.text)")
+            self.category.locationFreq[self.locationInput.text!] = 1 // Create a dictionary reference with frequency of 1
         }
         
         // Markov model with event name to location

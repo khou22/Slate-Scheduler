@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -20,7 +21,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     @IBOutlet weak var collectionViewLeft: NSLayoutConstraint!
     @IBOutlet weak var collectionViewRight: NSLayoutConstraint!
     
-    var categoryData: [Category] = [Category(name: StringIdentifiers.noCategory, eventNameFreq: [ : ])]
+    var categoryData: [Category] = [Constants.emptyCategory]
     var selectedItem: Int = 0
     
     // Cell size styling
@@ -28,11 +29,18 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     let cellInset: CGFloat = ScreenSize.screen_width / 50.0
     let cellHeight: CGFloat = 80.0 // Default cell height
     
+    // Location services
+    let locationManager: CLLocationManager = CLLocationManager()
+    
     // Styling before view appears
     override func viewDidLoad() {
         // Labels when no categories present
         for label in self.noCategoriesLabels {
             label.alpha = 0.0 // Make transparent
+        }
+        
+        if DataManager.locationServicesEnabled() { // If location services enabled
+            self.setupLocationService() // Setup and get location once
         }
     }
     
@@ -73,7 +81,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
             let textField = newCategoryAlert?.textFields![0] // Force unwrapping because we know it exists
             let categoryName: String = (textField?.text)! // Get category name from input
             
-            let category: Category = Category(name: categoryName, eventNameFreq: [ : ]) // Create new category
+            let category: Category = Category(name: categoryName, eventNameFreq: [ : ], locationFreq: [ : ]) // Create new category
             DataManager.newCategory(category: category) // Push to data set
             
             // Refresh collection view
@@ -170,6 +178,21 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         return UIEdgeInsetsMake(-40, cellInset, 0, cellInset)
     }
     
-
+    func setupLocationService() {
+        self.locationManager.delegate = self // Set delegate
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters // Don't need extreme accuracy
+        self.locationManager.requestLocation()
+    }
 }
 
+// Getting current location
+extension CategorySelection: CLLocationManagerDelegate {
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location: CLLocationCoordinate2D = manager.location!.coordinate // Get coordinates of location
+        print("Location = \(location.latitude) \(location.longitude)") // Feedback
+        
+        DataManager.setLatestLocation(coordinates: location)
+    }
+    
+}
