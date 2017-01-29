@@ -605,8 +605,11 @@
                                                 <color key="textColor" red="0.61966550350189209" green="0.61965179443359375" blue="0.61965441703796387" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-UH-lk1" customClass="AutocompleteTextField" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-UH-lk1" customClass="AutocompleteTextField" customModule="Calendar_Event_Template_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="23" width="271" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="Qcp-I6-Dcm"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
@@ -631,6 +634,9 @@
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="FSo-X2-1j2">
                                                 <rect key="frame" x="0.0" y="17" width="44" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="27" id="Lrd-RD-bgi"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
