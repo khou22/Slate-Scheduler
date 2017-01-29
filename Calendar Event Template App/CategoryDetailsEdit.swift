@@ -53,6 +53,37 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         self.present(newCategoryAlert, animated: true, completion: nil) // Present the alert
     }
     
+    // Manually add location prediction
+    @IBAction func addLocationPrediction(_ sender: Any) {
+        // Create text modal for adding an event name prediction
+        let newCategoryAlert = UIAlertController(title: "Enter Location", message: "Manually add a location suggestion", preferredStyle: .alert)
+        
+        // Add text field item
+        newCategoryAlert.addTextField { (textField) in
+            textField.text = "" // No placeholder
+            textField.autocapitalizationType = UITextAutocapitalizationType.words // Capitalization rules
+        }
+        
+        // Add cancel action
+        newCategoryAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil)) // No action if cancelled
+        
+        // Add submit action
+        newCategoryAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak newCategoryAlert] (_) in
+            // Get text field content
+            let textField = newCategoryAlert?.textFields![0] // Force unwrapping because we know it exists
+            
+            self.currentCategory.locationFreq[(textField?.text)!] = 0 // New event name frequency entry with frequency of 0
+            
+            // Update category data with new markov model
+            DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex)
+            
+            // Refresh the table view on this page
+            self.refreshData()
+        }))
+        
+        self.present(newCategoryAlert, animated: true, completion: nil) // Present the alert
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         self.refreshData() // Update data
         let categoryName = self.currentCategory.name

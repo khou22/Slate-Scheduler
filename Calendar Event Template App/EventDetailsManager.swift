@@ -294,19 +294,19 @@ extension EventDetails {
     func logEventData() {
         // Markov model with category to event name
         if let count = self.category.eventNameFreq[self.eventNameInput.text!] { // If it has been logged before
-            print("Updated frequency for \(self.eventNameInput.text): \(count + 1)")
+//            print("Updated frequency for \(self.eventNameInput.text): \(count + 1)")
             self.category.eventNameFreq[self.eventNameInput.text!] = count + 1 // Increment counter
         } else {
-            print("New frequency entry for \(self.eventNameInput.text)")
+//            print("New frequency entry for \(self.eventNameInput.text)")
             self.category.eventNameFreq[self.eventNameInput.text!] = 1 // Create a dictionary reference with frequency of 1
         }
         
         // Markov model with category to location
         if let count = self.category.locationFreq[self.locationInput.text!] { // If it has been logged before
-            print("Updated frequency for \(self.locationInput.text): \(count + 1)")
+//            print("Updated frequency for \(self.locationInput.text): \(count + 1)")
             self.category.locationFreq[self.locationInput.text!] = count + 1 // Increment counter
         } else {
-            print("New frequency entry for \(self.locationInput.text)")
+//            print("New frequency entry for \(self.locationInput.text)")
             self.category.locationFreq[self.locationInput.text!] = 1 // Create a dictionary reference with frequency of 1
         }
         

@@ -412,7 +412,7 @@
                                                 </constraints>
                                                 <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
-                                                    <action selector="addEventNamePrediction:" destination="ofc-Ei-ISN" eventType="touchUpInside" id="jtD-cS-7eE"/>
+                                                    <action selector="addLocationPrediction:" destination="ofc-Ei-ISN" eventType="touchUpInside" id="x7z-7I-cdv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -420,7 +420,7 @@
                                             <constraint firstAttribute="height" constant="16" id="fD8-N9-5aH"/>
                                         </constraints>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Sq-OR-xOd">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Sq-OR-xOd">
                                         <rect key="frame" x="0.0" y="248.5" width="319" height="186.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
