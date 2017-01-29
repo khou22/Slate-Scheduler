@@ -51,6 +51,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     
     // Entrance animation for suggestion box
     func showSuggestions() {
+        print("Showing suggestions")
         let oldFrame = self.autocompleteTableView.frame // Store old frame
         UIView.animate(withDuration: 0.2, animations: {
             self.autocompleteTableView.alpha = 1.0 // Show animation box
@@ -127,7 +128,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     }
     
     // Text field value changed
-    func valueChanged() {
+    public func valueChanged() {
         self.updateValid() // Update autocomplete suggestions when value changed
     }
     

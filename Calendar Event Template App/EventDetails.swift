@@ -23,7 +23,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // Form inputs
     @IBOutlet weak var eventNameInput: AutocompleteTextField!
-    @IBOutlet weak var locationInput: UITextField!
+    @IBOutlet weak var locationInput: AutocompleteTextField!
     @IBOutlet weak var roomInput: UITextField!
     @IBOutlet weak var durationSlider: StepSlider!
     @IBOutlet weak var durationLabel: UILabel!
@@ -92,14 +92,18 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Setup start time slider
         self.startTimeSlider.stepValue = 0.5 // Every half hour
         
-        // Event name input setup
+        // Autocomplete setup
         self.eventNameInput.nextTextField = self.locationInput // Setup next input
+        self.locationInput.nextTextField = self.roomInput // Next input
         
         // Setup table view if for category
         if (!self.noCategory) {
             self.eventNameInput.setupTableView(view: self.view)
             self.eventNameInput.updateSuggestions(prioritized: self.category.orderedEventNames()) // Load autocomplete suggestions
         }
+        
+        // Setup autocomplete table view for location search
+        self.locationInput.setupTableView(view: self.view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -132,6 +136,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
             // If neccessary inputs filled out correctly
             self.generateCard() // Begin process to add event to calendar
         }
+    }
+    
+    // Location input changed
+    @IBAction func locationInputChanged(_ sender: Any) {
+        self.updateLocationSearchResults(query: self.locationInput.text!) // Update autocomplete
     }
     
     // User released the slider
@@ -195,9 +204,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if (textField == self.locationInput) { // Pressed next on location input
-            self.roomInput.becomeFirstResponder() // Move to room input
-        } else { // On room number
+        if (textField == self.roomInput) { // On room number
             self.dismissKeyboard() // Hide keyboard
         }
         return true

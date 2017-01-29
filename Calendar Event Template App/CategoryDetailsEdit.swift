@@ -49,7 +49,6 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         }))
         
         self.present(newCategoryAlert, animated: true, completion: nil) // Present the alert
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

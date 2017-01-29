@@ -10,9 +10,71 @@
 
 import Foundation
 import UIKit
-import EventKit
+import EventKit // For creating/reading calendar data
+import MapKit // For providing location suggestions
 
 extension EventDetails {
+    
+    // Update location search results
+    func updateLocationSearchResults(query: String) {
+        let mapSearchRequest = MKLocalSearchRequest()
+        mapSearchRequest.naturalLanguageQuery = query
+        let defaultLocation = CLLocationCoordinate2D(latitude: 40.3440, longitude: -74.6514)
+        var regionSpan = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
+        mapSearchRequest.region = MKCoordinateRegion(center: defaultLocation, span: regionSpan) // For providing an area to search
+        let search = MKLocalSearch(request: mapSearchRequest)
+        search.start(completionHandler: { (response, _) in
+            guard let response = response else {
+                return
+            }
+            
+            var locationResultCount: Int = 10 // Show top x number
+            if (locationResultCount > response.mapItems.count) { // If fewer results than max
+                locationResultCount = response.mapItems.count // Max is number of responses
+            }
+            
+            print(response.mapItems.count)
+            
+            var locationResults: [String] = [] // Store suggestions
+            
+            for (index, mapLocation) in response.mapItems.enumerated() {
+                if (index < locationResultCount) { // Only store certain number
+                    let readableAddress: String = mapLocation.name! + " - " + self.parseAddress(selectedItem: mapLocation.placemark) // Create human-readable address
+                    locationResults.append(readableAddress) // Append name
+                }
+            }
+            
+            // Populate autocomplete
+            self.locationInput.updateSuggestions(prioritized: locationResults)
+            self.locationInput.updateValid()
+        })
+    }
+    
+    // Returns human readable address string
+    // Source: https://www.thorntech.com/2016/01/how-to-search-for-location-using-apples-mapkit/
+    func parseAddress(selectedItem: MKPlacemark) -> String {
+        // put a space between "4" and "Melrose Place"
+        let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
+        // put a comma between street and city/state
+        let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) && (selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
+        // put a space between "Washington" and "DC"
+        let secondSpace = (selectedItem.subAdministrativeArea != nil && selectedItem.administrativeArea != nil) ? " " : ""
+        let addressLine = String(
+            format:"%@%@%@%@%@%@%@",
+            // street number
+            selectedItem.subThoroughfare ?? "",
+            firstSpace,
+            // street name
+            selectedItem.thoroughfare ?? "",
+            comma,
+            // city
+            selectedItem.locality ?? "",
+            secondSpace,
+            // state
+            selectedItem.administrativeArea ?? ""
+        )
+        return addressLine
+    }
     
     // Calculate the labels for the quick day picker and update global variables
     func calcQuickDays() {
