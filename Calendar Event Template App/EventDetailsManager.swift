@@ -22,7 +22,7 @@ extension EventDetails {
         
         // Simulate current location
         let defaultLocation = CLLocationCoordinate2D(latitude: 40.3440, longitude: -74.6514)
-        let regionSpan = MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
+        let regionSpan = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
         mapSearchRequest.region = MKCoordinateRegion(center: defaultLocation, span: regionSpan) // For providing an area to search
         
         let search = MKLocalSearch(request: mapSearchRequest)
@@ -40,7 +40,7 @@ extension EventDetails {
             
             for index in 0..<locationResultCount {
                 let mapLocation: MKMapItem = response.mapItems[index] // Current map item
-                let readableAddress: String = mapLocation.name! + " - " + self.parseAddress(selectedItem: mapLocation.placemark) // Create human-readable address
+                let readableAddress: String = mapLocation.name! + ", " + self.parseAddress(selectedItem: mapLocation.placemark) // Create human-readable address
                 locationResults.append(readableAddress) // Append name
             }
             
