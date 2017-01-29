@@ -32,7 +32,7 @@ class OnboardingPageFour: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        ScrollData.setCurrentPage(index: 3)
+        ScrollData.setCurrentPage(index: 4)
         
         self.checkCalendarAuth() // Check for calendar authorization
     }

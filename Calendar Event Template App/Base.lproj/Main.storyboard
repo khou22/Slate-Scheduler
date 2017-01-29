@@ -1434,6 +1434,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="globeImage" destination="5XY-sz-Kf5" id="QZ2-du-cQ5"/>
                         <outlet property="mapPinBottomConstraint" destination="fLu-0v-WAH" id="6Ui-Fy-jQE"/>
                     </connections>
                 </viewController>

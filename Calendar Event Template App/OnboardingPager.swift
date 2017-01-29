@@ -120,7 +120,7 @@ extension OnboardingPager: UIScrollViewDelegate {
             
             let point = scrollView.contentOffset // Get pixels offset by scroll
             let percentComplete: CGFloat = fabs(point.x - view.frame.size.width)/view.frame.size.width // Calc percentage complete
-            //        print("Percentage scrolled \(percentComplete)") // Debugging
+//            print("Percentage scrolled \(percentComplete)") // Debugging
             ScrollData.value = Float(percentComplete) // Set global
             
             // Update within the view controllers
@@ -131,6 +131,8 @@ extension OnboardingPager: UIScrollViewDelegate {
                 getPageOne().updateScrollPercentage()
             case 2:
                 getPageTwo().updateScrollPercentage()
+            case 3:
+                getPageThree().updateScrollPercentage()
             default:
                 break
             }
