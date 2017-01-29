@@ -54,6 +54,10 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
         DataManager.setCategoryLabelSetting(value: self.categoryLabelSwitch.isOn)
     }
     
+    @IBAction func pressedHelp(_ sender: Any) {
+        performSegue(withIdentifier: SegueIdentifiers.showOnboarding, sender: self) // Show onboarding
+    }
+    
     func getCollection() {
         // Load data from NSUserDefaults
         self.categories = DataManager.getCategories()

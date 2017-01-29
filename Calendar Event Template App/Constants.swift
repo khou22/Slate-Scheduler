@@ -79,6 +79,7 @@ struct SegueIdentifiers {
     static let categoryDetailEdit           = "CategoryDetailEdit"
     static let newEventNoCategory           = "NewEventNoCategory"
     static let completeOnboarding           = "CompleteOnboarding"
+    static let showOnboarding               = "ShowOnboarding"
 }
 
 struct SDK {

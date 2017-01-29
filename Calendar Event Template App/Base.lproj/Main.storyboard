@@ -163,14 +163,14 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yFa-Iv-aIq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="520.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryEditCell" id="HHb-Eg-GDU" customClass="CategoryEditCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
@@ -198,19 +198,42 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Fb-Ad-ckb">
-                                <rect key="frame" x="25" y="600.5" width="325" height="50.5"/>
+                                <rect key="frame" x="20" y="600" width="330" height="51"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4J-1C-CUJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="51"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NO0-2G-5NR">
+                                                <rect key="frame" x="-5" y="10.5" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="NO0-2G-5NR" secondAttribute="height" multiplier="1:1" id="NqE-Yj-sH8"/>
+                                                    <constraint firstAttribute="height" constant="30" id="d0D-OU-Ctb"/>
+                                                </constraints>
+                                                <state key="normal" title="?" image="help-button"/>
+                                                <connections>
+                                                    <action selector="pressedHelp:" destination="c4k-Cp-UWn" eventType="touchUpInside" id="K1W-o5-YN6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="NO0-2G-5NR" firstAttribute="centerY" secondItem="m4J-1C-CUJ" secondAttribute="centerY" id="4dQ-vb-W73"/>
+                                            <constraint firstAttribute="width" constant="20" id="Mzt-Gz-hIi"/>
+                                            <constraint firstAttribute="height" constant="51" id="gnd-ge-F6U"/>
+                                            <constraint firstItem="NO0-2G-5NR" firstAttribute="centerX" secondItem="m4J-1C-CUJ" secondAttribute="centerX" id="wch-0z-HuS"/>
+                                        </constraints>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aN2-s4-zbD">
-                                        <rect key="frame" x="0.0" y="0.0" width="256" height="50.5"/>
+                                        <rect key="frame" x="40" y="0.0" width="221" height="51"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add events by category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uKN-na-d27">
-                                                <rect key="frame" x="0.0" y="0.0" width="256" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="221" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category name appears at the beginning of each event name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mfO-YT-Rk4">
-                                                <rect key="frame" x="0.0" y="20.5" width="256" height="30"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Category Name] appears at the beginning of each event name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mfO-YT-Rk4">
+                                                <rect key="frame" x="0.0" y="21" width="221" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="T4y-aa-lkM"/>
                                                 </constraints>
@@ -219,9 +242,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="vMz-Q4-l2Y"/>
+                                        </constraints>
                                     </stackView>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pbh-BT-R9J">
-                                        <rect key="frame" x="276" y="0.0" width="51" height="50.5"/>
+                                        <rect key="frame" x="281" y="0.0" width="51" height="51"/>
                                         <color key="onTintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="updatedCategoryLabelSetting:" destination="c4k-Cp-UWn" eventType="valueChanged" id="gq3-rd-2ow"/>
@@ -235,7 +261,7 @@
                             <constraint firstItem="yFa-Iv-aIq" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" id="Iwo-XQ-jpG"/>
                             <constraint firstItem="7Fb-Ad-ckb" firstAttribute="top" secondItem="yFa-Iv-aIq" secondAttribute="bottom" constant="16" id="ODX-CF-owO"/>
                             <constraint firstItem="D0a-8e-ONe" firstAttribute="top" secondItem="fdY-FQ-suL" secondAttribute="top" id="fSU-gV-0lH"/>
-                            <constraint firstItem="7Fb-Ad-ckb" firstAttribute="leading" secondItem="yFa-Iv-aIq" secondAttribute="leading" constant="25" id="j4y-ho-beE"/>
+                            <constraint firstItem="7Fb-Ad-ckb" firstAttribute="leading" secondItem="yFa-Iv-aIq" secondAttribute="leading" constant="20" id="j4y-ho-beE"/>
                             <constraint firstItem="GYA-0g-cSC" firstAttribute="top" secondItem="7Fb-Ad-ckb" secondAttribute="bottom" constant="16" id="jdh-25-7dH"/>
                             <constraint firstItem="D0a-8e-ONe" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" id="mfn-EJ-J1L"/>
                             <constraint firstAttribute="trailing" secondItem="yFa-Iv-aIq" secondAttribute="trailing" id="mmS-Pr-UQI"/>
@@ -264,6 +290,7 @@
                         <outlet property="closeButton" destination="7T4-Mf-QBA" id="2qG-dM-jZm"/>
                         <outlet property="editButton" destination="38X-bh-1OW" id="yeX-PX-H2q"/>
                         <segue destination="ofc-Ei-ISN" kind="show" identifier="CategoryDetailEdit" id="Ons-2K-Mg7"/>
+                        <segue destination="I2C-vX-COO" kind="showDetail" identifier="ShowOnboarding" id="1i2-dh-A29"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIs-CC-77f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -359,7 +386,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-XV-dkF">
-                                                            <rect key="frame" x="0.0" y="10.5" width="311" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="9.5" width="311" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fxk-Cw-Ru9">
                                                                     <rect key="frame" x="0.0" y="0.0" width="296" height="20.5"/>
@@ -1340,6 +1367,7 @@
         <image name="calendar-permission-alert" width="560" height="320"/>
         <image name="event-summary-card" width="2744" height="1664"/>
         <image name="google_calendar_icon" width="200" height="200"/>
+        <image name="help-button" width="160" height="160"/>
         <image name="icloud_icon" width="200" height="200"/>
         <image name="ios_calendar_icon" width="200" height="200"/>
         <image name="iphone-wireframe" width="740" height="1520"/>
