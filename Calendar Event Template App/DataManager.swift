@@ -146,10 +146,10 @@ struct DataManager {
     static func locationServicesEnabled() -> Bool { // Determine if location services enabled
         switch CLLocationManager.authorizationStatus() {
             case .notDetermined, .restricted, .denied: // Not allowed
-                print("Location services not enabled")
+//                print("Location services not enabled")
                 return false
             case .authorizedAlways, .authorizedWhenInUse: // Allowed
-                print("Location services enabled")
+//                print("Location services enabled")
                 return true
         }
     }

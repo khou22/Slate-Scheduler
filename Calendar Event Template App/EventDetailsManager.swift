@@ -249,7 +249,7 @@ extension EventDetails {
             self.loadingSpinner.layer.opacity = 1.0
             self.loadingSpinner.startAnimating()
             
-//            self.createEvent() // Create and save event to calendar
+            self.createEvent() // Create and save event to calendar
             
             // Update markov models if there's a category
             if (!self.noCategory) {

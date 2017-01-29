@@ -186,6 +186,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
 // Getting current location
 extension CategorySelection: CLLocationManagerDelegate {
     
+    // Called when location is looked up
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Location updated")
         let location: CLLocationCoordinate2D = manager.location!.coordinate // Get coordinates of location
@@ -194,6 +195,7 @@ extension CategorySelection: CLLocationManagerDelegate {
         DataManager.setLatestLocation(coordinates: location)
     }
     
+    // In event of location lookup failure
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Location lookup failed with error: \(error)")
     }
