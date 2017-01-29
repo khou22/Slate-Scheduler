@@ -114,6 +114,10 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         // Set current category
         self.currentCategory = self.categories[self.selectedIndex]
         
+        // Reset keys
+        self.eventKeys.removeAll()
+        self.locationKeys.removeAll()
+        
         // Set keys
         for (eventName, _) in self.currentCategory.eventNameFreq {
             self.eventKeys.append(eventName) // Add keys
@@ -127,6 +131,30 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
             self.predictedNameTable.reloadData()
             self.predictedLocationTable.reloadData()
         }
+    }
+    
+    // Prompt user if they want to delete all predictions
+    @IBAction func resetAllPredictions(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "Reset Predictions", message: "Are you sure you want to reset predictions? This cannot be undone.", preferredStyle: .actionSheet) // Create alert action sheet
+        
+        // Create actions
+        let resetAction: UIAlertAction = UIAlertAction(title: "Reset Predictions", style: .default, handler: { (alert: UIAlertAction!) -> Void in
+            // User pressed reset all predictions
+//            print("Reseting predictions")
+            self.currentCategory = Category(name: self.currentCategory.name, eventNameFreq: [ : ], locationFreq: [ : ]) // Reset predictions data
+            DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Update data
+            
+            self.refreshData() // Refresh frontend data
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (alert: UIAlertAction!) -> Void in
+            // User pressed cancel
+        })
+        
+        // Add actions
+        actionSheet.addAction(resetAction)
+        actionSheet.addAction(cancelAction)
+        
+        self.present(actionSheet, animated: true, completion: nil) // Present action sheet to user
     }
     
     // When pressed done on category name input
