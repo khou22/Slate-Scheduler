@@ -44,13 +44,11 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         // Add padding to left and right of collection view
         self.collectionViewLeft.constant = cellInset
         self.collectionViewRight.constant = cellInset
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        
         // Load data every time someone enters view
         refreshCollection()
     }
