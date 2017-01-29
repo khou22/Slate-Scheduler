@@ -64,7 +64,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var submitStatusLabel: UILabel!
     
     // Category data
-    var category: Category = Category(name: StringIdentifiers.noCategory, eventNameFreq: [ : ]) // Category object
+    var category: Category = Constants.emptyCategory // Category object
     var categoryIndex: Int = 0 // Category index in array
     var noCategory: Bool = false // Default is associated with category
     

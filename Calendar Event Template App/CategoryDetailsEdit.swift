@@ -12,7 +12,7 @@ import UIKit
 class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     var categories: [Category] = [] // Storing all categories
-    var currentCategory: Category = Category(name: StringIdentifiers.noCategory, eventNameFreq: [ : ]) // Initially empty category
+    var currentCategory: Category = Constants.emptyCategory // Initially empty category
     var eventKeys: [String] = []
     var selectedIndex: Int = 0 // The index of the category you are editing
     

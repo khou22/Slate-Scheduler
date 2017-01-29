@@ -16,11 +16,13 @@ class Category: NSObject, NSCoding {
     // Instance variables
     var name: String
     var eventNameFreq: [ String : Int ] // Frequency dictionary
+    var locationFreq: [ String : Int ] // Frequency dictionary
     
     // Constructor
-    init(name: String, eventNameFreq: [ String : Int ]) {
+    init(name: String, eventNameFreq: [ String : Int ], locationFreq: [String : Int ]) {
         self.name = name
         self.eventNameFreq = eventNameFreq
+        self.locationFreq = locationFreq
     }
     
     /*
@@ -33,15 +35,17 @@ class Category: NSObject, NSCoding {
     required convenience init(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: Keys.categoryName) as! String
         let eventNameFreq = aDecoder.decodeObject(forKey: Keys.eventNameFreq) as! [ String : Int ]
+        let locationFreq = aDecoder.decodeObject(forKey: Keys.locationFrequency) as! [ String : Int ]
         
         // Creating a new object but with the same values
-        self.init(name: name, eventNameFreq: eventNameFreq)
+        self.init(name: name, eventNameFreq: eventNameFreq, locationFreq: locationFreq)
     }
     
     // Encode all instance variables when storing
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: Keys.categoryName)
         aCoder.encode(eventNameFreq, forKey: Keys.eventNameFreq)
+        aCoder.encode(locationFreq, forKey: Keys.locationFrequency)
     }
     
     func orderedEventNames() -> [String] {
@@ -77,5 +81,40 @@ class Category: NSObject, NSCoding {
         }
         
         return orderedEventNames // Return the master list
+    }
+    
+    func orderedLocations() -> [String] {
+        var orderedLocations: [String] = []
+        
+        // Convert to arrays
+        var keys: [String] = []
+        var values: [Int] = []
+        for (key, value) in self.locationFreq {
+            keys.append(key)
+            values.append(value)
+        }
+        
+        // Sort by frequency
+        while (keys.count != 0) {
+            
+            // Track highest frequency then add to master list
+            var highest: Int = 0
+            var highestIndex: Int = 0
+            for (index, _) in keys.enumerated() {
+                let currentFreq = values[index]
+                if (currentFreq > highest) {
+                    // Set a new high
+                    highest = currentFreq
+                    highestIndex = index
+                }
+            }
+            
+            // Add to master list and remove from originals
+            orderedLocations.append(keys[highestIndex]) // Add to master list
+            keys.remove(at: highestIndex) // Remove so won't be used again
+            values.remove(at: highestIndex) // Remove so won't be used again
+        }
+        
+        return orderedLocations // Return the master list
     }
 }
