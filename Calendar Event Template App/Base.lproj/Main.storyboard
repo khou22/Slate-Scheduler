@@ -63,24 +63,35 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or add an event without a category attached to it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="puf-dc-6kU">
-                                <rect key="frame" x="50.5" y="512" width="275" height="65"/>
+                                <rect key="frame" x="20" y="547" width="335.5" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="JNl-1m-mOJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="JNl-1m-mOJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                 <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the plus button to add your first event!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-OW-RIp">
-                                <rect key="frame" x="50.5" y="214" width="275" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-IZ-J7l">
+                                <rect key="frame" x="46" y="214" width="283" height="115.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the plus button to add your first category!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-OW-RIp">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By adding events with categories, Calendar Template App can suggest frequently used event names and locations." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-Z1-mK9">
+                                        <rect key="frame" x="0.0" y="65" width="283" height="50.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="275" id="GBN-Za-T2Z"/>
-                                    <constraint firstAttribute="height" constant="60" id="h4R-fK-9ug"/>
+                                    <constraint firstAttribute="trailing" secondItem="kqQ-Z1-mK9" secondAttribute="trailing" id="RAm-Dt-TNT"/>
+                                    <constraint firstItem="kqQ-Z1-mK9" firstAttribute="leading" secondItem="0IN-IZ-J7l" secondAttribute="leading" id="Taq-dU-3kn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98B-ok-inu">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -101,15 +112,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="98B-ok-inu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0pm-br-25p"/>
-                            <constraint firstItem="5k7-OW-RIp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Qd-Qm-QB6"/>
-                            <constraint firstItem="5k7-OW-RIp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="2tm-Qq-A4p"/>
+                            <constraint firstItem="0IN-IZ-J7l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="3TY-gy-WnW"/>
                             <constraint firstItem="98B-ok-inu" firstAttribute="top" secondItem="My3-jn-8PS" secondAttribute="bottom" id="9HM-59-QKM"/>
                             <constraint firstAttribute="trailing" secondItem="98B-ok-inu" secondAttribute="trailing" id="JIL-aB-PAF"/>
                             <constraint firstAttribute="trailing" secondItem="My3-jn-8PS" secondAttribute="trailing" id="KgV-rH-glZ"/>
                             <constraint firstItem="My3-jn-8PS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PKk-hm-YsY"/>
+                            <constraint firstItem="0IN-IZ-J7l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="Tky-HD-IzS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0IN-IZ-J7l" secondAttribute="trailing" constant="30" id="Uwo-gE-LGr"/>
                             <constraint firstItem="puf-dc-6kU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a9y-dO-oRD"/>
-                            <constraint firstItem="98B-ok-inu" firstAttribute="top" secondItem="puf-dc-6kU" secondAttribute="bottom" constant="40" id="bZj-aa-cAZ"/>
-                            <constraint firstItem="puf-dc-6kU" firstAttribute="width" secondItem="5k7-OW-RIp" secondAttribute="width" id="clV-BM-JIb"/>
+                            <constraint firstItem="98B-ok-inu" firstAttribute="top" secondItem="puf-dc-6kU" secondAttribute="bottom" constant="30" id="bZj-aa-cAZ"/>
+                            <constraint firstItem="0IN-IZ-J7l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="htJ-jE-iJ1"/>
                             <constraint firstItem="My3-jn-8PS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rM8-05-Cvr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="98B-ok-inu" secondAttribute="bottom" id="zYK-PF-J2f"/>
                         </constraints>
@@ -132,8 +144,9 @@
                         <outlet property="categoryCollection" destination="My3-jn-8PS" id="5HZ-da-xUw"/>
                         <outlet property="collectionViewLeft" destination="PKk-hm-YsY" id="iAs-re-B9r"/>
                         <outlet property="collectionViewRight" destination="KgV-rH-glZ" id="N3H-HQ-ogp"/>
-                        <outletCollection property="noCategoriesLabels" destination="5k7-OW-RIp" collectionClass="NSMutableArray" id="gVg-6p-66x"/>
                         <outletCollection property="noCategoriesLabels" destination="puf-dc-6kU" collectionClass="NSMutableArray" id="fhJ-5b-u37"/>
+                        <outletCollection property="noCategoriesLabels" destination="5k7-OW-RIp" collectionClass="NSMutableArray" id="gVg-6p-66x"/>
+                        <outletCollection property="noCategoriesLabels" destination="kqQ-Z1-mK9" collectionClass="NSMutableArray" id="hVi-ih-cFR"/>
                         <segue destination="Pbh-M3-uzF" kind="presentation" identifier="CategoryToEventDetail" id="nJx-7m-wfl"/>
                         <segue destination="CnZ-f8-Her" kind="presentation" identifier="CategorySelectionToEdit" id="6wB-kl-4SO"/>
                         <segue destination="Pbh-M3-uzF" kind="presentation" identifier="NewEventNoCategory" id="nPH-XH-X7k"/>
