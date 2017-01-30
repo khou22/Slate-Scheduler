@@ -62,8 +62,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="UdB-tN-T7O"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or add an event without a category attached to it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="puf-dc-6kU">
-                                <rect key="frame" x="20" y="547" width="335.5" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or add an event without a category attached to it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="puf-dc-6kU">
+                                <rect key="frame" x="18" y="547" width="339" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="JNl-1m-mOJ"/>
                                 </constraints>
@@ -113,6 +113,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="98B-ok-inu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0pm-br-25p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="puf-dc-6kU" secondAttribute="trailing" constant="2" id="1ve-fN-al1"/>
+                            <constraint firstItem="puf-dc-6kU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="3DW-iA-vgJ"/>
                             <constraint firstItem="0IN-IZ-J7l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="3TY-gy-WnW"/>
                             <constraint firstItem="98B-ok-inu" firstAttribute="top" secondItem="My3-jn-8PS" secondAttribute="bottom" id="9HM-59-QKM"/>
                             <constraint firstAttribute="trailing" secondItem="98B-ok-inu" secondAttribute="trailing" id="JIL-aB-PAF"/>
@@ -120,7 +122,6 @@
                             <constraint firstItem="My3-jn-8PS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PKk-hm-YsY"/>
                             <constraint firstItem="0IN-IZ-J7l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="Tky-HD-IzS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0IN-IZ-J7l" secondAttribute="trailing" constant="30" id="Uwo-gE-LGr"/>
-                            <constraint firstItem="puf-dc-6kU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a9y-dO-oRD"/>
                             <constraint firstItem="98B-ok-inu" firstAttribute="top" secondItem="puf-dc-6kU" secondAttribute="bottom" constant="30" id="bZj-aa-cAZ"/>
                             <constraint firstItem="0IN-IZ-J7l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="htJ-jE-iJ1"/>
                             <constraint firstItem="My3-jn-8PS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rM8-05-Cvr"/>
