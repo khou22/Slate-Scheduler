@@ -191,7 +191,7 @@ extension CategorySelection: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        print("Location updated")
         let location: CLLocationCoordinate2D = manager.location!.coordinate // Get coordinates of location
-        print("Location = \(location.latitude) \(location.longitude)") // Feedback
+//        print("Location = \(location.latitude) \(location.longitude)") // Feedback
         
         DataManager.setLatestLocation(coordinates: location)
     }
