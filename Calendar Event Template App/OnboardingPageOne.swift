@@ -29,6 +29,14 @@ class OnboardingPageOne: UIViewController {
     // Animation options
     var entranceDistance: CGFloat = 100.0
     
+    // Constraints to modify
+    @IBOutlet weak var outlookBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var yahooBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var yahooRightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var iOSBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var iOSLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var googleTopConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         onboardingBackground() // Setup background gradient
         
@@ -45,6 +53,10 @@ class OnboardingPageOne: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.entranceAnimations() // Start entrance animations
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.adjustForScreenSizes() // Adjust constraints for smaller screen sizes
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -151,4 +163,23 @@ class OnboardingPageOne: UIViewController {
         }
         
     }
+    
+    func adjustForScreenSizes() {
+        
+        if DeviceTypes.iPhoneSE || DeviceTypes.iPhone7Zoomed {
+            // Change constraint constants, etc. here
+            self.outlookBottomConstraint.constant = 40
+            self.yahooBottomConstraint.constant = 20
+            self.yahooRightConstraint.constant = 20
+            self.iOSBottomConstraint.constant = -45
+            self.iOSLeftConstraint.constant = 20
+            self.googleTopConstraint.constant = 40
+            
+            view.layoutIfNeeded()
+            
+        } else {
+            
+        }
+    }
+
 }

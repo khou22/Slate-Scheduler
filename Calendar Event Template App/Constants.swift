@@ -129,11 +129,11 @@ struct ScreenSize {
 
 struct DeviceTypes {
     // Device type (useful for constraints)
-    static let iPhone4                      = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length < 568.0
-    static let iPhone5                      = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 568.0
-    static let iPhone6Standard              = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 667.0 && UIScreen.main.nativeScale == UIScreen.main.scale
-    static let iPhone6Zoomed                = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 667.0 && UIScreen.main.nativeScale > UIScreen.main.scale
-    static let iPhone6PlusStandard          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 736.0
-    static let iPhone6PlusZoomed            = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 736.0 && UIScreen.main.nativeScale < UIScreen.main.scale
+    static let iPhone4S                     = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length < 568.0
+    static let iPhoneSE                     = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 568.0
+    static let iPhone7Standard              = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 667.0 && UIScreen.main.nativeScale == UIScreen.main.scale
+    static let iPhone7Zoomed                = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 667.0 && UIScreen.main.nativeScale > UIScreen.main.scale
+    static let iPhone7PlusStandard          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 736.0
+    static let iPhone7PlusZoomed            = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length == 736.0 && UIScreen.main.nativeScale < UIScreen.main.scale
     static let iPad                         = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.screen_max_length == 1024.0
 }

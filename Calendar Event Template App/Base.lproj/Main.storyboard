@@ -88,6 +88,7 @@
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="115.5" id="GzA-PA-HJG"/>
                                     <constraint firstAttribute="trailing" secondItem="kqQ-Z1-mK9" secondAttribute="trailing" id="RAm-Dt-TNT"/>
                                     <constraint firstItem="kqQ-Z1-mK9" firstAttribute="leading" secondItem="0IN-IZ-J7l" secondAttribute="leading" id="Taq-dU-3kn"/>
                                 </constraints>
@@ -183,7 +184,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
@@ -398,7 +399,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="319" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j1z-lA-vpT" id="OCF-Fi-Trs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="39.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-XV-dkF">
@@ -471,7 +472,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="319" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7l-4G-Mbz" id="K4g-0v-vFr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOn-LF-L3e">
@@ -1057,18 +1058,18 @@
                                     <constraint firstAttribute="height" constant="160" id="7tn-cp-Oxe"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_calendar_icon" translatesAutoresizingMaskIntoConstraints="NO" id="At9-aO-Qaa">
-                                <rect key="frame" x="294" y="149" width="55" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="uk4-0C-jnM"/>
-                                    <constraint firstAttribute="width" constant="55" id="zEA-ZX-ZXt"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outlook_icon" translatesAutoresizingMaskIntoConstraints="NO" id="0R9-Jk-Rqa">
                                 <rect key="frame" x="196" y="63" width="55" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="czx-oy-NaM"/>
                                     <constraint firstAttribute="width" constant="55" id="k5K-AF-cIM"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ios_calendar_icon" translatesAutoresizingMaskIntoConstraints="NO" id="At9-aO-Qaa">
+                                <rect key="frame" x="294" y="149" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="uk4-0C-jnM"/>
+                                    <constraint firstAttribute="width" constant="55" id="zEA-ZX-ZXt"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yahoo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="gJu-k7-dXQ">
@@ -1133,10 +1134,16 @@
                     <connections>
                         <outlet property="calendarImage" destination="N6X-hK-mrF" id="MBU-FL-DIg"/>
                         <outlet property="googleCalendarIcon" destination="CnD-JX-zP4" id="Esj-Rk-G8N"/>
+                        <outlet property="googleTopConstraint" destination="UWc-Zf-EKD" id="RVv-jt-So6"/>
                         <outlet property="iCloudIcon" destination="DWU-rQ-uPV" id="oJa-55-3CF"/>
+                        <outlet property="iOSBottomConstraint" destination="4EJ-Uf-wee" id="T5d-EK-Boy"/>
                         <outlet property="iOSCalendarIcon" destination="At9-aO-Qaa" id="fUr-of-M4z"/>
+                        <outlet property="iOSLeftConstraint" destination="n4h-RC-tAg" id="8eo-SV-Aff"/>
+                        <outlet property="outlookBottomConstraint" destination="Wqj-Uo-TTc" id="r95-J2-O8M"/>
                         <outlet property="outlookIcon" destination="0R9-Jk-Rqa" id="iP5-sr-fXS"/>
+                        <outlet property="yahooBottomConstraint" destination="Tl5-G0-Rsd" id="g79-z4-vNG"/>
                         <outlet property="yahooIcon" destination="gJu-k7-dXQ" id="hp1-bC-bM7"/>
+                        <outlet property="yahooRightConstraint" destination="w1U-61-GKg" id="zJs-tb-259"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JbC-kU-JXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
