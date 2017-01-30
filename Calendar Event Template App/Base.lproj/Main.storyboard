@@ -1008,6 +1008,8 @@
                         <outlet property="durationSlider" destination="1ag-mR-KaH" id="kuS-cp-mcY"/>
                         <outlet property="eventListTable" destination="d1N-LA-6dL" id="kmL-ic-NBe"/>
                         <outlet property="eventNameInput" destination="JFO-c0-Lai" id="3xc-Oc-ASB"/>
+                        <outlet property="formItemsLeftConstraint" destination="KRw-xT-ROm" id="JRS-MY-HME"/>
+                        <outlet property="formItemsRightConstraint" destination="5QS-Y9-m8l" id="jmA-jb-DLH"/>
                         <outlet property="loadingSpinner" destination="48k-Jh-yKE" id="rM3-i7-8gZ"/>
                         <outlet property="locationInput" destination="iWU-UH-lk1" id="MVu-jv-7B5"/>
                         <outlet property="quickDayPicker" destination="ttk-bO-ra3" id="Xey-AL-hEq"/>

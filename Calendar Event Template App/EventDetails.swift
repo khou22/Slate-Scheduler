@@ -71,7 +71,13 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // Instance of calendar manager
     let calendarManager: CalendarManager = CalendarManager()
     
+    // Constraints to be modified
+    @IBOutlet weak var formItemsLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var formItemsRightConstraint: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
+        self.adjustForScreenSizes() // Adjust constraints for screen sizes
         self.refreshQuickDay() // Calculate labels
         self.hideKeyboardOnSwipe() // Initialize hide keyboard when tapped away
         
@@ -249,4 +255,20 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         return cell
     }
     
+    func adjustForScreenSizes() {
+        if DeviceTypes.iPhoneSE || DeviceTypes.iPhone7Zoomed {
+            // Change constraint constants, etc. here
+            self.formItemsLeftConstraint.constant = 0
+            self.formItemsRightConstraint.constant = 0
+            
+            // Fix autocomplete positioning
+            self.eventNameInput.padding = 25 // Move event name autocomplete table lower
+            self.locationInput.padding = 25 // Move event name autocomplete table lower
+            
+            view.layoutIfNeeded()
+            
+        } else {
+            
+        }
+    }
 }
