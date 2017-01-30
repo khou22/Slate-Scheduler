@@ -101,7 +101,6 @@ class OnboardingPageTwo: UIViewController {
     func checkCalendarPermissions() {
         let calendarPermission = EKEventStore.authorizationStatus(for: EKEntityType.event)
         let authorized = (calendarPermission == .authorized)
-        self.activityIndicator.isHidden = true // Hide and turn off spinner
         if authorized { // If authorized the calendar
             DispatchQueue.main.async {
                 UIView.animate(withDuration: 0.25, animations: {
