@@ -27,6 +27,12 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
     // Constraints
     @IBOutlet weak var mapPinBottomConstraint: NSLayoutConstraint!
     var originalMapPinBottomConstraintConst: CGFloat = -26.0
+    @IBOutlet weak var globeImageWidthConstraint: NSLayoutConstraint! // Default 200 for iPhone 7
+    @IBOutlet weak var mapPinWidthConstraint: NSLayoutConstraint! // Default 130 for iPhone 7
+    @IBOutlet weak var locationPermissionButtonLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var locationPermissionButtonRightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var globeImageBottomConstraint: NSLayoutConstraint!
+    
     
     let locationManager: CLLocationManager = CLLocationManager()
     var failedAccessGrant: Bool = false // Track whether user denied access
@@ -43,6 +49,7 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewDidLayoutSubviews() {
+        self.adjustForScreenSizes()
         self.entranceAnimations() // Start animations before screen appears
     }
     
@@ -148,4 +155,22 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
     func resetAnimations() {
         self.globeImage.transform = .identity // Reset animations
     }
+    
+    func adjustForScreenSizes() {
+        
+        if DeviceTypes.iPhoneSE || DeviceTypes.iPhone7Zoomed {
+            // Change constraint constants, etc. here
+            self.globeImageWidthConstraint.constant = 150
+            self.mapPinWidthConstraint.constant = 80
+            self.locationPermissionButtonLeftConstraint.constant = 60
+            self.locationPermissionButtonRightConstraint.constant = 60
+            self.globeImageBottomConstraint.constant = 25
+            
+            view.layoutIfNeeded()
+            
+        } else {
+            
+        }
+    }
+
 }

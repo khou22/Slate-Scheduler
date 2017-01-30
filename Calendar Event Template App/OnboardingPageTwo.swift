@@ -27,6 +27,9 @@ class OnboardingPageTwo: UIViewController {
     @IBOutlet weak var alertPromptImageLeading: NSLayoutConstraint!
     @IBOutlet weak var alertPromptImageTrailing: NSLayoutConstraint!
     
+    // Constraints to modify
+    @IBOutlet weak var alertPromptImageTopConstraint: NSLayoutConstraint!
+    
     var failedAccessGrant = false // If user denied calendar access permission
     
     let calendarManager: CalendarManager = CalendarManager() // Store
@@ -50,6 +53,10 @@ class OnboardingPageTwo: UIViewController {
         self.entranceAnimation() // Trigger entrance animation
         
         self.checkCalendarPermissions() // Check location status and update permissions
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.adjustForScreenSizes() // Adjust constraints for screen sizes
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -153,4 +160,18 @@ class OnboardingPageTwo: UIViewController {
     func resetAnimations() {
         self.alertPromptImage.transform = .identity // Restore to original
     }
+    
+    func adjustForScreenSizes() {
+        
+        if DeviceTypes.iPhoneSE || DeviceTypes.iPhone7Zoomed {
+            // Change constraint constants, etc. here
+            self.alertPromptImageTopConstraint.constant = 80
+            
+            view.layoutIfNeeded()
+            
+        } else {
+            
+        }
+    }
+
 }

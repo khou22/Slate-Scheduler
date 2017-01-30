@@ -1206,7 +1206,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="ESU-wH-fFm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Got It"/>
                                 <connections>
@@ -1248,6 +1248,7 @@
                         <outlet property="activityIndicator" destination="zzu-vc-t1V" id="1Zh-a5-Kwo"/>
                         <outlet property="alertPromptImage" destination="bKu-9L-Ygi" id="vDT-Be-Cqy"/>
                         <outlet property="alertPromptImageLeading" destination="pS2-qV-gka" id="0N6-0G-R18"/>
+                        <outlet property="alertPromptImageTopConstraint" destination="vg4-xS-wtb" id="Uko-2M-9jU"/>
                         <outlet property="alertPromptImageTrailing" destination="cQP-lP-EsB" id="xuW-BF-uhX"/>
                         <outlet property="calendarPermissionButton" destination="r1o-CH-28W" id="bwl-no-9Fh"/>
                         <outlet property="lowerLabel" destination="bFM-ZP-hJh" id="VbT-gJ-VtJ"/>
@@ -1276,7 +1277,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="whe-7H-3kJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Get Started"/>
                                 <connections>
@@ -1357,10 +1358,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryLabelStackBottomConstraint" destination="RTo-r4-lQB" id="hLx-UR-McL"/>
                         <outlet property="categoryLabelSwitch" destination="Gzb-tQ-aco" id="xTr-WZ-ZMl"/>
                         <outlet property="getStartedButton" destination="0Is-T3-7xu" id="gaG-wr-MJ5"/>
                         <outlet property="pageTitle" destination="E8R-Vt-d5B" id="ixv-OR-OiH"/>
                         <outlet property="summaryCard" destination="RjY-7g-hg7" id="KbX-0l-WBz"/>
+                        <outlet property="summaryCardLeftConstraint" destination="a0m-vb-GtJ" id="1tP-cN-csm"/>
+                        <outlet property="summaryCardRightConstraint" destination="c7N-Tg-rgR" id="57i-tu-D3z"/>
                         <segue destination="mvn-QH-rzQ" kind="show" identifier="CompleteOnboarding" id="cM2-aC-gnK"/>
                     </connections>
                 </viewController>
@@ -1426,7 +1430,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Lvt-Rr-ESV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sounds Good"/>
                                 <connections>
@@ -1466,9 +1470,14 @@
                     <connections>
                         <outlet property="activityIndicator" destination="f7e-vX-JRT" id="mDI-NB-69v"/>
                         <outlet property="globeImage" destination="5XY-sz-Kf5" id="QZ2-du-cQ5"/>
+                        <outlet property="globeImageBottomConstraint" destination="7DB-Wn-gWK" id="GQC-VF-qrt"/>
+                        <outlet property="globeImageWidthConstraint" destination="cJh-Hf-vDj" id="8Mi-EH-7jA"/>
                         <outlet property="locationPermissionButton" destination="b7J-dt-Tjg" id="k47-6C-RKf"/>
+                        <outlet property="locationPermissionButtonLeftConstraint" destination="d8v-sS-qke" id="mGo-8h-QRi"/>
+                        <outlet property="locationPermissionButtonRightConstraint" destination="jpH-gp-aM0" id="B2d-wF-mrf"/>
                         <outlet property="lowerLabel" destination="y9K-l8-D0n" id="f5W-W0-MNc"/>
                         <outlet property="mapPinBottomConstraint" destination="fLu-0v-WAH" id="6Ui-Fy-jQE"/>
+                        <outlet property="mapPinWidthConstraint" destination="zbh-E1-GOh" id="2MU-Sm-25y"/>
                         <outlet property="permissionGranted" destination="K6Z-PP-xg1" id="l7z-GA-4Ww"/>
                     </connections>
                 </viewController>

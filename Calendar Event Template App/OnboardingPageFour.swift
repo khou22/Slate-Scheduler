@@ -23,7 +23,14 @@ class OnboardingPageFour: UIViewController {
     
     var cardsAnimated: Bool = false // If cards are in the animated position
     
+    // Constraints to modify
+    @IBOutlet weak var categoryLabelStackBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var summaryCardLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var summaryCardRightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
+        adjustForScreenSizes() // Adjust constraints for screen sizes
+        
         onboardingBackground() // Setup background gradient
         setupSummaryCards() // Create the other two summary cards
         
@@ -135,4 +142,19 @@ class OnboardingPageFour: UIViewController {
             }
         }
     }
+    
+    func adjustForScreenSizes() {
+        if DeviceTypes.iPhoneSE || DeviceTypes.iPhone7Zoomed {
+            // Change constraint constants, etc. here
+            self.categoryLabelStackBottomConstraint.constant = 16
+            self.summaryCardLeftConstraint.constant = 40
+            self.summaryCardRightConstraint.constant = 40
+            
+            view.layoutIfNeeded()
+            
+        } else {
+            
+        }
+    }
+
 }
