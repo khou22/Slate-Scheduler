@@ -33,6 +33,17 @@ struct Analytics {
     static func sendGAEvent(withCategory: String!, action: String!, label: String!, value: NSNumber!) {
         let event: GAIDictionaryBuilder = GAIDictionaryBuilder.createEvent(withCategory: withCategory, action: action, label: label, value: value) // Create event
         let build = (event.build() as NSDictionary) as! [AnyHashable: Any] // Build and cast as correct type
+        
+        // Print statement feedback
+        var printStatement: String = "\(withCategory): \"\(action)\""
+        if label != nil {
+            printStatement += " with label \"\(label)\""
+        }
+        if value != nil {
+            printStatement += " with value \"\(value)\""
+        }
+        print(printStatement)
+        
         GATracker.send(build) // Send event
     }
     
@@ -50,7 +61,7 @@ struct Analytics {
     
     // Launched onboarding from manage categories screen
     static func onboardingFromCategoryEditing() {
-        sendGAEvent(withCategory: Categories.onboarding, action: "User Entered Onboarding from Category Management", label: nil, value: nil) // Create and send event
+        sendGAEvent(withCategory: Categories.onboarding, action: "User Entered Onboarding from Category Management Screen", label: nil, value: nil) // Create and send event
     }
     
     /********** Permissions **********/

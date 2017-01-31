@@ -249,11 +249,11 @@ extension EventDetails {
             self.loadingSpinner.layer.opacity = 1.0
             self.loadingSpinner.startAnimating()
             
-//            self.createEvent() // Create and save event to calendar
+            self.createEvent() // Create and save event to calendar
             
             // Send analytics event
             let secondsEllapsed = Date.timeIntervalSinceReferenceDate - self.startTime // Calculate seconds elapsed
-            print("Created event with time elalapsed: \(secondsEllapsed)") // Feedback
+//            print("Created event with time elalapsed: \(secondsEllapsed)") // Feedback
             if self.noCategory { // Not attached to category
                 Analytics.createdEventNoCategory(duration: Int(secondsEllapsed), withShortcut: self.withShortcut)
             } else { // Attached to category
