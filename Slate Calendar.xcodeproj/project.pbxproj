@@ -12,6 +12,9 @@
 		27190C5B1E1F4147002D3CB4 /* QuickDayPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */; };
 		272455741E1DCCA400F3856F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455731E1DCCA400F3856F /* Category.swift */; };
 		272455771E1DCE3000F3856F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272455761E1DCE3000F3856F /* DataManager.swift */; };
+		274B28FD1E4071B90005F22C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 274B28FC1E4071B90005F22C /* GoogleService-Info.plist */; };
+		274B28FE1E4071B90005F22C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 274B28FC1E4071B90005F22C /* GoogleService-Info.plist */; };
+		274B28FF1E4071B90005F22C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 274B28FC1E4071B90005F22C /* GoogleService-Info.plist */; };
 		274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA89B1E1DCBC7008E297C /* EventDetails.swift */; };
 		2757074B1E2733B3002A3060 /* CategoryEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074A1E2733B3002A3060 /* CategoryEditCell.swift */; };
 		2757074D1E27340A002A3060 /* CategoryEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074C1E27340A002A3060 /* CategoryEditing.swift */; };
@@ -71,6 +74,7 @@
 		27190C5A1E1F4147002D3CB4 /* QuickDayPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickDayPickerCell.swift; sourceTree = "<group>"; };
 		272455731E1DCCA400F3856F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		272455761E1DCE3000F3856F /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		274B28FC1E4071B90005F22C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		274FA89B1E1DCBC7008E297C /* EventDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
 		2757074A1E2733B3002A3060 /* CategoryEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEditCell.swift; sourceTree = "<group>"; };
 		2757074C1E27340A002A3060 /* CategoryEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEditing.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				27BDFD7F1E1D9E0500B8C474 /* Assets.xcassets */,
 				27BDFD811E1D9E0500B8C474 /* LaunchScreen.storyboard */,
 				27BDFD841E1D9E0500B8C474 /* Info.plist */,
+				274B28FC1E4071B90005F22C /* GoogleService-Info.plist */,
 			);
 			path = "Calendar Event Template App";
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BDFD831E1D9E0500B8C474 /* LaunchScreen.storyboard in Resources */,
+				274B28FD1E4071B90005F22C /* GoogleService-Info.plist in Resources */,
 				27BDFD801E1D9E0500B8C474 /* Assets.xcassets in Resources */,
 				27BDFD7E1E1D9E0500B8C474 /* Main.storyboard in Resources */,
 			);
@@ -407,6 +413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274B28FE1E4071B90005F22C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +421,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274B28FF1E4071B90005F22C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
