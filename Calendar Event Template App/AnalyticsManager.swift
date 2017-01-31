@@ -78,19 +78,30 @@ struct Analytics {
         
     }
     
-    /********** Event Creation **********/
-    // New event with category and how long it took to make that event
-    static func createdEventWithCategory(duration seconds: Int) {
+    /********** Force Touch Shortcuts **********/
+    // Adding category event with shortcut
+    static func shortcutCreateWithCategory() {
         
     }
     
-    // Created event without category attached and how long it took to make that event
-    static func createdEventNoCategory(duration seconds: Int) {
+    // Adding event with shortcut no category
+    static func shortcutCreateNoCategory() {
+        
+    }
+    
+    /********** Event Creation **********/
+    // New event with category: how long it took to make that event and if they used a force touch shortcut
+    static func createdEventWithCategory(duration seconds: Int, with shortcut: Bool) {
+        
+    }
+    
+    // Created event without category attached: how long it took to make that event and if they used a force touch shortcut
+    static func createdEventNoCategory(duration seconds: Int, with shortcut: Bool) {
         
     }
     
     // User cancelled creation of event
-    static func cancelledEvent() {
+    static func cancelledEventCreation() {
         
     }
     
