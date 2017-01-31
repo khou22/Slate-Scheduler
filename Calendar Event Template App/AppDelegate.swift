@@ -63,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (identifier == Storyboard.editEventDetails) { // If launching edit details screen
             initialViewController.pushViewController(storyboard.instantiateViewController(withIdentifier: Storyboard.categorySelection), animated: false)
             let categorySelection = initialViewController.topViewController as! CategorySelection
+            categorySelection.withShortcut = true // Used category
             categorySelection.newEventNoCategory(self)
         } else if (identifier == Storyboard.onboardingPager) { // If launching onboarding
             let onboardingPager = storyboard.instantiateViewController(withIdentifier: Storyboard.onboardingPager) // Launch onboarding pager as initial vc

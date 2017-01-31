@@ -15,7 +15,8 @@ struct Analytics {
     
     
     private struct Categories {
-        static let test                 = "Test Category"
+        static let onboarding               = "Onboarding"
+        static let createdEvent             = "Event Creation"
     }
     
     // Setting the user's current screen
@@ -39,7 +40,7 @@ struct Analytics {
     // Completed onboarding
     static func completedOnboarding(duration seconds: Int) {
         let value: NSNumber = NSNumber(integerLiteral: seconds) // Convert to NSNumber
-        sendGAEvent(withCategory: Analytics.Categories.test, action: "User Completed Onboarding", label: nil, value: value) // Create and send event
+        sendGAEvent(withCategory: Categories.onboarding, action: "User Completed Onboarding", label: nil, value: value) // Create and send event
     }
     
     // Exited mid onboarding
@@ -49,7 +50,7 @@ struct Analytics {
     
     // Launched onboarding from manage categories screen
     static func onboardingFromCategoryEditing() {
-        
+        sendGAEvent(withCategory: Categories.onboarding, action: "User Entered Onboarding from Category Management", label: nil, value: nil) // Create and send event
     }
     
     /********** Permissions **********/
@@ -91,13 +92,21 @@ struct Analytics {
     
     /********** Event Creation **********/
     // New event with category: how long it took to make that event and if they used a force touch shortcut
-    static func createdEventWithCategory(duration seconds: Int, with shortcut: Bool) {
-        
+    static func createdEventWithCategory(duration seconds: Int, withShortcut: Bool) {
+        var label: String? = nil
+        if withShortcut {
+            label = "With Force Touch Shortcut"
+        }
+        sendGAEvent(withCategory: Categories.createdEvent, action: "Created Event With Category", label: label, value: seconds as NSNumber!)
     }
     
     // Created event without category attached: how long it took to make that event and if they used a force touch shortcut
-    static func createdEventNoCategory(duration seconds: Int, with shortcut: Bool) {
-        
+    static func createdEventNoCategory(duration seconds: Int, withShortcut: Bool) {
+        var label: String? = nil
+        if withShortcut {
+            label = "With Force Touch Shortcut"
+        }
+        sendGAEvent(withCategory: Categories.createdEvent, action: "Created Event Without Category", label: label, value: seconds as NSNumber!)
     }
     
     // User cancelled creation of event

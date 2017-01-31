@@ -57,6 +57,8 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     @IBAction func pressedHelp(_ sender: Any) {
+        Analytics.onboardingFromCategoryEditing() // Analytics event
+        
         performSegue(withIdentifier: SegueIdentifiers.showOnboarding, sender: self) // Show onboarding
     }
     

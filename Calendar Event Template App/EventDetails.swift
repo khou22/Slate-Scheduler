@@ -67,6 +67,10 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     var category: Category = Constants.emptyCategory // Category object
     var categoryIndex: Int = 0 // Category index in array
     var noCategory: Bool = false // Default is associated with category
+    var withShortcut: Bool = false // Default is no shortcut
+    
+    // Analytics data
+    var startTime = Date.timeIntervalSinceReferenceDate // Get current time
     
     // Instance of calendar manager
     let calendarManager: CalendarManager = CalendarManager()
@@ -120,6 +124,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Auto focus on event name input
         self.eventNameInput.becomeFirstResponder()
+        
+        // Set start time
+        var startTime = Date.timeIntervalSinceReferenceDate // Get current time
         
         // Log screen in GA
         var screenName: String = "Event Details - With Category" // With category

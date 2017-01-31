@@ -32,6 +32,9 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     // Location services
     let locationManager: CLLocationManager = CLLocationManager()
     
+    // Analytics
+    var withShortcut: Bool = false // Default didn't use shortcut
+    
     // Styling before view appears
     override func viewDidLoad() {
         // Labels when no categories present
@@ -155,11 +158,13 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
 //            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
             eventDetailsVC.category = self.categoryData[self.selectedItem] // Pass on category data
             eventDetailsVC.categoryIndex = self.selectedItem // Pass on category index
+            eventDetailsVC.withShortcut = self.withShortcut // Pass on if used shortcut
             
         } else if (segue.identifier == SegueIdentifiers.newEventNoCategory) { // New event no category
             let eventDetailsVC = segue.destination as! EventDetails
             eventDetailsVC.noCategory = true // Signify no category
             eventDetailsVC.categoryIndex = self.selectedItem // Pass on index
+            eventDetailsVC.withShortcut = self.withShortcut // Pass on if used shortcut
             
         }
     }
