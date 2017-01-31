@@ -105,12 +105,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
         
-        // Optional: configure GAI options.
-        guard let gai = GAI.sharedInstance() else {
+        // Configure GAI options.
+        guard let gai = GAI.sharedInstance() else { // Check that GAI tracker exists
             assert(false, "Google Analytics not configured correctly")
         }
-        gai.trackUncaughtExceptions = true  // report uncaught exceptions
-        gai.logger.logLevel = GAILogLevel.verbose  // remove before app release
+        gai.trackUncaughtExceptions = true // Report uncaught exceptions
+        gai.dispatchInterval = 10.0 // Low dispatch time because time in app should be short
+        gai.logger.logLevel = GAILogLevel.verbose // Remove before app release
     }
 
 }
