@@ -104,6 +104,8 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         // Automatic row height
         self.predictedNameTable.rowHeight = UITableViewAutomaticDimension
         self.predictedLocationTable.rowHeight = UITableViewAutomaticDimension
+        
+        Analytics.setScreenName("Category Edit Details") // Log screen name
     }
     
     // Retrieve and prepare data

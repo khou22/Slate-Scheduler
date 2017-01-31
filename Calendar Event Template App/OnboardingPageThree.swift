@@ -46,6 +46,8 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         ScrollData.setCurrentPage(index: 3)
+        
+        Analytics.setScreenName("Onboarding Page Three") // Log screen name
     }
     
     override func viewDidLayoutSubviews() {

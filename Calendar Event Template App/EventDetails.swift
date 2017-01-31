@@ -120,6 +120,13 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Auto focus on event name input
         self.eventNameInput.becomeFirstResponder()
+        
+        // Log screen in GA
+        var screenName: String = "Event Details - With Category" // With category
+        if self.noCategory { // Change screen name if category
+            screenName = "Event Details - No Category"
+        }
+        Analytics.setScreenName(screenName) // Log screen name
     }
     
     override func viewDidLayoutSubviews() {

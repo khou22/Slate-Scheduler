@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
+        self.initializeLibraries() // Setup any third party libraries/services
+        
         return true
     }
     
@@ -91,6 +93,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // Setup and initialize any third party libraries
+    func initializeLibraries() {
+        self.initializeGA() // Set up Google Analytics
+    }
+    
+    // Setup Google Analytics
+    func initializeGA() {
+        // Configure tracker from GoogleService-Info.plist.
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError)")
+        
+        // Optional: configure GAI options.
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+        }
+        gai.trackUncaughtExceptions = true  // report uncaught exceptions
+        gai.logger.logLevel = GAILogLevel.verbose  // remove before app release
+    }
 
 }
 

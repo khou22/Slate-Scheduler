@@ -49,6 +49,8 @@ class OnboardingPageOne: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         ScrollData.setCurrentPage(index: 1)
+        
+        Analytics.setScreenName("Onboarding Page One") // Log screen name
     }
     
     override func viewDidAppear(_ animated: Bool) {

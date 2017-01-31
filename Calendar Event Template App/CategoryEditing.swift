@@ -48,6 +48,8 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewWillAppear(_ animated: Bool) {
         self.getCollection() // Get category data
+        
+        Analytics.setScreenName("Category Management") // Log screen name
     }
     
     @IBAction func updatedCategoryLabelSetting(_ sender: Any) {

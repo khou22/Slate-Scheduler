@@ -48,6 +48,8 @@ class OnboardingPageFour: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         ScrollData.setCurrentPage(index: 4)
         
+        Analytics.setScreenName("Onboarding Page Four") // Log screen name
+        
         self.checkCalendarAuth() // Check for calendar authorization
     }
     

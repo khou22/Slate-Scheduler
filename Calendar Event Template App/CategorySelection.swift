@@ -49,6 +49,8 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         self.collectionViewLeft.constant = cellInset
         self.collectionViewRight.constant = cellInset
         
+        Analytics.setScreenName("Category Selection Screen") // Log screen name
+        
         // Load data every time someone enters view
         refreshCollection()
     }

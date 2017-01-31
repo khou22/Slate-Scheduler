@@ -46,6 +46,8 @@ class OnboardingPageTwo: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         ScrollData.setCurrentPage(index: 2) // Set current page
         
+        Analytics.setScreenName("Onboarding Page Two") // Log screen name
+        
         self.prepareAnimation() // Prepare entance animation - make alert prompt image small
     }
     
