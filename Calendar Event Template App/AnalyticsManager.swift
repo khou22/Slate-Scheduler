@@ -11,7 +11,12 @@ import Foundation
 
 struct Analytics {
     
-    static var GATracker = GAI.sharedInstance().defaultTracker
+    static var GATracker: GAITracker = GAI.sharedInstance().defaultTracker
+    
+    
+    private struct Categories {
+        static let test                 = "Test Category"
+    }
     
     // Setting the user's current screen
     static func setScreenName(_ name: String) {
@@ -22,10 +27,19 @@ struct Analytics {
         tracker.send(builder.build() as [NSObject : AnyObject])
     }
     
+    // MARK - Analytics Events
+    // Useful tool to easily create and send events to Google Analytics
+    static func sendGAEvent(withCategory: String!, action: String!, label: String!, value: NSNumber!) {
+        let event: GAIDictionaryBuilder = GAIDictionaryBuilder.createEvent(withCategory: withCategory, action: action, label: label, value: value) // Create event
+        let build = (event.build() as NSDictionary) as! [AnyHashable: Any] // Build and cast as correct type
+        GATracker.send(build) // Send event
+    }
+    
     /********** Onboarding **********/
     // Completed onboarding
-    static func completedOnboarding() {
-        
+    static func completedOnboarding(duration seconds: Int) {
+        let value: NSNumber = NSNumber(integerLiteral: seconds) // Convert to NSNumber
+        sendGAEvent(withCategory: Analytics.Categories.test, action: "User Completed Onboarding", label: nil, value: value) // Create and send event
     }
     
     // Exited mid onboarding
@@ -66,12 +80,12 @@ struct Analytics {
     
     /********** Event Creation **********/
     // New event with category and how long it took to make that event
-    static func createdEventWithCategory(in seconds: Int) {
+    static func createdEventWithCategory(duration seconds: Int) {
         
     }
     
     // Created event without category attached and how long it took to make that event
-    static func createdEventNoCategory(in seconds: Int) {
+    static func createdEventNoCategory(duration seconds: Int) {
         
     }
     
