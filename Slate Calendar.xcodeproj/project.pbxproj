@@ -76,17 +76,17 @@
 		27AAE8B71E3D8A37006D2173 /* LocationListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListCell.swift; sourceTree = "<group>"; };
 		27AAE8B91E3DAB73006D2173 /* OnboardingPageThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageThree.swift; sourceTree = "<group>"; };
 		27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameLocationFrequencyCell.swift; sourceTree = "<group>"; };
-		27BDFD751E1D9E0500B8C474 /* Calendar Event Template App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calendar Event Template App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BDFD751E1D9E0500B8C474 /* Slate Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slate Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BDFD781E1D9E0500B8C474 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelection.swift; sourceTree = "<group>"; };
 		27BDFD7D1E1D9E0500B8C474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27BDFD7F1E1D9E0500B8C474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27BDFD821E1D9E0500B8C474 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27BDFD841E1D9E0500B8C474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27BDFD891E1D9E0500B8C474 /* Calendar Event Template AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Calendar Event Template AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BDFD891E1D9E0500B8C474 /* Slate CalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slate CalendarTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BDFD8D1E1D9E0500B8C474 /* Calendar_Event_Template_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar_Event_Template_AppTests.swift; sourceTree = "<group>"; };
 		27BDFD8F1E1D9E0500B8C474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27BDFD941E1D9E0500B8C474 /* Calendar Event Template AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Calendar Event Template AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BDFD941E1D9E0500B8C474 /* Slate CalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Slate CalendarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BDFD981E1D9E0500B8C474 /* Calendar_Event_Template_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar_Event_Template_AppUITests.swift; sourceTree = "<group>"; };
 		27BDFD9A1E1D9E0500B8C474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27BDFDA61E1DB4D100B8C474 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -155,9 +155,9 @@
 		27BDFD761E1D9E0500B8C474 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				27BDFD751E1D9E0500B8C474 /* Calendar Event Template App.app */,
-				27BDFD891E1D9E0500B8C474 /* Calendar Event Template AppTests.xctest */,
-				27BDFD941E1D9E0500B8C474 /* Calendar Event Template AppUITests.xctest */,
+				27BDFD751E1D9E0500B8C474 /* Slate Calendar.app */,
+				27BDFD891E1D9E0500B8C474 /* Slate CalendarTests.xctest */,
+				27BDFD941E1D9E0500B8C474 /* Slate CalendarUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,9 +238,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		27BDFD741E1D9E0500B8C474 /* Calendar Event Template App */ = {
+		27BDFD741E1D9E0500B8C474 /* Slate Calendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27BDFD9D1E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Calendar Event Template App" */;
+			buildConfigurationList = 27BDFD9D1E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Slate Calendar" */;
 			buildPhases = (
 				27BDFD711E1D9E0500B8C474 /* Sources */,
 				27BDFD721E1D9E0500B8C474 /* Frameworks */,
@@ -250,14 +250,14 @@
 			);
 			dependencies = (
 			);
-			name = "Calendar Event Template App";
+			name = "Slate Calendar";
 			productName = "Calendar Event Template App";
-			productReference = 27BDFD751E1D9E0500B8C474 /* Calendar Event Template App.app */;
+			productReference = 27BDFD751E1D9E0500B8C474 /* Slate Calendar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		27BDFD881E1D9E0500B8C474 /* Calendar Event Template AppTests */ = {
+		27BDFD881E1D9E0500B8C474 /* Slate CalendarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27BDFDA01E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Calendar Event Template AppTests" */;
+			buildConfigurationList = 27BDFDA01E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Slate CalendarTests" */;
 			buildPhases = (
 				27BDFD851E1D9E0500B8C474 /* Sources */,
 				27BDFD861E1D9E0500B8C474 /* Frameworks */,
@@ -268,14 +268,14 @@
 			dependencies = (
 				27BDFD8B1E1D9E0500B8C474 /* PBXTargetDependency */,
 			);
-			name = "Calendar Event Template AppTests";
+			name = "Slate CalendarTests";
 			productName = "Calendar Event Template AppTests";
-			productReference = 27BDFD891E1D9E0500B8C474 /* Calendar Event Template AppTests.xctest */;
+			productReference = 27BDFD891E1D9E0500B8C474 /* Slate CalendarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		27BDFD931E1D9E0500B8C474 /* Calendar Event Template AppUITests */ = {
+		27BDFD931E1D9E0500B8C474 /* Slate CalendarUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27BDFDA31E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Calendar Event Template AppUITests" */;
+			buildConfigurationList = 27BDFDA31E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Slate CalendarUITests" */;
 			buildPhases = (
 				27BDFD901E1D9E0500B8C474 /* Sources */,
 				27BDFD911E1D9E0500B8C474 /* Frameworks */,
@@ -286,9 +286,9 @@
 			dependencies = (
 				27BDFD961E1D9E0500B8C474 /* PBXTargetDependency */,
 			);
-			name = "Calendar Event Template AppUITests";
+			name = "Slate CalendarUITests";
 			productName = "Calendar Event Template AppUITests";
-			productReference = 27BDFD941E1D9E0500B8C474 /* Calendar Event Template AppUITests.xctest */;
+			productReference = 27BDFD941E1D9E0500B8C474 /* Slate CalendarUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -323,7 +323,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 27BDFD701E1D9E0500B8C474 /* Build configuration list for PBXProject "Calendar Event Template App" */;
+			buildConfigurationList = 27BDFD701E1D9E0500B8C474 /* Build configuration list for PBXProject "Slate Calendar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -336,9 +336,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				27BDFD741E1D9E0500B8C474 /* Calendar Event Template App */,
-				27BDFD881E1D9E0500B8C474 /* Calendar Event Template AppTests */,
-				27BDFD931E1D9E0500B8C474 /* Calendar Event Template AppUITests */,
+				27BDFD741E1D9E0500B8C474 /* Slate Calendar */,
+				27BDFD881E1D9E0500B8C474 /* Slate CalendarTests */,
+				27BDFD931E1D9E0500B8C474 /* Slate CalendarUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -427,12 +427,12 @@
 /* Begin PBXTargetDependency section */
 		27BDFD8B1E1D9E0500B8C474 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 27BDFD741E1D9E0500B8C474 /* Calendar Event Template App */;
+			target = 27BDFD741E1D9E0500B8C474 /* Slate Calendar */;
 			targetProxy = 27BDFD8A1E1D9E0500B8C474 /* PBXContainerItemProxy */;
 		};
 		27BDFD961E1D9E0500B8C474 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 27BDFD741E1D9E0500B8C474 /* Calendar Event Template App */;
+			target = 27BDFD741E1D9E0500B8C474 /* Slate Calendar */;
 			targetProxy = 27BDFD951E1D9E0500B8C474 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -594,7 +594,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.Calendar-Event-Template-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calendar Event Template App.app/Calendar Event Template App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slate Calendar.app/Slate Calendar";
 			};
 			name = Debug;
 		};
@@ -609,7 +609,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "kevinhou.Calendar-Event-Template-AppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calendar Event Template App.app/Calendar Event Template App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Slate Calendar.app/Slate Calendar";
 			};
 			name = Release;
 		};
@@ -644,7 +644,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		27BDFD701E1D9E0500B8C474 /* Build configuration list for PBXProject "Calendar Event Template App" */ = {
+		27BDFD701E1D9E0500B8C474 /* Build configuration list for PBXProject "Slate Calendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27BDFD9B1E1D9E0500B8C474 /* Debug */,
@@ -653,7 +653,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27BDFD9D1E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Calendar Event Template App" */ = {
+		27BDFD9D1E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Slate Calendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27BDFD9E1E1D9E0500B8C474 /* Debug */,
@@ -662,7 +662,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27BDFDA01E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Calendar Event Template AppTests" */ = {
+		27BDFDA01E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Slate CalendarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27BDFDA11E1D9E0500B8C474 /* Debug */,
@@ -671,7 +671,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27BDFDA31E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Calendar Event Template AppUITests" */ = {
+		27BDFDA31E1D9E0500B8C474 /* Build configuration list for PBXNativeTarget "Slate CalendarUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27BDFDA41E1D9E0500B8C474 /* Debug */,

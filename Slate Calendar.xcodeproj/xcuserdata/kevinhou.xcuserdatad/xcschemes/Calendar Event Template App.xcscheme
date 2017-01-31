@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27BDFD741E1D9E0500B8C474"
-               BuildableName = "Calendar Event Template App.app"
-               BlueprintName = "Calendar Event Template App"
-               ReferencedContainer = "container:Calendar Event Template App.xcodeproj">
+               BuildableName = "Slate Calendar.app"
+               BlueprintName = "Slate Calendar"
+               ReferencedContainer = "container:Slate Calendar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27BDFD881E1D9E0500B8C474"
-               BuildableName = "Calendar Event Template AppTests.xctest"
-               BlueprintName = "Calendar Event Template AppTests"
-               ReferencedContainer = "container:Calendar Event Template App.xcodeproj">
+               BuildableName = "Slate CalendarTests.xctest"
+               BlueprintName = "Slate CalendarTests"
+               ReferencedContainer = "container:Slate Calendar.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "27BDFD931E1D9E0500B8C474"
-               BuildableName = "Calendar Event Template AppUITests.xctest"
-               BlueprintName = "Calendar Event Template AppUITests"
-               ReferencedContainer = "container:Calendar Event Template App.xcodeproj">
+               BuildableName = "Slate CalendarUITests.xctest"
+               BlueprintName = "Slate CalendarUITests"
+               ReferencedContainer = "container:Slate Calendar.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27BDFD741E1D9E0500B8C474"
-            BuildableName = "Calendar Event Template App.app"
-            BlueprintName = "Calendar Event Template App"
-            ReferencedContainer = "container:Calendar Event Template App.xcodeproj">
+            BuildableName = "Slate Calendar.app"
+            BlueprintName = "Slate Calendar"
+            ReferencedContainer = "container:Slate Calendar.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27BDFD741E1D9E0500B8C474"
-            BuildableName = "Calendar Event Template App.app"
-            BlueprintName = "Calendar Event Template App"
-            ReferencedContainer = "container:Calendar Event Template App.xcodeproj">
+            BuildableName = "Slate Calendar.app"
+            BlueprintName = "Slate Calendar"
+            ReferencedContainer = "container:Slate Calendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "27BDFD741E1D9E0500B8C474"
-            BuildableName = "Calendar Event Template App.app"
-            BlueprintName = "Calendar Event Template App"
-            ReferencedContainer = "container:Calendar Event Template App.xcodeproj">
+            BuildableName = "Slate Calendar.app"
+            BlueprintName = "Slate Calendar"
+            ReferencedContainer = "container:Slate Calendar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
