@@ -14,7 +14,7 @@
         <!--Category Selection-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="categorySelection" title="Category Selection" id="BYZ-38-t0r" customClass="CategorySelection" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="categorySelection" title="Category Selection" id="BYZ-38-t0r" customClass="CategorySelection" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -33,7 +33,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="Zv9-md-FqH" customClass="CategoryCollectionCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="Zv9-md-FqH" customClass="CategoryCollectionCell" customModule="Slate_Calendar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -161,7 +161,7 @@
         <!--Edit Categories-->
         <scene sceneID="NIN-sE-BVn">
             <objects>
-                <viewController title="Edit Categories" id="c4k-Cp-UWn" customClass="CategoryEditing" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Categories" id="c4k-Cp-UWn" customClass="CategoryEditing" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4oo-4h-msO"/>
                         <viewControllerLayoutGuide type="bottom" id="GYA-0g-cSC"/>
@@ -181,7 +181,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryEditCell" id="HHb-Eg-GDU" customClass="CategoryEditCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryEditCell" id="HHb-Eg-GDU" customClass="CategoryEditCell" customModule="Slate_Calendar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
@@ -315,7 +315,7 @@
         <!--Category Details Edit-->
         <scene sceneID="sig-tp-Qco">
             <objects>
-                <viewController id="ofc-Ei-ISN" customClass="CategoryDetailsEdit" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ofc-Ei-ISN" customClass="CategoryDetailsEdit" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iNK-SB-Sx5"/>
                         <viewControllerLayoutGuide type="bottom" id="xva-yt-vf8"/>
@@ -396,7 +396,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameLocationCell" id="j1z-lA-vpT" customClass="NameLocationFrequencyCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NameLocationCell" id="j1z-lA-vpT" customClass="NameLocationFrequencyCell" customModule="Slate_Calendar" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="319" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j1z-lA-vpT" id="OCF-Fi-Trs">
@@ -469,7 +469,7 @@
                                         <rect key="frame" x="0.0" y="248.5" width="319" height="186.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationListCell" id="V7l-4G-Mbz" customClass="LocationListCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationListCell" id="V7l-4G-Mbz" customClass="LocationListCell" customModule="Slate_Calendar" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="319" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7l-4G-Mbz" id="K4g-0v-vFr">
@@ -550,6 +550,7 @@
                         <outlet property="categoryNameInput" destination="KYH-vy-UK2" id="LtR-Ea-WNO"/>
                         <outlet property="predictedLocationTable" destination="0Sq-OR-xOd" id="CCt-et-lbQ"/>
                         <outlet property="predictedNameTable" destination="CDh-z7-QAt" id="ljD-9k-b7e"/>
+                        <outlet property="resetPredictionsButton" destination="hrb-6U-o4t" id="6Oe-Xz-RIf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xGf-V7-fjg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -576,7 +577,7 @@
         <!--Event Details-->
         <scene sceneID="hjX-F2-KRZ">
             <objects>
-                <viewController storyboardIdentifier="editNewEventDetails" id="Pbh-M3-uzF" customClass="EventDetails" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editNewEventDetails" id="Pbh-M3-uzF" customClass="EventDetails" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yU3-wZ-w76"/>
                         <viewControllerLayoutGuide type="bottom" id="qsh-b2-hZD"/>
@@ -626,7 +627,7 @@
                                         <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-c0-Lai" customClass="AutocompleteTextField" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JFO-c0-Lai" customClass="AutocompleteTextField" customModule="Slate_Calendar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="23" width="319" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -650,7 +651,7 @@
                                                 <color key="textColor" red="0.61966550350189209" green="0.61965179443359375" blue="0.61965441703796387" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-UH-lk1" customClass="AutocompleteTextField" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="10" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-UH-lk1" customClass="AutocompleteTextField" customModule="Slate_Calendar" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="23" width="271" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Qcp-I6-Dcm"/>
@@ -702,7 +703,7 @@
                                         <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-mR-KaH" customClass="StepSlider" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="1ag-mR-KaH" customClass="StepSlider" customModule="Slate_Calendar" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="23" width="323" height="31"/>
                                         <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -746,7 +747,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuickDayPickerCell" id="ijQ-BW-Eig" customClass="QuickDayPickerCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuickDayPickerCell" id="ijQ-BW-Eig" customClass="QuickDayPickerCell" customModule="Slate_Calendar" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -789,7 +790,7 @@
                                             <outlet property="delegate" destination="Pbh-M3-uzF" id="h9C-Kq-Ite"/>
                                         </connections>
                                     </collectionView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="9" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="90P-4b-egX" customClass="StepSlider" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="9" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="90P-4b-egX" customClass="StepSlider" customModule="Slate_Calendar" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="79" width="323" height="31"/>
                                         <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -830,7 +831,7 @@
                                 <rect key="frame" x="28" y="348" width="319" height="161"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventListCell" id="6Sv-r7-lcJ" customClass="EventListCell" customModule="Calendar_Event_Template_App" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventListCell" id="6Sv-r7-lcJ" customClass="EventListCell" customModule="Slate_Calendar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="319" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Sv-r7-lcJ" id="XOb-QL-ZmB">
@@ -1037,7 +1038,7 @@
         <!--Onboarding Pager-->
         <scene sceneID="6XE-Qq-CNi">
             <objects>
-                <pageViewController storyboardIdentifier="OnboardingPager" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="I2C-vX-COO" customClass="OnboardingPager" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="OnboardingPager" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="I2C-vX-COO" customClass="OnboardingPager" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ux2-Lw-X1N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-303" y="-651"/>
@@ -1045,7 +1046,7 @@
         <!--Onboarding Page One-->
         <scene sceneID="t2U-Ni-Y3h">
             <objects>
-                <viewController storyboardIdentifier="OnboardingPageOne" id="8Ra-iV-seO" customClass="OnboardingPageOne" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingPageOne" id="8Ra-iV-seO" customClass="OnboardingPageOne" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uXV-Zd-J0V"/>
                         <viewControllerLayoutGuide type="bottom" id="Azc-1q-ue8"/>
@@ -1156,7 +1157,7 @@
         <!--Onboarding Page Two-->
         <scene sceneID="5o1-YE-SbW">
             <objects>
-                <viewController storyboardIdentifier="OnboardingPageTwo" id="8zU-Vz-ZRH" customClass="OnboardingPageTwo" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingPageTwo" id="8zU-Vz-ZRH" customClass="OnboardingPageTwo" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aDb-xk-RwT"/>
                         <viewControllerLayoutGuide type="bottom" id="VQE-f3-dsL"/>
@@ -1265,7 +1266,7 @@
         <!--Onboarding Page Four-->
         <scene sceneID="a78-og-PvO">
             <objects>
-                <viewController storyboardIdentifier="OnboardingPageFour" id="cne-eY-2Tp" customClass="OnboardingPageFour" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingPageFour" id="cne-eY-2Tp" customClass="OnboardingPageFour" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6vA-av-lYs"/>
                         <viewControllerLayoutGuide type="bottom" id="RU1-ol-kmH"/>
@@ -1378,7 +1379,7 @@
         <!--Onboarding Page Three-->
         <scene sceneID="HUy-Hm-tpy">
             <objects>
-                <viewController storyboardIdentifier="OnboardingPageThree" id="rzh-tQ-OMg" customClass="OnboardingPageThree" customModule="Calendar_Event_Template_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingPageThree" id="rzh-tQ-OMg" customClass="OnboardingPageThree" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QXJ-87-tia"/>
                         <viewControllerLayoutGuide type="bottom" id="Fu2-s6-GMS"/>

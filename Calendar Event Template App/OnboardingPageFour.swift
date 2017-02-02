@@ -34,6 +34,7 @@ class OnboardingPageFour: UIViewController {
         onboardingBackground() // Setup background gradient
         setupSummaryCards() // Create the other two summary cards
         
+        self.getStartedButton.layer.cornerRadius = 4 // Round button corners
         self.getStartedButton.setTitleColor(Colors.lightGrey, for: .selected) // Set button text color when pressed
         self.getStartedButton.showsTouchWhenHighlighted = true // Show a button press
         

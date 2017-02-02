@@ -41,6 +41,9 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
         onboardingBackground() // Setup background gradient
         self.initializeScrollAnimations() // Initialize scrolling animations
         
+        // Round button corners
+        self.locationPermissionButton.layer.cornerRadius = 4
+        
         self.permissionGranted.layer.opacity = 0.0 // Hide permission granted checkmark
     }
     

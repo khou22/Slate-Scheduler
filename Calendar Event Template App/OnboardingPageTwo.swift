@@ -39,6 +39,9 @@ class OnboardingPageTwo: UIViewController {
         
         self.initializeScrollAnimations() // Setup scrolling percentage
         
+        // Round button corners
+        self.calendarPermissionButton.layer.cornerRadius = 4
+        
         self.permissionGranted.layer.opacity = 0.0 // Start invisible
         self.calendarPermissionButton.setTitleColor(Colors.lightGrey, for: .selected) // Set button text color when pressed
     }

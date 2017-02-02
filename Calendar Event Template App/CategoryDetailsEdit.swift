@@ -21,6 +21,7 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var categoryNameInput: UITextField!
     @IBOutlet weak var predictedNameTable: UITableView!
     @IBOutlet weak var predictedLocationTable: UITableView!
+    @IBOutlet weak var resetPredictionsButton: UIButton!
     
     // Manually add an event name prediction
     @IBAction func addEventNamePrediction(_ sender: Any) {
@@ -82,6 +83,10 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         }))
         
         self.present(newCategoryAlert, animated: true, completion: nil) // Present the alert
+    }
+    
+    override func viewDidLoad() {
+        self.resetPredictionsButton.layer.cornerRadius = 4 // Round button corners
     }
     
     override func viewWillAppear(_ animated: Bool) {
