@@ -119,6 +119,10 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // Auto select "Today" in quick day picker
+        let indexPathForFirstRow = IndexPath(row: 0, section: 0) // First index
+        self.quickDayPicker.selectItem(at: indexPathForFirstRow, animated: true, scrollPosition: .top) // Make selection
+        
         // Setup summary card view
         self.setupSummaryCard()
         
@@ -126,7 +130,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.eventNameInput.becomeFirstResponder()
         
         // Set start time
-        var startTime = Date.timeIntervalSinceReferenceDate // Get current time
+        self.startTime = Date.timeIntervalSinceReferenceDate // Get current time
         
         // Log screen in GA
         var screenName: String = "Event Details - With Category" // With category
