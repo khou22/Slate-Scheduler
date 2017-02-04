@@ -127,14 +127,18 @@ struct Analytics {
     }
     
     // User cancelled creation of event
-    static func cancelledEventCreation() {
-        
+    static func cancelledEventCreation(duration seconds: Int, withShortcut: Bool) {
+        var label: String? = nil
+        if withShortcut {
+            label = "With Force Touch Shortcut"
+        }
+        sendGAEvent(withCategory: Categories.createdEvent, action: "Cancelled Event Creation", label: label, value: seconds as NSNumber!)
     }
     
     /********** Category Management **********/
     // Created new category and log the name of the category
     static func createdCategory(with name: String) {
-        
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Created New Category", label: name, value: nil)
     }
     
     // Deleted a category
@@ -161,11 +165,11 @@ struct Analytics {
     
     // Removed an event name prediction from category history
     static func removedNamePrediction() {
-        
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Removed Event Name Prediction", label: nil, value: nil)
     }
     
     // Removed a location prediction from category history
     static func removedLocationPrediction() {
-        
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Removed Location Prediction", label: nil, value: nil)
     }
 }

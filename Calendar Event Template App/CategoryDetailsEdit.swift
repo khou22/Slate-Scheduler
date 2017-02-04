@@ -242,6 +242,8 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
                 DispatchQueue.main.async {
                     self.predictedNameTable.reloadData()
                 }
+                
+                Analytics.removedNamePrediction() // Log in GA
             } else { // Locations
                 self.currentCategory.locationFreq.removeValue(forKey: self.locationKeys[index]) // Remove frequency data for specific event name
                 
@@ -251,6 +253,8 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
                 DispatchQueue.main.async {
                     self.predictedLocationTable.reloadData()
                 }
+                
+                Analytics.removedLocationPrediction() // Log in GA
             }
         }
     }

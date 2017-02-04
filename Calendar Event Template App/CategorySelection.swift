@@ -91,6 +91,8 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
             
             // Refresh collection view
             self.refreshCollection()
+            
+            Analytics.createdCategory(with: category.name) // Log event in GA
         }))
         
         self.present(newCategoryAlert, animated: true, completion: nil) // Present the alert

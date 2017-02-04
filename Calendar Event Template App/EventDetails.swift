@@ -147,6 +147,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     @IBAction func cancelEvent(_ sender: Any) {
+        
+        // GA Event: User cancelled event
+        let secondsEllapsed = Date.timeIntervalSinceReferenceDate - self.startTime // Calculate seconds elapsed
+        Analytics.cancelledEventCreation(duration: Int(secondsEllapsed), withShortcut: self.withShortcut) // Log event in GA
+        
         view.endEditing(true) // Force keyboard to close
         dismiss(animated: true, completion: nil) // Exit segue back to category selection
     }
