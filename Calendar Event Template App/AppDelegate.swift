@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func handleShortcut(shortcutItem: UIApplicationShortcutItem) -> Bool {
         switch shortcutItem.type  {
             case "kevinhou.Calendar-Event-Template-App.newUncategorizedEvent":
+                Analytics.shortcutCreateNoCategory() // Log event in GA
+                
                 // Handle shortcut for new uncategorized event
                 launchInitialVC(viewController: Storyboard.editEventDetails)
                 break

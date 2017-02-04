@@ -17,6 +17,7 @@ struct Analytics {
     private struct Categories {
         static let onboarding               = "Onboarding"
         static let authentication           = "Authentication"
+        static let shortcuts                = "Force Touch Shortcuts"
         static let createdEvent             = "Event Creation"
         static let categoryManagement       = "Category Management"
     }
@@ -100,7 +101,7 @@ struct Analytics {
     
     // Adding event with shortcut no category
     static func shortcutCreateNoCategory() {
-        
+        sendGAEvent(withCategory: Categories.shortcuts, action: "Used Force Touch Shortcut", label: "No Category", value: nil)
     }
     
     static func userTurnedOffCalenderPermissionAfterOnboarding() {
