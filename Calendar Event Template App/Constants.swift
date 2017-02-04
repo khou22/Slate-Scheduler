@@ -45,6 +45,8 @@ struct Images {
     static let eventSummaryCardNoCategory   = "event-summary-card-no-category"
     static let eventSummaryCardAlt1         = "event-summary-card-alt-1"
     static let eventSummaryCardAlt2         = "event-summary-card-alt-2"
+    static let calendarErrorNoX             = "permission-denied-no-x"
+    static let calendarError                = "permission-denied"
 }
 
 struct Storyboard {

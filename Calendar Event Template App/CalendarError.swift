@@ -11,6 +11,7 @@ import UIKit
 
 class CalendarError: UIViewController {
     override func viewDidLoad() {
+        onboardingBackground() // Use gradient background
         print("Calendar permission error")
     }
 }

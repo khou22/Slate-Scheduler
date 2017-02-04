@@ -1046,12 +1046,58 @@
                     <view key="view" contentMode="scaleToFill" id="DcF-ha-1zQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please allow us to read and schedule events in your calendar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0EY-db-7dv">
+                                <rect key="frame" x="32" y="36" width="311" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="rh3-sz-vCk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings -&gt; Privacy -&gt; Calendars -&gt; Switch On Slate Calendar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MxW-sf-E2d">
+                                <rect key="frame" x="26" y="538.5" width="323" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK4-kZ-iVa">
+                                <rect key="frame" x="91" y="602" width="193" height="45"/>
+                                <color key="backgroundColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="cQ8-T4-s80"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Go to Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="permission-denied-no-x" translatesAutoresizingMaskIntoConstraints="NO" id="Sqq-uV-O5D">
+                                <rect key="frame" x="41" y="129" width="293" height="364.5"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MxW-sf-E2d" firstAttribute="top" secondItem="Sqq-uV-O5D" secondAttribute="bottom" constant="45" id="70b-vf-fNH"/>
+                            <constraint firstItem="0EY-db-7dv" firstAttribute="top" secondItem="NMw-T8-kt9" secondAttribute="bottom" constant="16" id="9CL-Zt-rGI"/>
+                            <constraint firstItem="Sqq-uV-O5D" firstAttribute="leading" secondItem="DcF-ha-1zQ" secondAttribute="leadingMargin" constant="25" id="Dbl-1i-3oj"/>
+                            <constraint firstItem="MxW-sf-E2d" firstAttribute="leading" secondItem="DcF-ha-1zQ" secondAttribute="leadingMargin" constant="10" id="EKV-NE-g7o"/>
+                            <constraint firstItem="Sqq-uV-O5D" firstAttribute="top" secondItem="0EY-db-7dv" secondAttribute="bottom" constant="45" id="JRh-Wf-BAU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sqq-uV-O5D" secondAttribute="trailing" constant="25" id="O5G-xg-eFn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BK4-kZ-iVa" secondAttribute="trailing" constant="75" id="Rc3-Ea-yR3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0EY-db-7dv" secondAttribute="trailing" constant="16" id="VYI-zG-kvs"/>
+                            <constraint firstItem="0EY-db-7dv" firstAttribute="leading" secondItem="DcF-ha-1zQ" secondAttribute="leadingMargin" constant="16" id="Wyl-hB-SiA"/>
+                            <constraint firstItem="BK4-kZ-iVa" firstAttribute="leading" secondItem="DcF-ha-1zQ" secondAttribute="leadingMargin" constant="75" id="dZH-RS-G6C"/>
+                            <constraint firstItem="BK4-kZ-iVa" firstAttribute="top" secondItem="MxW-sf-E2d" secondAttribute="bottom" constant="25" id="fDl-qR-4bc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MxW-sf-E2d" secondAttribute="trailing" constant="10" id="t7N-ie-Ajt"/>
+                            <constraint firstItem="DxX-Qe-e9x" firstAttribute="top" secondItem="BK4-kZ-iVa" secondAttribute="bottom" constant="20" id="uyp-xl-hp1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8DC-bU-bm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2582" y="124"/>
+            <point key="canvasLocation" x="2581.5999999999999" y="123.68815592203899"/>
         </scene>
         <!--Onboarding Pager-->
         <scene sceneID="6XE-Qq-CNi">
@@ -1536,6 +1582,7 @@
         <image name="iphone-wireframe" width="740" height="1520"/>
         <image name="map-pin" width="472" height="632"/>
         <image name="outlook_icon" width="200" height="200"/>
+        <image name="permission-denied-no-x" width="1272" height="1544"/>
         <image name="submit-confirmation" width="70" height="70"/>
         <image name="yahoo_icon" width="200" height="200"/>
     </resources>
