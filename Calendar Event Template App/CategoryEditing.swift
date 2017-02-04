@@ -107,6 +107,8 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
         let itemToMove = categories[sourceIndexPath.row] // Get item to move
         categories.remove(at: sourceIndexPath.row) // Delete at old position
         categories.insert(itemToMove, at: destinationIndexPath.row) // Move to new position
+        
+        Analytics.modifiedCategoryOrder() // Log GA event
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -125,6 +127,8 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
             let index = indexPath.item
             categories.remove(at: index) // Delete item
             self.refreshPersistData() // Refresh persist data
+            
+            Analytics.deletedCategory(name: categories[index].name) // Log GA event
             
             // Refresh table view to show updated category data
             DispatchQueue.main.async {

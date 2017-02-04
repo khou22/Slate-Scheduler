@@ -149,6 +149,9 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         // Create actions
         let resetAction: UIAlertAction = UIAlertAction(title: "Reset Predictions", style: .default, handler: { (alert: UIAlertAction!) -> Void in
             // User pressed reset all predictions
+            let numPredictions: Int = self.currentCategory.eventNameFreq.count + self.currentCategory.locationFreq.count // Tally how many predictions
+            Analytics.resetCategoryPredictions(name: self.currentCategory.name, totalPrediction: numPredictions) // Log event in GA
+            
 //            print("Reseting predictions")
             self.currentCategory = Category(name: self.currentCategory.name, eventNameFreq: [ : ], locationFreq: [ : ]) // Reset predictions data
             DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Update data
@@ -177,6 +180,8 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
             
             self.refreshData()
             self.dismissKeyboard() // Hide keyboard
+            
+            Analytics.renamedCategory(name: self.categoryNameInput.text!) // Log event in GA
         }
         
         return true

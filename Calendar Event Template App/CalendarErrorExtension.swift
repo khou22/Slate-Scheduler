@@ -15,11 +15,13 @@ extension UIViewController {
         let calendarPermission = EKEventStore.authorizationStatus(for: EKEntityType.event) // Get authorization status
         let authorized = (calendarPermission == .authorized)
         if !authorized { // If not authorized calendar
+            Analytics.userTurnedOffCalenderPermissionAfterOnboarding() // Log event in GA
+            
             print("Calendar not authorized...seguing to error screen")
             let calendarError = storyboard?.instantiateViewController(withIdentifier: Storyboard.calendarError) as! CalendarError // Retrieve calendar error screen
-            let segueToErrorScreen: UIStoryboardSegue = UIStoryboardSegue(identifier: "SegueToError", source: self, destination: calendarError) // Create segue to error screen
+            let segueToErrorScreen: UIStoryboardSegue = UIStoryboardSegue(identifier: "segueToErrorScreen", source: self, destination: calendarError) // Create segue to error screen
             
-//            segueToErrorScreen.perform() // Perform segue
+            segueToErrorScreen.perform() // Perform segue
         }
     }
 }

@@ -16,7 +16,9 @@ struct Analytics {
     
     private struct Categories {
         static let onboarding               = "Onboarding"
+        static let authentication           = "Authentication"
         static let createdEvent             = "Event Creation"
+        static let categoryManagement       = "Category Management"
     }
     
     // Setting the user's current screen
@@ -30,7 +32,7 @@ struct Analytics {
     
     // MARK - Analytics Events
     // Useful tool to easily create and send events to Google Analytics
-    static func sendGAEvent(withCategory: String!, action: String!, label: String!, value: NSNumber!) {
+    private static func sendGAEvent(withCategory: String!, action: String!, label: String!, value: NSNumber!) {
         let event: GAIDictionaryBuilder = GAIDictionaryBuilder.createEvent(withCategory: withCategory, action: action, label: label, value: value) // Create event
         let build = (event.build() as NSDictionary) as! [AnyHashable: Any] // Build and cast as correct type
         
@@ -101,6 +103,10 @@ struct Analytics {
         
     }
     
+    static func userTurnedOffCalenderPermissionAfterOnboarding() {
+        sendGAEvent(withCategory: Categories.authentication, action: "Showing Calendar Authentication Error Screen", label: "User turned off calendar permission sometime after onboarding", value: nil)
+    }
+    
     /********** Event Creation **********/
     // New event with category: how long it took to make that event and if they used a force touch shortcut
     static func createdEventWithCategory(duration seconds: Int, withShortcut: Bool) {
@@ -132,18 +138,25 @@ struct Analytics {
     }
     
     // Deleted a category
-    static func deletedCategory() {
-        
+    static func deletedCategory(name: String) {
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Deleted Category", label: name, value: nil)
+    }
+    
+    // Changed the order of categories
+    static func modifiedCategoryOrder() {
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Modified Category Order", label: nil, value: nil)
     }
     
     // Renamed a category
-    static func renamedCategory() {
-        
+    static func renamedCategory(name: String) {
+        let label = "Renamed to: " + name
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Renamed Category", label: label, value: nil)
     }
     
     // Reset category history for a single category
-    static func resetCategoryPredictions() {
-        
+    static func resetCategoryPredictions(name: String, totalPrediction: Int) {
+        let label = "Category name: " + name
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Reset Category Predictions", label: label, value: totalPrediction as NSNumber!)
     }
     
     // Removed an event name prediction from category history
