@@ -130,7 +130,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.eventNameInput.becomeFirstResponder()
         
         // Set start time
-        self.startTime = Date.timeIntervalSinceReferenceDate // Get current time
+        self.startTime = Date.timeIntervalSinceReferenceDate // Get and store current time
         
         // Log screen in GA
         var screenName: String = "Event Details - With Category" // With category

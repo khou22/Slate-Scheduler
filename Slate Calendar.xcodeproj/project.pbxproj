@@ -18,6 +18,7 @@
 		274B29021E4073930005F22C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B29011E4073930005F22C /* AnalyticsManager.swift */; };
 		274B29031E4073930005F22C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B29011E4073930005F22C /* AnalyticsManager.swift */; };
 		274B29041E4073930005F22C /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274B29011E4073930005F22C /* AnalyticsManager.swift */; };
+		274DD6AE1E457BF3003CD0F6 /* CalendarError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274DD6AD1E457BF3003CD0F6 /* CalendarError.swift */; };
 		274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FA89B1E1DCBC7008E297C /* EventDetails.swift */; };
 		2757074B1E2733B3002A3060 /* CategoryEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074A1E2733B3002A3060 /* CategoryEditCell.swift */; };
 		2757074D1E27340A002A3060 /* CategoryEditing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074C1E27340A002A3060 /* CategoryEditing.swift */; };
@@ -80,6 +81,7 @@
 		274B28FC1E4071B90005F22C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		274B29001E4072280005F22C /* Slate Calendar-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Slate Calendar-Bridging-Header.h"; sourceTree = "<group>"; };
 		274B29011E4073930005F22C /* AnalyticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		274DD6AD1E457BF3003CD0F6 /* CalendarError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarError.swift; sourceTree = "<group>"; };
 		274FA89B1E1DCBC7008E297C /* EventDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
 		2757074A1E2733B3002A3060 /* CategoryEditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEditCell.swift; sourceTree = "<group>"; };
 		2757074C1E27340A002A3060 /* CategoryEditing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryEditing.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				2757074E1E2741E2002A3060 /* CategoryDetailsEdit.swift */,
 				274FA89B1E1DCBC7008E297C /* EventDetails.swift */,
 				2707362A1E20609E003E8B72 /* EventDetailsManager.swift */,
+				274DD6AD1E457BF3003CD0F6 /* CalendarError.swift */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
 				272455771E1DCE3000F3856F /* DataManager.swift in Sources */,
 				2770E12F1E3AAB80003AA5F4 /* AngleHelper.swift in Sources */,
+				274DD6AE1E457BF3003CD0F6 /* CalendarError.swift in Sources */,
 				27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */,
 				2707362B1E20609E003E8B72 /* EventDetailsManager.swift in Sources */,
 				274B29021E4073930005F22C /* AnalyticsManager.swift in Sources */,
