@@ -37,6 +37,8 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     
     // Styling before view appears
     override func viewDidLoad() {
+        self.showCalendarErrorScreen() // Check calendar permission and show error screen if needed
+        
         // Labels when no categories present
         for label in self.noCategoriesLabels {
             label.alpha = 0.0 // Make transparent

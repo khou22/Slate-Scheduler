@@ -81,6 +81,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     
     override func viewDidLoad() {
+        self.showCalendarErrorScreen() // Check calendar permission and show error screen if needed
+        
         self.adjustForScreenSizes() // Adjust constraints for screen sizes
         self.refreshQuickDay() // Calculate labels
         self.hideKeyboardOnSwipe() // Initialize hide keyboard when tapped away

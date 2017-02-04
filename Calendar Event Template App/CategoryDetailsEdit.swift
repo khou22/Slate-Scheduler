@@ -86,6 +86,8 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidLoad() {
+        self.showCalendarErrorScreen() // Check calendar permission and show error screen if needed
+        
         self.resetPredictionsButton.layer.cornerRadius = 4 // Round button corners
     }
     

@@ -40,6 +40,8 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     override func viewDidLoad() {
+        self.showCalendarErrorScreen() // Check calendar permission and show error screen if needed
+        
         self.categoryTable.allowsMultipleSelection = false // Don't allow multiple selection of cells
         
         // Set initial value of categoyr label switch

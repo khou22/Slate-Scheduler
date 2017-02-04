@@ -1062,7 +1062,7 @@
                                 <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK4-kZ-iVa">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK4-kZ-iVa">
                                 <rect key="frame" x="91" y="602" width="193" height="45"/>
                                 <color key="backgroundColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -1094,6 +1094,10 @@
                             <constraint firstItem="DxX-Qe-e9x" firstAttribute="top" secondItem="BK4-kZ-iVa" secondAttribute="bottom" constant="20" id="uyp-xl-hp1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calendarErrorImageNoX" destination="Sqq-uV-O5D" id="6VV-Mq-WRI"/>
+                        <outlet property="settingsButton" destination="BK4-kZ-iVa" id="wvf-r0-2Pd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8DC-bU-bm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

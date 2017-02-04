@@ -27,6 +27,7 @@
 		2770E12F1E3AAB80003AA5F4 /* AngleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */; };
 		279022631E209BF10062FFE8 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279022621E209BF10062FFE8 /* EventListCell.swift */; };
 		279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */; };
+		279E898C1E466A5400C38C6D /* CalendarErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */; };
 		27AAE8B81E3D8A37006D2173 /* LocationListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AAE8B71E3D8A37006D2173 /* LocationListCell.swift */; };
 		27AAE8BA1E3DAB73006D2173 /* OnboardingPageThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AAE8B91E3DAB73006D2173 /* OnboardingPageThree.swift */; };
 		27BA98041E2C937B0055AA54 /* NameLocationFrequencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */; };
@@ -90,6 +91,7 @@
 		2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleHelper.swift; sourceTree = "<group>"; };
 		279022621E209BF10062FFE8 /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
+		279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarErrorExtension.swift; sourceTree = "<group>"; };
 		27AAE8B71E3D8A37006D2173 /* LocationListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListCell.swift; sourceTree = "<group>"; };
 		27AAE8B91E3DAB73006D2173 /* OnboardingPageThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageThree.swift; sourceTree = "<group>"; };
 		27BA98031E2C937B0055AA54 /* NameLocationFrequencyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameLocationFrequencyCell.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				27DC4E7F1E20758500F510D3 /* CustomTextField.swift */,
 				2770E12C1E3A8876003AA5F4 /* OnboardingPageExtensions.swift */,
 				2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */,
+				279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				27CBC4FF1E35C4B4001CE9DA /* OnboardingPager.swift in Sources */,
 				27BA98041E2C937B0055AA54 /* NameLocationFrequencyCell.swift in Sources */,
 				270991051E1E289000267071 /* StepSlider.swift in Sources */,
+				279E898C1E466A5400C38C6D /* CalendarErrorExtension.swift in Sources */,
 				27CBC5081E35C6DD001CE9DA /* OnboardingPageFour.swift in Sources */,
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
 				272455771E1DCE3000F3856F /* DataManager.swift in Sources */,
