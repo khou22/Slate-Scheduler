@@ -122,7 +122,7 @@ extension EventDetails {
     }
     
     func refreshDaysEvents() {
-        self.daysEvents = self.calendarManager.getEvents(day: eventDate.dateWithoutTime())
+        self.daysEvents = self.calendarManager.getEvents(day: self.eventDate.dateWithoutTime())
         
         // Refresh the table
         DispatchQueue.main.async {
