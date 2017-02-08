@@ -19,9 +19,7 @@ extension UIViewController {
             
             print("Calendar not authorized...seguing to error screen")
             let calendarError = storyboard?.instantiateViewController(withIdentifier: Storyboard.calendarError) as! CalendarError // Retrieve calendar error screen
-            let segueToErrorScreen: UIStoryboardSegue = UIStoryboardSegue(identifier: "segueToErrorScreen", source: self, destination: calendarError) // Create segue to error screen
-            
-            segueToErrorScreen.perform() // Perform segue
+            present(calendarError, animated: false, completion: nil) // Present view controller
         }
     }
 }
