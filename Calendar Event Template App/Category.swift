@@ -15,12 +15,14 @@ class Category: NSObject, NSCoding {
     
     // Instance variables
     var name: String
+    var timesUsed: Int // Number of times the category has been used to create an event
     var eventNameFreq: [ String : Int ] // Frequency dictionary
     var locationFreq: [ String : Int ] // Frequency dictionary
     
     // Constructor
-    init(name: String, eventNameFreq: [ String : Int ], locationFreq: [String : Int ]) {
+    init(name: String, timesUsed: Int, eventNameFreq: [ String : Int ], locationFreq: [String : Int ]) {
         self.name = name
+        self.timesUsed = timesUsed
         self.eventNameFreq = eventNameFreq
         self.locationFreq = locationFreq
     }
@@ -34,16 +36,18 @@ class Category: NSObject, NSCoding {
     // Decoding all instance variables when retrieving
     required convenience init(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: Keys.categoryName) as! String
+        let timesUsed = aDecoder.decodeInteger(forKey: Keys.categoryTimesUsed) as! Int
         let eventNameFreq = aDecoder.decodeObject(forKey: Keys.eventNameFreq) as! [ String : Int ]
         let locationFreq = aDecoder.decodeObject(forKey: Keys.locationFrequency) as! [ String : Int ]
         
         // Creating a new object but with the same values
-        self.init(name: name, eventNameFreq: eventNameFreq, locationFreq: locationFreq)
+        self.init(name: name, timesUsed: timesUsed, eventNameFreq: eventNameFreq, locationFreq: locationFreq)
     }
     
     // Encode all instance variables when storing
     func encode(with aCoder: NSCoder) {
         aCoder.encode(name, forKey: Keys.categoryName)
+        aCoder.encode(timesUsed, forKey: Keys.categoryTimesUsed)
         aCoder.encode(eventNameFreq, forKey: Keys.eventNameFreq)
         aCoder.encode(locationFreq, forKey: Keys.locationFrequency)
     }

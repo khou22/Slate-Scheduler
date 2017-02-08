@@ -96,7 +96,7 @@ struct Constants {
     static let defaults                     = UserDefaults.standard
     
     // Empty category
-    static let emptyCategory                = Category(name: StringIdentifiers.noCategory, eventNameFreq: [ : ], locationFreq: [ : ])
+    static let emptyCategory                = Category(name: StringIdentifiers.noCategory, timesUsed: 0, eventNameFreq: [ : ], locationFreq: [ : ])
     
     // Default location if user hasn't allowed location services
     static let defaultLocation              = CLLocationCoordinate2D(latitude: 40.3440, longitude: -74.6514)
@@ -113,6 +113,7 @@ struct Keys {
     
     // Other keys
     static let categoryName                 = "categoryName"
+    static let categoryTimesUsed            = "categoryTimesUsed"
     static let eventNameFreq                = "nameFrequency"
     static let locationFrequency            = "locationFrequency"
 }

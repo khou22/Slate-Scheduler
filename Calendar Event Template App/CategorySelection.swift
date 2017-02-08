@@ -37,6 +37,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     
     // Styling before view appears
     override func viewDidLoad() {
+        DataManager.deleteAllCategories()
         self.showCalendarErrorScreen() // Check calendar permission and show error screen if needed
         
         // Labels when no categories present
@@ -86,7 +87,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
             let textField = newCategoryAlert?.textFields![0] // Force unwrapping because we know it exists
             let categoryName: String = (textField?.text)! // Get category name from input
             
-            let category: Category = Category(name: categoryName, eventNameFreq: [ : ], locationFreq: [ : ]) // Create new category
+            let category: Category = Category(name: categoryName, timesUsed: 0, eventNameFreq: [ : ], locationFreq: [ : ]) // Create new category
             DataManager.newCategory(category: category) // Push to data set
             
             // Refresh collection view

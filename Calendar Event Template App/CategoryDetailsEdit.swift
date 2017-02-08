@@ -95,6 +95,7 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         self.refreshData() // Update data
         let categoryName = self.currentCategory.name
 //        print("Selected index: \(categoryName)")
+        print("Category has been used: \(self.currentCategory.timesUsed)")
         
         // Title changes
         self.navigationItem.title = categoryName
@@ -153,7 +154,7 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
             Analytics.resetCategoryPredictions(name: self.currentCategory.name, totalPrediction: numPredictions) // Log event in GA
             
 //            print("Reseting predictions")
-            self.currentCategory = Category(name: self.currentCategory.name, eventNameFreq: [ : ], locationFreq: [ : ]) // Reset predictions data
+            self.currentCategory = Category(name: self.currentCategory.name, timesUsed: self.currentCategory.timesUsed, eventNameFreq: [ : ], locationFreq: [ : ]) // Reset predictions data
             DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Update data
             
             self.refreshData() // Refresh frontend data

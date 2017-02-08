@@ -306,6 +306,9 @@ extension EventDetails {
     
     /************ Log to predictive analytics ************/
     func logEventData() {
+        // Update number of times the category has been used to create an event
+        self.category.timesUsed += 1 // Increment
+        
         // Markov model with category to event name
         if let count = self.category.eventNameFreq[self.eventNameInput.text!] { // If it has been logged before
 //            print("Updated frequency for \(self.eventNameInput.text): \(count + 1)")
