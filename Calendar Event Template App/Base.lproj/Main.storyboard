@@ -1072,6 +1072,9 @@
                                 <state key="normal" title="Go to Settings">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressedSettings:" destination="7xp-HT-8w2" eventType="touchUpInside" id="ElS-J7-Upl"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="permission-denied-no-x" translatesAutoresizingMaskIntoConstraints="NO" id="Sqq-uV-O5D">
                                 <rect key="frame" x="41" y="129" width="293" height="364.5"/>
