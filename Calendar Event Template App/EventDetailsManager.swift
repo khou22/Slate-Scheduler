@@ -224,7 +224,11 @@ extension EventDetails {
             }
         }
         
-        self.summaryLocation.text = self.roomInput.text! + " " + self.locationInput.text! // Concatinate
+        if self.roomInput.text! == "" { // If there's no room number
+            self.summaryLocation.text = self.locationInput.text! // No leading space
+        } else { // If there's a room number
+            self.summaryLocation.text = self.roomInput.text! + " " + self.locationInput.text! // Concatinate
+        }
         
         // Format summary time
         let dateFormatter = DateFormatter()
@@ -235,7 +239,7 @@ extension EventDetails {
         let startTime: Date = self.eventDate.addingTimeInterval(self.eventTime) // Calculate starting time
         let endTime: Date = startTime.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Calculate end time
         let timeStr: String = dateFormatter.string(from: startTime) + " - " + dateFormatter.string(from: endTime) // Concatinate string
-        self.summaryDateTime.text = dateStr + " \n " + timeStr // Add to card view
+        self.summaryDateTime.text = dateStr + " \n" + timeStr // Add to card view
         
         // Card entrance
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
