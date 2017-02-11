@@ -17,6 +17,7 @@ struct Analytics {
     private struct Categories {
         static let onboarding               = "Onboarding"
         static let authentication           = "Authentication"
+        static let permissions              = "Permissions"
         static let shortcuts                = "Force Touch Shortcuts"
         static let createdEvent             = "Event Creation"
         static let categoryManagement       = "Category Management"
@@ -51,6 +52,11 @@ struct Analytics {
     }
     
     /********** Onboarding **********/
+    // First time app is launched
+    static func firstLaunch() {
+        sendGAEvent(withCategory: Categories.onboarding, action: "User Launched App for First Time", label: nil, value: nil)
+    }
+    
     // Completed onboarding
     static func completedOnboarding(duration seconds: Int) {
         let value: NSNumber = NSNumber(integerLiteral: seconds) // Convert to NSNumber
@@ -70,7 +76,14 @@ struct Analytics {
     /********** Permissions **********/
     // If calendar permission is approved
     static func calendarPermissionGranted() {
-        
+        var label: String? = nil
+        if let firstLaunch = Constants.defaults.object(forKey: Keys.firstLaunchDate) {
+            let timeSinceFirstLaunch: TimeInterval = Date().timeIntervalSince(firstLaunch as! Date)
+            print(timeSinceFirstLaunch)
+            label = "Time since app was first opened: \(timeSinceFirstLaunch.stringFromTimeInterval())"
+            print(label)
+        }
+        sendGAEvent(withCategory: Categories.permissions, action: "Calendar Permission Granted", label: label, value: nil) // Create and send event
     }
     
     // Calendar permission denied

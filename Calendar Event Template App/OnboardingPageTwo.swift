@@ -98,6 +98,11 @@ class OnboardingPageTwo: UIViewController {
 //            print("Requested calendar access \(success)")
             if success {
                 self.checkCalendarPermissions() // Check location status and update permissions
+                
+                // If just authorized
+                if EKEventStore.authorizationStatus(for: EKEntityType.event) == .authorized {
+                    Analytics.calendarPermissionGranted() // Log GA event
+                }
             }
         })
     }

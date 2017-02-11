@@ -110,6 +110,8 @@ struct Keys {
     static let categoryLabelOnEvents        = "categoryLabelOnEvents"
     static let userLatitude                 = "userLatitude"
     static let userLongitude                = "userLongitude"
+    static let launchedBefore               = "launchedBefore"
+    static let firstLaunchDate              = "firstLaunchDate"
     
     // Other keys
     static let categoryName                 = "categoryName"

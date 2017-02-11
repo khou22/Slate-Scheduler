@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        self.initializeLibraries() // Setup any third party libraries/services
+        
+        let launchedBefore: Bool = Constants.defaults.bool(forKey: Keys.launchedBefore) // If launched app before
+        if !launchedBefore { // First launch
+            Constants.defaults.set(true, forKey: Keys.launchedBefore) // Update persist data
+            Constants.defaults.set(Date(), forKey: Keys.firstLaunchDate) // Set first launch date
+            Analytics.firstLaunch() // Log event in GA
+        }
+        
         // Launch onboarding if user hasn't completed onboarding
         if !DataManager.onboardingStatus() {
             launchInitialVC(viewController: Storyboard.onboardingPager) // Launch onboarding pager as initial vc
@@ -27,8 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             _ = handleShortcut(shortcutItem: shortcutItem)
             return false
         }
-        
-        self.initializeLibraries() // Setup any third party libraries/services
         
         return true
     }
