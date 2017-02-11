@@ -102,6 +102,8 @@ class OnboardingPageTwo: UIViewController {
                 // If just authorized
                 if EKEventStore.authorizationStatus(for: EKEntityType.event) == .authorized {
                     Analytics.calendarPermissionGranted() // Log GA event
+                } else {
+                    Analytics.calendarPermissionDenied() // Log GA event
                 }
             }
         })

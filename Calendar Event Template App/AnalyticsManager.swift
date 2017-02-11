@@ -78,17 +78,16 @@ struct Analytics {
     static func calendarPermissionGranted() {
         var label: String? = nil
         if let firstLaunch = Constants.defaults.object(forKey: Keys.firstLaunchDate) {
-            let timeSinceFirstLaunch: TimeInterval = Date().timeIntervalSince(firstLaunch as! Date)
-            print(timeSinceFirstLaunch)
-            label = "Time since app was first opened: \(timeSinceFirstLaunch.stringFromTimeInterval())"
-            print(label)
+            let date = firstLaunch as! Date
+            let timeSinceFirstLaunch: TimeInterval = Date().timeIntervalSince(date)
+            label = "Time since app was first opened: \(timeSinceFirstLaunch.toString())"
         }
         sendGAEvent(withCategory: Categories.permissions, action: "Calendar Permission Granted", label: label, value: nil) // Create and send event
     }
     
     // Calendar permission denied
     static func calendarPermissionDenied() {
-        
+        sendGAEvent(withCategory: Categories.permissions, action: "Calendar Permission Denied", label: nil, value: nil) // Create and send event
     }
     
     // If location permission is approved

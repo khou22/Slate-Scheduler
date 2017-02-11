@@ -25,12 +25,14 @@ extension Date {
 }
 
 extension TimeInterval {
-    // Useful tool: http://stackoverflow.com/questions/35215694/format-timer-label-to-hoursminutesseconds-in-swift
-    func stringFromTimeInterval() -> String {
-        let hours = self / 3600
-        let minutes = (self / 60).truncatingRemainder(dividingBy: 60.0)
-        let seconds = self.truncatingRemainder(dividingBy: 60.0)
-        return String(format:"%02i hours, %02i minutes, %02i seconds", hours, minutes, seconds)
+    
+    // Time interval to string
+    func toString() -> String {
+        let seconds: Int = Int(self.truncatingRemainder(dividingBy: 60.0))
+        let minutes: Int = Int((self / 60.0).truncatingRemainder(dividingBy: 60.0))
+        let hours: Int = Int(self / 3600)
+        let str = "\(hours):\(minutes):\(seconds)"
+        
+        return str
     }
-
 }
