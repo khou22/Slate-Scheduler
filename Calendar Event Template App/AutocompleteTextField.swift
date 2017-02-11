@@ -52,7 +52,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     // Entrance animation for suggestion box
     func showSuggestions() {
         let oldFrame = self.autocompleteTableView.frame // Store old frame
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.15, animations: {
             self.autocompleteTableView.alpha = 1.0 // Show animation box
             self.autocompleteTableView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: self.tableHeight) // Animate expand
         })
@@ -61,7 +61,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     // Exit animation for suggestion box
     func hideSuggestions() {
         let oldFrame = self.autocompleteTableView.frame // Store old frame
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.15, animations: {
             self.autocompleteTableView.alpha = 0.0 // Doesn't have to be 0
             self.autocompleteTableView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: 0.0) // Animate shrink
         })
