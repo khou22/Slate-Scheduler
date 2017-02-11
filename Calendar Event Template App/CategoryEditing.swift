@@ -34,7 +34,7 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
             
             refreshPersistData() // Update persist data
         } else { // If now editing
-            editButton.title = "Save" // Update labels
+            editButton.title = "Done" // Update labels
             closeButton.title = "Cancel"
         }
     }
@@ -125,10 +125,11 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
         if (editingStyle == .delete) {
             // When delete an item
             let index = indexPath.item
-            categories.remove(at: index) // Delete item
-            self.refreshPersistData() // Refresh persist data
             
             Analytics.deletedCategory(name: categories[index].name) // Log GA event
+            
+            categories.remove(at: index) // Delete item
+            self.refreshPersistData() // Refresh persist data
             
             // Refresh table view to show updated category data
             DispatchQueue.main.async {
