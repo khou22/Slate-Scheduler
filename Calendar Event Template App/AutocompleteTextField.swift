@@ -62,7 +62,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     func hideSuggestions() {
         let oldFrame = self.autocompleteTableView.frame // Store old frame
         UIView.animate(withDuration: 0.2, animations: {
-            self.autocompleteTableView.alpha = 0.25 // Doesn't have to be 0
+            self.autocompleteTableView.alpha = 0.0 // Doesn't have to be 0
             self.autocompleteTableView.frame = CGRect(x: oldFrame.minX, y: oldFrame.minY, width: oldFrame.width, height: 0.0) // Animate shrink
         })
     }
