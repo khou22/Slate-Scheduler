@@ -116,6 +116,11 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         Analytics.setScreenName("Category Edit Details") // Log screen name
     }
     
+    // When navigating away from the page
+    override func viewWillDisappear(_ animated: Bool) {
+        self.renameCategory() // Ensure that name is saved
+    }
+    
     // Retrieve and prepare data
     func refreshData() {
         // Load data from NSUserDefaults
