@@ -170,22 +170,31 @@ class CategoryDetailsEdit: UIViewController, UITableViewDelegate, UITableViewDat
         self.present(actionSheet, animated: true, completion: nil) // Present action sheet to user
     }
     
+    // User finishes editing the category name
+    @IBAction func finishedEditingName(_ sender: Any) {
+        self.renameCategory() // Rename category
+    }
+    
     // When pressed done on category name input
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == self.categoryNameInput) { // Pressed save
-            // Update and save the category name
-            currentCategory.name = self.categoryNameInput.text! // Save new name
-            self.navigationItem.title = self.categoryNameInput.text! // Update screen title
-            
-            DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Update persist data
-            
-            self.refreshData()
-            self.dismissKeyboard() // Hide keyboard
-            
-            Analytics.renamedCategory(name: self.categoryNameInput.text!) // Log event in GA
+            self.dismissKeyboard() // Dismiss the keyboard
         }
         
         return true
+    }
+    
+    func renameCategory() {
+        // Update and save the category name
+        currentCategory.name = self.categoryNameInput.text! // Save new name
+        self.navigationItem.title = self.categoryNameInput.text! // Update screen title
+        
+        DataManager.updateOneCategory(with: self.currentCategory, index: self.selectedIndex) // Update persist data
+        
+        self.refreshData()
+        self.dismissKeyboard() // Hide keyboard
+        
+        Analytics.renamedCategory(name: self.categoryNameInput.text!) // Log event in GA
     }
     
     // MARK - Table View Functions

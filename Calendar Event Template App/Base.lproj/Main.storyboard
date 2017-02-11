@@ -352,6 +352,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                         <connections>
+                                            <action selector="finishedEditingName:" destination="ofc-Ei-ISN" eventType="editingDidEnd" id="m5G-Yc-xLv"/>
                                             <outlet property="delegate" destination="ofc-Ei-ISN" id="Hvc-9E-Zs8"/>
                                         </connections>
                                     </textField>
