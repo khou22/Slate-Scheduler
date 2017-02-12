@@ -151,12 +151,12 @@ struct Analytics {
     /********** Category Management **********/
     // Created new category and log the name of the category
     static func createdCategory(with name: String) {
-        sendGAEvent(withCategory: Categories.categoryManagement, action: "Created New Category", label: name, value: nil)
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Created New Category", label: "New category: \(name)", value: nil)
     }
     
     // Deleted a category
     static func deletedCategory(name: String) {
-        sendGAEvent(withCategory: Categories.categoryManagement, action: "Deleted Category", label: name, value: nil)
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Deleted Category", label: "Deleted category: \(name)", value: nil)
     }
     
     // Changed the order of categories
@@ -166,13 +166,13 @@ struct Analytics {
     
     // Renamed a category
     static func renamedCategory(name: String) {
-        let label = "Renamed to: " + name
+        let label = "Renamed category to: " + name
         sendGAEvent(withCategory: Categories.categoryManagement, action: "Renamed Category", label: label, value: nil)
     }
     
     // Reset category history for a single category
     static func resetCategoryPredictions(name: String, totalPrediction: Int) {
-        let label = "Category name: " + name
+        let label = "Reset predictions for category: " + name
         sendGAEvent(withCategory: Categories.categoryManagement, action: "Reset Category Predictions", label: label, value: totalPrediction as NSNumber!)
     }
     
