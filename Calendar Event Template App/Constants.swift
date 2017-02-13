@@ -54,6 +54,7 @@ struct Storyboard {
     static let categorySelection            = "categorySelection"
     static let editEventDetails             = "editNewEventDetails"
     static let calendarError                = "calendarError"
+    static let splashScreen                 = "splashScreen"
     
     // Onboarding identifiers
     static let onboardingPager              = "OnboardingPager"

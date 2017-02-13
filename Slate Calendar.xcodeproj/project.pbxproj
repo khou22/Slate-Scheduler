@@ -25,6 +25,11 @@
 		2757074F1E2741E2002A3060 /* CategoryDetailsEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2757074E1E2741E2002A3060 /* CategoryDetailsEdit.swift */; };
 		2770E12D1E3A8876003AA5F4 /* OnboardingPageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770E12C1E3A8876003AA5F4 /* OnboardingPageExtensions.swift */; };
 		2770E12F1E3AAB80003AA5F4 /* AngleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */; };
+		277EDB661E52614100CD172B /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB651E52614000CD172B /* SplashScreen.swift */; };
+		277EDB691E52637000CD172B /* TileGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB681E52637000CD172B /* TileGridView.swift */; };
+		277EDB6B1E52637500CD172B /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB6A1E52637500CD172B /* TileView.swift */; };
+		277EDB6D1E52651400CD172B /* SplashScreenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB6C1E52651400CD172B /* SplashScreenOptions.swift */; };
+		277EDB6F1E52687A00CD172B /* RootContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB6E1E52687A00CD172B /* RootContainerViewController.swift */; };
 		279022631E209BF10062FFE8 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279022621E209BF10062FFE8 /* EventListCell.swift */; };
 		279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */; };
 		279E898C1E466A5400C38C6D /* CalendarErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */; };
@@ -89,6 +94,11 @@
 		2757074E1E2741E2002A3060 /* CategoryDetailsEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailsEdit.swift; sourceTree = "<group>"; };
 		2770E12C1E3A8876003AA5F4 /* OnboardingPageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageExtensions.swift; sourceTree = "<group>"; };
 		2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AngleHelper.swift; sourceTree = "<group>"; };
+		277EDB651E52614000CD172B /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		277EDB681E52637000CD172B /* TileGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileGridView.swift; sourceTree = "<group>"; };
+		277EDB6A1E52637500CD172B /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
+		277EDB6C1E52651400CD172B /* SplashScreenOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenOptions.swift; sourceTree = "<group>"; };
+		277EDB6E1E52687A00CD172B /* RootContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootContainerViewController.swift; sourceTree = "<group>"; };
 		279022621E209BF10062FFE8 /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarErrorExtension.swift; sourceTree = "<group>"; };
@@ -183,6 +193,18 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		277EDB671E52636500CD172B /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				277EDB6E1E52687A00CD172B /* RootContainerViewController.swift */,
+				277EDB651E52614000CD172B /* SplashScreen.swift */,
+				277EDB681E52637000CD172B /* TileGridView.swift */,
+				277EDB6A1E52637500CD172B /* TileView.swift */,
+				277EDB6C1E52651400CD172B /* SplashScreenOptions.swift */,
+			);
+			name = "Splash Screen";
+			sourceTree = "<group>";
+		};
 		27BDFD6C1E1D9E0500B8C474 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				27CBC5001E35C4BA001CE9DA /* Onboarding */,
+				277EDB671E52636500CD172B /* Splash Screen */,
 				27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */,
 				2757074C1E27340A002A3060 /* CategoryEditing.swift */,
 				2757074E1E2741E2002A3060 /* CategoryDetailsEdit.swift */,
@@ -589,24 +612,29 @@
 				2757074F1E2741E2002A3060 /* CategoryDetailsEdit.swift in Sources */,
 				27DC4E7E1E2061B700F510D3 /* DateExtension.swift in Sources */,
 				27DC4E821E2089EA00F510D3 /* CalendarManager.swift in Sources */,
+				277EDB6D1E52651400CD172B /* SplashScreenOptions.swift in Sources */,
 				274FA89C1E1DCBC7008E297C /* EventDetails.swift in Sources */,
 				2757074B1E2733B3002A3060 /* CategoryEditCell.swift in Sources */,
 				279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */,
 				27CBC4FF1E35C4B4001CE9DA /* OnboardingPager.swift in Sources */,
 				27BA98041E2C937B0055AA54 /* NameLocationFrequencyCell.swift in Sources */,
 				270991051E1E289000267071 /* StepSlider.swift in Sources */,
+				277EDB6B1E52637500CD172B /* TileView.swift in Sources */,
 				279E898C1E466A5400C38C6D /* CalendarErrorExtension.swift in Sources */,
 				27CBC5081E35C6DD001CE9DA /* OnboardingPageFour.swift in Sources */,
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
 				272455771E1DCE3000F3856F /* DataManager.swift in Sources */,
+				277EDB691E52637000CD172B /* TileGridView.swift in Sources */,
 				2770E12F1E3AAB80003AA5F4 /* AngleHelper.swift in Sources */,
 				274DD6AE1E457BF3003CD0F6 /* CalendarError.swift in Sources */,
 				27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */,
+				277EDB6F1E52687A00CD172B /* RootContainerViewController.swift in Sources */,
 				2707362B1E20609E003E8B72 /* EventDetailsManager.swift in Sources */,
 				274B29021E4073930005F22C /* AnalyticsManager.swift in Sources */,
 				27AAE8B81E3D8A37006D2173 /* LocationListCell.swift in Sources */,
 				27AAE8BA1E3DAB73006D2173 /* OnboardingPageThree.swift in Sources */,
 				27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */,
+				277EDB661E52614100CD172B /* SplashScreen.swift in Sources */,
 				272455741E1DCCA400F3856F /* Category.swift in Sources */,
 				2757074D1E27340A002A3060 /* CategoryEditing.swift in Sources */,
 				27F4D5CF1E2EADD4005EDD36 /* AutocompleteTextField.swift in Sources */,

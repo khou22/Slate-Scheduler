@@ -185,7 +185,7 @@ struct Analytics {
     }
     
     /********** Useful helper functions **********/
-    private static func timeSinceAppFirstLaunched() -> String {
+    private static func timeSinceAppFirstLaunched() -> String? {
         if let firstLaunch = Constants.defaults.object(forKey: Keys.firstLaunchDate) {
             let date = firstLaunch as! Date
             let timeSinceFirstLaunch: TimeInterval = Date().timeIntervalSince(date)
