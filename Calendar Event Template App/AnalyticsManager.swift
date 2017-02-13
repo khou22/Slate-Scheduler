@@ -76,28 +76,26 @@ struct Analytics {
     /********** Permissions **********/
     // If calendar permission is approved
     static func calendarPermissionGranted() {
-        var label: String? = nil
-        if let firstLaunch = Constants.defaults.object(forKey: Keys.firstLaunchDate) {
-            let date = firstLaunch as! Date
-            let timeSinceFirstLaunch: TimeInterval = Date().timeIntervalSince(date)
-            label = "Time since app was first opened: \(timeSinceFirstLaunch.toString())"
-        }
+        var label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
         sendGAEvent(withCategory: Categories.permissions, action: "Calendar Permission Granted", label: label, value: nil) // Create and send event
     }
     
     // Calendar permission denied
     static func calendarPermissionDenied() {
-        sendGAEvent(withCategory: Categories.permissions, action: "Calendar Permission Denied", label: nil, value: nil) // Create and send event
+        var label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
+        sendGAEvent(withCategory: Categories.permissions, action: "Calendar Permission Denied", label: label, value: nil) // Create and send event
     }
     
     // If location permission is approved
     static func locationPermissionGranted() {
-        sendGAEvent(withCategory: Categories.permissions, action: "Location Permission Granted", label: nil, value: nil) // Create and send event
+        var label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
+        sendGAEvent(withCategory: Categories.permissions, action: "Location Permission Granted", label: label, value: nil) // Create and send event
     }
     
     // Location permission denied
     static func locationPermissionDenied() {
-        sendGAEvent(withCategory: Categories.permissions, action: "Location Permission Denied", label: nil, value: nil) // Create and send event
+        var label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
+        sendGAEvent(withCategory: Categories.permissions, action: "Location Permission Denied", label: label, value: nil) // Create and send event
     }
     
     // Allowed calendar access but not location access
@@ -184,5 +182,16 @@ struct Analytics {
     // Removed a location prediction from category history
     static func removedLocationPrediction() {
         sendGAEvent(withCategory: Categories.categoryManagement, action: "Removed Location Prediction", label: nil, value: nil)
+    }
+    
+    /********** Useful helper functions **********/
+    private static func timeSinceAppFirstLaunched() -> String {
+        if let firstLaunch = Constants.defaults.object(forKey: Keys.firstLaunchDate) {
+            let date = firstLaunch as! Date
+            let timeSinceFirstLaunch: TimeInterval = Date().timeIntervalSince(date)
+            return "Time since app was first opened: \(timeSinceFirstLaunch.toString())"
+        } else {
+            return nil
+        }
     }
 }

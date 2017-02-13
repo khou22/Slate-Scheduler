@@ -31,8 +31,9 @@ extension TimeInterval {
         let seconds: Int = Int(self.truncatingRemainder(dividingBy: 60.0))
         let minutes: Int = Int((self / 60.0).truncatingRemainder(dividingBy: 60.0))
         let hours: Int = Int(self / 3600)
-        let str = "\(hours):\(minutes):\(seconds)"
+        let days: Int = Int(self / (3600 * 24))
+        let str = "\(days) days, \(hours):\(minutes):\(seconds)"
         
-        return str
+        return str // Return human-readable string
     }
 }
