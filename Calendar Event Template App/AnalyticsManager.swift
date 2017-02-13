@@ -92,12 +92,12 @@ struct Analytics {
     
     // If location permission is approved
     static func locationPermissionGranted() {
-        
+        sendGAEvent(withCategory: Categories.permissions, action: "Location Permission Granted", label: nil, value: nil) // Create and send event
     }
     
     // Location permission denied
     static func locationPermissionDenied() {
-        
+        sendGAEvent(withCategory: Categories.permissions, action: "Location Permission Denied", label: nil, value: nil) // Create and send event
     }
     
     // Allowed calendar access but not location access

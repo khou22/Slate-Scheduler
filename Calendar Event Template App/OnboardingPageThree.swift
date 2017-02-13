@@ -91,9 +91,15 @@ class OnboardingPageThree: UIViewController, CLLocationManagerDelegate {
         self.locationManager.requestWhenInUseAuthorization() // Ask for authorization
     }
 
-    // If authorization status changed
+    // If authorization status changes while on this VC
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//        print("Location access changed")
+        
+        if status == .denied || status == .notDetermined { // If denied access
+            Analytics.locationPermissionDenied() // Log GA event
+        } else { // If allowed access
+            Analytics.locationPermissionGranted()
+        }
+        
         self.checkLocationPermissions() // Check status and update frontend
     }
     
