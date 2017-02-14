@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func launchInitialVC(viewController identifier: String) {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: Storyboard.rootViewController) as! UINavigationController // Skip splash screen sequence
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
         
