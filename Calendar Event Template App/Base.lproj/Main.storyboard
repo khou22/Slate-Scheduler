@@ -1574,6 +1574,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="mvn-QH-rzQ" kind="custom" customClass="FadeSegue" id="Onn-iX-Ghb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFn-yL-oMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1582,7 +1585,7 @@
         <!--Navigation Controller-->
         <scene sceneID="I0Z-Yt-6bU">
             <objects>
-                <navigationController id="mvn-QH-rzQ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rootViewController" id="mvn-QH-rzQ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aHZ-Fl-qnF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1613,6 +1616,7 @@
         <image name="yahoo_icon" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cM2-aC-gnK"/>
         <segue reference="nPH-XH-X7k"/>
     </inferredMetricsTieBreakers>
 </document>

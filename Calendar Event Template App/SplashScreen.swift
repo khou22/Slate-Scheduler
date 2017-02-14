@@ -25,21 +25,57 @@ import UIKit
 open class SplashViewController: UIViewController {
     open var pulsing: Bool = false
     
+    var animatedLogo: UIImageView!
     var tileGridView: TileGridView!
     
     public init(tileViewFileName: String) {
         
         super.init(nibName: nil, bundle: nil)
-        tileGridView = TileGridView(TileFileName: Images.submitConfirmation)
+        
+        // Setup grid
+        tileGridView = TileGridView(TileFileName: Images.tilePattern)
         view.addSubview(tileGridView)
         tileGridView.frame = view.bounds
         
-        tileGridView.startAnimating()
+        // Setup logo
+        animatedLogo = UIImageView() // Set icon
+        if let image = UIImage(named: Images.calendarIcon) {
+            animatedLogo.image = image // Set image
+            animatedLogo.contentMode = .scaleAspectFit // Aspect fit
+        }
+        view.addSubview(animatedLogo)
+        let logoWidth: CGFloat = 90.0
+        let logoHeight: CGFloat = 100.0
+        let origin = CGPoint(x: (view.frame.width - logoWidth) / 2, y: (view.frame.height - logoHeight) / 2)
+        animatedLogo.frame = CGRect(origin: origin, size: CGSize(width: 90.0, height: 90.0))
         
+        tileGridView.startAnimating()
+        animateLogo()
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func animateLogo() {
+        UIView.animate(withDuration: kAnimationDuration - 1.0, delay: 0.5, usingSpringWithDamping: 1.0, initialSpringVelocity: 15.0, options: [], animations: {
+            self.animatedLogo.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        }, completion: { (completion) in
+            
+        })
+        UIView.animate(withDuration: 0.75, delay: kAnimationDuration - 1.7, usingSpringWithDamping: 0, initialSpringVelocity: 0, options: [], animations: {
+            self.animatedLogo.transform = CGAffineTransform(scaleX: 5.0, y: 5.0) // Return to original state
+            self.animatedLogo.alpha = 0.0 // Make transparent
+        }, completion: nil)
+        
+        Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(segueToRootVC), userInfo: nil, repeats: false) // Go to root VC after delay
+    }
+    
+    func segueToRootVC() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: Storyboard.rootViewController)
+        let segueToMain: FadeSegue = FadeSegue(identifier: SegueIdentifiers.splashToMain, source: self, destination: destinationVC)
+        segueToMain.perform()
     }
     
     open override var prefersStatusBarHidden : Bool {

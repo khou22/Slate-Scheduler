@@ -30,6 +30,7 @@
 		277EDB6B1E52637500CD172B /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB6A1E52637500CD172B /* TileView.swift */; };
 		277EDB6D1E52651400CD172B /* SplashScreenOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB6C1E52651400CD172B /* SplashScreenOptions.swift */; };
 		277EDB6F1E52687A00CD172B /* RootContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB6E1E52687A00CD172B /* RootContainerViewController.swift */; };
+		277EDB731E52A60E00CD172B /* CustomSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB721E52A60E00CD172B /* CustomSegues.swift */; };
 		279022631E209BF10062FFE8 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279022621E209BF10062FFE8 /* EventListCell.swift */; };
 		279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */; };
 		279E898C1E466A5400C38C6D /* CalendarErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */; };
@@ -99,6 +100,7 @@
 		277EDB6A1E52637500CD172B /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		277EDB6C1E52651400CD172B /* SplashScreenOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenOptions.swift; sourceTree = "<group>"; };
 		277EDB6E1E52687A00CD172B /* RootContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootContainerViewController.swift; sourceTree = "<group>"; };
+		277EDB721E52A60E00CD172B /* CustomSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegues.swift; sourceTree = "<group>"; };
 		279022621E209BF10062FFE8 /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarErrorExtension.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				2770E12C1E3A8876003AA5F4 /* OnboardingPageExtensions.swift */,
 				2770E12E1E3AAB80003AA5F4 /* AngleHelper.swift */,
 				279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */,
+				277EDB721E52A60E00CD172B /* CustomSegues.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -623,6 +626,7 @@
 				279E898C1E466A5400C38C6D /* CalendarErrorExtension.swift in Sources */,
 				27CBC5081E35C6DD001CE9DA /* OnboardingPageFour.swift in Sources */,
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
+				277EDB731E52A60E00CD172B /* CustomSegues.swift in Sources */,
 				272455771E1DCE3000F3856F /* DataManager.swift in Sources */,
 				277EDB691E52637000CD172B /* TileGridView.swift in Sources */,
 				2770E12F1E3AAB80003AA5F4 /* AngleHelper.swift in Sources */,

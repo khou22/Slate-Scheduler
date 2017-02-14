@@ -57,14 +57,7 @@ class RootContainerViewController: UIViewController {
     func showSplashViewController() {
         showSplashViewControllerNoPing()
         
-//        delay(6.00) {
-//            self.showMenuNavigationViewController()
-//        }
     }
-    
-    /// Displays the MapViewController
-    func showMenuNavigationViewController() {
-            }
     
     
     override var prefersStatusBarHidden : Bool {

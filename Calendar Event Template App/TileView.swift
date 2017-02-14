@@ -30,7 +30,7 @@ class TileView: UIView {
   var shouldEnableRipple = false
   
   convenience init(TileFileName: String) {
-    TileView.chimesSplashImage = UIImage(named: Images.submitConfirmation)!
+    TileView.chimesSplashImage = UIImage(named: TileFileName)!
     self.init(frame: CGRect.zero)
     frame = CGRect(x: 0, y: 0, width: TileView.chimesSplashImage.size.width, height: TileView.chimesSplashImage.size.height)
   }
