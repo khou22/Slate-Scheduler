@@ -35,13 +35,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-IZ-J7l">
                                 <rect key="frame" x="46" y="214" width="283" height="116"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Press the plus button to add your first category!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-OW-RIp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the plus button to add your first category!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-OW-RIp">
                                         <rect key="frame" x="0.0" y="0.0" width="283" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="By adding events with categories, Calendar Template App can suggest frequently used event names and locations." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-Z1-mK9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By adding events with categories, Calendar Template App can suggest frequently used event names and locations." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-Z1-mK9">
                                         <rect key="frame" x="0.0" y="65" width="283" height="51"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1561,10 +1561,10 @@
             </objects>
             <point key="canvasLocation" x="1880.8" y="-654.42278860569718"/>
         </scene>
-        <!--Root Container View Controller-->
+        <!--Splash Screen-->
         <scene sceneID="QaN-Q1-w4C">
             <objects>
-                <viewController storyboardIdentifier="splashScreen" id="cF5-3X-mqM" customClass="RootContainerViewController" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splashScreen" title="Splash Screen" id="cF5-3X-mqM" customClass="RootContainerViewController" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Uo-5S-b5h"/>
                         <viewControllerLayoutGuide type="bottom" id="MQt-Qp-6YW"/>
@@ -1616,7 +1616,7 @@
         <image name="yahoo_icon" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cM2-aC-gnK"/>
+        <segue reference="Onn-iX-Ghb"/>
         <segue reference="nPH-XH-X7k"/>
     </inferredMetricsTieBreakers>
 </document>
