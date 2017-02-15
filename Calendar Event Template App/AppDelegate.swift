@@ -121,7 +121,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         gai.trackUncaughtExceptions = true // Report uncaught exceptions
         gai.dispatchInterval = 10.0 // Low dispatch time because time in app should be short
-        gai.logger.logLevel = GAILogLevel.verbose // Remove before app release
+        gai.logger.logLevel = .warning // ONly show errors
+//        gai.logger.logLevel = GAILogLevel.verbose // Remove before app release
     }
 
 }

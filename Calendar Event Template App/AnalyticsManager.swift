@@ -76,25 +76,25 @@ struct Analytics {
     /********** Permissions **********/
     // If calendar permission is approved
     static func calendarPermissionGranted() {
-        var label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
+        let label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
         sendGAEvent(withCategory: Categories.permissions, action: "Calendar Permission Granted", label: label, value: nil) // Create and send event
     }
     
     // Calendar permission denied
     static func calendarPermissionDenied() {
-        var label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
+        let label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
         sendGAEvent(withCategory: Categories.permissions, action: "Calendar Permission Denied", label: label, value: nil) // Create and send event
     }
     
     // If location permission is approved
     static func locationPermissionGranted() {
-        var label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
+        let label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
         sendGAEvent(withCategory: Categories.permissions, action: "Location Permission Granted", label: label, value: nil) // Create and send event
     }
     
     // Location permission denied
     static func locationPermissionDenied() {
-        var label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
+        let label: String? = timeSinceAppFirstLaunched() // Human-readable time since app was first launched
         sendGAEvent(withCategory: Categories.permissions, action: "Location Permission Denied", label: label, value: nil) // Create and send event
     }
     
