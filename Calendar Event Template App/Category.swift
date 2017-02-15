@@ -36,7 +36,7 @@ class Category: NSObject, NSCoding {
     // Decoding all instance variables when retrieving
     required convenience init(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObject(forKey: Keys.categoryName) as! String
-        let timesUsed = aDecoder.decodeInteger(forKey: Keys.categoryTimesUsed) as! Int
+        let timesUsed = aDecoder.decodeInteger(forKey: Keys.categoryTimesUsed)
         let eventNameFreq = aDecoder.decodeObject(forKey: Keys.eventNameFreq) as! [ String : Int ]
         let locationFreq = aDecoder.decodeObject(forKey: Keys.locationFrequency) as! [ String : Int ]
         

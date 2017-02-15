@@ -1575,12 +1575,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="mvn-QH-rzQ" kind="custom" customClass="FadeSegue" id="Onn-iX-Ghb"/>
+                        <segue destination="mvn-QH-rzQ" kind="custom" identifier="SegueToRoot" customClass="FadeSegue" id="Onn-iX-Ghb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFn-yL-oMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1066.4000000000001" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-834" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I0Z-Yt-6bU">
@@ -1616,7 +1616,7 @@
         <image name="yahoo_icon" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Onn-iX-Ghb"/>
+        <segue reference="cM2-aC-gnK"/>
         <segue reference="nPH-XH-X7k"/>
     </inferredMetricsTieBreakers>
 </document>
