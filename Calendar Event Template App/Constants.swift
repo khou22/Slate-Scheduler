@@ -47,6 +47,7 @@ struct Images {
     static let eventSummaryCardAlt2         = "event-summary-card-alt-2"
     static let calendarErrorNoX             = "permission-denied-no-x"
     static let calendarError                = "permission-denied"
+    static let tilePattern                  = "tile-pattern"
 }
 
 struct Storyboard {
@@ -54,6 +55,8 @@ struct Storyboard {
     static let categorySelection            = "categorySelection"
     static let editEventDetails             = "editNewEventDetails"
     static let calendarError                = "calendarError"
+    static let splashScreen                 = "splashScreen"
+    static let rootViewController           = "rootViewController"
     
     // Onboarding identifiers
     static let onboardingPager              = "OnboardingPager"
@@ -84,6 +87,7 @@ struct SegueIdentifiers {
     static let newEventNoCategory           = "NewEventNoCategory"
     static let completeOnboarding           = "CompleteOnboarding"
     static let showOnboarding               = "ShowOnboarding"
+    static let splashToMain                 = "SplashToMain"
 }
 
 struct SDK {
