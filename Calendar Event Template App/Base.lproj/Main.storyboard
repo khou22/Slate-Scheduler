@@ -35,14 +35,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-IZ-J7l">
                                 <rect key="frame" x="46" y="214" width="283" height="116"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the plus button to add your first category!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-OW-RIp">
-                                        <rect key="frame" x="0.0" y="0.0" width="283" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Press the plus button to add your first category!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-OW-RIp">
+                                        <rect key="frame" x="0.0" y="0.0" width="283" height="41.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By adding events with categories, Calendar Template App can suggest frequently used event names and locations." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-Z1-mK9">
-                                        <rect key="frame" x="0.0" y="65" width="283" height="51"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="By adding events with categories, Calendar Template App can suggest frequently used event names and locations." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-Z1-mK9">
+                                        <rect key="frame" x="0.0" y="65.5" width="283" height="50.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                         <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -185,7 +185,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HHb-Eg-GDU" id="0I1-Bm-1Rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ii5-o0-YwQ">
@@ -401,7 +401,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="319" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j1z-lA-vpT" id="OCF-Fi-Trs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="39"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="39.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXm-XV-dkF">
@@ -474,7 +474,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="319" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V7l-4G-Mbz" id="K4g-0v-vFr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="319" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOn-LF-L3e">
@@ -829,7 +829,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d1N-LA-6dL">
-                                <rect key="frame" x="28" y="348" width="319" height="161"/>
+                                <rect key="frame" x="28" y="348" width="319" height="165"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventListCell" id="6Sv-r7-lcJ" customClass="EventListCell" customModule="Slate_Calendar" customModuleProvider="target">
@@ -996,7 +996,7 @@
                             <constraint firstItem="48k-Jh-yKE" firstAttribute="top" secondItem="zKd-dG-sFF" secondAttribute="bottom" constant="110" id="gHW-7D-hnx"/>
                             <constraint firstItem="d1N-LA-6dL" firstAttribute="leading" secondItem="2HI-eM-WmX" secondAttribute="leading" id="gZY-ga-REj"/>
                             <constraint firstItem="857-Bi-Zaw" firstAttribute="top" secondItem="aGk-3w-xpp" secondAttribute="bottom" constant="16" id="lve-Lf-pGP"/>
-                            <constraint firstItem="aGk-3w-xpp" firstAttribute="top" secondItem="d1N-LA-6dL" secondAttribute="bottom" constant="16" id="pv4-uh-Or2"/>
+                            <constraint firstItem="aGk-3w-xpp" firstAttribute="top" secondItem="d1N-LA-6dL" secondAttribute="bottom" constant="12" id="pv4-uh-Or2"/>
                             <constraint firstItem="d1N-LA-6dL" firstAttribute="trailing" secondItem="2HI-eM-WmX" secondAttribute="trailing" id="rab-DU-puw"/>
                             <constraint firstItem="qA9-jB-0b0" firstAttribute="height" secondItem="48k-Jh-yKE" secondAttribute="height" constant="20" id="yc9-2c-fao"/>
                         </constraints>
@@ -1580,7 +1580,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFn-yL-oMu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-834" y="124"/>
+            <point key="canvasLocation" x="-1009" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="I0Z-Yt-6bU">
