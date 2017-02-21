@@ -84,15 +84,29 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         newCategoryAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak newCategoryAlert] (_) in
             // Get text field content
             let textField = newCategoryAlert?.textFields![0] // Force unwrapping because we know it exists
-            let categoryName: String = (textField?.text)! // Get category name from input
+            let categoryName: String = (textField?.text)!.trimmingCharacters(in: .whitespaces) // Get category name from input (trim whitespace)
+            var alreadyExists: Bool = false // If category with that name already exists
             
-            let category: Category = Category(name: categoryName, timesUsed: 0, eventNameFreq: [ : ], locationFreq: [ : ]) // Create new category
-            DataManager.newCategory(category: category) // Push to data set
+            for category in self.categoryData { // Cycle through all categories
+                if (category.name == categoryName) { // If category with that name already exists
+                    // Category already exists
+                    alreadyExists = true
+                    let alert = UIAlertController(title: "Error", message: "Category with that name already exists.", preferredStyle: .alert) // Create alert
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil)) // Add done button
+                    self.present(alert, animated: true, completion: nil) // Present alert
+                    return // Cancel category add
+                }
+            }
             
-            // Refresh collection view
-            self.refreshCollection()
-            
-            Analytics.createdCategory(with: category.name) // Log event in GA
+            if !alreadyExists { // Doesn't already exist
+                let category: Category = Category(name: categoryName, timesUsed: 0, eventNameFreq: [ : ], locationFreq: [ : ]) // Create new category
+                DataManager.newCategory(category: category) // Push to data set
+                
+                // Refresh collection view
+                self.refreshCollection()
+                
+                Analytics.createdCategory(with: category.name) // Log event in GA
+            }
         }))
         
         self.present(newCategoryAlert, animated: true, completion: nil) // Present the alert
