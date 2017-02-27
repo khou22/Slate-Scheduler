@@ -280,13 +280,13 @@ extension EventDetails {
             // Animate out
             self.blackFade.layer.opacity = 0 // Transparent
             self.summaryCardTopConstraint.constant = self.summaryCardTopConstraint.constant - ScreenSize.screen_height // Move it off screen up
-            self.submitConfirmation.layer.opacity = 0.0 // Make label transparent
             self.view.layoutIfNeeded() // Animate update position
         }, completion: { finished in
             // MARK - Adding event complete
             
             // Make transparent to prevent user from seeing it
             self.summaryCard.layer.opacity = 0.0
+            self.submitConfirmation.layer.opacity = 0.0 // Make label transparent
             
             // Exit segue back to category selection
             self.dismiss(animated: true, completion: nil)
