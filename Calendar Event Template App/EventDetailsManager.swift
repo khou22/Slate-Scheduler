@@ -324,15 +324,17 @@ extension EventDetails {
         }
         
         // Markov model with category to location
-        if let count = self.category.locationFreq[self.locationInput.text!] { // If it has been logged before
-//            print("Updated frequency for \(self.locationInput.text): \(count + 1)")
-            self.category.locationFreq[self.locationInput.text!] = count + 1 // Increment counter
-        } else {
-//            print("New frequency entry for \(self.locationInput.text)")
-            self.category.locationFreq[self.locationInput.text!] = 1 // Create a dictionary reference with frequency of 1
+        if (self.locationInput.text != "") { // Only log if location input exists
+            if let count = self.category.locationFreq[self.locationInput.text!] { // If it has been logged before
+//                print("Updated frequency for \(self.locationInput.text): \(count + 1)")
+                self.category.locationFreq[self.locationInput.text!] = count + 1 // Increment counter
+            } else {
+//                print("New frequency entry for \(self.locationInput.text)")
+                self.category.locationFreq[self.locationInput.text!] = 1 // Create a dictionary reference with frequency of 1
+            }
         }
         
-        // Markov model with event name to location
+        // Save update markov models
 //        print("Updating \(self.category.name) with index \(self.categoryIndex)")
         DataManager.updateOneCategory(with: self.category, index: self.categoryIndex)
     }
