@@ -27,11 +27,10 @@ class Category: NSObject, NSCoding {
         self.locationFreq = locationFreq
     }
     
-    /*
     // When printing the category object
-    public var description: String {
+    public override var description: String {
         return self.name
-    }*/
+    }
     
     // Decoding all instance variables when retrieving
     required convenience init(coder aDecoder: NSCoder) {
@@ -120,5 +119,18 @@ class Category: NSObject, NSCoding {
         }
         
         return orderedLocations // Return the master list
+    }
+}
+
+// Implement a comparable to sort categoires based on num times used
+extension Category: Comparable {
+    
+    // Will sort in descending order
+    static func < (this: Category, that: Category) -> Bool {
+        return this.timesUsed > that.timesUsed
+    }
+    
+    static func == (this: Category, that: Category) -> Bool {
+        return this.timesUsed == that.timesUsed
     }
 }

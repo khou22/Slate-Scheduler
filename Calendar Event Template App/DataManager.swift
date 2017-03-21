@@ -24,6 +24,15 @@ struct DataManager {
         }
     }
     
+    static func getFrequentCategories(num: Int) -> [Category] {
+        // Get all categories in order
+        let allCategories: [Category] = self.getCategories().sorted()
+        
+        let subarray: ArraySlice<Category> = allCategories[0..<num] // Slice the array to length
+        
+        return Array(subarray) // Return slice of array as Array type
+    }
+    
     /************ Writing Data ************/
     static func newCategory(category: Category) {
         // Get category data if data exists

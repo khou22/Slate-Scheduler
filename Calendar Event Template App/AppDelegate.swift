@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             launchInitialVC(viewController: Storyboard.onboardingPager) // Launch onboarding pager as initial vc
         }
         
+        // Create shortcuts
+        self.createShortcuts()
+        
         // Handle shortcuts
         if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             _ = handleShortcut(shortcutItem: shortcutItem)
@@ -101,6 +104,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // Initialize dynamic 3D touch shortcuts
+    func createShortcuts() {
+        // Get three most used categories
+        let topCategories: [Category] = DataManager.getFrequentCategories(num: 3)
+        print(topCategories) // Print for debugging
+        for category in topCategories {
+            
+        }
+        // Creating a shortcut
+        let shortcut1 = UIMutableApplicationShortcutItem(
+            type: "kevinhou.Calendar-Event-Template-App.newCategorizedEvent",
+            localizedTitle: "Shortcut 1",
+            localizedSubtitle: nil,
+            icon: UIApplicationShortcutIcon(templateImageName: "myimage"),
+            userInfo: ["foo": "bar"])
+        
+        // Set the shortcut items
+        UIApplication.shared.shortcutItems = [shortcut1]
     }
 
     // Setup and initialize any third party libraries
