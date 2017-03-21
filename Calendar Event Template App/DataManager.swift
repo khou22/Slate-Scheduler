@@ -218,18 +218,20 @@ struct DataManager {
         return value
     }
     
-    static func setReminderTime(time: ReminderTime.identifiers) {
-        Constants.defaults.set(time, forKey: Keys.defaultReminderTime) // Save enum value
+    static func setReminderTime(time: ReminderTime.values) {
+        Constants.defaults.set(time.rawValue, forKey: Keys.defaultReminderTime) // Save enum value
     }
     
-    static func reminderTimeState() -> ReminderTime.identifiers {
-        return Constants.defaults.value(forKey: Keys.defaultReminderTime) as! ReminderTime.identifiers // Return the enum value
+    static func reminderTimeState() -> ReminderTime.values {
+        let rawValue: Double = Constants.defaults.double(forKey: Keys.defaultReminderTime) // Get hash
+        if let time = ReminderTime.values(rawValue: rawValue) {
+            return time
+        } else {
+            return ReminderTime.values.fifteenMinutes
+        }
     }
     
     static func reminderTime() -> Double {
-        let timeIdentifier: ReminderTime.identifiers = Constants.defaults.value(forKey: Keys.defaultReminderTime) as! ReminderTime.identifiers // Get enum value
-        let time: Double = ReminderTime.values[timeIdentifier]! // Get time for enum identifier
-        
-        return time // Return time value
+        return Constants.defaults.double(forKey: Keys.defaultReminderTime) // Get hash
     }
 }

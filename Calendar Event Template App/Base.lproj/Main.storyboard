@@ -288,6 +288,9 @@
                                             <segment title="1 Hour"/>
                                         </segments>
                                         <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="updatedReminderTime:" destination="c4k-Cp-UWn" eventType="valueChanged" id="ITG-i4-K9o"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
@@ -328,6 +331,7 @@
                         <outlet property="categoryTable" destination="yFa-Iv-aIq" id="O0O-HZ-cyl"/>
                         <outlet property="closeButton" destination="7T4-Mf-QBA" id="2qG-dM-jZm"/>
                         <outlet property="editButton" destination="38X-bh-1OW" id="yeX-PX-H2q"/>
+                        <outlet property="reminderTimeControl" destination="lZr-FT-dvN" id="OHV-Vb-bYE"/>
                         <segue destination="ofc-Ei-ISN" kind="show" identifier="CategoryDetailEdit" id="Ons-2K-Mg7"/>
                         <segue destination="I2C-vX-COO" kind="showDetail" identifier="ShowOnboarding" id="1i2-dh-A29"/>
                     </connections>

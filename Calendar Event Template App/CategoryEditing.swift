@@ -19,6 +19,7 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var closeButton: UIBarButtonItem!
     @IBOutlet weak var categoryTable: UITableView!
     @IBOutlet weak var categoryLabelSwitch: UISwitch!
+    @IBOutlet weak var reminderTimeControl: UISegmentedControl!
     
     @IBAction func closeEditing(_ sender: Any) {
         dismiss(animated: true, completion: nil) // Exit segue back to category selection
@@ -46,6 +47,10 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
         
         // Set initial value of categoyr label switch
         self.categoryLabelSwitch.isOn = DataManager.includeCategoryLabel()
+        
+        // Set value of event reminder time
+        let index: Int = DataManager.reminderTimeState().hashValue
+        self.reminderTimeControl.selectedSegmentIndex = index // Set selected
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,6 +67,12 @@ class CategoryEditing: UIViewController, UITableViewDelegate, UITableViewDataSou
         Analytics.onboardingFromCategoryEditing() // Analytics event
         
         performSegue(withIdentifier: SegueIdentifiers.showOnboarding, sender: self) // Show onboarding
+    }
+    
+    // Update the reminder time
+    @IBAction func updatedReminderTime(_ sender: Any) {
+        let timeEnum: ReminderTime.values = ReminderTime.orderedValues[self.reminderTimeControl.selectedSegmentIndex] // Get enum value
+        DataManager.setReminderTime(time: timeEnum) // Save
     }
     
     func getCollection() {

@@ -17,16 +17,16 @@ struct StringIdentifiers {
 // Event reminder time
 struct ReminderTime {
     
-    // Enum keys
-    enum identifiers {
-        case none, fifteenMinutes, thirtyMinutes, oneHour
-    }
+    // Access via index
+    static let orderedValues: [values]        = [.none, .fifteenMinutes, .thirtyMinutes, .oneHour]
     
-    // Map strings to values
-    static let values: Dictionary           = [ ReminderTime.identifiers.none : 0.0,
-                                                ReminderTime.identifiers.fifteenMinutes: 15 * 60.0,
-                                                ReminderTime.identifiers.thirtyMinutes: 30 * 60.0,
-                                                ReminderTime.identifiers.oneHour: 60 * 60.0 ]
+    // Enum keys
+    enum values: Double {
+        case none                   = 0.0
+        case fifteenMinutes         = 900.0
+        case thirtyMinutes          = 1800.0
+        case oneHour                = 3600.0
+    }
 }
 
 struct Colors {

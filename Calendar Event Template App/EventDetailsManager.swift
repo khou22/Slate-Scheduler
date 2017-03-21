@@ -163,7 +163,8 @@ extension EventDetails {
         event.isAllDay = false // Not all day
         
         // Set event alert
-        let secondsBefore: TimeInterval = -1 * 30 * 60 // Half an hour time interval before
+        let secondsBefore: TimeInterval = -1 * DataManager.reminderTime() // Get reminder time
+        print("Event reminder time: \(DataManager.reminderTime())") // Debugging
         let defaultAlert: EKAlarm = EKAlarm(relativeOffset: secondsBefore) // Set alert before event time
         event.addAlarm(defaultAlert) // Add default alert
         
