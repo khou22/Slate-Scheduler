@@ -103,17 +103,6 @@ struct Analytics {
         
     }
     
-    /********** Force Touch Shortcuts **********/
-    // Adding category event with shortcut
-    static func shortcutCreateWithCategory() {
-        
-    }
-    
-    // Adding event with shortcut no category
-    static func shortcutCreateNoCategory() {
-        sendGAEvent(withCategory: Categories.shortcuts, action: "Used Force Touch Shortcut", label: "No Category", value: nil)
-    }
-    
     static func userTurnedOffCalenderPermissionAfterOnboarding() {
         sendGAEvent(withCategory: Categories.authentication, action: "Showing Calendar Authentication Error Screen", label: "User turned off calendar permission sometime after onboarding", value: nil)
     }
