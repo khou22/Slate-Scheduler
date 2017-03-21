@@ -33,6 +33,16 @@ struct DataManager {
         return Array(subarray) // Return slice of array as Array type
     }
     
+    static func indexForCategory(categoryName: String) -> Int {
+        let allCategories: [Category] = self.getCategories()
+        if let index = allCategories.index(where: { $0.name == categoryName }) {
+            return index // Return the index if found
+        } else { // Can't find index for that category name
+            // If can't find category
+            return -1
+        }
+    }
+    
     /************ Writing Data ************/
     static func newCategory(category: Category) {
         // Get category data if data exists

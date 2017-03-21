@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case "kevinhou.Calendar-Event-Template-App.newCategorizedEvent":
                 
                 let categoryName = shortcutItem.userInfo?["categoryName"] // Get name of category
-                launchInitialVC(viewController: categoryName as! String) // Launch screen
+                launchInitialVC(viewController: categoryName as! String) // Launch category selection screen
             
                 break
             default:
@@ -96,7 +96,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             categorySelection.withShortcut = true // Used shortcut
             
             // Select the category
-
+            let categoryIndex: Int = DataManager.indexForCategory(categoryName: identifier)
+            
+            if (categoryIndex == -1) { // If category name doesn't exist
+                // This should never be reached
+                return
+            } else { // Category name does exist
+                categorySelection.selectedItem = categoryIndex // Set index of category
+                categorySelection.categoryData = DataManager.getCategories() // Set categories
+                categorySelection.performSegue(withIdentifier: SegueIdentifiers.createEvent, sender: nil) // Perform segue to event creation page
+            }
+            
         }
     }
 
