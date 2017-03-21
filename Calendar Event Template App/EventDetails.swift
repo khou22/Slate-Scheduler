@@ -111,9 +111,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Setup table view if for category
         if (!self.noCategory) {
             self.eventNameInput.setupTableView(view: self.view)
-            self.eventNameInput.updateSuggestions(prioritized: self.category.orderedEventNames()) // Load autocomplete suggestions
             
             self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations()) // Load previous locations
+            self.eventNameInput.updateSuggestions(prioritized: self.category.orderedEventNames()) // Load autocomplete suggestions
         }
         
         // Setup autocomplete table view for location search

@@ -28,7 +28,12 @@ struct DataManager {
         // Get all categories in order
         let allCategories: [Category] = self.getCategories().sorted()
         
-        let subarray: ArraySlice<Category> = allCategories[0..<num] // Slice the array to length
+        var sliceToIndex: Int = num // Save number to slice to
+        if (sliceToIndex > allCategories.count) { // If not enough to slice
+            sliceToIndex = allCategories.count // Minimum amount that can slice
+        }
+        
+        let subarray: ArraySlice<Category> = allCategories[0..<sliceToIndex] // Slice the array to length
         
         return Array(subarray) // Return slice of array as Array type
     }
