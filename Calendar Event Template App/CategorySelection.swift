@@ -199,7 +199,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         
         // Set -40 to remove weird top space above collection view
         // Source: http://stackoverflow.com/questions/23786198/uicollectionview-how-can-i-remove-the-space-on-top-first-cells-row
-        return UIEdgeInsetsMake(2 * cellInset, cellInset, 0, cellInset) // Extra space on top
+        return UIEdgeInsetsMake(2 * cellInset, cellInset, cellInset, cellInset) // Extra space on top
     }
     
     func setupLocationService() {
