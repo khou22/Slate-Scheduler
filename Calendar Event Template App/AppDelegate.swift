@@ -31,9 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             launchInitialVC(viewController: Storyboard.onboardingPager) // Launch onboarding pager as initial vc
         }
         
-        // Create shortcuts
-        self.createShortcuts()
-        
         // Handle shortcuts
         if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             _ = handleShortcut(shortcutItem: shortcutItem)
@@ -56,6 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // Handle shortcut for new uncategorized event
                 launchInitialVC(viewController: Storyboard.editEventDetails)
                 break
+            case "kevinhou.Calendar-Event-Template-App.newCategorizedEvent":
+                
+                let categoryName = shortcutItem.userInfo?["categoryName"] // Get name of category
+                launchInitialVC(viewController: categoryName as! String) // Launch screen
+            
+                break
             default:
                 return false
         }
@@ -73,14 +76,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Perform required segues and navigations
         if (identifier == Storyboard.editEventDetails) { // If launching edit details screen
+            
+            // New event without category
             initialViewController.pushViewController(storyboard.instantiateViewController(withIdentifier: Storyboard.categorySelection), animated: false)
             let categorySelection = initialViewController.topViewController as! CategorySelection
-            categorySelection.withShortcut = true // Used category
+            categorySelection.withShortcut = true // Used shortcut
             categorySelection.newEventNoCategory(self)
         } else if (identifier == Storyboard.onboardingPager) { // If launching onboarding
+            
+            // Launch onboarding
             let onboardingPager = storyboard.instantiateViewController(withIdentifier: Storyboard.onboardingPager) // Launch onboarding pager as initial vc
             self.window?.rootViewController = onboardingPager
             self.window?.makeKeyAndVisible()
+        } else { // New event with category
+            
+            // Push category selection
+            initialViewController.pushViewController(storyboard.instantiateViewController(withIdentifier: Storyboard.categorySelection), animated: false)
+            let categorySelection = initialViewController.topViewController as! CategorySelection
+            categorySelection.withShortcut = true // Used shortcut
+            
+            // Select the category
+
         }
     }
 
@@ -106,26 +122,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    // Initialize dynamic 3D touch shortcuts
-    func createShortcuts() {
-        // Get three most used categories
-        let topCategories: [Category] = DataManager.getFrequentCategories(num: 3)
-        print(topCategories) // Print for debugging
-        for category in topCategories {
-            
-        }
-        // Creating a shortcut
-        let shortcut1 = UIMutableApplicationShortcutItem(
-            type: "kevinhou.Calendar-Event-Template-App.newCategorizedEvent",
-            localizedTitle: "Shortcut 1",
-            localizedSubtitle: nil,
-            icon: UIApplicationShortcutIcon(templateImageName: "myimage"),
-            userInfo: ["foo": "bar"])
-        
-        // Set the shortcut items
-        UIApplication.shared.shortcutItems = [shortcut1]
-    }
-
     // Setup and initialize any third party libraries
     func initializeLibraries() {
         self.initializeGA() // Set up Google Analytics
