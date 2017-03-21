@@ -123,6 +123,32 @@ struct DataManager {
         return decodedItems
     }
     
+    /************ Setup Shortcuts ************/
+    // Initialize dynamic 3D touch shortcuts
+    static func createShortcuts() {
+        // Store shortcuts
+        var shortcuts: [UIMutableApplicationShortcutItem] = [] // Empty array
+        
+        // Get three most used categories
+        let topCategories: [Category] = DataManager.getFrequentCategories(num: 3)
+        
+        for category in topCategories {
+            // Create shortcut
+            let shortcut = UIMutableApplicationShortcutItem(
+                type: "kevinhou.Calendar-Event-Template-App.newCategorizedEvent",
+                localizedTitle: category.name,
+                localizedSubtitle: nil,
+                icon: UIApplicationShortcutIcon(templateImageName: ""), // Dot icon
+                userInfo: ["categoryName": category.name])
+            
+            shortcuts.append(shortcut) // Add to master list
+        }
+        
+        
+        // Set the shortcut items
+        UIApplication.shared.shortcutItems = shortcuts
+    }
+    
     /************ User Details ************/
     static func userCompletedOnboarding() {
         Constants.defaults.set(true, forKey: Keys.completedOnboarding)

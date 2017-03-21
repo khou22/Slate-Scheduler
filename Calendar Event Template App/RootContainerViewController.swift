@@ -30,33 +30,10 @@ class RootContainerViewController: UIViewController {
         super.viewDidLoad()
         showSplashViewController()
         
-        // Create shortcuts
-        self.createShortcuts()
-    }
-    
-    // Initialize dynamic 3D touch shortcuts
-    func createShortcuts() {
-        // Store shortcuts
-        var shortcuts: [UIMutableApplicationShortcutItem] = [] // Empty array
-        
-        // Get three most used categories
-        let topCategories: [Category] = DataManager.getFrequentCategories(num: 3)
-        
-        for category in topCategories {
-            // Create shortcut
-            let shortcut = UIMutableApplicationShortcutItem(
-                type: "kevinhou.Calendar-Event-Template-App.newCategorizedEvent",
-                localizedTitle: category.name,
-                localizedSubtitle: nil,
-                icon: UIApplicationShortcutIcon(templateImageName: ""), // Dot icon
-                userInfo: ["categoryName": category.name])
-            
-            shortcuts.append(shortcut) // Add to master list
+        // Run in background
+        DispatchQueue.main.async {
+            DataManager.createShortcuts() // Create 3D touch shortcuts
         }
-        
-        
-        // Set the shortcut items
-        UIApplication.shared.shortcutItems = shortcuts
     }
 
     
