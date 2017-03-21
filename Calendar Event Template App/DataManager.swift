@@ -217,4 +217,19 @@ struct DataManager {
         let value = Constants.defaults.bool(forKey: Keys.categoryLabelOnEvents) // If key doesn't exist, it's false
         return value
     }
+    
+    static func setReminderTime(time: ReminderTime.identifiers) {
+        Constants.defaults.set(time, forKey: Keys.defaultReminderTime) // Save enum value
+    }
+    
+    static func reminderTimeState() -> ReminderTime.identifiers {
+        return Constants.defaults.value(forKey: Keys.defaultReminderTime) as! ReminderTime.identifiers // Return the enum value
+    }
+    
+    static func reminderTime() -> Double {
+        let timeIdentifier: ReminderTime.identifiers = Constants.defaults.value(forKey: Keys.defaultReminderTime) as! ReminderTime.identifiers // Get enum value
+        let time: Double = ReminderTime.values[timeIdentifier]! // Get time for enum identifier
+        
+        return time // Return time value
+    }
 }

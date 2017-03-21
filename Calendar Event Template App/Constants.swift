@@ -14,6 +14,21 @@ struct StringIdentifiers {
     static let noCategory                   = "!#No#Category#!" // To signify a new event with no category
 }
 
+// Event reminder time
+struct ReminderTime {
+    
+    // Enum keys
+    enum identifiers {
+        case none, fifteenMinutes, thirtyMinutes, oneHour
+    }
+    
+    // Map strings to values
+    static let values: Dictionary           = [ ReminderTime.identifiers.none : 0.0,
+                                                ReminderTime.identifiers.fifteenMinutes: 15 * 60.0,
+                                                ReminderTime.identifiers.thirtyMinutes: 30 * 60.0,
+                                                ReminderTime.identifiers.oneHour: 60 * 60.0 ]
+}
+
 struct Colors {
     // Project colors
     static let red                          = UIColor(red: 226.0/255.0, green: 111.0/255.0, blue: 80.0/255.0, alpha: 1.0) // Custom color scheme
@@ -116,6 +131,7 @@ struct Keys {
     static let userLongitude                = "userLongitude"
     static let launchedBefore               = "launchedBefore"
     static let firstLaunchDate              = "firstLaunchDate"
+    static let defaultReminderTime          = "defaultReminderTime"
     
     // Other keys
     static let categoryName                 = "categoryName"

@@ -271,16 +271,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="EZM-lI-t1P">
-                                <rect key="frame" x="0.0" y="521.5" width="375" height="54.5"/>
+                                <rect key="frame" x="8" y="521.5" width="359" height="54.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Reminder Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaE-BD-niM">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <color key="textColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lZr-FT-dvN">
-                                        <rect key="frame" x="0.0" y="26.5" width="375" height="29"/>
+                                        <rect key="frame" x="0.0" y="26.5" width="359" height="29"/>
                                         <segments>
                                             <segment title="None"/>
                                             <segment title="15 Minutes"/>
@@ -295,8 +295,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EZM-lI-t1P" firstAttribute="top" secondItem="yFa-Iv-aIq" secondAttribute="bottom" constant="8" id="BWu-OH-hTl"/>
-                            <constraint firstItem="EZM-lI-t1P" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" id="Etj-S5-L0O"/>
-                            <constraint firstAttribute="trailing" secondItem="EZM-lI-t1P" secondAttribute="trailing" id="HrR-Th-AE9"/>
+                            <constraint firstItem="EZM-lI-t1P" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" constant="8" id="Etj-S5-L0O"/>
+                            <constraint firstAttribute="trailing" secondItem="EZM-lI-t1P" secondAttribute="trailing" constant="8" id="HrR-Th-AE9"/>
                             <constraint firstItem="yFa-Iv-aIq" firstAttribute="leading" secondItem="fdY-FQ-suL" secondAttribute="leading" id="Iwo-XQ-jpG"/>
                             <constraint firstItem="D0a-8e-ONe" firstAttribute="top" secondItem="fdY-FQ-suL" secondAttribute="top" id="fSU-gV-0lH"/>
                             <constraint firstItem="7Fb-Ad-ckb" firstAttribute="leading" secondItem="yFa-Iv-aIq" secondAttribute="leading" constant="20" id="j4y-ho-beE"/>

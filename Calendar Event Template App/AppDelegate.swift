@@ -31,6 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             launchInitialVC(viewController: Storyboard.onboardingPager) // Launch onboarding pager as initial vc
         }
         
+        // Ensure default event reminder time is set
+        if let timeID = Constants.defaults.value(forKey: Keys.defaultReminderTime) {
+            // Reminder time exists
+            print("Default reminder time: \(timeID)")
+        } else {
+            DataManager.setReminderTime(time: .fifteenMinutes) // Default is 15
+        }
+        
         // Handle shortcuts
         if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             _ = handleShortcut(shortcutItem: shortcutItem)
