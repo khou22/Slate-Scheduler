@@ -104,6 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else { // Category name does exist
                 categorySelection.selectedItem = categoryIndex // Set index of category
                 categorySelection.categoryData = DataManager.getCategories() // Set categories
+                categorySelection.withShortcut = true // Using category
                 categorySelection.performSegue(withIdentifier: SegueIdentifiers.createEvent, sender: nil) // Perform segue to event creation page
             }
             
