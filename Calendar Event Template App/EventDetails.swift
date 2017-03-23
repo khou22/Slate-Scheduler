@@ -118,6 +118,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Setup autocomplete table view for location search
         self.locationInput.setupTableView(view: self.view)
+        
+        // Initial population of event list
+        self.refreshDaysEvents()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -228,10 +231,14 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
         self.eventDate = self.dateOptions[index] // Update the event date
-        self.refreshDaysEvents() // Update event list
         self.updateDateLabel() // Update frontend
         
         self.dismissKeyboard() // Dismiss keyboard if press a day
+        
+        // Update in background
+        DispatchQueue.main.async {
+            self.refreshDaysEvents() // Update event list
+        }
     }
     
     func styleTextInput() {
