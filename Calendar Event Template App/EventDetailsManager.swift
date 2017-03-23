@@ -304,6 +304,8 @@ extension EventDetails {
             
             self.view.layoutIfNeeded() // Update view
         }, completion: { finished in
+            self.loadingSpinner.layer.opacity = 0.0 // Make loading spinner transparent
+            
             // Change label to reflect status
             self.submitStatusLabel.text = "Added to Calendar"
         })
