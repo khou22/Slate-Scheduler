@@ -155,6 +155,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configure GAI options.
         guard let gai = GAI.sharedInstance() else { // Check that GAI tracker exists
             assert(false, "Google Analytics not configured correctly")
+            return // Safegaurd
         }
         gai.trackUncaughtExceptions = true // Report uncaught exceptions
         gai.dispatchInterval = 10.0 // Low dispatch time because time in app should be short
