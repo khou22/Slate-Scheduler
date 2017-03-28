@@ -36,6 +36,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    <key>ITSAppUsesNonExemptEncryption</key><false/>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
