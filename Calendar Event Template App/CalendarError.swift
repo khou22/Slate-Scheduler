@@ -48,9 +48,14 @@ class CalendarError: UIViewController {
             return
         } // Get url location for Settings app
         if UIApplication.shared.canOpenURL(settingsUrl) {
-            UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
-                //                    print("Settings opened: \(success)") // Prints true
-            })
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+//                    print("Settings opened: \(success)") // Prints true
+                })
+            } else {
+                // Fallback on earlier versions
+                UIApplication.shared.openURL(NSURL(string:UIApplicationOpenSettingsURLString)! as URL)
+            }
         }
 
     }
