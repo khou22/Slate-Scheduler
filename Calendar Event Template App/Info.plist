@@ -4,10 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>Allows user to quickly read and write calendar events from this app.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allows user to search for addresses when providing a location for an event.</string>
+	<key>CFBundleDisplayName</key>
+	<string>Slate Scheduler</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -22,8 +20,25 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Allows user to quickly read and write calendar events from this app.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allows user to search for addresses when providing a location for an event.</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>compose</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>New Uncategorized Event</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>kevinhou.Calendar-Event-Template-App.newUncategorizedEvent</string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -35,18 +50,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-    <key>ITSAppUsesNonExemptEncryption</key><false/>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>kevinhou.Calendar-Event-Template-App.newUncategorizedEvent</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>New Uncategorized Event</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>compose</string>
-		</dict>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
