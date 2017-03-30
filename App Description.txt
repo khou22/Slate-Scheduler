@@ -1,0 +1,7 @@
+Add calendar events with ease using Slate Scheduler!
+
+Slate does away with clunky date pickers and scroll wheels to give you a quick and seamless way to add calendar events to your favorite calendar services like Apple Calendar, Google Calendar, Outlook, and more!
+
+By using autocomplete, Slate can help you add your common events more efficiently than any other calendar app. Happy scheduling!
+
+** Slate does not share your personal data. It is stored completely locally on your device. **

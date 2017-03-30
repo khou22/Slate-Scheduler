@@ -18,7 +18,7 @@ class CalendarManager {
     func requestAccess(completion: @escaping (_ success: Bool) -> Void) {
         self.eventStore.requestAccess(to: .event, completion: { (granted, error) in
             if (error != nil) {
-                print("Error \(error)")
+                print("Error \(String(describing: error))")
                 completion(false)
             } else {
 //                print("Granted access \(granted)")
