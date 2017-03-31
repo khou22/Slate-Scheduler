@@ -157,7 +157,13 @@ extension EventDetails {
         event.calendar = self.calendarManager.eventStore.defaultCalendarForNewEvents // Default calendar
         
         // Date and time
-        let startDate: Date = self.eventDate.addingTimeInterval(self.eventTime) // Create start date
+        var startDate: Date = self.eventDate.addingTimeInterval(self.eventTime) // Create start date
+        
+        // Compensate for time zone
+        let timeZone = NSTimeZone.local // Time zone
+        let offset = -timeZone.daylightSavingTimeOffset(for: startDate)
+        startDate.addTimeInterval(offset) // Add daylight savings time offset
+        
         event.startDate = startDate
         event.endDate = startDate.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Convert hours to time interval
         event.isAllDay = false // Not all day
@@ -237,7 +243,13 @@ extension EventDetails {
         let dateStr: String = dateFormatter.string(from: self.eventDate)
         
         dateFormatter.dateFormat = "h:mm a" // Time only
-        let startTime: Date = self.eventDate.addingTimeInterval(self.eventTime) // Calculate starting time
+        var startTime: Date = self.eventDate.addingTimeInterval(self.eventTime) // Calculate starting time
+        
+        // Compensate for time zone
+        let timeZone = NSTimeZone.local // Time zone
+        let offset = -timeZone.daylightSavingTimeOffset(for: startTime)
+        startTime.addTimeInterval(offset) // Add daylight savings time offset
+        
         let endTime: Date = startTime.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Calculate end time
         let timeStr: String = dateFormatter.string(from: startTime) + " - " + dateFormatter.string(from: endTime) // Concatinate string
         self.summaryDateTime.text = dateStr + " \n" + timeStr // Add to card view
