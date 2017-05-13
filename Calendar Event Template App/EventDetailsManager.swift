@@ -156,8 +156,17 @@ extension EventDetails {
         // Set the calendar
         event.calendar = self.calendarManager.eventStore.defaultCalendarForNewEvents // Default calendar
         
+        // Compensate for daylight savings
+        var minutesFromMidnight = self.eventTime
+        let timeZone = NSTimeZone.local // Time zone
+        let offset = -timeZone.daylightSavingTimeOffset(for: self.eventDate)
+        if (timeZone.isDaylightSavingTime()) {
+            print("Offsetting time by \(offset)")
+            minutesFromMidnight += offset // Add daylight savings time offset
+        }
+        
         // Date and time
-        let startDate: Date = self.eventDate.addingTimeInterval(self.eventTime) // Create start date
+        let startDate: Date = self.eventDate.addingTimeInterval(minutesFromMidnight) // Create start date
         event.startDate = startDate
         event.endDate = startDate.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Convert hours to time interval
         event.isAllDay = false // Not all day
@@ -236,8 +245,16 @@ extension EventDetails {
         dateFormatter.dateFormat = "MMMM d" // Date only
         let dateStr: String = dateFormatter.string(from: self.eventDate)
         
+        // Compensate for daylight savings
+        var minutesFromMidnight = self.eventTime
+        let timeZone = NSTimeZone.local // Time zone
+        let offset = -timeZone.daylightSavingTimeOffset(for: self.eventDate)
+        if (timeZone.isDaylightSavingTime()) {
+            minutesFromMidnight += offset // Add daylight savings time offset
+        }
+        
         dateFormatter.dateFormat = "h:mm a" // Time only
-        let startTime: Date = self.eventDate.addingTimeInterval(self.eventTime) // Calculate starting time
+        let startTime: Date = self.eventDate.addingTimeInterval(minutesFromMidnight) // Calculate starting time
         let endTime: Date = startTime.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Calculate end time
         let timeStr: String = dateFormatter.string(from: startTime) + " - " + dateFormatter.string(from: endTime) // Concatinate string
         self.summaryDateTime.text = dateStr + " \n" + timeStr // Add to card view

@@ -202,13 +202,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func startTimeDragging(_ sender: Any) {
         var minutesFromMidnight = self.startTimeSlider.roundValue() * 3600.0 // Minutes from midnight
         
-        // Compensate for daylight savings
-        let timeZone = NSTimeZone.local // Time zone
-        let offset = -timeZone.daylightSavingTimeOffset(for: self.eventDate)
-        if (timeZone.isDaylightSavingTime()) {
-            minutesFromMidnight += offset // Add daylight savings time offset
-        }
-        
         self.eventTime = minutesFromMidnight // Change global variable
         
         // Compensate for time zone
