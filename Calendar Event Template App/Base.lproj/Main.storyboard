@@ -1063,10 +1063,10 @@
             </objects>
             <point key="canvasLocation" x="1168.8" y="123.68815592203899"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Event Details-->
         <scene sceneID="PcO-u1-Oyh">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="vertical" spineLocation="min" id="uHm-Ee-yXc" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Event Details" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="uHm-Ee-yXc" customClass="EventDetailsPager" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7m-AT-wMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="124"/>
