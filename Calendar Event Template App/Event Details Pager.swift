@@ -9,27 +9,58 @@
 import UIKit
 
 class EventDetailsPager: UIPageViewController {
-
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Set initial page
+        setViewControllers([getPageOne()], direction: .forward, animated: false, completion: nil)
+        
+        self.dataSource = self // Set data source
+        
+        // Set background color
+        self.view.backgroundColor = Colors.white
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func getPageOne() -> EventDetails {
+        // Retrieve the view
+        return storyboard!.instantiateViewController(withIdentifier: Storyboard.editEventDetails) as! EventDetails
     }
-    */
+    
+    func getPageTwo() -> EventDetailsMore {
+        // Retrieve the view
+        return storyboard!.instantiateViewController(withIdentifier: Storyboard.editEventDetailsMore) as! EventDetailsMore
+    }
+}
 
+extension EventDetailsPager: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        // Swiping forward
+        if viewController.isKind(of: EventDetails.self) { // 1 -> 2
+            return getPageTwo()
+        } else { // If on page two
+            return nil
+        }
+    }
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        // Swiping backward
+        
+        if viewController.isKind(of: EventDetailsMore.self) { // 2 -> 1
+            return getPageOne()
+        } else {
+            // If on the first page, can't swipe back
+            return nil
+        }
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return 2
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        // On the first dot when you first load the OnboardingPager
+        // Swift automatically handles switching pages and updating the page control dots
+        // Updates when setViewControllers is called
+        return 0
+    }
 }

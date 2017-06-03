@@ -1061,7 +1061,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUZ-8L-Sj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6mG-Dv-vHT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1168.8" y="123.68815592203899"/>
+            <point key="canvasLocation" x="2042" y="134"/>
+        </scene>
+        <!--Event Details More-->
+        <scene sceneID="2Nx-D2-blO">
+            <objects>
+                <viewController storyboardIdentifier="eventDetailsMore" id="bG0-pg-MIt" customClass="EventDetailsMore" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eh6-jw-cc1"/>
+                        <viewControllerLayoutGuide type="bottom" id="oHi-bp-dzB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9S3-wS-s8e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hc2-eF-DMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2721" y="124"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="PcO-u1-Oyh">
@@ -1069,7 +1087,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" title="Event Details" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="uHm-Ee-yXc" customClass="EventDetailsPager" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7m-AT-wMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="124"/>
+            <point key="canvasLocation" x="1326" y="124"/>
         </scene>
         <!--Calendar Error-->
         <scene sceneID="0Mj-GR-d0g">
@@ -1652,6 +1670,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cM2-aC-gnK"/>
-        <segue reference="nPH-XH-X7k"/>
+        <segue reference="nJx-7m-wfl"/>
     </inferredMetricsTieBreakers>
 </document>

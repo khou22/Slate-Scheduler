@@ -69,6 +69,7 @@ struct Storyboard {
     // Storyboard identifiers
     static let categorySelection            = "categorySelection"
     static let editEventDetails             = "editNewEventDetails"
+    static let editEventDetailsMore         = "eventDetailsMore"
     static let calendarError                = "calendarError"
     static let splashScreen                 = "splashScreen"
     static let rootViewController           = "rootViewController"
