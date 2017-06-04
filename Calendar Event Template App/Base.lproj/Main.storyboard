@@ -148,14 +148,14 @@
                         <outletCollection property="noCategoriesLabels" destination="puf-dc-6kU" collectionClass="NSMutableArray" id="fhJ-5b-u37"/>
                         <outletCollection property="noCategoriesLabels" destination="5k7-OW-RIp" collectionClass="NSMutableArray" id="gVg-6p-66x"/>
                         <outletCollection property="noCategoriesLabels" destination="kqQ-Z1-mK9" collectionClass="NSMutableArray" id="hVi-ih-cFR"/>
-                        <segue destination="Pbh-M3-uzF" kind="presentation" identifier="CategoryToEventDetail" id="nJx-7m-wfl"/>
                         <segue destination="CnZ-f8-Her" kind="presentation" identifier="CategorySelectionToEdit" id="6wB-kl-4SO"/>
-                        <segue destination="Pbh-M3-uzF" kind="presentation" identifier="NewEventNoCategory" id="nPH-XH-X7k"/>
+                        <segue destination="uHm-Ee-yXc" kind="presentation" identifier="NewEventNoCategory" id="heW-Kv-PfD"/>
+                        <segue destination="uHm-Ee-yXc" kind="presentation" identifier="CategoryToEventDetail" id="u38-JD-1sE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445.60000000000002" y="123.68815592203899"/>
+            <point key="canvasLocation" x="446" y="124"/>
         </scene>
         <!--Edit Categories-->
         <scene sceneID="NIN-sE-BVn">
@@ -1061,7 +1061,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUZ-8L-Sj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6mG-Dv-vHT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="134"/>
+            <point key="canvasLocation" x="2012" y="124"/>
         </scene>
         <!--Event Details More-->
         <scene sceneID="2Nx-D2-blO">
@@ -1087,7 +1087,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" title="Event Details" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="uHm-Ee-yXc" customClass="EventDetailsPager" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7m-AT-wMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="124"/>
+            <point key="canvasLocation" x="1252" y="124"/>
         </scene>
         <!--Calendar Error-->
         <scene sceneID="0Mj-GR-d0g">
@@ -1670,6 +1670,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cM2-aC-gnK"/>
-        <segue reference="nJx-7m-wfl"/>
+        <segue reference="u38-JD-1sE"/>
     </inferredMetricsTieBreakers>
 </document>

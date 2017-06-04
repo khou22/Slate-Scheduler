@@ -168,7 +168,9 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // TODO: Move these variable declarations to a global struct (like scroll percentage)
         
+        /*
         // Creating new event segue
         if (segue.identifier == SegueIdentifiers.createEvent) {
             let eventDetailsVC = segue.destination as! EventDetails
@@ -184,6 +186,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
             eventDetailsVC.withShortcut = self.withShortcut // Pass on if used shortcut
             
         }
+ */
     }
     
     // MARK - Flow layout
