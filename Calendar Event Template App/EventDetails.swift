@@ -18,9 +18,6 @@ struct EventDetailsData {
 
 class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
     
-    // Navigation buttons
-    @IBOutlet weak var saveButton: UIButton!
-    
     // Form inputs
     @IBOutlet weak var eventNameInput: AutocompleteTextField!
     @IBOutlet weak var locationInput: AutocompleteTextField!
@@ -43,21 +40,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // Calendar list view
     @IBOutlet weak var eventListTable: UITableView!
     var daysEvents: [EKEvent] = [] // Empty
-    
-    // Card view
-    @IBOutlet weak var summaryCard: UIView!
-    @IBOutlet weak var summaryTitle: UILabel!
-    @IBOutlet weak var summaryLocation: UILabel!
-    @IBOutlet weak var summaryDateTime: UILabel!
-    @IBOutlet weak var summaryCardTopConstraint: NSLayoutConstraint!
-    var blackFade: UIView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenSize.screen_width, height: ScreenSize.screen_height)) // Covers full screen
-    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
-    
-    // Other UI Elements
-    @IBOutlet weak var submitConfirmation: UIImageView!
-    @IBOutlet weak var submitConfirmationWidth: NSLayoutConstraint!
-    @IBOutlet weak var submitConfirmationHeight: NSLayoutConstraint!
-    @IBOutlet weak var submitStatusLabel: UILabel!
     
     // Instance of calendar manager
     let calendarManager: CalendarManager = CalendarManager()
@@ -115,50 +97,17 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         let indexPathForFirstRow = IndexPath(row: 0, section: 0) // First index
         self.quickDayPicker.selectItem(at: indexPathForFirstRow, animated: true, scrollPosition: .top) // Make selection
         
-        // Setup summary card view
-        self.setupSummaryCard()
-        
         // Auto focus on event name input
         self.eventNameInput.becomeFirstResponder()
-        
-        // Set start time
-        data.event.time = Date.timeIntervalSinceReferenceDate // Get and store current time
-        
-        // Log screen in GA
-        var screenName: String = "Event Details - With Category" // With category
-        if data.meta.noCategory { // Change screen name if category
-            screenName = "Event Details - No Category"
-        }
-        Analytics.setScreenName(screenName) // Log screen name
     }
     
     override func viewDidLayoutSubviews() {
         self.styleTextInput() // Must be called after autolayout complete
     }
     
-    @IBAction func cancelEvent(_ sender: Any) {
-        
-        // GA Event: User cancelled event
-        let secondsEllapsed = Date.timeIntervalSinceReferenceDate - data.event.time // Calculate seconds elapsed
-        Analytics.cancelledEventCreation(duration: Int(secondsEllapsed), withShortcut: data.meta.withShortcut) // Log event in GA
-        
-        view.endEditing(true) // Force keyboard to close
-        dismiss(animated: true, completion: nil) // Exit segue back to category selection
-    }
-    
-    @IBAction func saveEvent(_ sender: Any) {
-        let validInputs: Bool = self.validateParameters() // Ensure that form was filled out correctly
-        
-        if !validInputs { // If not filled out correctly
-            let alert = UIAlertController(title: "Form Incomplete", message: "Please enter an event name", preferredStyle: .alert) // Create alert message
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                self.eventNameInput.becomeFirstResponder() // Programmably launch keyboard to edit event name
-            })) // Add button to dismiss
-            self.present(alert, animated: true, completion: nil) // Present alert
-        } else {
-            // If neccessary inputs filled out correctly
-            self.generateCard() // Begin process to add event to calendar
-        }
+    // Event name input changed
+    @IBAction func eventNameChanged(_ sender: Any) {
+        data.updateEventName(name: self.eventNameInput.text!)
     }
     
     // Location input changed
@@ -170,11 +119,20 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
             self.locationInput.updateSuggestions(prioritized: data.meta.category.orderedLocations()) // Use previous locations
             self.locationInput.valueChanged() // Force update
         }
+        
+        data.updateEventLocation(location: query)
+    }
+    
+    // Room input changed
+    @IBAction func roomNumberChanged(_ sender: Any) {
+        data.event.room = self.roomInput.text!
     }
     
     // User released the slider
     @IBAction func finishedDragging(_ sender: Any) {
         self.durationSlider.released() // Animate to rounded value
+        
+        data.event.duration = self.durationSlider.roundValue() // Store round value
     }
     
     // User dragging slider
@@ -184,9 +142,13 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     @IBAction func startTimeFinishedDragging(_ sender: Any) {
         self.startTimeSlider.released()
+        
+        data.event.time = self.startTimeSlider.roundValue() // Store round value
     }
     
     @IBAction func startTimeDragging(_ sender: Any) {
+        self.dismissKeyboard() // Dismiss keyboard if sliding
+        
         var minutesFromMidnight = self.startTimeSlider.roundValue() * 3600.0 // Minutes from midnight
         
         data.event.time = minutesFromMidnight // Change global variable
@@ -198,7 +160,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         dateFormatter.dateFormat = "h:mm a"
         self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
         
-        self.dismissKeyboard() // Dismiss keyboard if sliding
+        data.event.time = minutesFromMidnight // Store globally
     }
     
     // MARK - Collection cell calls

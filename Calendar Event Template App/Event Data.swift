@@ -21,10 +21,12 @@ struct data {
     
     // Event data
     struct event {
-        static var name: String = "Event Name" // Event name
-        static var location: String = "Location" // Event location
+        static var name: String = "" // Event name
+        static var location: String = "" // Event location
+        static var room: String = "" // Room number
         static var date: Date = Date().dateWithoutTime() // Event date
         static var time: Double = 11 * 3600.0 // Minutes from midnight
+        static var duration: Double = 3600.0 // Default one hour
     }
     
     // User analytics data
@@ -52,10 +54,5 @@ struct data {
     
     public static func updateEventLocation(location: String) {
         event.location = location // SEt location
-    }
-    
-    public static func updateEventDate(dateWithoutTime: Date, timeSinceMidnight: Double) {
-        event.date = dateWithoutTime
-        event.time = timeSinceMidnight
     }
 }
