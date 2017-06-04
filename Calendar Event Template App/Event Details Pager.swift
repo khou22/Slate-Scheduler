@@ -18,7 +18,6 @@ class EventDetailsPager: UIPageViewController {
         
         // Set background color
         self.view.backgroundColor = Colors.white
-        
     }
     
     func getPageOne() -> EventDetails {

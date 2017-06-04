@@ -36,7 +36,7 @@ extension EventDetails {
                 locationResultCount = response.mapItems.count // Max is number of responses
             }
             
-            var locationResults: [String] = self.category.orderedLocations() // Store suggestions including predictive history
+            var locationResults: [String] = data.meta.category.orderedLocations() // Store suggestions including predictive history
             
             for index in 0..<locationResultCount {
                 let mapLocation: MKMapItem = response.mapItems[index] // Current map item
@@ -48,8 +48,8 @@ extension EventDetails {
             if self.locationInput.text! != "" { // If text box has a query
                 self.locationInput.updateSuggestions(prioritized: locationResults)
             } else { // If text box empty
-                if (!self.noCategory) { // If there is a category
-                    self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations())
+                if (!data.meta.noCategory) { // If there is a category
+                    self.locationInput.updateSuggestions(prioritized: data.meta.category.orderedLocations())
                 }
             }
             
@@ -122,7 +122,7 @@ extension EventDetails {
     }
     
     func refreshDaysEvents() {
-        self.daysEvents = self.calendarManager.getEvents(day: self.eventDate.dateWithoutTime())
+        self.daysEvents = self.calendarManager.getEvents(day: data.event.date.dateWithoutTime())
         
         // Refresh the table
         DispatchQueue.main.async {
@@ -134,18 +134,18 @@ extension EventDetails {
         // Change frontend label
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d" // Format
-        self.dateLabel.text = dateFormatter.string(from: self.eventDate) + " at" // Update label
+        self.dateLabel.text = dateFormatter.string(from: data.event.date) + " at" // Update label
     }
     
     func createEvent() {
         let event: EKEvent = EKEvent(eventStore: self.calendarManager.eventStore)
         
         // Determine even name
-        if self.noCategory { // If no category
+        if data.meta.noCategory { // If no category
             event.title = self.eventNameInput.text!
         } else { // Connected to category
             if DataManager.includeCategoryLabel() { // If including category name
-                event.title = "[" + category.name + "] " + self.eventNameInput.text!
+                event.title = "[" + data.meta.category.name + "] " + self.eventNameInput.text!
             } else { // If not including cateogyr name
                 event.title = self.eventNameInput.text!
             }
@@ -157,16 +157,16 @@ extension EventDetails {
         event.calendar = self.calendarManager.eventStore.defaultCalendarForNewEvents // Default calendar
         
         // Compensate for daylight savings
-        var minutesFromMidnight = self.eventTime
+        var minutesFromMidnight = data.event.time
         let timeZone = NSTimeZone.local // Time zone
-        let offset = -timeZone.daylightSavingTimeOffset(for: self.eventDate)
+        let offset = -timeZone.daylightSavingTimeOffset(for: data.event.date)
         if (timeZone.isDaylightSavingTime()) {
             print("Offsetting time by \(offset)")
             minutesFromMidnight += offset // Add daylight savings time offset
         }
         
         // Date and time
-        let startDate: Date = self.eventDate.addingTimeInterval(minutesFromMidnight) // Create start date
+        let startDate: Date = data.event.date.addingTimeInterval(minutesFromMidnight) // Create start date
         event.startDate = startDate
         event.endDate = startDate.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Convert hours to time interval
         event.isAllDay = false // Not all day
@@ -224,11 +224,11 @@ extension EventDetails {
     func generateCard() {
         // Populate information
         
-        if self.noCategory { // If no category
+        if data.meta.noCategory { // If no category
             self.summaryTitle.text = self.eventNameInput.text!
         } else { // Connected to category
             if DataManager.includeCategoryLabel() { // If user wants to include category name
-                self.summaryTitle.text = "[" + category.name + "] " + self.eventNameInput.text!
+                self.summaryTitle.text = "[" + data.meta.category.name + "] " + self.eventNameInput.text!
             } else { // If not including cateogyr name
                 self.summaryTitle.text = self.eventNameInput.text!
             }
@@ -243,18 +243,18 @@ extension EventDetails {
         // Format summary time
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d" // Date only
-        let dateStr: String = dateFormatter.string(from: self.eventDate)
+        let dateStr: String = dateFormatter.string(from: data.event.date)
         
         // Compensate for daylight savings
-        var minutesFromMidnight = self.eventTime
+        var minutesFromMidnight = data.event.time
         let timeZone = NSTimeZone.local // Time zone
-        let offset = -timeZone.daylightSavingTimeOffset(for: self.eventDate)
+        let offset = -timeZone.daylightSavingTimeOffset(for: data.event.date)
         if (timeZone.isDaylightSavingTime()) {
             minutesFromMidnight += offset // Add daylight savings time offset
         }
         
         dateFormatter.dateFormat = "h:mm a" // Time only
-        let startTime: Date = self.eventDate.addingTimeInterval(minutesFromMidnight) // Calculate starting time
+        let startTime: Date = data.event.date.addingTimeInterval(minutesFromMidnight) // Calculate starting time
         let endTime: Date = startTime.addingTimeInterval(self.durationSlider.roundValue() * 3600.0) // Calculate end time
         let timeStr: String = dateFormatter.string(from: startTime) + " - " + dateFormatter.string(from: endTime) // Concatinate string
         self.summaryDateTime.text = dateStr + " \n" + timeStr // Add to card view
@@ -274,16 +274,16 @@ extension EventDetails {
             self.createEvent() // Create and save event to calendar
             
             // Send analytics event
-            let secondsEllapsed = Date.timeIntervalSinceReferenceDate - self.startTime // Calculate seconds elapsed
+            let secondsEllapsed = Date.timeIntervalSinceReferenceDate - data.user.startTime // Calculate seconds elapsed
 //            print("Created event with time elalapsed: \(secondsEllapsed)") // Feedback
-            if self.noCategory { // Not attached to category
-                Analytics.createdEventNoCategory(duration: Int(secondsEllapsed), withShortcut: self.withShortcut)
+            if data.meta.noCategory { // Not attached to category
+                Analytics.createdEventNoCategory(duration: Int(secondsEllapsed), withShortcut: data.meta.withShortcut)
             } else { // Attached to category
-                Analytics.createdEventWithCategory(duration: Int(secondsEllapsed), withShortcut: self.withShortcut)
+                Analytics.createdEventWithCategory(duration: Int(secondsEllapsed), withShortcut: data.meta.withShortcut)
             }
             
             // Update markov models if there's a category
-            if (!self.noCategory) {
+            if (!data.meta.noCategory) {
                 self.logEventData()
             }
             
@@ -331,30 +331,30 @@ extension EventDetails {
     /************ Log to predictive analytics ************/
     func logEventData() {
         // Update number of times the category has been used to create an event
-        self.category.timesUsed += 1 // Increment
+        data.meta.category.timesUsed += 1 // Increment
         
         // Markov model with category to event name
-        if let count = self.category.eventNameFreq[self.eventNameInput.text!] { // If it has been logged before
+        if let count = data.meta.category.eventNameFreq[self.eventNameInput.text!] { // If it has been logged before
 //            print("Updated frequency for \(self.eventNameInput.text): \(count + 1)")
-            self.category.eventNameFreq[self.eventNameInput.text!] = count + 1 // Increment counter
+            data.meta.category.eventNameFreq[self.eventNameInput.text!] = count + 1 // Increment counter
         } else {
 //            print("New frequency entry for \(self.eventNameInput.text)")
-            self.category.eventNameFreq[self.eventNameInput.text!] = 1 // Create a dictionary reference with frequency of 1
+            data.meta.category.eventNameFreq[self.eventNameInput.text!] = 1 // Create a dictionary reference with frequency of 1
         }
         
         // Markov model with category to location
         if (self.locationInput.text != "") { // Only log if location input exists
-            if let count = self.category.locationFreq[self.locationInput.text!] { // If it has been logged before
+            if let count = data.meta.category.locationFreq[self.locationInput.text!] { // If it has been logged before
 //                print("Updated frequency for \(self.locationInput.text): \(count + 1)")
-                self.category.locationFreq[self.locationInput.text!] = count + 1 // Increment counter
+                data.meta.category.locationFreq[self.locationInput.text!] = count + 1 // Increment counter
             } else {
 //                print("New frequency entry for \(self.locationInput.text)")
-                self.category.locationFreq[self.locationInput.text!] = 1 // Create a dictionary reference with frequency of 1
+                data.meta.category.locationFreq[self.locationInput.text!] = 1 // Create a dictionary reference with frequency of 1
             }
         }
         
         // Save update markov models
 //        print("Updating \(self.category.name) with index \(self.categoryIndex)")
-        DataManager.updateOneCategory(with: self.category, index: self.categoryIndex)
+        DataManager.updateOneCategory(with: data.meta.category, index: data.meta.categoryIndex)
     }
 }

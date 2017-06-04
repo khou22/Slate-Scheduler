@@ -31,10 +31,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    // Form data
-    var eventDate: Date = Date().dateWithoutTime() // Today, but no time
-    var eventTime: Double = 11 * 3600.0 // Minutes from midnight
-    
     // Quick day picker
     @IBOutlet weak var quickDayPicker: UICollectionView!
     let numQuickDays: Int = EventDetailsData.numQuickDays // Can quickly pick 5 days
@@ -62,15 +58,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var submitConfirmationWidth: NSLayoutConstraint!
     @IBOutlet weak var submitConfirmationHeight: NSLayoutConstraint!
     @IBOutlet weak var submitStatusLabel: UILabel!
-    
-    // Category data
-    var category: Category = Constants.emptyCategory // Category object
-    var categoryIndex: Int = 0 // Category index in array
-    var noCategory: Bool = false // Default is associated with category
-    var withShortcut: Bool = false // Default is no shortcut
-    
-    // Analytics data
-    var startTime = Date.timeIntervalSinceReferenceDate // Get current time
     
     // Instance of calendar manager
     let calendarManager: CalendarManager = CalendarManager()
@@ -109,11 +96,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.locationInput.nextTextField = self.roomInput // Next input
         
         // Setup table view if for category
-        if (!self.noCategory) {
+        if (!data.meta.noCategory) {
             self.eventNameInput.setupTableView(view: self.view)
             
-            self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations()) // Load previous locations
-            self.eventNameInput.updateSuggestions(prioritized: self.category.orderedEventNames()) // Load autocomplete suggestions
+            self.locationInput.updateSuggestions(prioritized: data.meta.category.orderedLocations()) // Load previous locations
+            self.eventNameInput.updateSuggestions(prioritized: data.meta.category.orderedEventNames()) // Load autocomplete suggestions
         }
         
         // Setup autocomplete table view for location search
@@ -135,11 +122,11 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         self.eventNameInput.becomeFirstResponder()
         
         // Set start time
-        self.startTime = Date.timeIntervalSinceReferenceDate // Get and store current time
+        data.event.time = Date.timeIntervalSinceReferenceDate // Get and store current time
         
         // Log screen in GA
         var screenName: String = "Event Details - With Category" // With category
-        if self.noCategory { // Change screen name if category
+        if data.meta.noCategory { // Change screen name if category
             screenName = "Event Details - No Category"
         }
         Analytics.setScreenName(screenName) // Log screen name
@@ -152,8 +139,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func cancelEvent(_ sender: Any) {
         
         // GA Event: User cancelled event
-        let secondsEllapsed = Date.timeIntervalSinceReferenceDate - self.startTime // Calculate seconds elapsed
-        Analytics.cancelledEventCreation(duration: Int(secondsEllapsed), withShortcut: self.withShortcut) // Log event in GA
+        let secondsEllapsed = Date.timeIntervalSinceReferenceDate - data.event.time // Calculate seconds elapsed
+        Analytics.cancelledEventCreation(duration: Int(secondsEllapsed), withShortcut: data.meta.withShortcut) // Log event in GA
         
         view.endEditing(true) // Force keyboard to close
         dismiss(animated: true, completion: nil) // Exit segue back to category selection
@@ -180,7 +167,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         if (query != "") { // If text exists
             self.updateLocationSearchResults(query: query) // Update autocomplete
         } else { // If no text
-            self.locationInput.updateSuggestions(prioritized: self.category.orderedLocations()) // Use previous locations
+            self.locationInput.updateSuggestions(prioritized: data.meta.category.orderedLocations()) // Use previous locations
             self.locationInput.valueChanged() // Force update
         }
     }
@@ -202,7 +189,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func startTimeDragging(_ sender: Any) {
         var minutesFromMidnight = self.startTimeSlider.roundValue() * 3600.0 // Minutes from midnight
         
-        self.eventTime = minutesFromMidnight // Change global variable
+        data.event.time = minutesFromMidnight // Change global variable
         
         // Compensate for time zone
         minutesFromMidnight += -Double(NSTimeZone.local.secondsFromGMT()) // Apply time zone shift
@@ -234,7 +221,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // Handle cell selection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = indexPath.item
-        self.eventDate = self.dateOptions[index] // Update the event date
+        data.event.date = self.dateOptions[index] // Update the event date
         self.updateDateLabel() // Update frontend
         
         self.dismissKeyboard() // Dismiss keyboard if press a day

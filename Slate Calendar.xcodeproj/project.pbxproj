@@ -33,6 +33,7 @@
 		277EDB731E52A60E00CD172B /* CustomSegues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EDB721E52A60E00CD172B /* CustomSegues.swift */; };
 		277F99E21EE1832100BC0CE4 /* Event Details Pager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277F99E11EE1832100BC0CE4 /* Event Details Pager.swift */; };
 		277F99E41EE2E45A00BC0CE4 /* EventDetailsMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277F99E31EE2E45A00BC0CE4 /* EventDetailsMore.swift */; };
+		278CDF4B1EE4BD9B004C6D85 /* Event Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278CDF4A1EE4BD9B004C6D85 /* Event Data.swift */; };
 		279022631E209BF10062FFE8 /* EventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279022621E209BF10062FFE8 /* EventListCell.swift */; };
 		279D7B6F1E1F4AF8005D1C84 /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */; };
 		279E898C1E466A5400C38C6D /* CalendarErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */; };
@@ -105,6 +106,7 @@
 		277EDB721E52A60E00CD172B /* CustomSegues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegues.swift; sourceTree = "<group>"; };
 		277F99E11EE1832100BC0CE4 /* Event Details Pager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event Details Pager.swift"; sourceTree = "<group>"; };
 		277F99E31EE2E45A00BC0CE4 /* EventDetailsMore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsMore.swift; sourceTree = "<group>"; };
+		278CDF4A1EE4BD9B004C6D85 /* Event Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event Data.swift"; sourceTree = "<group>"; };
 		279022621E209BF10062FFE8 /* EventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListCell.swift; sourceTree = "<group>"; };
 		279D7B6E1E1F4AF8005D1C84 /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		279E898B1E466A5400C38C6D /* CalendarErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarErrorExtension.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				277F99E11EE1832100BC0CE4 /* Event Details Pager.swift */,
+				278CDF4A1EE4BD9B004C6D85 /* Event Data.swift */,
 				274FA89B1E1DCBC7008E297C /* EventDetails.swift */,
 				2707362A1E20609E003E8B72 /* EventDetailsManager.swift */,
 			);
@@ -638,6 +641,7 @@
 				270991051E1E289000267071 /* StepSlider.swift in Sources */,
 				277EDB6B1E52637500CD172B /* TileView.swift in Sources */,
 				279E898C1E466A5400C38C6D /* CalendarErrorExtension.swift in Sources */,
+				278CDF4B1EE4BD9B004C6D85 /* Event Data.swift in Sources */,
 				27CBC5081E35C6DD001CE9DA /* OnboardingPageFour.swift in Sources */,
 				27BDFD7B1E1D9E0500B8C474 /* CategorySelection.swift in Sources */,
 				277EDB731E52A60E00CD172B /* CustomSegues.swift in Sources */,

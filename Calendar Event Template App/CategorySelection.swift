@@ -168,25 +168,15 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // TODO: Move these variable declarations to a global struct (like scroll percentage)
-        
-        /*
-        // Creating new event segue
+        // Creating-new-event segue
+        // Store neccessary information in a global struct
         if (segue.identifier == SegueIdentifiers.createEvent) {
-            let eventDetailsVC = segue.destination as! EventDetails
+            data.newEventSession(with: self.categoryData[self.selectedItem], categoryIndex: self.selectedItem, withShortcut: self.withShortcut)
 //            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
-            eventDetailsVC.category = self.categoryData[self.selectedItem] // Pass on category data
-            eventDetailsVC.categoryIndex = self.selectedItem // Pass on category index
-            eventDetailsVC.withShortcut = self.withShortcut // Pass on if used shortcut
             
         } else if (segue.identifier == SegueIdentifiers.newEventNoCategory) { // New event no category
-            let eventDetailsVC = segue.destination as! EventDetails
-            eventDetailsVC.noCategory = true // Signify no category
-            eventDetailsVC.categoryIndex = self.selectedItem // Pass on index
-            eventDetailsVC.withShortcut = self.withShortcut // Pass on if used shortcut
-            
+            data.newEventSession(with: Constants.emptyCategory, categoryIndex: -1, withShortcut: self.withShortcut) // Send with empty category
         }
- */
     }
     
     // MARK - Flow layout
