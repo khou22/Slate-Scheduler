@@ -75,7 +75,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Autocomplete setup
         self.eventNameInput.nextTextField = self.locationInput // Setup next input
+        self.eventNameInput.liveUpdate(withVariable: data.event.name) // All changes stored in this variable
         self.locationInput.nextTextField = self.roomInput // Next input
+        self.locationInput.liveUpdate(withVariable: data.event.location) // All changes stored in global struct
         
         // Setup table view if for category
         if (!data.meta.noCategory) {
@@ -107,6 +109,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // Event name input changed
     @IBAction func eventNameChanged(_ sender: Any) {
+        print("Updating event name")
         data.updateEventName(name: self.eventNameInput.text!)
     }
     

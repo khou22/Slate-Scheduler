@@ -28,6 +28,8 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     
     // Options
     public var characterError: Int = 2 // Degree of error you're allowed to be off by using Levenshtein algorithm
+    private var updateVariable: Bool = false // Whether or not to update an additional variable
+    private var variableToUpdate: String = String() // Reference to a variable to change
     
     // Not sure what this does
     override init(frame: CGRect) {
@@ -42,6 +44,12 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
         
         // Setup function triggers on events
         self.addTarget(self, action: #selector(self.valueChanged), for: .editingChanged)
+    }
+    
+    // If want to live update a variable
+    public func liveUpdate(withVariable variable: String) {
+        self.updateVariable = true
+        self.variableToUpdate = variable
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -128,6 +136,10 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     // Text field value changed
     public func valueChanged() {
         self.updateValid() // Update autocomplete suggestions when value changed
+        
+        if (self.updateVariable) {
+            self.variableToUpdate = self.text! // Update the variable
+        }
     }
     
     func updateTableViewHeight() {
