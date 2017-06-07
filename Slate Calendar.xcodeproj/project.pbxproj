@@ -223,6 +223,7 @@
 				278CDF4A1EE4BD9B004C6D85 /* Event Data.swift */,
 				274FA89B1E1DCBC7008E297C /* EventDetails.swift */,
 				2707362A1E20609E003E8B72 /* EventDetailsManager.swift */,
+				277F99E31EE2E45A00BC0CE4 /* EventDetailsMore.swift */,
 			);
 			name = "Event Details";
 			sourceTree = "<group>";
@@ -295,7 +296,6 @@
 				277EDB671E52636500CD172B /* Splash Screen */,
 				27BDFD7A1E1D9E0500B8C474 /* CategorySelection.swift */,
 				2757074C1E27340A002A3060 /* CategoryEditing.swift */,
-				277F99E31EE2E45A00BC0CE4 /* EventDetailsMore.swift */,
 				2757074E1E2741E2002A3060 /* CategoryDetailsEdit.swift */,
 				277F99E01EE182DF00BC0CE4 /* Event Details */,
 				274DD6AD1E457BF3003CD0F6 /* CalendarError.swift */,

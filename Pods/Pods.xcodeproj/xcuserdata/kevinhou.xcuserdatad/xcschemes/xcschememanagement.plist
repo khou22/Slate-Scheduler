@@ -4,7 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CalendarKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DateToolsSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DynamicColor.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Neon.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,17 +52,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>258F39D9136BED36A98C1096FDC2DF6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3316DB4439051F9C258A6B503084503E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9DC856A6476F37565FDC1635B89504DF</key>
+		<key>3BAA24B46131F764E741CC47C051FEF2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E538B63D53CE32AEBA77E3C2D667C4C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>AA61CF8B1B2E9EEC8E4DD04780C8BBEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D801225CF4A341C39651E0A47D562B9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F282205EB00DE6D7457C29DC6CCBAB48</key>
 		<dict>
 			<key>primary</key>
 			<true/>
