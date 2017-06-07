@@ -75,9 +75,16 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Autocomplete setup
         self.eventNameInput.nextTextField = self.locationInput // Setup next input
-        self.eventNameInput.liveUpdate(withVariable: data.event.name) // All changes stored in this variable
+        self.eventNameInput.updateCompletion = { // Completion handler when text changes
+            print("Updating event name: \(self.eventNameInput.text)")
+            data.event.name = self.eventNameInput.text! // Update
+        }
+        
         self.locationInput.nextTextField = self.roomInput // Next input
-        self.locationInput.liveUpdate(withVariable: data.event.location) // All changes stored in global struct
+        self.locationInput.updateCompletion = { // Completion handler when text changes
+            print("Updating location: \(self.locationInput.text)")
+            data.event.location = self.locationInput.text! // Update
+        }
         
         // Setup table view if for category
         if (!data.meta.noCategory) {
@@ -89,6 +96,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Setup autocomplete table view for location search
         self.locationInput.setupTableView(view: self.view)
+        
+        data.event.time = self.startTimeSlider.roundValue() // Store globally
         
         // Initial population of event list
         self.refreshDaysEvents()
@@ -105,12 +114,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     override func viewDidLayoutSubviews() {
         self.styleTextInput() // Must be called after autolayout complete
-    }
-    
-    // Event name input changed
-    @IBAction func eventNameChanged(_ sender: Any) {
-        print("Updating event name")
-        data.updateEventName(name: self.eventNameInput.text!)
     }
     
     // Location input changed
@@ -134,19 +137,19 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // User released the slider
     @IBAction func finishedDragging(_ sender: Any) {
         self.durationSlider.released() // Animate to rounded value
-        
-        data.event.duration = self.durationSlider.roundValue() // Store round value
     }
     
     // User dragging slider
     @IBAction func dragging(_ sender: Any) {
         self.durationLabel.text = self.durationSlider.roundString() + " hours" // Real time rounded value of slider
+        
+        data.event.duration = self.durationSlider.roundValue() * 3600.0 // Store round value in seconds
     }
     
     @IBAction func startTimeFinishedDragging(_ sender: Any) {
         self.startTimeSlider.released()
         
-        data.event.time = self.startTimeSlider.roundValue() // Store round value
+        data.event.time = self.startTimeSlider.roundValue() * 3600.0 // Store round value
     }
     
     @IBAction func startTimeDragging(_ sender: Any) {
@@ -162,8 +165,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
         self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
-        
-        data.event.time = minutesFromMidnight // Store globally
     }
     
     // MARK - Collection cell calls
@@ -188,6 +189,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         let index = indexPath.item
         data.event.date = self.dateOptions[index] // Update the event date
         self.updateDateLabel() // Update frontend
+        
+        print("Selected\(data.event.date)")
         
         self.dismissKeyboard() // Dismiss keyboard if press a day
         

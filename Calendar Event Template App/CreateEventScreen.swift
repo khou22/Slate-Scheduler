@@ -111,6 +111,8 @@ class CreateEventScreen: UIViewController {
         let defaultAlert: EKAlarm = EKAlarm(relativeOffset: secondsBefore) // Set alert before event time
         event.addAlarm(defaultAlert) // Add default alert
         
+        print(event.title)
+        
         self.calendarManager.saveEvent(event: event) // Save event
     }
     

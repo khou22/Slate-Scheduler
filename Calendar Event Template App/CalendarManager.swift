@@ -31,7 +31,8 @@ class CalendarManager {
         do {
             try self.eventStore.save(event, span: .thisEvent) // Try to add to calendar
             
-            print("Event added successfully")
+            print("Event \(event.title) added successfully")
+            print("At \(event.startDate)")
         } catch let err as NSError {
             print("Event could not be added")
             print("An error occured \(err.localizedDescription)")
