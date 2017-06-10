@@ -106,6 +106,12 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         let indexPathForFirstRow = IndexPath(row: 0, section: 0) // First index
         self.quickDayPicker.selectItem(at: indexPathForFirstRow, animated: true, scrollPosition: .top) // Make selection
         
+        // Populate event time label
+        data.event.time = self.startTimeSlider.roundValue() * 3600.0 // Starting value
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: data.event.time-Double(NSTimeZone.local.secondsFromGMT())))
+        
         // Auto focus on event name input
         self.eventNameInput.becomeFirstResponder()
     }
