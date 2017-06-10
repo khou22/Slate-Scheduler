@@ -68,26 +68,26 @@ struct data {
         
         // Markov model with category to event name
         if let count = meta.category.eventNameFreq[data.event.name] { // If it has been logged before
-            print("Updated frequency for \(data.event.name): \(count + 1)")
+//            print("Updated frequency for \(data.event.name): \(count + 1)")
             meta.category.eventNameFreq[data.event.name] = count + 1 // Increment counter
         } else {
-            print("New frequency entry for \(data.event.name)")
+//            print("New frequency entry for \(data.event.name)")
             meta.category.eventNameFreq[data.event.name] = 1 // Create a dictionary reference with frequency of 1
         }
         
         // Markov model with category to location
         if (event.location != "") { // Only log if location input exists
             if let count = data.meta.category.locationFreq[data.event.location] { // If it has been logged before
-                print("Updated frequency for \(event.location): \(count + 1)")
+//                print("Updated frequency for \(event.location): \(count + 1)")
                 meta.category.locationFreq[data.event.location] = count + 1 // Increment counter
             } else {
-                print("New frequency entry for \(event.location)")
+//                print("New frequency entry for \(event.location)")
                 meta.category.locationFreq[data.event.location] = 1 // Create a dictionary reference with frequency of 1
             }
         }
         
         // Save update markov models
-        print("Updating \(meta.category) with index \(meta.categoryIndex)")
+//        print("Updating \(meta.category) with index \(meta.categoryIndex)")
         DataManager.updateOneCategory(with: data.meta.category, index: data.meta.categoryIndex)
     }
     

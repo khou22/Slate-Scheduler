@@ -33,9 +33,6 @@ class CreateEventScreen: UIViewController {
         // Setup summary card view
         self.setupSummaryCard()
         
-        // Set start time
-        data.event.time = Date.timeIntervalSinceReferenceDate // Get and store current time
-        
         // Log screen in GA
         var screenName: String = "Event Details - With Category" // With category
         if data.meta.noCategory { // Change screen name if category
@@ -92,6 +89,7 @@ class CreateEventScreen: UIViewController {
         
         // Compensate for daylight savings
         var minutesFromMidnight = data.event.time
+        print("data.event.time: \(data.event.time)")
         let timeZone = NSTimeZone.local // Time zone
         let offset = -timeZone.daylightSavingTimeOffset(for: data.event.date)
         if (timeZone.isDaylightSavingTime()) {
@@ -100,6 +98,7 @@ class CreateEventScreen: UIViewController {
         }
         
         // Date and time
+        print("Minutes from midnight: \(minutesFromMidnight)")
         let startDate: Date = data.event.date.addingTimeInterval(minutesFromMidnight) // Create start date
         event.startDate = startDate
         event.endDate = startDate.addingTimeInterval(data.event.time)

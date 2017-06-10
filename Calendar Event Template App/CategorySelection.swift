@@ -172,7 +172,7 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         // Store neccessary information in a global struct
         if (segue.identifier == SegueIdentifiers.createEvent) {
             data.newEventSession(with: self.categoryData[self.selectedItem], categoryIndex: self.selectedItem, withShortcut: self.withShortcut)
-            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
+//            print("Performing segue with data: " + self.categoryData[self.selectedItem].name)
             
         } else if (segue.identifier == SegueIdentifiers.newEventNoCategory) { // New event no category
             data.newEventSession(with: Constants.emptyCategory, categoryIndex: -1, withShortcut: self.withShortcut) // Send with empty category

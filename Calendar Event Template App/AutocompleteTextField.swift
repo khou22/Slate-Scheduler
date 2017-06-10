@@ -216,6 +216,11 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.text = self.validSuggestions[indexPath.item] // Push suggestion to text box value
         self.nextTextField.becomeFirstResponder() // Next responder
+        
+        // Run custom completion function
+        if let handler = self.updateCompletion {
+            handler()
+        }
     }
 }
 

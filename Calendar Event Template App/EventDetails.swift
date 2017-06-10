@@ -97,8 +97,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Setup autocomplete table view for location search
         self.locationInput.setupTableView(view: self.view)
         
-        data.event.time = self.startTimeSlider.roundValue() // Store globally
-        
         // Initial population of event list
         self.refreshDaysEvents()
     }
