@@ -219,8 +219,10 @@ class CreateEventScreen: UIViewController {
             }
             
             // Update markov models if there's a category
+            print(data.meta.noCategory)
             if (!data.meta.noCategory) {
-                self.logEventData()
+                print("Logging event data")
+                data.logEventData()
             }
             
             // Exit animations
@@ -263,35 +265,4 @@ class CreateEventScreen: UIViewController {
             self.submitStatusLabel.text = "Added to Calendar"
         })
     }
-    
-    /************ Log to predictive analytics ************/
-    func logEventData() {
-        // Update number of times the category has been used to create an event
-        data.meta.category.timesUsed += 1 // Increment
-        
-        // Markov model with category to event name
-        if let count = data.meta.category.eventNameFreq[data.event.name] { // If it has been logged before
-            //            print("Updated frequency for \(self.eventNameInput.text): \(count + 1)")
-            data.meta.category.eventNameFreq[data.event.name] = count + 1 // Increment counter
-        } else {
-            //            print("New frequency entry for \(self.eventNameInput.text)")
-            data.meta.category.eventNameFreq[data.event.name] = 1 // Create a dictionary reference with frequency of 1
-        }
-        
-        // Markov model with category to location
-        if (data.event.location != "") { // Only log if location input exists
-            if let count = data.meta.category.locationFreq[data.event.location] { // If it has been logged before
-                //                print("Updated frequency for \(self.locationInput.text): \(count + 1)")
-                data.meta.category.locationFreq[data.event.location] = count + 1 // Increment counter
-            } else {
-                //                print("New frequency entry for \(self.locationInput.text)")
-                data.meta.category.locationFreq[data.event.location] = 1 // Create a dictionary reference with frequency of 1
-            }
-        }
-        
-        // Save update markov models
-        //        print("Updating \(self.category.name) with index \(self.categoryIndex)")
-        DataManager.updateOneCategory(with: data.meta.category, index: data.meta.categoryIndex)
-    }
-    
 }

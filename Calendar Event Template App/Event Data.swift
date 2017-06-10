@@ -41,10 +41,15 @@ struct data {
         meta.category = category
         meta.categoryIndex = categoryIndex
         meta.withShortcut = withShortcut
-        meta.noCategory = category == Constants.emptyCategory // If empty category, there is no category declared
+        meta.noCategory = (categoryIndex == -1) // If empty category, there is no category declared
         
         // Set start time for analytics purposes
         user.startTime = Date.timeIntervalSinceReferenceDate // Reset
+        
+        // Default values for the event
+        event.date = Date().dateWithoutTime()
+        event.time = 11 * 3600.0
+        event.duration = 3600.0
     }
     
     // MARK - Public functions to update the event values
@@ -55,4 +60,35 @@ struct data {
     public static func updateEventLocation(location: String) {
         event.location = location // SEt location
     }
+    
+    /************ Log to predictive analytics ************/
+    public static func logEventData() {
+        // Update number of times the category has been used to create an event
+        meta.category.timesUsed += 1 // Increment
+        
+        // Markov model with category to event name
+        if let count = meta.category.eventNameFreq[data.event.name] { // If it has been logged before
+            print("Updated frequency for \(data.event.name): \(count + 1)")
+            meta.category.eventNameFreq[data.event.name] = count + 1 // Increment counter
+        } else {
+            print("New frequency entry for \(data.event.name)")
+            meta.category.eventNameFreq[data.event.name] = 1 // Create a dictionary reference with frequency of 1
+        }
+        
+        // Markov model with category to location
+        if (event.location != "") { // Only log if location input exists
+            if let count = data.meta.category.locationFreq[data.event.location] { // If it has been logged before
+                print("Updated frequency for \(event.location): \(count + 1)")
+                meta.category.locationFreq[data.event.location] = count + 1 // Increment counter
+            } else {
+                print("New frequency entry for \(event.location)")
+                meta.category.locationFreq[data.event.location] = 1 // Create a dictionary reference with frequency of 1
+            }
+        }
+        
+        // Save update markov models
+        print("Updating \(meta.category) with index \(meta.categoryIndex)")
+        DataManager.updateOneCategory(with: data.meta.category, index: data.meta.categoryIndex)
+    }
+    
 }
