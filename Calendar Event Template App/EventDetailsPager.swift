@@ -29,6 +29,14 @@ class EventDetailsPager: UIPageViewController {
         // Retrieve the view
         return storyboard!.instantiateViewController(withIdentifier: Storyboard.editEventDetailsMore) as! EventDetailsMore
     }
+    
+    func goToPageOne() {
+        setViewControllers([getPageTwo()], direction: .forward, animated: true, completion: nil)
+    }
+    
+    func goToPageTwo() {
+        setViewControllers([getPageTwo()], direction: .forward, animated: true, completion: nil)
+    }
 }
 
 extension EventDetailsPager: UIPageViewControllerDataSource {
