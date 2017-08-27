@@ -961,7 +961,7 @@
         <!--Navigation Controller-->
         <scene sceneID="AwS-o1-RXQ">
             <objects>
-                <navigationController modalPresentationStyle="currentContext" navigationBarHidden="YES" id="ozW-3a-gt5" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="currentContext" id="ozW-3a-gt5" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Hr-r7-SOz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -118,6 +118,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     override func viewDidLayoutSubviews() {
         self.styleTextInput() // Must be called after autolayout complete
+        self.navigationController?.navigationBar.alpha = 0 // Hide navigation bar
     }
     
     // Location input changed
