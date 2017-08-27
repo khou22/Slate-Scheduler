@@ -956,10 +956,8 @@
                                         <rect key="frame" x="-2" y="29" width="323" height="31"/>
                                         <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <action selector="dragging:" destination="Pbh-M3-uzF" eventType="valueChanged" id="MCV-0A-KV5"/>
-                                            <action selector="finishedDragging:" destination="Pbh-M3-uzF" eventType="touchUpInside" id="yXe-Eb-Heg"/>
-                                            <action selector="startTimeDragging:" destination="Pbh-M3-uzF" eventType="valueChanged" id="9T2-I7-oYg"/>
-                                            <action selector="startTimeFinishedDragging:" destination="Pbh-M3-uzF" eventType="touchUpInside" id="gFr-bM-jaM"/>
+                                            <action selector="draggingTime:" destination="bG0-pg-MIt" eventType="valueChanged" id="UCh-Bd-dzD"/>
+                                            <action selector="releasedTime:" destination="bG0-pg-MIt" eventType="touchUpInside" id="RAg-FB-TQf"/>
                                         </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sJt-Lo-u5A">
@@ -1000,8 +998,8 @@
                                         <rect key="frame" x="-2" y="23" width="323" height="31"/>
                                         <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <action selector="dragging:" destination="Pbh-M3-uzF" eventType="valueChanged" id="e0s-dv-LXx"/>
-                                            <action selector="finishedDragging:" destination="Pbh-M3-uzF" eventType="touchUpInside" id="GWc-vM-LHO"/>
+                                            <action selector="draggingDuration:" destination="bG0-pg-MIt" eventType="valueChanged" id="DgQ-Il-V7q"/>
+                                            <action selector="releasedDuration:" destination="bG0-pg-MIt" eventType="touchUpInside" id="3uv-UB-txf"/>
                                         </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0 Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzU-Uy-zow">
@@ -1135,6 +1133,12 @@
                             <constraint firstItem="ztM-hM-Vx0" firstAttribute="top" secondItem="yWe-0q-q8v" secondAttribute="bottom" constant="16" id="yWe-we-zb3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="durationLabel" destination="tzU-Uy-zow" id="joh-om-YaS"/>
+                        <outlet property="durationSlider" destination="Dqd-zn-ag3" id="43x-eI-kIQ"/>
+                        <outlet property="timeLabel" destination="6Ys-Bi-3X3" id="JKr-2U-XEX"/>
+                        <outlet property="timeSlider" destination="gqj-GB-NK1" id="5Fm-15-5Qy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hc2-eF-DMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
