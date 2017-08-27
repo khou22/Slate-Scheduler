@@ -39,6 +39,8 @@ class CreateEventScreen: UIViewController {
             screenName = "Event Details - No Category"
         }
         Analytics.setScreenName(screenName) // Log screen name
+        
+        self.navigationController?.navigationBar.clipsToBounds = false // To fix status bar glitch
     }
     
     // Cancelled event

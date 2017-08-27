@@ -268,7 +268,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
 
     @IBAction func seeMore(_ sender: Any) {
-        let parent = self.parent as! EventDetailsPager
-        parent.goToPageTwo()
+        print("Seeing more")
+        performSegue(withIdentifier: SegueIdentifiers.viewCalendar, sender: nil)
     }
 }

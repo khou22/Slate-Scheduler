@@ -615,7 +615,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="VrQ-eX-OOQ">
-                                <rect key="frame" x="28" y="8" width="319" height="44"/>
+                                <rect key="frame" x="28" y="72" width="319" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDW-CK-sU6">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="17"/>
@@ -639,7 +639,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Peu-Sx-HOd">
-                                <rect key="frame" x="28" y="72" width="319" height="44"/>
+                                <rect key="frame" x="28" y="136" width="319" height="44"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sPF-Gr-eH2">
                                         <rect key="frame" x="0.0" y="0.0" width="271" height="44"/>
@@ -728,7 +728,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2HI-eM-WmX">
-                                <rect key="frame" x="28" y="136" width="319" height="132"/>
+                                <rect key="frame" x="28" y="200" width="319" height="132"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ga-3n-RYl">
                                         <rect key="frame" x="0.0" y="0.0" width="30.5" height="17"/>
@@ -830,7 +830,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d1N-LA-6dL">
-                                <rect key="frame" x="28" y="276" width="319" height="185"/>
+                                <rect key="frame" x="28" y="340" width="319" height="121"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventListCell" id="6Sv-r7-lcJ" customClass="EventListCell" customModule="Slate_Calendar" customModuleProvider="target">
@@ -923,12 +923,13 @@
                         <outlet property="startTimeLabel" destination="kwv-VE-m54" id="gyT-0i-jt6"/>
                         <outlet property="startTimeSlider" destination="90P-4b-egX" id="EN9-kt-rCv"/>
                         <segue destination="6mG-Dv-vHT" kind="unwind" identifier="unwind" unwindAction="unwindToVCWithSegue:" id="8ef-sw-I5T"/>
+                        <segue destination="bG0-pg-MIt" kind="show" identifier="ViewCalendarDetails" id="0ET-E4-IML"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUZ-8L-Sj2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6mG-Dv-vHT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3326" y="-114"/>
+            <point key="canvasLocation" x="2089" y="124"/>
         </scene>
         <!--Event Details More-->
         <scene sceneID="2Nx-D2-blO">
@@ -941,25 +942,41 @@
                     <view key="view" contentMode="scaleToFill" id="9S3-wS-s8e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e90-ok-EuD">
+                                <rect key="frame" x="166" y="266" width="40" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hc2-eF-DMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3895" y="461"/>
+            <point key="canvasLocation" x="3002" y="15"/>
         </scene>
-        <!--Event Details-->
-        <scene sceneID="PcO-u1-Oyh">
+        <!--Navigation Controller-->
+        <scene sceneID="AwS-o1-RXQ">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" title="Event Details" transitionStyle="scroll" navigationOrientation="vertical" spineLocation="none" id="uHm-Ee-yXc" customClass="EventDetailsPager" customModule="Slate_Calendar" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="currentContext" navigationBarHidden="YES" id="ozW-3a-gt5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Hr-r7-SOz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="eCM-GP-zAy">
+                        <rect key="frame" x="0.0" y="509" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="Pbh-M3-uzF" kind="show" id="akc-qY-t8U"/>
-                        <segue destination="bG0-pg-MIt" kind="show" id="kwL-uJ-sed"/>
+                        <segue destination="Pbh-M3-uzF" kind="relationship" relationship="rootViewController" id="EKe-d0-iLM"/>
                     </connections>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i7m-AT-wMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pp9-N4-BRw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2108" y="124"/>
+            <point key="canvasLocation" x="3906" y="328"/>
         </scene>
         <!--Create Event Screen-->
         <scene sceneID="aob-Lq-U8p">
@@ -973,6 +990,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVp-KG-RBC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Event Details" id="c7r-zr-vVA">
+                                        <barButtonItem key="backBarButtonItem" title="Cancel" id="GHi-DT-YLa"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="DhN-pQ-inG">
+                                            <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="cancelEvent:" destination="Qx2-2A-9sj" id="Pk6-TP-Uix"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barPosition">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="857-Bi-Zaw">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -990,23 +1026,9 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUC-aY-opX">
                                 <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <connections>
-                                    <segue destination="uHm-Ee-yXc" kind="embed" id="yYo-4X-Me9"/>
+                                    <segue destination="ozW-3a-gt5" kind="embed" id="wWm-js-rz3"/>
                                 </connections>
                             </containerView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVp-KG-RBC">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Event Details" id="c7r-zr-vVA">
-                                        <barButtonItem key="backBarButtonItem" title="Cancel" id="GHi-DT-YLa"/>
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="DhN-pQ-inG">
-                                            <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <connections>
-                                                <action selector="cancelEvent:" destination="Qx2-2A-9sj" id="Pk6-TP-Uix"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKd-dG-sFF">
                                 <rect key="frame" x="16" y="119" width="343" height="210"/>
                                 <subviews>
@@ -1723,7 +1745,7 @@
         <image name="yahoo_icon" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cM2-aC-gnK"/>
-        <segue reference="Vgo-5E-v0c"/>
+        <segue reference="Onn-iX-Ghb"/>
+        <segue reference="zlH-xJ-ibI"/>
     </inferredMetricsTieBreakers>
 </document>

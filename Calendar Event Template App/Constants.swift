@@ -104,6 +104,7 @@ struct SegueIdentifiers {
     static let completeOnboarding           = "CompleteOnboarding"
     static let showOnboarding               = "ShowOnboarding"
     static let splashToMain                 = "SplashToMain"
+    static let viewCalendar                 = "ViewCalendarDetails"
 }
 
 struct SDK {
