@@ -49,6 +49,7 @@
 		27BDFD991E1D9E0500B8C474 /* Calendar_Event_Template_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFD981E1D9E0500B8C474 /* Calendar_Event_Template_AppUITests.swift */; };
 		27BDFDA71E1DB4D100B8C474 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFDA61E1DB4D100B8C474 /* Constants.swift */; };
 		27BDFDAA1E1DBE1700B8C474 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */; };
+		27BE9F2F1F53876E00DB4226 /* MonthDayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BE9F2E1F53876E00DB4226 /* MonthDayPicker.swift */; };
 		27CBC4FF1E35C4B4001CE9DA /* OnboardingPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBC4FE1E35C4B4001CE9DA /* OnboardingPager.swift */; };
 		27CBC5021E35C4FF001CE9DA /* OnboardingPageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBC5011E35C4FF001CE9DA /* OnboardingPageOne.swift */; };
 		27CBC5041E35C5E8001CE9DA /* OnboardingPageTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CBC5031E35C5E8001CE9DA /* OnboardingPageTwo.swift */; };
@@ -128,6 +129,7 @@
 		27BDFD9A1E1D9E0500B8C474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27BDFDA61E1DB4D100B8C474 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
+		27BE9F2E1F53876E00DB4226 /* MonthDayPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthDayPicker.swift; sourceTree = "<group>"; };
 		27CBC4FE1E35C4B4001CE9DA /* OnboardingPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPager.swift; sourceTree = "<group>"; };
 		27CBC5011E35C4FF001CE9DA /* OnboardingPageOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageOne.swift; sourceTree = "<group>"; };
 		27CBC5031E35C5E8001CE9DA /* OnboardingPageTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageTwo.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				272455731E1DCCA400F3856F /* Category.swift */,
+				27BE9F2E1F53876E00DB4226 /* MonthDayPicker.swift */,
 				270991041E1E289000267071 /* StepSlider.swift */,
 				27BDFDA91E1DBE1700B8C474 /* CategoryCollectionCell.swift */,
 				2757074A1E2733B3002A3060 /* CategoryEditCell.swift */,
@@ -652,6 +655,7 @@
 				274DD6AE1E457BF3003CD0F6 /* CalendarError.swift in Sources */,
 				27BDFD791E1D9E0500B8C474 /* AppDelegate.swift in Sources */,
 				277EDB6F1E52687A00CD172B /* RootContainerViewController.swift in Sources */,
+				27BE9F2F1F53876E00DB4226 /* MonthDayPicker.swift in Sources */,
 				2707362B1E20609E003E8B72 /* EventDetailsManager.swift in Sources */,
 				274B29021E4073930005F22C /* AnalyticsManager.swift in Sources */,
 				27AAE8B81E3D8A37006D2173 /* LocationListCell.swift in Sources */,

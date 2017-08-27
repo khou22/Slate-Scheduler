@@ -269,7 +269,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
 
     @IBAction func seeMore(_ sender: Any) {
-        print("Seeing more")
         performSegue(withIdentifier: SegueIdentifiers.viewCalendar, sender: nil)
     }
 }
