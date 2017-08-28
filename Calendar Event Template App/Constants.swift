@@ -145,7 +145,7 @@ struct Keys {
 
 struct Urls {
     // URLs
-    static let personalWebsite              = "https://khou22.github.io"
+    static let personalWebsite              = "http://khou22.com"
 }
 
 struct ScreenSize {
