@@ -155,14 +155,25 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // Location input changed
     @IBAction func locationInputChanged(_ sender: Any) {
         let query: String = self.locationInput.text!
+//        print("Enquing query: \(query)")
         if (query != "") { // If text exists
-            self.updateLocationSearchResults(query: query) // Update autocomplete
+            _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.filterLocationRequest), userInfo: query, repeats: false)
         } else { // If no text
             self.locationInput.updateSuggestions(prioritized: data.meta.category.orderedLocations()) // Use previous locations
             self.locationInput.valueChanged() // Force update
         }
         
         data.updateEventLocation(location: query)
+    }
+    
+    @objc func filterLocationRequest(_ timer: Timer) {
+        let query: String = timer.userInfo as! String
+        if (self.locationInput.text == query) { // If the query hasn't changed, user is done typing
+//            print("Firing request for: \(query)")
+            self.updateLocationSearchResults(query: query) // Update autocomplete
+        } else {
+//            print("Cancelled request for: \(query)")
+        }
     }
     
     // Room input changed

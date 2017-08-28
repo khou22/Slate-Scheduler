@@ -17,6 +17,7 @@ extension EventDetails {
     
     // Update location search results
     func updateLocationSearchResults(query: String) {
+        // Hit API
         placesManager.getPlaces(for: query, completion: { (results) in
             var locationResultCount: Int = 10 // Show top x number
             if (locationResultCount > results.count) { // If fewer results than max
@@ -31,14 +32,15 @@ extension EventDetails {
             
             // Populate autocomplete
             if (self.locationInput.text == query) { // If text box matches the correct response
-                print("Results for \(self.locationInput.text): \(locationResults)")
+//                print("Results for \(self.locationInput.text): \(locationResults)")
                 self.locationInput.updateSuggestions(prioritized: locationResults)
+                self.locationInput.valueChanged()
             } else { // If text box empty
                 if (!data.meta.noCategory) { // If there is a category
                     self.locationInput.updateSuggestions(prioritized: data.meta.category.orderedLocations())
                 }
             }
-        }) // Hit API
+        })
     }
     
     // Returns human readable address string
