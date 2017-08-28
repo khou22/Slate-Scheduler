@@ -124,16 +124,23 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // For syncing with data structur
     func setInitialStates() {
         print("(Initial states 1) Time: \(data.event.time). Duration: \(data.event.duration)")
+        
+        // Time and duration
         startTimeSlider.value = Float(data.event.time / 3600.0)
         durationSlider.value = Float(data.event.duration / 3600.0)
         self.durationLabel.text = self.durationSlider.roundString() + " hours" // Real time rounded value of slider
         var minutesFromMidnight = self.startTimeSlider.roundValue() * 3600.0 // Minutes from midnight
-        // Compensate for time zone
         minutesFromMidnight += -Double(NSTimeZone.local.secondsFromGMT()) // Apply time zone shift
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
         self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
+        
+        // Date
+        self.updateDateLabel() // Update frontend
+        DispatchQueue.main.async { // Update in background
+            self.refreshDaysEvents() // Update event list
+        }
+        
     }
     
     // Location input changed

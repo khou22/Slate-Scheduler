@@ -49,7 +49,18 @@ class DayPicker: UIView {
         updateSelectedDay(newID: selectedIndex) // Set initial
     }
     
-    func initializeData() {
+    public func setDate(date: Date) {
+        let timeBetween: TimeInterval = startingDate.timeIntervalSince(date.dateWithoutTime())
+        let newDateIndex: Int = Int(abs(floor(timeBetween / (24.0 * 60.0 * 60.0))))
+        print(newDateIndex)
+        if (newDateIndex < tiles.count) {
+            updateSelectedDay(newID: newDateIndex)
+        } else {
+            print("Date out of range")
+        }
+    }
+    
+    private func initializeData() {
         let weekday: Int = currentDate.getWeekday()
         let startingDate = currentDate.daysAhead(-weekday) // In the past
         self.startingDate = startingDate // Store as instance variables
@@ -62,7 +73,7 @@ class DayPicker: UIView {
         }
     }
     
-    func drawDaySquares() {
+    private func drawDaySquares() {
         // Store dimensions
         let sideLength: CGFloat = self.bounds.width / 7
         
@@ -127,7 +138,7 @@ class DayPicker: UIView {
         updateSelectedDay(newID: sender.view!.tag)
     }
     
-    func updateSelectedDay(newID: Int) {
+    private func updateSelectedDay(newID: Int) {
         let datePicked: Date = tileDates[newID]
         
         tileCircles[selectedIndex].layer.isHidden = true // Reset previous
@@ -150,6 +161,7 @@ class DayPicker: UIView {
         }, completion: nil)
     }
 }
+
 
 class CalendarDayPickerManager {
     

@@ -38,6 +38,7 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
         durationSlider.value = Float(data.event.duration / 3600.0)
         updateTime()
         updateDuration()
+        dayPicker.setDate(date: data.event.date)
     }
     
     @IBAction func draggingTime(_ sender: Any) {
