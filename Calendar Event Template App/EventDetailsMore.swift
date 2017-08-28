@@ -33,7 +33,7 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func setInitialStates() {
-        print("(Initial states 2) Time: \(data.event.time). Duration: \(data.event.duration)")
+//        print("(Initial states 2) Time: \(data.event.time). Duration: \(data.event.duration)")
         timeSlider.value = Float(data.event.time / 3600.0)
         durationSlider.value = Float(data.event.duration / 3600.0)
         updateTime()
@@ -122,5 +122,8 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.dateLabel.text = dateFormatter.string(from: newDate) + " at" // Update label
     }
 
+    @IBAction func backToMain(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true) // Go back to previous page
+    }
 }
 

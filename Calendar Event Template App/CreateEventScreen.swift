@@ -11,6 +11,8 @@ import EventKit
 
 class CreateEventScreen: UIViewController {
     
+    @IBOutlet weak var containerView: UIView!
+
     // Card view
     @IBOutlet weak var summaryCard: UIView!
     @IBOutlet weak var summaryTitle: UILabel!

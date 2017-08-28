@@ -48,6 +48,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var formItemsLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var formItemsRightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var viewCalendarButton: UIButton!
     
     override func viewDidLoad() {
         self.showCalendarErrorScreen() // Check calendar permission and show error screen if needed
@@ -118,7 +119,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // For syncing with data structur
     func setInitialStates() {
-        print("(Initial states 1) Time: \(data.event.time). Duration: \(data.event.duration)")
+//        print("(Initial states 1) Time: \(data.event.time). Duration: \(data.event.duration)")
         
         // Time and duration
         startTimeSlider.value = Float(data.event.time / 3600.0)
@@ -132,7 +133,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Date
         self.updateDateLabel() // Update frontend
-        print("Current date: \(data.event.date)")
         for (index, date) in dateOptions.enumerated() {
             if (data.event.date.compare(date) == .orderedSame) { // See if you can highlight one in the day picker
                 self.quickDayPicker.selectItem(at: IndexPath(item: index, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.left)
@@ -292,8 +292,12 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
             
         }
     }
-
-    @IBAction func seeMore(_ sender: Any) {
-        performSegue(withIdentifier: SegueIdentifiers.viewCalendar, sender: nil)
+    
+    @IBAction func viewCalendar(_ sender: Any) {
+        segueToViewCalendar()
+    }
+    
+    func segueToViewCalendar() {
+        self.performSegue(withIdentifier: SegueIdentifiers.viewCalendar, sender: self)
     }
 }

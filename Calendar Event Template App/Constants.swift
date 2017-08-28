@@ -73,6 +73,7 @@ struct Storyboard {
     static let calendarError                = "calendarError"
     static let splashScreen                 = "splashScreen"
     static let rootViewController           = "rootViewController"
+    static let eventDetailsNav              = "eventDetailsNavigationController"
     
     // Onboarding identifiers
     static let onboardingPager              = "OnboardingPager"
