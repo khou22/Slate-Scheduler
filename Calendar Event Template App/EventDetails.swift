@@ -63,7 +63,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Set initial selection for quick day picker view
         self.updateDateLabel() // Update for initial frontend
-        self.quickDayPicker.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.left)
         
         // Refresh collection view
         DispatchQueue.main.async {
@@ -102,10 +101,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Auto select "Today" in quick day picker
-        let indexPathForFirstRow = IndexPath(row: 0, section: 0) // First index
-        self.quickDayPicker.selectItem(at: indexPathForFirstRow, animated: true, scrollPosition: .top) // Make selection
-        
         // Populate event time label
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
@@ -137,6 +132,14 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         // Date
         self.updateDateLabel() // Update frontend
+        print("Current date: \(data.event.date)")
+        for (index, date) in dateOptions.enumerated() {
+            if (data.event.date.compare(date) == .orderedSame) { // See if you can highlight one in the day picker
+                self.quickDayPicker.selectItem(at: IndexPath(item: index, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition.left)
+            } else {
+                self.quickDayPicker.deselectItem(at: IndexPath(item: index, section: 0), animated: false)
+            }
+        }
         DispatchQueue.main.async { // Update in background
             self.refreshDaysEvents() // Update event list
         }
