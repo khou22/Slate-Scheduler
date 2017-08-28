@@ -27,7 +27,8 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     fileprivate var tableHeight: CGFloat = 40.0 * 3 // Default value is three cell heights
     
     // Options
-    public var characterError: Int = 2 // Degree of error you're allowed to be off by using Levenshtein algorithm
+    public var characterError: Int = 4 // Degree of error you're allowed to be off by using Levenshtein algorithm
+    public var filterResults: Bool = true // Whether or not to filter the autocomplete options at all
     private var updateVariable: Bool = false // Whether or not to update an additional variable
     
     
@@ -81,7 +82,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     func updateValid() {
         let currentQuery: String = self.text!.uppercased() // Make uppercase so not case sensitive
         
-        if (currentQuery == "") { // If the textbox is empty
+        if (currentQuery == "" || !self.filterResults) { // If the textbox is empty or not filtering
             self.validSuggestions = self.autocompleteSuggestions // Load all as potentially valid
         } else { // If the user has typed something into the text box
             self.validSuggestions.removeAll() // Clear array
@@ -94,12 +95,12 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
                 if currentQuery.characters.count <= 2 { // If only one letter in search query
                     valid = potentialCaseFree.contains(currentQuery) // If exact match, set true
                     
-                } else { // If more than one letter in search query
+                } else { // If more than one letter in search query, use Levenshtein
                     if (currentQuery.characters.count < potentialCaseFree.characters.count) { // If the query is less than the result
                         potentialCaseFree = potentialCaseFree.substring(to: currentQuery.endIndex) // Only compare substrings of the same length
                     }
                     
-//                    print("Comparing: \(potentialCaseFree) and \(currentQuery)") // Debugging
+                    print("Comparing: \(potentialCaseFree) and \(currentQuery)") // Debugging
                     
                     // If Levenshtein distance is within specified range
                     valid = potentialCaseFree.getLevenshtein(target: currentQuery) <= self.characterError

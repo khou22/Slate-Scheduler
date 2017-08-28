@@ -45,7 +45,8 @@ extension EventDetails {
             }
             
             // Populate autocomplete
-            if self.locationInput.text! != "" { // If text box has a query
+            if (self.locationInput.text == query) { // If text box matches the correct response
+                print("Results for \(self.locationInput.text): \(locationResults)")
                 self.locationInput.updateSuggestions(prioritized: locationResults)
             } else { // If text box empty
                 if (!data.meta.noCategory) { // If there is a category

@@ -81,8 +81,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         }
         
         self.locationInput.nextTextField = self.roomInput // Next input
+        self.locationInput.filterResults = false // Don't filter out mismatch search queries becaues maps query already does that
         self.locationInput.updateCompletion = { // Completion handler when text changes
-            print("Updating location: \(self.locationInput.text)")
+//            print("Updating location: \(self.locationInput.text)")
             data.event.location = self.locationInput.text! // Update
         }
         
