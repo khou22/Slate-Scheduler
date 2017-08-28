@@ -164,7 +164,7 @@ extension AutocompleteTextField: UITableViewDelegate, UITableViewDataSource {
         // Starts below text input, same width
         let lowerLeftCorner: CGPoint = CGPoint(x: self.frame.minX, y: self.frame.maxY) // Get coordinate of text input
         let transformedOrigin: CGPoint = (self.superview?.convert(lowerLeftCorner, to: view))! // Transform point into view frame
-        let frame = CGRect(x: transformedOrigin.x, y: transformedOrigin.y + self.padding, width: self.frame.width, height: self.tableHeight)
+        let frame = CGRect(x: transformedOrigin.x, y: transformedOrigin.y + self.padding - (5 * self.tableHeight / 9), width: self.frame.width, height: self.tableHeight)
         self.autocompleteTableView = UITableView(frame: frame)
         
         // Set data source and delegate

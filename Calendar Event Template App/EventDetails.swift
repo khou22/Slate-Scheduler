@@ -12,7 +12,7 @@ import EventKit
 
 // Global variables
 struct EventDetailsData {
-    static let numQuickDays: Int = 10 // Total number available
+    static let numQuickDays: Int = 20 // Total number available
     static let quickDaysShown: Int = 5 // Number shown initially, no scroll
 }
 
@@ -107,8 +107,10 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         dateFormatter.dateFormat = "h:mm a"
         self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: data.event.time-Double(NSTimeZone.local.secondsFromGMT())))
         
-        // Auto focus on event name input
-        self.eventNameInput.becomeFirstResponder()
+        // Auto focus on event name input if it's empty
+        if (self.eventNameInput.text == "") {
+            self.eventNameInput.becomeFirstResponder()
+        }
         setInitialStates()
     }
     
