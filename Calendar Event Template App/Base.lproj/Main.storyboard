@@ -943,8 +943,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="yWe-0q-q8v">
-                                <rect key="frame" x="28" y="353" width="319" height="88"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yWe-0q-q8v">
+                                <rect key="frame" x="28" y="365" width="319" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeD-tN-gEK">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="17"/>
@@ -953,7 +953,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="9" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="gqj-GB-NK1" customClass="StepSlider" customModule="Slate_Calendar" customModuleProvider="target">
-                                        <rect key="frame" x="-2" y="29" width="323" height="31"/>
+                                        <rect key="frame" x="-2" y="23" width="323" height="31"/>
                                         <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <action selector="draggingTime:" destination="bG0-pg-MIt" eventType="valueChanged" id="UCh-Bd-dzD"/>
@@ -961,7 +961,7 @@
                                         </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sJt-Lo-u5A">
-                                        <rect key="frame" x="97.5" y="71" width="124" height="17"/>
+                                        <rect key="frame" x="97.5" y="59" width="124" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKR-LU-lw7">
                                                 <rect key="frame" x="0.0" y="0.0" width="59.5" height="17"/>
@@ -1017,7 +1017,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fbc-dr-odu" customClass="DayPicker" customModule="Slate_Calendar" customModuleProvider="target">
-                                <rect key="frame" x="28" y="48" width="319" height="171"/>
+                                <rect key="frame" x="28" y="48" width="319" height="175"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule Viewer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uW-rj-KDp">
@@ -1027,7 +1027,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sRY-ic-cBQ">
-                                <rect key="frame" x="28" y="227" width="319" height="110"/>
+                                <rect key="frame" x="28" y="239" width="319" height="110"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="110" id="amj-hL-jVL"/>
@@ -1108,8 +1108,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Pbh-M3-uzF" id="x9r-A1-5uG"/>
-                                    <outlet property="delegate" destination="Pbh-M3-uzF" id="Y65-YK-hfm"/>
+                                    <outlet property="dataSource" destination="bG0-pg-MIt" id="UW5-rD-DPu"/>
+                                    <outlet property="delegate" destination="bG0-pg-MIt" id="Ylk-JX-hVY"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -1124,7 +1124,7 @@
                             <constraint firstItem="9uW-rj-KDp" firstAttribute="top" secondItem="9S3-wS-s8e" secondAttribute="topMargin" constant="12" id="b5G-Gm-s6h"/>
                             <constraint firstItem="sRY-ic-cBQ" firstAttribute="leading" secondItem="fbc-dr-odu" secondAttribute="leading" id="bWI-QX-D32"/>
                             <constraint firstItem="yWe-0q-q8v" firstAttribute="top" secondItem="sRY-ic-cBQ" secondAttribute="bottom" constant="16" id="diu-of-3FV"/>
-                            <constraint firstItem="sRY-ic-cBQ" firstAttribute="top" secondItem="fbc-dr-odu" secondAttribute="bottom" constant="8" id="eOh-iI-JUJ"/>
+                            <constraint firstItem="sRY-ic-cBQ" firstAttribute="top" secondItem="fbc-dr-odu" secondAttribute="bottom" constant="16" id="eOh-iI-JUJ"/>
                             <constraint firstItem="oHi-bp-dzB" firstAttribute="top" secondItem="ztM-hM-Vx0" secondAttribute="bottom" constant="20" id="hHr-12-kJu"/>
                             <constraint firstItem="9uW-rj-KDp" firstAttribute="leading" secondItem="9S3-wS-s8e" secondAttribute="leadingMargin" constant="12" id="heS-E5-yNG"/>
                             <constraint firstItem="sRY-ic-cBQ" firstAttribute="trailing" secondItem="fbc-dr-odu" secondAttribute="trailing" id="m4u-8s-H2v"/>
@@ -1134,8 +1134,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="WKR-LU-lw7" id="XB1-TV-2cH"/>
+                        <outlet property="dayPicker" destination="fbc-dr-odu" id="BKa-72-fpd"/>
                         <outlet property="durationLabel" destination="tzU-Uy-zow" id="joh-om-YaS"/>
                         <outlet property="durationSlider" destination="Dqd-zn-ag3" id="43x-eI-kIQ"/>
+                        <outlet property="eventListTable" destination="sRY-ic-cBQ" id="Pd1-g8-85B"/>
                         <outlet property="timeLabel" destination="6Ys-Bi-3X3" id="JKr-2U-XEX"/>
                         <outlet property="timeSlider" destination="gqj-GB-NK1" id="5Fm-15-5Qy"/>
                     </connections>
