@@ -1,10 +1,4 @@
 PODS:
-  - CalendarKit (0.1.17):
-    - DateToolsSwift
-    - DynamicColor
-    - Neon
-  - DateToolsSwift (2.0.3)
-  - DynamicColor (3.3)
   - FirebaseAnalytics (3.9.0):
     - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
@@ -19,27 +13,27 @@ PODS:
   - Google/Core (3.1.0):
     - FirebaseAnalytics (~> 3.2)
   - GoogleAnalytics (3.17.0)
+  - GoogleMaps/Base (2.3.0)
+  - GooglePlaces (2.3.0):
+    - GoogleMaps/Base (= 2.3.0)
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
-  - Neon (0.4.0)
 
 DEPENDENCIES:
-  - CalendarKit
   - Google/Analytics
+  - GooglePlaces
 
 SPEC CHECKSUMS:
-  CalendarKit: cf59e1e76c6a02c69a047cb7f091efc8b20e9881
-  DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
-  DynamicColor: 3cdaa1e01c16e93ba744e0630f768373e0fc7a7d
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
   FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleMaps: 340a6a0bebd17c2db8abcd3921976c7c53c86cb8
+  GooglePlaces: 74d322c74184ea4576184089b496d291cf0dcd38
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  Neon: 7fb5a9327e7e57911843f608e08f4893a74deaf9
 
-PODFILE CHECKSUM: 19a86960dd3e29413f7e79b8f4b75116f910294b
+PODFILE CHECKSUM: d258b290026290656042d2c77afc33c70ed549f3
 
 COCOAPODS: 1.1.1

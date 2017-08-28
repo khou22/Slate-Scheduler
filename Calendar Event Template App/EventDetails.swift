@@ -44,6 +44,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // Instance of calendar manager
     let calendarManager: CalendarManager = CalendarManager()
     
+    // Map manager
+    let placesManager: GooglePlacesManager = GooglePlacesManager()
+    
     // Constraints to be modified
     @IBOutlet weak var formItemsLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var formItemsRightConstraint: NSLayoutConstraint!

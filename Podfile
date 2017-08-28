@@ -7,6 +7,7 @@ target 'Slate Calendar' do
 
   # Pods for Slate Calendar
   pod 'Google/Analytics'
+  pod 'GooglePlaces'
 
   target 'Slate CalendarTests' do
     inherit! :search_paths

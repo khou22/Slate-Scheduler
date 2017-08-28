@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -143,6 +144,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Setup and initialize any third party libraries
     func initializeLibraries() {
         self.initializeGA() // Set up Google Analytics
+        self.initializeGooglePlaces() // Setup Google Places API
     }
     
     // Setup Google Analytics
@@ -161,6 +163,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         gai.dispatchInterval = 10.0 // Low dispatch time because time in app should be short
         gai.logger.logLevel = .warning // ONly show errors
 //        gai.logger.logLevel = GAILogLevel.verbose // Remove before app release
+    }
+    
+    func initializeGooglePlaces() {
+        GMSPlacesClient.provideAPIKey(APIKeys.GooglePlacesAPI) // Use key
     }
 
 }

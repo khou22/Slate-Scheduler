@@ -17,31 +17,16 @@ extension EventDetails {
     
     // Update location search results
     func updateLocationSearchResults(query: String) {
-        let mapSearchRequest = MKLocalSearchRequest()
-        mapSearchRequest.naturalLanguageQuery = query
-        
-        // Simulate current location
-        let defaultLocation = DataManager.getLatestLocation() // Get most recent location or default location
-        let regionSpan = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
-        mapSearchRequest.region = MKCoordinateRegion(center: defaultLocation, span: regionSpan) // For providing an area to search
-        
-        let search = MKLocalSearch(request: mapSearchRequest)
-        search.start(completionHandler: { (response, _) in
-            guard let response = response else {
-                return
-            }
-            
+        placesManager.getPlaces(for: query, completion: { (results) in
             var locationResultCount: Int = 10 // Show top x number
-            if (locationResultCount > response.mapItems.count) { // If fewer results than max
-                locationResultCount = response.mapItems.count // Max is number of responses
+            if (locationResultCount > results.count) { // If fewer results than max
+                locationResultCount = results.count // Max is number of responses
             }
             
             var locationResults: [String] = data.meta.category.orderedLocations() // Store suggestions including predictive history
             
             for index in 0..<locationResultCount {
-                let mapLocation: MKMapItem = response.mapItems[index] // Current map item
-                let readableAddress: String = mapLocation.name! + ", " + self.parseAddress(selectedItem: mapLocation.placemark) // Create human-readable address
-                locationResults.append(readableAddress) // Append name
+                locationResults.append(results[index]) // Append name
             }
             
             // Populate autocomplete
@@ -53,9 +38,7 @@ extension EventDetails {
                     self.locationInput.updateSuggestions(prioritized: data.meta.category.orderedLocations())
                 }
             }
-            
-            self.locationInput.updateValid()
-        })
+        }) // Hit API
     }
     
     // Returns human readable address string
