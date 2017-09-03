@@ -91,28 +91,30 @@ class CreateEventScreen: UIViewController {
         
         // Compensate for daylight savings
         var minutesFromMidnight = data.event.time
-        print("data.event.time: \(data.event.time)")
         let timeZone = NSTimeZone.local // Time zone
         let offset = -timeZone.daylightSavingTimeOffset(for: data.event.date)
         if (timeZone.isDaylightSavingTime()) {
-            print("Offsetting time by \(offset)")
+//            print("Offsetting time by \(offset)")
             minutesFromMidnight += offset // Add daylight savings time offset
         }
         
         // Date and time
-        print("Minutes from midnight: \(minutesFromMidnight)")
+//        print("Minutes from midnight: \(minutesFromMidnight)")
         let startDate: Date = data.event.date.addingTimeInterval(minutesFromMidnight) // Create start date
         event.startDate = startDate
-        event.endDate = startDate.addingTimeInterval(data.event.time)
+        event.endDate = startDate.addingTimeInterval(data.event.duration) // Add duration
         event.isAllDay = false // Not all day
         
         // Set event alert
         let secondsBefore: TimeInterval = -1 * DataManager.reminderTime() // Get reminder time
-        print("Event reminder time: \(DataManager.reminderTime())") // Debugging
+//        print("Event reminder time: \(DataManager.reminderTime())") // Debugging
         let defaultAlert: EKAlarm = EKAlarm(relativeOffset: secondsBefore) // Set alert before event time
         event.addAlarm(defaultAlert) // Add default alert
         
+        print("\nEvent saved: ")
         print(event.title)
+        print(event.startDate)
+        print(event.endDate)
         
         self.calendarManager.saveEvent(event: event) // Save event
     }
@@ -124,7 +126,7 @@ class CreateEventScreen: UIViewController {
         let locationFilled: Bool = (data.event.location != "")
         
         if !locationFilled { // Not an error if event doesn't have a location
-            print("Location was not filled")
+//            print("Location was not filled")
         }
         
         if !nameFilled { // Return false if no event name

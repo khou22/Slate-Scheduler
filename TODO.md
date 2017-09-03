@@ -1,7 +1,10 @@
 # Slate Calendar App
 Pivot: Slate will replace, not supplement, your original calendar app.
 
-# To Do
+## Issues
+Duration and time are not being set correctly when events are saved
+
+## To Do
 Add "all-day" events
 Expand timeframe beyond 10 days
 Localization
