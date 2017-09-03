@@ -743,6 +743,9 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvg-68-KNk">
                                                 <rect key="frame" x="11" y="27" width="51" height="49"/>
                                                 <color key="onTintColor" red="0.85882352941176465" green="0.53725490196078429" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <action selector="updatedAllDay:" destination="Pbh-M3-uzF" eventType="valueChanged" id="Ppa-BN-Bwa"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                         <constraints>

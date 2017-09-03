@@ -182,7 +182,10 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // User dragging slider
     @IBAction func dragging(_ sender: Any) {
+        self.allDaySwitch.isOn = false // Set to false
+        data.event.allDay = false
         data.event.duration = self.durationSlider.roundValue() * 3600.0 // Store round value in seconds
+        self.startTimeLabel.text = data.formatTimeLabel()
         self.durationLabel.text = data.formatDurationLabel() // Real time rounded value of slider
     }
     
@@ -193,11 +196,23 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     @IBAction func startTimeDragging(_ sender: Any) {
+        self.allDaySwitch.isOn = false // Set to false
+        data.event.allDay = false
         self.dismissKeyboard() // Dismiss keyboard if sliding
         
         data.event.time = self.startTimeSlider.roundValue() * 3600.0 // Change global variable
         
         self.startTimeLabel.text = data.formatTimeLabel()
+        self.durationLabel.text = data.formatDurationLabel()
+    }
+    
+    // Updated the all day switch
+    @IBAction func updatedAllDay(_ sender: Any) {
+        data.event.allDay = allDaySwitch.isOn // Update global
+        
+        // Update labels
+        self.startTimeLabel.text = data.formatTimeLabel()
+        self.durationLabel.text = data.formatDurationLabel()
     }
     
     // MARK - Collection cell calls

@@ -27,6 +27,7 @@ struct data {
         static var date: Date = Date().dateWithoutTime() // Event date
         static var time: Double = 11 * 3600.0 // Minutes from midnight
         static var duration: Double = 3600.0 // Default one hour
+        static var allDay: Bool = false // Default not all day
     }
     
     // User analytics data
@@ -50,6 +51,7 @@ struct data {
         event.date = Date().dateWithoutTime()
         event.time = 11 * 3600.0
         event.duration = 3600.0
+        event.allDay = false
     }
     
     // MARK - Public functions to update the event values
@@ -64,7 +66,11 @@ struct data {
     // MARK - Formatting values
     // Formatting the time and returning a string
     public static func formatTimeLabel() -> String {
-        // Populate event time label
+        if (event.allDay) {
+            return "12 AM (All Day Event)" // If an all day event
+        }
+
+        // Format event time label
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
         return dateFormatter.string(from: Date(timeIntervalSince1970: data.event.time-Double(NSTimeZone.local.secondsFromGMT())))
@@ -72,6 +78,10 @@ struct data {
     
     // Format the duration and return as string
     public static func formatDurationLabel() -> String {
+        if (event.allDay) {
+            return "24 hours" // For all day events
+        }
+        
         return String(data.event.duration / 3600.0) + " hours" // Real time rounded value of slider
     }
 
