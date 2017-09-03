@@ -2,7 +2,7 @@
 Pivot: Slate will replace, not supplement, your original calendar app.
 
 ## Issues
-Duration and time are not being set correctly when events are saved
+~~Duration and time are not being set correctly when events are saved~~
 
 ## To Do
 Add "all-day" events

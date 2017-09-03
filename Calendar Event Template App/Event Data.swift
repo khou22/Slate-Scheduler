@@ -61,6 +61,21 @@ struct data {
         event.location = location // SEt location
     }
     
+    // MARK - Formatting values
+    // Formatting the time and returning a string
+    public static func formatTimeLabel() -> String {
+        // Populate event time label
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        return dateFormatter.string(from: Date(timeIntervalSince1970: data.event.time-Double(NSTimeZone.local.secondsFromGMT())))
+    }
+    
+    // Format the duration and return as string
+    public static func formatDurationLabel() -> String {
+        return String(data.event.duration / 3600.0) + " hours" // Real time rounded value of slider
+    }
+
+    
     /************ Log to predictive analytics ************/
     public static func logEventData() {
         // Update number of times the category has been used to create an event

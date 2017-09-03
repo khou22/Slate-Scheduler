@@ -62,18 +62,12 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
     func updateTime() {
         var minutesFromMidnight = timeSlider.roundValue() * 3600.0 // Minutes from midnight
         data.event.time = minutesFromMidnight // Change global variable
-        
-        // Compensate for time zone
-        minutesFromMidnight += -Double(NSTimeZone.local.secondsFromGMT()) // Apply time zone shift
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
-        timeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
+        timeLabel.text = data.formatTimeLabel() // Update frontend
     }
     
     func updateDuration() {
-        durationLabel.text = self.durationSlider.roundString() + " hours" // Real time rounded value of slider
         data.event.duration = self.durationSlider.roundValue() * 3600.0 // Store round value in seconds
+        durationLabel.text = data.formatDurationLabel() // Real time rounded value of slider
     }
     
     // MARK - Days Events Table

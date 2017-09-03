@@ -11,7 +11,7 @@ import UIKit
 
 class StepSlider: UISlider {
     
-    public var stepValue: Float = 0.5 // Default is by 1
+    public var stepValue: Float = 0.25 // Default is by 1
     private var animationTime: Double = 0.25 // Default is 0.25
     
     // Call when released - animate to rounded value

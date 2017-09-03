@@ -27,6 +27,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var startTimeSlider: StepSlider!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var allDaySwitch: UISwitch!
     
     // Quick day picker
     @IBOutlet weak var quickDayPicker: UICollectionView!
@@ -106,10 +107,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Populate event time label
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
-        self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: data.event.time-Double(NSTimeZone.local.secondsFromGMT())))
+        self.startTimeLabel.text = data.formatTimeLabel() // Update
         
         // Auto focus on event name input if it's empty
         if (self.eventNameInput.text == "") {
@@ -130,12 +128,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Time and duration
         startTimeSlider.value = Float(data.event.time / 3600.0)
         durationSlider.value = Float(data.event.duration / 3600.0)
-        self.durationLabel.text = self.durationSlider.roundString() + " hours" // Real time rounded value of slider
-        var minutesFromMidnight = self.startTimeSlider.roundValue() * 3600.0 // Minutes from midnight
-        minutesFromMidnight += -Double(NSTimeZone.local.secondsFromGMT()) // Apply time zone shift
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
-        self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
+        self.durationLabel.text = data.formatDurationLabel() // Real time rounded value of slider
+        self.startTimeLabel.text = data.formatTimeLabel()
         
         // Date
         self.updateDateLabel() // Update frontend
@@ -188,9 +182,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     // User dragging slider
     @IBAction func dragging(_ sender: Any) {
-        self.durationLabel.text = self.durationSlider.roundString() + " hours" // Real time rounded value of slider
-        
         data.event.duration = self.durationSlider.roundValue() * 3600.0 // Store round value in seconds
+        self.durationLabel.text = data.formatDurationLabel() // Real time rounded value of slider
     }
     
     @IBAction func startTimeFinishedDragging(_ sender: Any) {
@@ -202,16 +195,9 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     @IBAction func startTimeDragging(_ sender: Any) {
         self.dismissKeyboard() // Dismiss keyboard if sliding
         
-        var minutesFromMidnight = self.startTimeSlider.roundValue() * 3600.0 // Minutes from midnight
+        data.event.time = self.startTimeSlider.roundValue() * 3600.0 // Change global variable
         
-        data.event.time = minutesFromMidnight // Change global variable
-        
-        // Compensate for time zone
-        minutesFromMidnight += -Double(NSTimeZone.local.secondsFromGMT()) // Apply time zone shift
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
-        self.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: minutesFromMidnight))
+        self.startTimeLabel.text = data.formatTimeLabel()
     }
     
     // MARK - Collection cell calls
