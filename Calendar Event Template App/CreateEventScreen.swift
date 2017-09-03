@@ -92,11 +92,10 @@ class CreateEventScreen: UIViewController {
         // Date and time
         event.startDate = data.getStartDate()
         event.endDate = event.startDate.addingTimeInterval(data.event.duration) // Add duration
-        event.isAllDay = false // Not all day
+        event.isAllDay = data.event.allDay // Whether it's all day
         
         // Set event alert
         let secondsBefore: TimeInterval = -1 * DataManager.reminderTime() // Get reminder time
-//        print("Event reminder time: \(DataManager.reminderTime())") // Debugging
         let defaultAlert: EKAlarm = EKAlarm(relativeOffset: secondsBefore) // Set alert before event time
         event.addAlarm(defaultAlert) // Add default alert
         
@@ -171,7 +170,10 @@ class CreateEventScreen: UIViewController {
         dateFormatter.dateFormat = "h:mm a" // Time only
         let startTime: Date = data.getStartDate()
         let endTime: Date = startTime.addingTimeInterval(data.event.duration) // Calculate end time
-        let timeStr: String = dateFormatter.string(from: startTime) + " - " + dateFormatter.string(from: endTime) // Concatinate string
+        var timeStr: String = dateFormatter.string(from: startTime) + " - " + dateFormatter.string(from: endTime) // Concatinate string
+        if (data.event.allDay) {
+            timeStr = "All Day" // Change if it's an all day event
+        }
         self.summaryDateTime.text = dateStr + " \n" + timeStr // Add to card view
         
         // Card entrance
