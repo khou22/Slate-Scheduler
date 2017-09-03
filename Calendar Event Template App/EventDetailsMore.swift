@@ -35,7 +35,6 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func setInitialStates() {
-//        print("(Initial states 2) Time: \(data.event.time). Duration: \(data.event.duration)")
         timeSlider.value = Float(data.event.time / 3600.0)
         durationSlider.value = Float(data.event.duration / 3600.0)
         allDaySwitch.isOn = data.event.allDay
@@ -63,7 +62,6 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     @IBAction func updatedAllDay(_ sender: Any) {
-        print("Updating all day to \(allDaySwitch.isOn)")
         data.event.allDay = allDaySwitch.isOn // Make global change
         
         // Push frontend changes

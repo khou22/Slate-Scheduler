@@ -89,20 +89,9 @@ class CreateEventScreen: UIViewController {
         // Set the calendar
         event.calendar = self.calendarManager.eventStore.defaultCalendarForNewEvents // Default calendar
         
-        // Compensate for daylight savings
-        var minutesFromMidnight = data.event.time
-        let timeZone = NSTimeZone.local // Time zone
-        let offset = -timeZone.daylightSavingTimeOffset(for: data.event.date)
-        if (timeZone.isDaylightSavingTime()) {
-//            print("Offsetting time by \(offset)")
-            minutesFromMidnight += offset // Add daylight savings time offset
-        }
-        
         // Date and time
-//        print("Minutes from midnight: \(minutesFromMidnight)")
-        let startDate: Date = data.event.date.addingTimeInterval(minutesFromMidnight) // Create start date
-        event.startDate = startDate
-        event.endDate = startDate.addingTimeInterval(data.event.duration) // Add duration
+        event.startDate = data.getStartDate()
+        event.endDate = event.startDate.addingTimeInterval(data.event.duration) // Add duration
         event.isAllDay = false // Not all day
         
         // Set event alert
@@ -110,11 +99,6 @@ class CreateEventScreen: UIViewController {
 //        print("Event reminder time: \(DataManager.reminderTime())") // Debugging
         let defaultAlert: EKAlarm = EKAlarm(relativeOffset: secondsBefore) // Set alert before event time
         event.addAlarm(defaultAlert) // Add default alert
-        
-        print("\nEvent saved: ")
-        print(event.title)
-        print(event.startDate)
-        print(event.endDate)
         
         self.calendarManager.saveEvent(event: event) // Save event
     }
@@ -184,16 +168,8 @@ class CreateEventScreen: UIViewController {
         dateFormatter.dateFormat = "MMMM d" // Date only
         let dateStr: String = dateFormatter.string(from: data.event.date)
         
-        // Compensate for daylight savings
-        var minutesFromMidnight = data.event.time
-        let timeZone = NSTimeZone.local // Time zone
-        let offset = -timeZone.daylightSavingTimeOffset(for: data.event.date)
-        if (timeZone.isDaylightSavingTime()) {
-            minutesFromMidnight += offset // Add daylight savings time offset
-        }
-        
         dateFormatter.dateFormat = "h:mm a" // Time only
-        let startTime: Date = data.event.date.addingTimeInterval(minutesFromMidnight) // Calculate starting time
+        let startTime: Date = data.getStartDate()
         let endTime: Date = startTime.addingTimeInterval(data.event.duration) // Calculate end time
         let timeStr: String = dateFormatter.string(from: startTime) + " - " + dateFormatter.string(from: endTime) // Concatinate string
         self.summaryDateTime.text = dateStr + " \n" + timeStr // Add to card view
@@ -222,9 +198,9 @@ class CreateEventScreen: UIViewController {
             }
             
             // Update markov models if there's a category
-            print(data.meta.noCategory)
+//            print(data.meta.noCategory)
             if (!data.meta.noCategory) {
-                print("Logging event data")
+//                print("Logging event data")
                 data.logEventData()
             }
             

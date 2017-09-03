@@ -80,7 +80,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Autocomplete setup
         self.eventNameInput.nextTextField = self.locationInput // Setup next input
         self.eventNameInput.updateCompletion = { // Completion handler when text changes
-            print("Updating event name: \(self.eventNameInput.text)")
+//            print("Updating event name: \(self.eventNameInput.text)")
             data.event.name = self.eventNameInput.text! // Update
         }
         
@@ -239,7 +239,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         data.event.date = self.dateOptions[index] // Update the event date
         self.updateDateLabel() // Update frontend
         
-        print("Selected\(data.event.date)")
+//        print("Selected\(data.event.date)")
         
         self.dismissKeyboard() // Dismiss keyboard if press a day
         

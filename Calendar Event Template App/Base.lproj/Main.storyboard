@@ -824,7 +824,7 @@
                                             <outlet property="delegate" destination="Pbh-M3-uzF" id="h9C-Kq-Ite"/>
                                         </connections>
                                     </collectionView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="9" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="90P-4b-egX" customClass="StepSlider" customModule="Slate_Calendar" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="7" maxValue="23.5" translatesAutoresizingMaskIntoConstraints="NO" id="90P-4b-egX" customClass="StepSlider" customModule="Slate_Calendar" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="79" width="323" height="31"/>
                                         <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
@@ -995,7 +995,7 @@
                                         <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="9" maxValue="23" translatesAutoresizingMaskIntoConstraints="NO" id="gqj-GB-NK1" customClass="StepSlider" customModule="Slate_Calendar" customModuleProvider="target">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="7" maxValue="23.5" translatesAutoresizingMaskIntoConstraints="NO" id="gqj-GB-NK1" customClass="StepSlider" customModule="Slate_Calendar" customModuleProvider="target">
                                         <rect key="frame" x="-2" y="23" width="323" height="31"/>
                                         <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>

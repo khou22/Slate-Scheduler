@@ -73,7 +73,7 @@ struct data {
         // Format event time label
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
-        return dateFormatter.string(from: Date(timeIntervalSince1970: data.event.time-Double(NSTimeZone.local.secondsFromGMT())))
+        return dateFormatter.string(from: Date(timeIntervalSince1970: data.event.time - Double(NSTimeZone.local.secondsFromGMT())))
     }
     
     // Format the duration and return as string
@@ -83,6 +83,18 @@ struct data {
         }
         
         return String(data.event.duration / 3600.0) + " hours" // Real time rounded value of slider
+    }
+    
+    public static func getStartDate() -> Date {
+        var date = data.event.date.addingTimeInterval(data.event.time)
+        
+        // Componesate for daylight savings
+        let offset = -NSTimeZone.local.daylightSavingTimeOffset(for: data.event.date)
+        if (NSTimeZone.local.isDaylightSavingTime()) {
+            date = date.addingTimeInterval(offset) // Add daylight savings time offset
+        }
+        
+        return date // Return final start date
     }
 
     
