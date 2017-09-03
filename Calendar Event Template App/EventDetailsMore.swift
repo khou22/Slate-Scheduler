@@ -24,6 +24,8 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
     @IBOutlet weak var durationSlider: StepSlider!
     @IBOutlet weak var durationLabel: UILabel!
     
+    @IBOutlet weak var allDaySwitch: UISwitch!
+    
     override func viewDidLoad() {
         dayPicker.delegate = self // Set delegate to self
     }
@@ -36,8 +38,9 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
 //        print("(Initial states 2) Time: \(data.event.time). Duration: \(data.event.duration)")
         timeSlider.value = Float(data.event.time / 3600.0)
         durationSlider.value = Float(data.event.duration / 3600.0)
-        updateTime()
-        updateDuration()
+        allDaySwitch.isOn = data.event.allDay
+        timeLabel.text = data.formatTimeLabel()
+        durationLabel.text = data.formatDurationLabel()
         dayPicker.setDate(date: data.event.date)
     }
     
@@ -59,15 +62,30 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
         updateDuration()
     }
     
-    func updateTime() {
-        var minutesFromMidnight = timeSlider.roundValue() * 3600.0 // Minutes from midnight
-        data.event.time = minutesFromMidnight // Change global variable
+    @IBAction func updatedAllDay(_ sender: Any) {
+        print("Updating all day to \(allDaySwitch.isOn)")
+        data.event.allDay = allDaySwitch.isOn // Make global change
+        
+        // Push frontend changes
         timeLabel.text = data.formatTimeLabel() // Update frontend
+        durationLabel.text = data.formatDurationLabel()
+    }
+
+    func updateTime() {
+        let minutesFromMidnight = timeSlider.roundValue() * 3600.0 // Minutes from midnight
+        data.event.time = minutesFromMidnight // Change global variable
+        allDaySwitch.isOn = false
+        data.event.allDay = false
+        timeLabel.text = data.formatTimeLabel() // Update frontend
+        durationLabel.text = data.formatDurationLabel()
     }
     
     func updateDuration() {
         data.event.duration = self.durationSlider.roundValue() * 3600.0 // Store round value in seconds
+        allDaySwitch.isOn = false
+        data.event.allDay = false
         durationLabel.text = data.formatDurationLabel() // Real time rounded value of slider
+        timeLabel.text = data.formatTimeLabel()
     }
     
     // MARK - Days Events Table

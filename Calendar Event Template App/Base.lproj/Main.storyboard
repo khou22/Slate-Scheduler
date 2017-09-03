@@ -731,30 +731,32 @@
                                             <constraint firstItem="1ag-mR-KaH" firstAttribute="leading" secondItem="aGk-3w-xpp" secondAttribute="leading" id="hG3-yQ-xZY"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="q2x-an-Qzh">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="vBk-st-RH1">
                                         <rect key="frame" x="259" y="0.0" width="60" height="76"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-1V-KON">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h91-oW-osJ">
                                                 <rect key="frame" x="15" y="0.0" width="45" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvg-68-KNk">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOr-WD-q5w">
                                                 <rect key="frame" x="11" y="27" width="51" height="49"/>
-                                                <color key="onTintColor" red="0.85882352941176465" green="0.53725490196078429" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="onTintColor" red="0.85882352939999995" green="0.53725490200000003" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
-                                                    <action selector="updatedAllDay:" destination="Pbh-M3-uzF" eventType="valueChanged" id="Ppa-BN-Bwa"/>
+                                                    <action selector="updatedAllDay:" destination="bG0-pg-MIt" eventType="valueChanged" id="FFE-JY-kKr"/>
+                                                    <action selector="updatedAllDay:" destination="Pbh-M3-uzF" eventType="valueChanged" id="hVR-Ov-yMD"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="hfW-dJ-gge"/>
+                                            <constraint firstAttribute="width" constant="60" id="Wp0-2P-PPW"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="q2x-an-Qzh" firstAttribute="height" secondItem="aGk-3w-xpp" secondAttribute="height" id="tW5-sz-uhv"/>
+                                    <constraint firstAttribute="bottom" secondItem="vBk-st-RH1" secondAttribute="bottom" id="XBm-IR-Ros"/>
+                                    <constraint firstItem="vBk-st-RH1" firstAttribute="top" secondItem="Nix-CF-xpL" secondAttribute="top" id="nYh-21-mcO"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2HI-eM-WmX">
@@ -948,7 +950,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="WkC-HJ-T0A"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="allDaySwitch" destination="fvg-68-KNk" id="tcK-Xb-BOT"/>
+                        <outlet property="allDaySwitch" destination="eOr-WD-q5w" id="YEX-wV-g40"/>
                         <outlet property="dateLabel" destination="kBr-Ol-OnL" id="gNz-ZY-frc"/>
                         <outlet property="durationLabel" destination="BLf-Df-vAq" id="uAL-C3-575"/>
                         <outlet property="durationSlider" destination="1ag-mR-KaH" id="kuS-cp-mcY"/>
@@ -985,7 +987,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yWe-0q-q8v">
-                                <rect key="frame" x="28" y="360" width="319" height="76"/>
+                                <rect key="frame" x="28" y="364" width="319" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeD-tN-gEK">
                                         <rect key="frame" x="0.0" y="0.0" width="319" height="17"/>
@@ -1028,35 +1030,65 @@
                                     <constraint firstAttribute="trailing" secondItem="gqj-GB-NK1" secondAttribute="trailing" id="mi3-xh-mET"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ztM-hM-Vx0">
-                                <rect key="frame" x="28" y="452" width="319" height="76"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="I8n-1H-K7p">
+                                <rect key="frame" x="28" y="456" width="319" height="76"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iM-q3-n5A">
-                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dqd-zn-ag3" customClass="StepSlider" customModule="Slate_Calendar" customModuleProvider="target">
-                                        <rect key="frame" x="-2" y="23" width="323" height="31"/>
-                                        <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <connections>
-                                            <action selector="draggingDuration:" destination="bG0-pg-MIt" eventType="valueChanged" id="DgQ-Il-V7q"/>
-                                            <action selector="releasedDuration:" destination="bG0-pg-MIt" eventType="touchUpInside" id="3uv-UB-txf"/>
-                                        </connections>
-                                    </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0 Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzU-Uy-zow">
-                                        <rect key="frame" x="0.0" y="59" width="319" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ztM-hM-Vx0">
+                                        <rect key="frame" x="0.0" y="0.0" width="259" height="76"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iM-q3-n5A">
+                                                <rect key="frame" x="0.0" y="0.0" width="55.5" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dqd-zn-ag3" customClass="StepSlider" customModule="Slate_Calendar" customModuleProvider="target">
+                                                <rect key="frame" x="-2" y="23" width="263" height="31"/>
+                                                <color key="tintColor" red="0.87903261180000003" green="0.4371282756" blue="0.31369483469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <action selector="draggingDuration:" destination="bG0-pg-MIt" eventType="valueChanged" id="DgQ-Il-V7q"/>
+                                                    <action selector="releasedDuration:" destination="bG0-pg-MIt" eventType="touchUpInside" id="3uv-UB-txf"/>
+                                                </connections>
+                                            </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0 Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzU-Uy-zow">
+                                                <rect key="frame" x="0.0" y="59" width="259" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Dqd-zn-ag3" secondAttribute="trailing" id="5h5-Xd-Ghp"/>
+                                            <constraint firstItem="Dqd-zn-ag3" firstAttribute="leading" secondItem="ztM-hM-Vx0" secondAttribute="leading" id="GlY-KR-dy7"/>
+                                            <constraint firstItem="tzU-Uy-zow" firstAttribute="leading" secondItem="ztM-hM-Vx0" secondAttribute="leading" id="IGW-lp-EhE"/>
+                                            <constraint firstAttribute="trailing" secondItem="tzU-Uy-zow" secondAttribute="trailing" id="gzB-s5-8sh"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="q2x-an-Qzh">
+                                        <rect key="frame" x="259" y="0.0" width="60" height="76"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-1V-KON">
+                                                <rect key="frame" x="15" y="0.0" width="45" height="27"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.61966550350000005" green="0.61965179439999996" blue="0.61965441700000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvg-68-KNk">
+                                                <rect key="frame" x="11" y="27" width="51" height="49"/>
+                                                <color key="onTintColor" red="0.85882352941176465" green="0.53725490196078429" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <action selector="updatedAllDay:" destination="bG0-pg-MIt" eventType="valueChanged" id="2XI-6u-V4g"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="hfW-dJ-gge"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Dqd-zn-ag3" secondAttribute="trailing" id="5h5-Xd-Ghp"/>
-                                    <constraint firstItem="Dqd-zn-ag3" firstAttribute="leading" secondItem="ztM-hM-Vx0" secondAttribute="leading" id="GlY-KR-dy7"/>
-                                    <constraint firstItem="tzU-Uy-zow" firstAttribute="leading" secondItem="ztM-hM-Vx0" secondAttribute="leading" id="IGW-lp-EhE"/>
-                                    <constraint firstAttribute="trailing" secondItem="tzU-Uy-zow" secondAttribute="trailing" id="gzB-s5-8sh"/>
+                                    <constraint firstItem="q2x-an-Qzh" firstAttribute="top" secondItem="I8n-1H-K7p" secondAttribute="top" id="ND8-zq-K87"/>
+                                    <constraint firstAttribute="bottom" secondItem="q2x-an-Qzh" secondAttribute="bottom" id="SBu-kC-i8I"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-jz-G4r">
@@ -1078,7 +1110,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sRY-ic-cBQ">
-                                <rect key="frame" x="28" y="218" width="319" height="126"/>
+                                <rect key="frame" x="28" y="218" width="319" height="130"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventListCell" id="oM7-bq-k6t" customClass="EventListCell" customModule="Slate_Calendar" customModuleProvider="target">
@@ -1171,12 +1203,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Lh8-jz-G4r" firstAttribute="width" secondItem="9S3-wS-s8e" secondAttribute="width" multiplier="0.4" id="AI6-io-Ax3"/>
-                            <constraint firstItem="ztM-hM-Vx0" firstAttribute="trailing" secondItem="fbc-dr-odu" secondAttribute="trailing" id="C9Z-7q-vD0"/>
-                            <constraint firstItem="ztM-hM-Vx0" firstAttribute="leading" secondItem="fbc-dr-odu" secondAttribute="leading" id="GfO-U1-1tJ"/>
-                            <constraint firstItem="ztM-hM-Vx0" firstAttribute="bottom" secondItem="Lh8-jz-G4r" secondAttribute="top" constant="-20" id="Ij5-he-xJz"/>
+                            <constraint firstItem="I8n-1H-K7p" firstAttribute="leading" secondItem="yWe-0q-q8v" secondAttribute="leading" id="LvU-9q-KGY"/>
                             <constraint firstItem="oHi-bp-dzB" firstAttribute="top" secondItem="Lh8-jz-G4r" secondAttribute="bottom" id="Pp4-0V-d0H"/>
+                            <constraint firstItem="asp-xJ-15I" firstAttribute="top" secondItem="I8n-1H-K7p" secondAttribute="bottom" constant="16" id="Tuq-iM-rLw"/>
                             <constraint firstAttribute="trailing" secondItem="Lh8-jz-G4r" secondAttribute="trailing" id="UdO-4U-1JX"/>
                             <constraint firstItem="fbc-dr-odu" firstAttribute="top" secondItem="9S3-wS-s8e" secondAttribute="topMargin" constant="12" id="Uf9-FF-BnE"/>
+                            <constraint firstItem="I8n-1H-K7p" firstAttribute="top" secondItem="yWe-0q-q8v" secondAttribute="bottom" constant="16" id="YCw-Ii-6Sx"/>
+                            <constraint firstItem="I8n-1H-K7p" firstAttribute="trailing" secondItem="yWe-0q-q8v" secondAttribute="trailing" id="Yzf-bu-m1j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fbc-dr-odu" secondAttribute="trailing" constant="12" id="Z6Y-TN-zyK"/>
                             <constraint firstItem="yWe-0q-q8v" firstAttribute="leading" secondItem="fbc-dr-odu" secondAttribute="leading" id="ZiC-69-jxi"/>
                             <constraint firstItem="sRY-ic-cBQ" firstAttribute="leading" secondItem="fbc-dr-odu" secondAttribute="leading" id="bWI-QX-D32"/>
@@ -1189,10 +1222,10 @@
                             <constraint firstItem="sRY-ic-cBQ" firstAttribute="trailing" secondItem="fbc-dr-odu" secondAttribute="trailing" id="m4u-8s-H2v"/>
                             <constraint firstItem="asp-xJ-15I" firstAttribute="bottom" secondItem="Lh8-jz-G4r" secondAttribute="bottom" id="mNY-R5-uHZ"/>
                             <constraint firstItem="yWe-0q-q8v" firstAttribute="trailing" secondItem="fbc-dr-odu" secondAttribute="trailing" id="oz1-ho-k0v"/>
-                            <constraint firstItem="ztM-hM-Vx0" firstAttribute="top" secondItem="yWe-0q-q8v" secondAttribute="bottom" constant="16" id="yWe-we-zb3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allDaySwitch" destination="fvg-68-KNk" id="x50-9J-BHy"/>
                         <outlet property="dateLabel" destination="WKR-LU-lw7" id="XB1-TV-2cH"/>
                         <outlet property="dayPicker" destination="fbc-dr-odu" id="BKa-72-fpd"/>
                         <outlet property="durationLabel" destination="tzU-Uy-zow" id="joh-om-YaS"/>

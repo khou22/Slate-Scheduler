@@ -128,6 +128,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         // Time and duration
         startTimeSlider.value = Float(data.event.time / 3600.0)
         durationSlider.value = Float(data.event.duration / 3600.0)
+        allDaySwitch.isOn = data.event.allDay
         self.durationLabel.text = data.formatDurationLabel() // Real time rounded value of slider
         self.startTimeLabel.text = data.formatTimeLabel()
         
