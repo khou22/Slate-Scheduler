@@ -64,6 +64,16 @@ class MonthDayPicker: UIView, DayTileDelegate {
         self.addSubview(weekdayHeader)
         self.addSubview(container)
         
+        // Add swiping gesture functionality
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.nextMonth(sender:)))
+        swipeRight.direction = .right
+        swipeRight.cancelsTouchesInView = false
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.previousMonth(sender:)))
+        swipeLeft.direction = .left
+        swipeLeft.cancelsTouchesInView = false
+        self.addGestureRecognizer(swipeRight)
+        self.addGestureRecognizer(swipeLeft)
+        
         // Add the tiles to the container view
         drawDaySquares()
     }

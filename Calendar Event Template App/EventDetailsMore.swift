@@ -28,6 +28,9 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         dayPicker.delegate = self // Set delegate to self
+        
+        self.timeSlider.stepValue = 0.25 // Rounds to quarter hour
+        self.timeSlider.maximumValue = self.timeSlider.maximumValue + data.sliderOffset(raw: Float(self.timeSlider.roundValue())) // Fix offset
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -222,11 +222,17 @@ class CreateEventScreen: UIViewController {
             // MARK - Adding event complete
             
             // Make transparent to prevent user from seeing it
-            self.summaryCard.layer.opacity = 0.0
-            self.submitConfirmation.layer.opacity = 0.0 // Make label transparent
-            
-            // Exit segue back to category selection
-            self.dismiss(animated: true, completion: nil)
+            UIView.animate(withDuration: 0.25, animations: {
+                self.summaryCard.layer.opacity = 0.0
+                self.submitConfirmation.layer.opacity = 0.0 // Make label transparent
+            }, completion: { complete in
+                // Reset submit confirmation size
+                self.submitConfirmationWidth.constant = 40.0
+                self.view.layoutIfNeeded() // Update view
+                
+                // Exit segue back to category selection
+                self.dismiss(animated: true, completion: nil)
+            })
         })
     }
     
@@ -236,7 +242,7 @@ class CreateEventScreen: UIViewController {
             self.submitConfirmation.layer.opacity = 1.0
             
             // Enlarge
-            self.submitConfirmationWidth.constant = 20.0 // Only change width because aspect fit
+            self.submitConfirmationWidth.constant = 60.0 // Only change width because aspect fit
             
             self.view.layoutIfNeeded() // Update view
         }, completion: { finished in

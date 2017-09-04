@@ -21,11 +21,21 @@ extension UIViewController {
         swipeDown.direction = .down // Swipe down
         swipeDown.cancelsTouchesInView = false // Won't override UICollection/UITableView View selection
         
+        let swipeRight: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        swipeRight.direction = .right
+        swipeRight.cancelsTouchesInView = false
+        
+        let swipeLeft: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        swipeLeft.direction = .left
+        swipeLeft.cancelsTouchesInView = false
+        
         // When double tapping hide keyboard
         let doubleTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         doubleTap.numberOfTapsRequired = 2
         
         view.addGestureRecognizer(swipeDown) // Add gesture to view
+        view.addGestureRecognizer(swipeRight)
+        view.addGestureRecognizer(swipeLeft)
         view.addGestureRecognizer(doubleTap) // Add touble tap to view
     }
     

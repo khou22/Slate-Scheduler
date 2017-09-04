@@ -75,7 +75,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         }
         
         // Setup start time slider
-        self.startTimeSlider.stepValue = 0.5 // Every half hour
+        self.startTimeSlider.stepValue = 0.25 // Every quarter hour
+        self.startTimeSlider.maximumValue = self.startTimeSlider.maximumValue + data.sliderOffset(raw: Float(self.startTimeSlider.roundValue()))
         
         // Autocomplete setup
         self.eventNameInput.nextTextField = self.locationInput // Setup next input

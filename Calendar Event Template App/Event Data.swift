@@ -76,6 +76,19 @@ struct data {
         return dateFormatter.string(from: Date(timeIntervalSince1970: data.event.time - Double(NSTimeZone.local.secondsFromGMT())))
     }
     
+    // For offeseting the min/max of the time sliders — due to time zones
+    public static func sliderOffset(raw: Float) -> Float {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h" // Just want the hour
+        let dateString: String = dateFormatter.string(from: Date(timeIntervalSince1970: data.event.time - Double(NSTimeZone.local.secondsFromGMT())))
+        
+        if let output = Float(dateString) {
+            return floor(raw) - output
+        } else { // Can't parse for some reason
+            return 0
+        }
+    }
+    
     // Format the duration and return as string
     public static func formatDurationLabel() -> String {
         if (event.allDay) {
