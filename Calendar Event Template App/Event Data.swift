@@ -79,7 +79,7 @@ struct data {
     // Format the duration and return as string
     public static func formatDurationLabel() -> String {
         if (event.allDay) {
-            return "24 hours" // For all day events
+            return "All Day" // For all day events
         }
         
         return String(data.event.duration / 3600.0) + " hours" // Real time rounded value of slider

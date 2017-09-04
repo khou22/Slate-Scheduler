@@ -9,9 +9,9 @@
 import UIKit
 import EventKit
 
-class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSource, DayPickerDelegate {
+class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSource, MonthDayPickerDelegate {
     
-    @IBOutlet weak var dayPicker: DayPicker!
+    @IBOutlet weak var dayPicker: MonthDayPicker!
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var eventListTable: UITableView!
@@ -40,6 +40,8 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
         allDaySwitch.isOn = data.event.allDay
         timeLabel.text = data.formatTimeLabel()
         durationLabel.text = data.formatDurationLabel()
+        print(data.event.date)
+        print(data.event.date.getMonth())
         dayPicker.setDate(date: data.event.date)
     }
     
