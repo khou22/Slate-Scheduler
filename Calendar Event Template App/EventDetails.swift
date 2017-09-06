@@ -298,15 +298,6 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     func adjustForScreenSizes() {
         if DeviceTypes.iPhoneSE || DeviceTypes.iPhone7Zoomed {
-            // Change constraint constants, etc. here
-            self.formItemsLeftConstraint.constant = 0
-            self.formItemsRightConstraint.constant = 0
-            
-            // Fix autocomplete positioning
-            self.eventNameInput.padding = 25 // Move event name autocomplete table lower
-            self.locationInput.padding = 25 // Move event name autocomplete table lower
-            
-            view.layoutIfNeeded()
             
         } else {
             
