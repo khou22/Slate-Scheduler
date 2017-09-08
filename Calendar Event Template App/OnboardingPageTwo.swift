@@ -181,12 +181,12 @@ class OnboardingPageTwo: UIViewController {
         
         if DeviceTypes.iPhoneSE || DeviceTypes.iPhone7Zoomed {
             // Change constraint constants, etc. here
-            self.alertPromptImageTopConstraint.constant = 80
+            self.alertPromptImageTopConstraint.constant = 40
             
             view.layoutIfNeeded()
-            
-        } else {
-            
+        } else if DeviceTypes.iPad {
+            self.alertPromptImageLeading.constant = 50.0
+            self.alertPromptImageTrailing.constant = -50.0
         }
     }
 

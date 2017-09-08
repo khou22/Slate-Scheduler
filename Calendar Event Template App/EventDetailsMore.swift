@@ -43,8 +43,6 @@ class EventDetailsMore: UIViewController, UITableViewDelegate, UITableViewDataSo
         allDaySwitch.isOn = data.event.allDay
         timeLabel.text = data.formatTimeLabel()
         durationLabel.text = data.formatDurationLabel()
-        print(data.event.date)
-        print(data.event.date.getMonth())
         dayPicker.setDate(date: data.event.date)
     }
     
