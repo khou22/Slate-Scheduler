@@ -1444,6 +1444,7 @@
                     <connections>
                         <outlet property="containerView" destination="yUC-aY-opX" id="qaM-MQ-ecb"/>
                         <outlet property="loadingSpinner" destination="48k-Jh-yKE" id="s9f-ob-TCL"/>
+                        <outlet property="navigationBar" destination="PVp-KG-RBC" id="mEu-ao-Mll"/>
                         <outlet property="submitConfirmation" destination="qA9-jB-0b0" id="Dbo-tt-9XA"/>
                         <outlet property="submitConfirmationHeight" destination="v25-j0-w3D" id="5Y0-EZ-rwN"/>
                         <outlet property="submitConfirmationWidth" destination="mcs-1k-Weg" id="kpi-Rt-9Jc"/>

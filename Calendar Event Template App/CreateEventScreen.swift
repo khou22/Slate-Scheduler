@@ -12,6 +12,7 @@ import EventKit
 class CreateEventScreen: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var navigationBar: UINavigationBar!
 
     // Card view
     @IBOutlet weak var summaryCard: UIView!
@@ -41,6 +42,12 @@ class CreateEventScreen: UIViewController {
             screenName = "Event Details - No Category"
         }
         Analytics.setScreenName(screenName) // Log screen name
+        
+        // Set navigation bar title
+        if (!data.meta.noCategory) { // Only change if category
+//            print("Updating navigation bar title to: \(data.meta.category.name)")
+            self.navigationBar.topItem?.title = data.meta.category.name
+        }
     }
     
     // Cancelled event
