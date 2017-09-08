@@ -52,6 +52,11 @@ struct data {
         event.time = 11 * 3600.0
         event.duration = 3600.0
         event.allDay = false
+        
+        // Reset fields
+        event.name = ""
+        event.location = ""
+        event.room = ""
     }
     
     // MARK - Public functions to update the event values

@@ -25,14 +25,15 @@ extension UITextField {
     
     // MARK - Add done button to number keyboard
     // Source: https://gist.github.com/jplazcano87/8b5d3bc89c3578e45c3e
-    func addDoneButtonOnKeyboard() {
+    func addKeyboardBar() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 50)) // Create keyboard toolbar
         doneToolbar.barStyle = .default // Set style
         
         let blankFlexSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil) // Add blank spacing item to left of done button
+        let switchKeyboard: UIBarButtonItem = UIBarButtonItem(title: "abc/123", style: .plain, target: self, action: #selector(self.switchKeyboardType(sender:))) // Add done button
         let doneButton: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction)) // Add done button
         
-        doneToolbar.items = [blankFlexSpace, doneButton] // Create array of the items and add to toolbar
+        doneToolbar.items = [switchKeyboard, blankFlexSpace, doneButton] // Create array of the items and add to toolbar
         doneToolbar.sizeToFit() // Fit to screen size
         
         self.inputAccessoryView = doneToolbar // Add toolbar to keyboard
@@ -42,6 +43,18 @@ extension UITextField {
     // Function called when done button pressed
     func doneButtonAction() {
         self.resignFirstResponder() // Desselect
+    }
+    
+    func switchKeyboardType(sender: UIBarButtonItem) {
+        if (self.keyboardType == .numberPad) {
+            self.keyboardType = .alphabet
+        } else { // Switch back to number pad
+            self.keyboardType = .numberPad
+        }
+
+        // Toggle to reflect changes
+        self.resignFirstResponder()
+        self.becomeFirstResponder()
     }
     
     // MARK - End of adding done button to number pad
