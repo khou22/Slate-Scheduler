@@ -687,7 +687,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                 <connections>
-                                                    <action selector="roomNumberChanged:" destination="Pbh-M3-uzF" eventType="valueChanged" id="hQs-Lz-9tC"/>
+                                                    <action selector="roomInputChanged:" destination="Pbh-M3-uzF" eventType="editingDidEnd" id="9BE-VG-YrF"/>
+                                                    <action selector="roomInputChanged:" destination="Pbh-M3-uzF" eventType="valueChanged" id="Xld-MM-l8A"/>
                                                 </connections>
                                             </textField>
                                         </subviews>

@@ -172,10 +172,10 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         }
     }
     
-    // Room input changed
-    @IBAction func roomNumberChanged(_ sender: Any) {
-        data.event.room = self.roomInput.text!
+    @IBAction func roomInputChanged(_ sender: Any) {
+        data.updateRoom(room: self.roomInput.text!)
     }
+    
     
     // User released the slider
     @IBAction func finishedDragging(_ sender: Any) {

@@ -91,7 +91,12 @@ class CreateEventScreen: UIViewController {
             }
         }
         
-        event.location = data.event.room + " " + data.event.location
+        // If there is a room number
+        if (data.event.room != "") {
+            event.location = data.event.room + " " + data.event.location
+        } else {
+            event.location = data.event.location // No room number
+        }
         
         // Set the calendar
         event.calendar = self.calendarManager.eventStore.defaultCalendarForNewEvents // Default calendar

@@ -65,7 +65,11 @@ struct data {
     }
     
     public static func updateEventLocation(location: String) {
-        event.location = location // SEt location
+        event.location = location // Set location
+    }
+    
+    public static func updateRoom(room: String) {
+        event.room = room // Set room
     }
     
     // MARK - Formatting values
