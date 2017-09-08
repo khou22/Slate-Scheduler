@@ -1908,10 +1908,10 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-pin" translatesAutoresizingMaskIntoConstraints="NO" id="mbY-t4-ci7">
-                                <rect key="frame" x="122" y="128" width="130" height="130"/>
+                                <rect key="frame" x="127" y="138" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mbY-t4-ci7" secondAttribute="height" multiplier="1:1" id="iPd-Jn-PVk"/>
-                                    <constraint firstAttribute="width" constant="130" id="zbh-E1-GOh"/>
+                                    <constraint firstAttribute="width" constant="120" id="zbh-E1-GOh"/>
                                 </constraints>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="f7e-vX-JRT">
