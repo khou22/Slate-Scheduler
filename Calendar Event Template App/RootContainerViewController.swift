@@ -29,11 +29,6 @@ class RootContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showSplashViewController()
-        
-        // Run in background
-        DispatchQueue.main.async {
-            DataManager.createShortcuts() // Create 3D touch shortcuts
-        }
     }
 
     

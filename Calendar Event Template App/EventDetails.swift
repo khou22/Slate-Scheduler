@@ -12,8 +12,8 @@ import EventKit
 
 // Global variables
 struct EventDetailsData {
-    static let numQuickDays: Int = 20 // Total number available
-    static let quickDaysShown: Int = 5 // Number shown initially, no scroll
+    static let numQuickDays: Int = 24 // Total number available
+    static let quickDaysShown: Int = 6 // Number shown initially, no scroll
 }
 
 class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource {
@@ -269,7 +269,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     // MARK - UICollectionViewDelegateFlowLayout
     // Declare size of quick day picker cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth: CGFloat = ScreenSize.screen_width / (self.cellsPerSection + 2) // Add 2 for spacing
+        let cellWidth: CGFloat = (ScreenSize.screen_width - 20) / (self.cellsPerSection) // Formatting the width of each cell
         return CGSize(width: cellWidth, height: self.cellHeight)
     }
     

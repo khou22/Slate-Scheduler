@@ -47,6 +47,11 @@ class CategorySelection: UIViewController, UICollectionViewDelegate, UICollectio
         if DataManager.locationServicesEnabled() { // If location services enabled
             self.setupLocationService() // Setup and get location once
         }
+        
+        // Run in background - update 3D touch shortcuts
+        DispatchQueue.main.async {
+            DataManager.createShortcuts() // Create 3D touch shortcuts
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
