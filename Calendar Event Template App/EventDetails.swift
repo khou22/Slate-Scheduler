@@ -86,7 +86,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         }
         
         self.locationInput.nextTextField = self.roomInput // Next input
-        self.locationInput.filterResults = false // Don't filter out mismatch search queries becaues maps query already does that
+//        self.locationInput.filterResults = false // Don't filter out mismatch search queries becaues maps query already does that
+        placesManager.setLocationBiasing(location: DataManager.getLatestLocation(), radius: 50.0) // Set location biasing to encompass the continent
         self.locationInput.updateCompletion = { // Completion handler when text changes
 //            print("Updating location: \(self.locationInput.text)")
             data.event.location = self.locationInput.text! // Update
@@ -153,7 +154,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         let query: String = self.locationInput.text!
 //        print("Enquing query: \(query)")
         if (query != "") { // If text exists
-            _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.filterLocationRequest), userInfo: query, repeats: false)
+            _ = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.filterLocationRequest), userInfo: query, repeats: false)
         } else { // If no text
             self.locationInput.updateSuggestions(prioritized: data.meta.category.orderedLocations()) // Use previous locations
             self.locationInput.valueChanged() // Force update
@@ -164,7 +165,7 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
     
     @objc func filterLocationRequest(_ timer: Timer) {
         let query: String = timer.userInfo as! String
-        if (self.locationInput.text == query) { // If the query hasn't changed, user is done typing
+        if (self.locationInput.text == query && self.locationInput.isFirstResponder) { // If the query hasn't changed, user is done typing
 //            print("Firing request for: \(query)")
             self.updateLocationSearchResults(query: query) // Update autocomplete
         } else {

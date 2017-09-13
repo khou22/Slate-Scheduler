@@ -100,7 +100,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
                         potentialCaseFree = potentialCaseFree.substring(to: currentQuery.endIndex) // Only compare substrings of the same length
                     }
                     
-                    print("Comparing: \(potentialCaseFree) and \(currentQuery)") // Debugging
+//                    print("Comparing: \(potentialCaseFree) and \(currentQuery)") // Debugging
                     
                     // If Levenshtein distance is within specified range
                     valid = potentialCaseFree.getLevenshtein(target: currentQuery) <= self.characterError
