@@ -87,7 +87,8 @@ class EventDetails: UIViewController, UICollectionViewDelegate, UICollectionView
         
         self.locationInput.nextTextField = self.roomInput // Next input
 //        self.locationInput.filterResults = false // Don't filter out mismatch search queries becaues maps query already does that
-        placesManager.setLocationBiasing(location: DataManager.getLatestLocation(), radius: 50.0) // Set location biasing to encompass the continent
+        let radius = DataManager.locationServicesEnabled() ? 2.0 : 20000000.0; // If no location service, cover entire world
+        placesManager.setLocationBiasing(location: DataManager.getLatestLocation(), radius: radius) // Set location biasing to encompass the continent
         self.locationInput.updateCompletion = { // Completion handler when text changes
 //            print("Updating location: \(self.locationInput.text)")
             data.event.location = self.locationInput.text! // Update
