@@ -5,6 +5,9 @@ Pivot: Slate will replace, not supplement, your original calendar app.
 ~~Duration and time are not being set correctly when events are saved~~
 
 ## To Do
+Fix iOS 11 bug
+Optimize for iPhone X
+Prefer whole numbers like 11:30 and 11:00 to 11:15..very easy for your hand to slip and change it when you release.
 Check with daylight savings
 Prompt user for a review
 Localization
