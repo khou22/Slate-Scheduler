@@ -14,4 +14,5 @@ Localization
 
 # Maybe
 Predictive model for most common time/duration (ie. breakfast typically at 8 AM)
+Assign a default calendar for each specific calendar. Also allow user to change the calendar they're adding to.
 Ability to scan the week’s events for common events and automatically create categories of user
