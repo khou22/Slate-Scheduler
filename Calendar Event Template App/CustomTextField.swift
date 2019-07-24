@@ -41,11 +41,11 @@ extension UITextField {
     }
     
     // Function called when done button pressed
-    func doneButtonAction() {
+    @objc func doneButtonAction() {
         self.resignFirstResponder() // Desselect
     }
     
-    func switchKeyboardType(sender: UIBarButtonItem) {
+    @objc func switchKeyboardType(sender: UIBarButtonItem) {
         if (self.keyboardType == .numberPad) {
             self.keyboardType = .alphabet
         } else { // Switch back to number pad

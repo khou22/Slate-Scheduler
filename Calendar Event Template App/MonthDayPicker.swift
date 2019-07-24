@@ -17,7 +17,7 @@ class MonthDayPicker: UIView, DayTileDelegate {
     
     // Options
     private let sensitivity: CGFloat = 8.0 // X events a day is the peak color
-    private let highlightColor = UIColor(colorLiteralRed: 226.0/255.0, green: 111.0/255.0, blue: 80.0/255.0, alpha: 1.0)
+    private let highlightColor = UIColor(displayP3Red: 226.0/255.0, green: 111.0/255.0, blue: 80.0/255.0, alpha: 1.0)
     private let colorScheme = UIColor(red: 225.0/255.0, green: 145.0/255.0, blue: 124.0/255.0, alpha: 1.0)
     
     // Colors

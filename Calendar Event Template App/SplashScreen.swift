@@ -71,7 +71,7 @@ open class SplashViewController: UIViewController {
         Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(segueToRootVC), userInfo: nil, repeats: false) // Go to root VC after delay
     }
     
-    func segueToRootVC() {
+    @objc func segueToRootVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: Storyboard.rootViewController)
         let segueToMain: FadeSegue = FadeSegue(identifier: SegueIdentifiers.splashToMain, source: self, destination: destinationVC)

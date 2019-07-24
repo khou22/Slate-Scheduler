@@ -132,7 +132,7 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
     }
     
     // Text field value changed
-    public func valueChanged() {
+    @objc public func valueChanged() {
         self.updateValid() // Update autocomplete suggestions when value changed
         
         // Run the completion function

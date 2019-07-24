@@ -40,7 +40,7 @@ extension UIViewController {
     }
     
     // Dismiss keyboard
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true) // End keyboarding editing
     }
 }

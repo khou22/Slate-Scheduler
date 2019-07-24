@@ -156,6 +156,7 @@ struct ScreenSize {
     static let screen_min_length            = min(ScreenSize.screen_width, ScreenSize.screen_height)
 }
 
+
 struct DeviceTypes {
     // Device type (useful for constraints)
     static let iPhone4S                     = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.screen_max_length < 568.0
