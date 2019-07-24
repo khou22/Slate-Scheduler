@@ -39,14 +39,14 @@ struct Analytics {
         let build = (event.build() as NSDictionary) as! [AnyHashable: Any] // Build and cast as correct type
         
         // Print statement feedback
-        var printStatement: String = "\(withCategory): \"\(action)\""
-        if label != nil {
-            printStatement += " with label \"\(label)\""
-        }
-        if value != nil {
-            printStatement += " with value \"\(value)\""
-        }
-        print(printStatement)
+//        var printStatement: String = "\(withCategory): \"\(action)\""
+//        if label != nil {
+//            printStatement += " with label \"\(label)\""
+//        }
+//        if value != nil {
+//            printStatement += " with value \"\(value)\""
+//        }
+//        print(printStatement)
         
         GATracker.send(build) // Send event
     }
@@ -114,7 +114,7 @@ struct Analytics {
         if withShortcut {
             label = "With Force Touch Shortcut"
         }
-        sendGAEvent(withCategory: Categories.createdEvent, action: "Created Event With Category", label: label, value: seconds as NSNumber!)
+        sendGAEvent(withCategory: Categories.createdEvent, action: "Created Event With Category", label: label, value: seconds as NSNumber)
     }
     
     // Created event without category attached: how long it took to make that event and if they used a force touch shortcut
@@ -123,7 +123,7 @@ struct Analytics {
         if withShortcut {
             label = "With Force Touch Shortcut"
         }
-        sendGAEvent(withCategory: Categories.createdEvent, action: "Created Event Without Category", label: label, value: seconds as NSNumber!)
+        sendGAEvent(withCategory: Categories.createdEvent, action: "Created Event Without Category", label: label, value: seconds as NSNumber)
     }
     
     // User cancelled creation of event
@@ -132,7 +132,7 @@ struct Analytics {
         if withShortcut {
             label = "With Force Touch Shortcut"
         }
-        sendGAEvent(withCategory: Categories.createdEvent, action: "Cancelled Event Creation", label: label, value: seconds as NSNumber!)
+        sendGAEvent(withCategory: Categories.createdEvent, action: "Cancelled Event Creation", label: label, value: seconds as NSNumber)
     }
     
     /********** Category Management **********/
@@ -160,7 +160,7 @@ struct Analytics {
     // Reset category history for a single category
     static func resetCategoryPredictions(name: String, totalPrediction: Int) {
         let label = "Reset predictions for category: " + name
-        sendGAEvent(withCategory: Categories.categoryManagement, action: "Reset Category Predictions", label: label, value: totalPrediction as NSNumber!)
+        sendGAEvent(withCategory: Categories.categoryManagement, action: "Reset Category Predictions", label: label, value: totalPrediction as NSNumber)
     }
     
     // Removed an event name prediction from category history

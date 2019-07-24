@@ -92,11 +92,11 @@ class AutocompleteTextField: UITextField, UITextFieldDelegate {
                 
                 var valid = false // Track if valid
                 
-                if currentQuery.characters.count <= 2 { // If only one letter in search query
+                if currentQuery.count <= 2 { // If only one letter in search query
                     valid = potentialCaseFree.contains(currentQuery) // If exact match, set true
                     
                 } else { // If more than one letter in search query, use Levenshtein
-                    if (currentQuery.characters.count < potentialCaseFree.characters.count) { // If the query is less than the result
+                    if (currentQuery.count < potentialCaseFree.count) { // If the query is less than the result
                         potentialCaseFree = potentialCaseFree.substring(to: currentQuery.endIndex) // Only compare substrings of the same length
                     }
                     
