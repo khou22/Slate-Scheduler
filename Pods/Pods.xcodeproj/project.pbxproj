@@ -7,24 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08F771014E85CB7E3FAB67359E0C6505 /* Pods-Slate CalendarUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5D530C811E29051C3F45CE4C5C7C30F /* Pods-Slate CalendarUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A14EB4F22A7AEC626BC0B4FA7CCB458 /* Pods-Slate CalendarTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A614015680DD18984BD4D18970D24C /* Pods-Slate CalendarTests-dummy.m */; };
-		3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		3D636B96424AA7A622B73227179A29B2 /* Pods-Slate Calendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98089C117D8D1121C6861798FEC0BC4B /* Pods-Slate Calendar-dummy.m */; };
-		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C2F366E974DE8196109480230ED72BB /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5687807C8FF1D997B4B42E856D904845 /* Pods-Slate Calendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 876D4D378FE80717085E7924CE15278C /* Pods-Slate Calendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0A7FFCEA8A3F5D5B5F148EEF31F6A61 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		833DF43EB1EE22154F63F330248A5276 /* Pods-Slate CalendarUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D609A6C96ECFC4A423527CDF8940E2F8 /* Pods-Slate CalendarUITests-dummy.m */; };
-		A0DD41E70428C583F7623F5D702C6627 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 21856DF2A5FE3FD2633104C6712C398B /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC225C1C9BA673CF5BAA89747E15D1C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		DE7CD1BE57850A8B3F6570E39D7FADC7 /* Pods-Slate CalendarTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A440E5AC04B358869AD51F95A1CE0BA9 /* Pods-Slate CalendarTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E1B8A689CB997C4A1BFFB84D9EABAFFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 451859A7F4988D522ADBB6F685C7A49C /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB1498DCE4970FFD400CB3E8AFBA0BA5 /* GoogleToolboxForMac-dummy.m */; };
+		0866330AF3B73CB6CC5241181C45F1DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		126DDCD98E96355396A20E168A316639 /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8A5AE91387A7A7D7AC81C7E3C5E70D /* GTMNSData+zlib.m */; };
+		29AB833072872E9A75BA65F7694E6A63 /* Pods-Slate CalendarTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C6093D22262A8614E5B8F7DBDE63FF3E /* Pods-Slate CalendarTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D636B96424AA7A622B73227179A29B2 /* Pods-Slate Calendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E83F5F3EAAA6A98FB02CA684495D3D35 /* Pods-Slate Calendar-dummy.m */; };
+		460D79770F35DB99C9AAC93A912BAB25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 589E609F8482316468B1DAF7CC5131B3 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5687807C8FF1D997B4B42E856D904845 /* Pods-Slate Calendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E947F71434CD7419D4318A1B1AC92DE /* Pods-Slate Calendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C9BA20091DE602F5E1DCD75AFDEFE44 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84E46DB0D00E07133318F51F5BF4ED8C /* Pods-Slate CalendarUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8802CC662CA4B3067B0344C9ABDFC1D /* Pods-Slate CalendarUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		904F0B6809A5C268D3D0F71A19294614 /* Pods-Slate CalendarTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E0F5DF8EA1466F7ADC7B8237D09FC9 /* Pods-Slate CalendarTests-dummy.m */; };
+		9750F2D1AB7CDDF022912AD787E80E88 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		A6540A6A4481C4B815BC996D421CA7B7 /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 44447E8D7E08E33AD16E4CEECC42723E /* GoogleToolboxForMac-dummy.m */; };
+		BEF183C3929850CF4CC4D04C60080C5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		D1EF7C638479C7D93975F1A48C778398 /* Pods-Slate CalendarUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F39BA1E156191B2200DFA4E3AA4C9449 /* Pods-Slate CalendarUITests-dummy.m */; };
+		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2E28F9423A1FC9CFD1BDCE7A66CEBA /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6C0E7DDD1C613AE5F390283EE0CBAB6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DC856A6476F37565FDC1635B89504DF;
+			remoteInfo = "Pods-Slate Calendar";
+		};
 		BE3A00CFA71EA31637D107F8C8A612EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -32,86 +39,96 @@
 			remoteGlobalIDString = 00103D6C821BE85971C563025527BA5D;
 			remoteInfo = GoogleToolboxForMac;
 		};
+		FFA6286EB4F4D0B29D96AAC8FF435764 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DC856A6476F37565FDC1635B89504DF;
+			remoteInfo = "Pods-Slate Calendar";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00B21E6E17C4748FDAB3665765367EFB /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
-		02DEE7BE01CB9FF12A21A04CC32EE20E /* Pods-Slate CalendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate CalendarUITests.release.xcconfig"; sourceTree = "<group>"; };
-		03362A806697C697ABAEE2C8834A5B71 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05A90FC6AF2919D61B8D50DE5F4D240A /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Sources/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		0A2E34879E6FBF9CA43B850E524C4A79 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AE27BB23994FF5818441FDDD55A895A /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
-		0CB1F82736776FE9E3AE37253E22D38B /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
-		10833FC7A41F1AC17F0809D8A7D7C274 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Sources/GAIEcommercePromotion.h; sourceTree = "<group>"; };
-		193EEF2C7805FC919DD86C90B602C937 /* Pods_Slate_CalendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate_CalendarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		19D2098A35F20D50EB60BD75873DE42F /* Pods-Slate CalendarTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Slate CalendarTests.modulemap"; sourceTree = "<group>"; };
-		1ABE9259A503D2D99BF4B5F14179891D /* Pods_Slate_Calendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate_Calendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D25C5E3C496A076F60FC83CA22539B2 /* Pods-Slate Calendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Slate Calendar.modulemap"; sourceTree = "<group>"; };
-		20F5BDD8A56419FFFB36AC965EEDD94B /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
-		21856DF2A5FE3FD2633104C6712C398B /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
-		25D70F2A042D18148D43DD692D40CE14 /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/Core.h; sourceTree = "<group>"; };
-		26650BECD0C841D298E6A447DE25F868 /* Pods-Slate CalendarUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate CalendarUITests-frameworks.sh"; sourceTree = "<group>"; };
-		3355FB18C84842DFCDD9A6DFABB2E1F7 /* Pods-Slate CalendarUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Slate CalendarUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3709D3118CA5963980A599D18C6A6AEF /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
-		3C2F366E974DE8196109480230ED72BB /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		451859A7F4988D522ADBB6F685C7A49C /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
-		4762A496222397ECE7268B553869FFD8 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		4D5577C6465CE97FCDCD6E81DF805A24 /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Sources/GAITracker.h; sourceTree = "<group>"; };
-		4DBD297C91ED1B7EDD921D4FF678715C /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Sources/GAIEcommerceProduct.h; sourceTree = "<group>"; };
-		4E55852442B6ECE20D799024C874602D /* Pods-Slate CalendarTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Slate CalendarTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4F54446DC045D7648DD26ABFDB6E3DCA /* Pods-Slate Calendar-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate Calendar-resources.sh"; sourceTree = "<group>"; };
-		4FEB535CF0CE958B565747F374D578FD /* Pods-Slate CalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate CalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
-		531B611E913CE325FD77C6E29E932A49 /* Pods_Slate_CalendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slate_CalendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5437E44C3C88A6E6136902B00883620E /* Pods-Slate Calendar-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Slate Calendar-acknowledgements.markdown"; sourceTree = "<group>"; };
-		5660ACDC9D0976EF804F8B853960F650 /* Pods-Slate CalendarTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate CalendarTests-resources.sh"; sourceTree = "<group>"; };
-		5FA5AEF7C7EA39D42625ADF3031938B9 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
-		6221C40A090565D14BF4AB75D523977D /* Pods-Slate CalendarUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Slate CalendarUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		6625E4EEDC2275E27F57EAE2FED24D2B /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Sources/GAI.h; sourceTree = "<group>"; };
-		6B56BF28DBD87D91C077612D6FCDDC10 /* Pods-Slate Calendar-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Slate Calendar-acknowledgements.plist"; sourceTree = "<group>"; };
-		6F74CFFA05BC08781E8067FE3FB2A26E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7491829C643D2ED6A1A80049854A06D3 /* GGLCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLCore.framework; path = Frameworks/GGLCore.framework; sourceTree = "<group>"; };
-		771B04B33DA3C436BF3AF1CB885284B5 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
-		7B212242FDCEEF649849B7C51B2F150F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B5F68503EFC06BD86ED0B975DB5DCD6 /* Pods-Slate Calendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate Calendar.release.xcconfig"; sourceTree = "<group>"; };
-		820CC08DCC95ED02A30C88D2341DB50B /* Pods-Slate CalendarTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate CalendarTests-frameworks.sh"; sourceTree = "<group>"; };
-		8365A6AB537732FDACA02F69BD4D6AF0 /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Sources/GAIFields.h; sourceTree = "<group>"; };
-		876D4D378FE80717085E7924CE15278C /* Pods-Slate Calendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Slate Calendar-umbrella.h"; sourceTree = "<group>"; };
-		8786355F03CAF4206F50EBD836886975 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
-		9279238E63F649BFB5D50DA5AEA93E08 /* Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Analytics.h; path = Headers/Analytics.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9404A8F2FFEF5E965D8716C87D6FBD88 /* Pods-Slate CalendarUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Slate CalendarUITests.modulemap"; sourceTree = "<group>"; };
-		98089C117D8D1121C6861798FEC0BC4B /* Pods-Slate Calendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Slate Calendar-dummy.m"; sourceTree = "<group>"; };
-		A0A7FFCEA8A3F5D5B5F148EEF31F6A61 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
-		A440E5AC04B358869AD51F95A1CE0BA9 /* Pods-Slate CalendarTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Slate CalendarTests-umbrella.h"; sourceTree = "<group>"; };
-		A5DF271F64F2B6BADE826A9AA276FD44 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		BFAE0ECE3203876B6184AB435654116C /* GGLAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLAnalytics.framework; path = Frameworks/GGLAnalytics.framework; sourceTree = "<group>"; };
-		C193F4871E91594A0EEE79FF371D9461 /* Pods-Slate CalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate CalendarTests.release.xcconfig"; sourceTree = "<group>"; };
-		C6F9FAAA6263CC58C1FAA819E5F3755D /* Pods-Slate CalendarTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Slate CalendarTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CD62EBD3AB36BFE40CA0DCDC4350575C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDA6FD970AFF7DC91846D028A4286DE9 /* Pods-Slate Calendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate Calendar.debug.xcconfig"; sourceTree = "<group>"; };
-		D609A6C96ECFC4A423527CDF8940E2F8 /* Pods-Slate CalendarUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Slate CalendarUITests-dummy.m"; sourceTree = "<group>"; };
-		DB1498DCE4970FFD400CB3E8AFBA0BA5 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
-		DBEB2BF57793F26A7C03E3EBAFE6AB68 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		E44F5894D514BD537E2AE4D47738B3D9 /* Pods-Slate Calendar-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate Calendar-frameworks.sh"; sourceTree = "<group>"; };
-		E4FF1A7BECA5CF40ADC7FE9ACB142061 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Sources/GAIEcommerceFields.h; sourceTree = "<group>"; };
-		E5D530C811E29051C3F45CE4C5C7C30F /* Pods-Slate CalendarUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Slate CalendarUITests-umbrella.h"; sourceTree = "<group>"; };
-		E71A88964A780417B5CA5D51B1213088 /* Pods-Slate CalendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate CalendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		EDC11407F6ACB9A1B45328EA177CCF99 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
-		EE93774F1EC66022C33B8E2F52FCD780 /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Sources/GAILogger.h; sourceTree = "<group>"; };
-		F2A614015680DD18984BD4D18970D24C /* Pods-Slate CalendarTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Slate CalendarTests-dummy.m"; sourceTree = "<group>"; };
-		F78D88F74C0FEEA2B6E116F5251FF46F /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Sources/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
-		F7B5BFD79ED7DB86404FDB3B92330B79 /* Pods-Slate CalendarUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate CalendarUITests-resources.sh"; sourceTree = "<group>"; };
-		FA02520CD455658920BFC859B1062F08 /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Sources/GAITrackedViewController.h; sourceTree = "<group>"; };
-		FE4953B93E8570100185AE0D89643A87 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		000FAE34F9826F3B8B851669D81675EA /* Pods-Slate Calendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Slate Calendar.modulemap"; sourceTree = "<group>"; };
+		0A2E34879E6FBF9CA43B850E524C4A79 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D26A8BB74977685922A0A1D469653DB /* Pods-Slate Calendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate Calendar.debug.xcconfig"; sourceTree = "<group>"; };
+		191B9AE95F844E2BF23D237B4A21C829 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
+		193EEF2C7805FC919DD86C90B602C937 /* Pods_Slate_CalendarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Slate_CalendarUITests.framework; path = "Pods-Slate CalendarUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19B9E7611562C81082F0FE1429B109B0 /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		1ABE9259A503D2D99BF4B5F14179891D /* Pods_Slate_Calendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Slate_Calendar.framework; path = "Pods-Slate Calendar.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2588951D8577EA05FF7E24A7DE571082 /* GGLAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLAnalytics.framework; path = Frameworks/GGLAnalytics.framework; sourceTree = "<group>"; };
+		26073644614662106191B392156B121C /* Pods-Slate CalendarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate CalendarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		26DE378970E144929375A810C97BA75C /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		2F19AF79EC75B56AD88B76D091F2A1C8 /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Sources/GAILogger.h; sourceTree = "<group>"; };
+		309869AD8DE722B1924CA58E0AB87BF5 /* Pods-Slate CalendarUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Slate CalendarUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		318ABFC15841604466ECAF48E96DC327 /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/Core.h; sourceTree = "<group>"; };
+		3C9BA20091DE602F5E1DCD75AFDEFE44 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		3CF267655436F372300D65352DA651C2 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Sources/GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		3F09590C2134502C6B3504F44CAC7162 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		3F1C655EE895586FDEB485564EA64746 /* Pods-Slate CalendarTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Slate CalendarTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		44447E8D7E08E33AD16E4CEECC42723E /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
+		4CC71DE563B9CE6CE66BDB13364BBFC0 /* Pods-Slate Calendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate Calendar.release.xcconfig"; sourceTree = "<group>"; };
+		531B611E913CE325FD77C6E29E932A49 /* Pods_Slate_CalendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Slate_CalendarTests.framework; path = "Pods-Slate CalendarTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		544285F01A30690C59E029FAA6FC58E5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57057F47EE235E924877B8584C5961F9 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		576D0CE8639447357D2F07841792D8DE /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Sources/GAITrackedViewController.h; sourceTree = "<group>"; };
+		589E609F8482316468B1DAF7CC5131B3 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5A8DFBA7C3C32A6E3015DA542F0A73D7 /* GGLCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLCore.framework; path = Frameworks/GGLCore.framework; sourceTree = "<group>"; };
+		5B5904EC790F8D381BC2849499EF0194 /* Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Analytics.h; path = Headers/Analytics.h; sourceTree = "<group>"; };
+		5D2E28F9423A1FC9CFD1BDCE7A66CEBA /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		5DFCCAAD47B4F2E0CB9A5B4F50D0CAC2 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
+		655E977B0C772DB38F071E370E493A0F /* Pods-Slate CalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate CalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7097D37DC994A3F50D5D21AD20FCCE85 /* Pods-Slate CalendarUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate CalendarUITests-resources.sh"; sourceTree = "<group>"; };
+		70E65CF2B1661D8F43A3D91E619A1EB6 /* Pods-Slate CalendarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate CalendarUITests.release.xcconfig"; sourceTree = "<group>"; };
+		714263E03370869EC081AD672C48D09B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72E0F5DF8EA1466F7ADC7B8237D09FC9 /* Pods-Slate CalendarTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Slate CalendarTests-dummy.m"; sourceTree = "<group>"; };
+		771C267A812A5F8649E0C8ED7003906E /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		7B3F1987455107A3B1A0DEF1C196743D /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		7E947F71434CD7419D4318A1B1AC92DE /* Pods-Slate Calendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Slate Calendar-umbrella.h"; sourceTree = "<group>"; };
+		82E0A9678E359F9A3C79B3340F9DA38D /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Sources/GAIEcommerceFields.h; sourceTree = "<group>"; };
+		83A3D58083DFB18835A8650F211BE6FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		862EF812620E680CD482FE97DB0D1E97 /* Pods-Slate Calendar-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Slate Calendar-acknowledgements.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95A3C22A732B192FE51F81286870000D /* Pods-Slate CalendarTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate CalendarTests-resources.sh"; sourceTree = "<group>"; };
+		A43BB4FDCA6E9693AE8A2B18E5039B42 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Sources/GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		A6A58D9086D97CBE60950683807DAE58 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		A70F60D8D9DAE542EB257D462D751E5C /* Pods-Slate CalendarTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Slate CalendarTests.modulemap"; sourceTree = "<group>"; };
+		A86577EE9A70AF97424C280C4D0AEA25 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		A92A023F7D65D221841C4295A79940E9 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		AD8667CC81C68BC695F9DEF86F488893 /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Sources/GAIFields.h; sourceTree = "<group>"; };
+		B0A71CD8F56422D0ECE5C42349BFE1C0 /* Pods-Slate Calendar-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate Calendar-frameworks.sh"; sourceTree = "<group>"; };
+		B1B06E7C74BDF65283EFAE32AF88B3F4 /* Pods-Slate CalendarUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Slate CalendarUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BD8E94DC84BE24435798223239AF45CD /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
+		C27E1B4BD6133CBA2712E5AD542A352A /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Sources/GAITracker.h; sourceTree = "<group>"; };
+		C6093D22262A8614E5B8F7DBDE63FF3E /* Pods-Slate CalendarTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Slate CalendarTests-umbrella.h"; sourceTree = "<group>"; };
+		C65B8C27CFEE4903C88E70AD5B607C27 /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Sources/GAI.h; sourceTree = "<group>"; };
+		CBC3F58D32FD1403A8805C73302C8891 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		CFDC3EB1D5362C90867E4491ECAF52B5 /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
+		D2BFF09EA160EAB26C123F8F40943E14 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		D358A8236353CFD4F8121C9DF1543D60 /* Pods-Slate CalendarUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate CalendarUITests-frameworks.sh"; sourceTree = "<group>"; };
+		D3AC53C7A8175155B805876003FD4719 /* Pods-Slate Calendar-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate Calendar-resources.sh"; sourceTree = "<group>"; };
+		D522C22794C01FA9F0C9A80EE7D72704 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5334C3E8CD084C273B76BC8760D7E07 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Sources/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		D8D8F8729D1E66BCDCFFE069926C9132 /* Pods-Slate Calendar-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Slate Calendar-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DE8A5AE91387A7A7D7AC81C7E3C5E70D /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		E54E3A7499C00DAEAFBC22A6A43959C1 /* Pods-Slate CalendarTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Slate CalendarTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E83F5F3EAAA6A98FB02CA684495D3D35 /* Pods-Slate Calendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Slate Calendar-dummy.m"; sourceTree = "<group>"; };
+		E877AFBB85538DA0387675230816CA78 /* Pods-Slate CalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Slate CalendarTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED5E9B835780D90DD0BD76868E62F15D /* Pods-Slate CalendarTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Slate CalendarTests-frameworks.sh"; sourceTree = "<group>"; };
+		F0EB519B9B2FF5F9983DFA6A457CD09E /* Pods-Slate CalendarUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Slate CalendarUITests.modulemap"; sourceTree = "<group>"; };
+		F39BA1E156191B2200DFA4E3AA4C9449 /* Pods-Slate CalendarUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Slate CalendarUITests-dummy.m"; sourceTree = "<group>"; };
+		F8802CC662CA4B3067B0344C9ABDFC1D /* Pods-Slate CalendarUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Slate CalendarUITests-umbrella.h"; sourceTree = "<group>"; };
+		FA6241781E99884804243FC6C98CC47A /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Sources/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		FB8BCBC6E84466192563D8D4BAC33DA6 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		582E3FAE7EAC951A80C7D8A300A28924 /* Frameworks */ = {
+		5807E1349E8F288EB0B8971D26993818 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC225C1C9BA673CF5BAA89747E15D1C2 /* Foundation.framework in Frameworks */,
+				460D79770F35DB99C9AAC93A912BAB25 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,15 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B8A689CB997C4A1BFFB84D9EABAFFE /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ECC8957FA8501240C206217DD0F03011 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0DD41E70428C583F7623F5D702C6627 /* Foundation.framework in Frameworks */,
+				9750F2D1AB7CDDF022912AD787E80E88 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,155 +144,178 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */,
+				BEF183C3929850CF4CC4D04C60080C5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCEBB6C491AB8C56211D613ABE599E21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0866330AF3B73CB6CC5241181C45F1DE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		08796EEBF6C6728B50C85C2183880180 /* GoogleAnalytics */ = {
+		1BCFBB7DDD687AD58E493D1DB481D83B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6625E4EEDC2275E27F57EAE2FED24D2B /* GAI.h */,
-				05A90FC6AF2919D61B8D50DE5F4D240A /* GAIDictionaryBuilder.h */,
-				E4FF1A7BECA5CF40ADC7FE9ACB142061 /* GAIEcommerceFields.h */,
-				4DBD297C91ED1B7EDD921D4FF678715C /* GAIEcommerceProduct.h */,
-				F78D88F74C0FEEA2B6E116F5251FF46F /* GAIEcommerceProductAction.h */,
-				10833FC7A41F1AC17F0809D8A7D7C274 /* GAIEcommercePromotion.h */,
-				8365A6AB537732FDACA02F69BD4D6AF0 /* GAIFields.h */,
-				EE93774F1EC66022C33B8E2F52FCD780 /* GAILogger.h */,
-				FA02520CD455658920BFC859B1062F08 /* GAITrackedViewController.h */,
-				4D5577C6465CE97FCDCD6E81DF805A24 /* GAITracker.h */,
-				283CB4F180D854D3DA505A83045C643A /* Frameworks */,
-			);
-			path = GoogleAnalytics;
-			sourceTree = "<group>";
-		};
-		0FBE1BC0D33DDF31DE445E70F4E18B49 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				C0665782270351BB0D70FB5A4AA047F6 /* Frameworks */,
-			);
-			name = Base;
-			sourceTree = "<group>";
-		};
-		110E6E8A01E31006E69E3B846ABAC9DC /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				9279238E63F649BFB5D50DA5AEA93E08 /* Analytics.h */,
-				A0CB0B66C7D8D68BB5741C6E706BD86D /* Frameworks */,
-			);
-			name = Analytics;
-			sourceTree = "<group>";
-		};
-		2743047CC5D81E0A1870429EC3AE9C99 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5FA5AEF7C7EA39D42625ADF3031938B9 /* GooglePlaces.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		283CB4F180D854D3DA505A83045C643A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FE4953B93E8570100185AE0D89643A87 /* libGoogleAnalytics.a */,
+				FB8BCBC6E84466192563D8D4BAC33DA6 /* FirebaseCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2E6971F6E29C1918C2C0A40751482440 /* NSData+zlib */ = {
+		1CA8D6AF12A01F8CCBB522579ED99CE0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				21856DF2A5FE3FD2633104C6712C398B /* GTMNSData+zlib.h */,
-				451859A7F4988D522ADBB6F685C7A49C /* GTMNSData+zlib.m */,
+				771C267A812A5F8649E0C8ED7003906E /* GoogleToolboxForMac.modulemap */,
+				57057F47EE235E924877B8584C5961F9 /* GoogleToolboxForMac.xcconfig */,
+				44447E8D7E08E33AD16E4CEECC42723E /* GoogleToolboxForMac-dummy.m */,
+				BD8E94DC84BE24435798223239AF45CD /* GoogleToolboxForMac-prefix.pch */,
+				3C9BA20091DE602F5E1DCD75AFDEFE44 /* GoogleToolboxForMac-umbrella.h */,
+				D522C22794C01FA9F0C9A80EE7D72704 /* Info.plist */,
 			);
-			name = "NSData+zlib";
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
 			sourceTree = "<group>";
 		};
-		2EA72E47D495C2BF66C878515DE22D72 /* GoogleMaps */ = {
+		1E2D4F762137374945CD4FBB391EE0BE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0FBE1BC0D33DDF31DE445E70F4E18B49 /* Base */,
-			);
-			path = GoogleMaps;
-			sourceTree = "<group>";
-		};
-		39BCE3B5187F705F5733B2973C35DD4E /* Pods-Slate CalendarTests */ = {
-			isa = PBXGroup;
-			children = (
-				6F74CFFA05BC08781E8067FE3FB2A26E /* Info.plist */,
-				19D2098A35F20D50EB60BD75873DE42F /* Pods-Slate CalendarTests.modulemap */,
-				4E55852442B6ECE20D799024C874602D /* Pods-Slate CalendarTests-acknowledgements.markdown */,
-				C6F9FAAA6263CC58C1FAA819E5F3755D /* Pods-Slate CalendarTests-acknowledgements.plist */,
-				F2A614015680DD18984BD4D18970D24C /* Pods-Slate CalendarTests-dummy.m */,
-				820CC08DCC95ED02A30C88D2341DB50B /* Pods-Slate CalendarTests-frameworks.sh */,
-				5660ACDC9D0976EF804F8B853960F650 /* Pods-Slate CalendarTests-resources.sh */,
-				A440E5AC04B358869AD51F95A1CE0BA9 /* Pods-Slate CalendarTests-umbrella.h */,
-				4FEB535CF0CE958B565747F374D578FD /* Pods-Slate CalendarTests.debug.xcconfig */,
-				C193F4871E91594A0EEE79FF371D9461 /* Pods-Slate CalendarTests.release.xcconfig */,
-			);
-			name = "Pods-Slate CalendarTests";
-			path = "Target Support Files/Pods-Slate CalendarTests";
-			sourceTree = "<group>";
-		};
-		463D80A5CDDB4BFFBFF1601175BF5FAF /* Google */ = {
-			isa = PBXGroup;
-			children = (
-				110E6E8A01E31006E69E3B846ABAC9DC /* Analytics */,
-				B6F788EE350BE826213FCF63FF008AFE /* Core */,
-			);
-			path = Google;
-			sourceTree = "<group>";
-		};
-		521F243A09EC0138E5D1E2D2503B7ADB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DBEB2BF57793F26A7C03E3EBAFE6AB68 /* FirebaseInstanceID.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5FF6DB247010A1F49CDCA0364022F22D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BB10F6B6D535BE80920EA4B8856ED2BD /* FirebaseAnalytics */,
-				9940FF859E9D43C22621622F1C3F080E /* FirebaseCore */,
-				A88F03A171CC8B43D0A118AA5F05C8F8 /* FirebaseInstanceID */,
-				463D80A5CDDB4BFFBFF1601175BF5FAF /* Google */,
-				08796EEBF6C6728B50C85C2183880180 /* GoogleAnalytics */,
-				2EA72E47D495C2BF66C878515DE22D72 /* GoogleMaps */,
-				FB5B30E39CC1A13583114BF2874C6DEF /* GooglePlaces */,
-				A56145DE0DD7DF7362DA2DA6951E7CA8 /* GoogleToolboxForMac */,
+				50A3762A5A7D6F1AE4476E172BEB804C /* FirebaseAnalytics */,
+				F5372ECA512177049BD510B059E117CA /* FirebaseCore */,
+				D50848BD9277BEBEF62226E52124AF6E /* FirebaseInstanceID */,
+				A85FEB3E3A2718274C61072C4465FB0B /* Google */,
+				2AD663B0ABBFC994918A63B95F9F49CB /* GoogleAnalytics */,
+				2C1396511079AA340734CCB6B82E1D50 /* GoogleMaps */,
+				D13D2DF5A1A1CB80BFD41F496FBA4EEE /* GooglePlaces */,
+				CE816DD8B6BC97B11BA879EE71744597 /* GoogleToolboxForMac */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		64A304D89B0DCD57BC902E655D119F7C /* Defines */ = {
+		2A4E4545AAA950ACD7FEE4372F9E7E24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3C2F366E974DE8196109480230ED72BB /* GTMDefines.h */,
+				5DFCCAAD47B4F2E0CB9A5B4F50D0CAC2 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AD663B0ABBFC994918A63B95F9F49CB /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				C65B8C27CFEE4903C88E70AD5B607C27 /* GAI.h */,
+				FA6241781E99884804243FC6C98CC47A /* GAIDictionaryBuilder.h */,
+				82E0A9678E359F9A3C79B3340F9DA38D /* GAIEcommerceFields.h */,
+				3CF267655436F372300D65352DA651C2 /* GAIEcommerceProduct.h */,
+				D5334C3E8CD084C273B76BC8760D7E07 /* GAIEcommerceProductAction.h */,
+				A43BB4FDCA6E9693AE8A2B18E5039B42 /* GAIEcommercePromotion.h */,
+				AD8667CC81C68BC695F9DEF86F488893 /* GAIFields.h */,
+				2F19AF79EC75B56AD88B76D091F2A1C8 /* GAILogger.h */,
+				576D0CE8639447357D2F07841792D8DE /* GAITrackedViewController.h */,
+				C27E1B4BD6133CBA2712E5AD542A352A /* GAITracker.h */,
+				F1D93D35316AB92655AD0C7EEE1FE0AF /* Frameworks */,
+			);
+			name = GoogleAnalytics;
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		2C1396511079AA340734CCB6B82E1D50 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				46099E629DBFCA910499B34D4F5FD87D /* Base */,
+				4628E1B51B1725040AC3195C32111DCD /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		3B5BCC3749852C0F975C2EBAC56D26C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A86577EE9A70AF97424C280C4D0AEA25 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40D1449DA3F31E3244696D2C3090D07F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A8DFBA7C3C32A6E3015DA542F0A73D7 /* GGLCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46099E629DBFCA910499B34D4F5FD87D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2A4E4545AAA950ACD7FEE4372F9E7E24 /* Frameworks */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		4628E1B51B1725040AC3195C32111DCD /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				A97FCCA9AE1859223EA2EB2E82C4B7F2 /* Frameworks */,
+				B56934518A8AF16084D9A6190CDCCDA5 /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		50A3762A5A7D6F1AE4476E172BEB804C /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				BF2156249230FD0DE5D25C71D2254857 /* Frameworks */,
+			);
+			name = FirebaseAnalytics;
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		50EE9B5AA01A37AF036DD3EC3579F99B /* NSData+zlib */ = {
+			isa = PBXGroup;
+			children = (
+				5D2E28F9423A1FC9CFD1BDCE7A66CEBA /* GTMNSData+zlib.h */,
+				DE8A5AE91387A7A7D7AC81C7E3C5E70D /* GTMNSData+zlib.m */,
+			);
+			name = "NSData+zlib";
+			sourceTree = "<group>";
+		};
+		5570423BB78B3502FCAF385F425D4B99 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				589E609F8482316468B1DAF7CC5131B3 /* GTMDefines.h */,
 			);
 			name = Defines;
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		60D34856A1A4FD27F4DBFF2F46D485A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2588951D8577EA05FF7E24A7DE571082 /* GGLAnalytics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		6BE716121BDB81512130F17357AE7F29 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A9A71140E2512D680A1E02AAA51F5906 /* Pods-Slate Calendar */,
-				39BCE3B5187F705F5733B2973C35DD4E /* Pods-Slate CalendarTests */,
-				C9FC14C94FCB67FA8F9E3CCE8E52EA80 /* Pods-Slate CalendarUITests */,
+				7FFE5040AC8E55909A2BAE361A1BB583 /* Pods-Slate Calendar */,
+				F9D6D8850D9D29F253469D99DAF9CF45 /* Pods-Slate CalendarTests */,
+				D81D985B1577A3CE4840FEFD062541FE /* Pods-Slate CalendarUITests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -291,120 +323,81 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				5FF6DB247010A1F49CDCA0364022F22D /* Pods */,
+				1E2D4F762137374945CD4FBB391EE0BE /* Pods */,
 				C2727219CE885E2D078C0E9FE4723317 /* Products */,
 				6BE716121BDB81512130F17357AE7F29 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9940FF859E9D43C22621622F1C3F080E /* FirebaseCore */ = {
+		7EB0B36A542F3A56D0AA5F4298A594D7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FEC866A482E725CE5F5F00C91FDDCF93 /* Frameworks */,
+				CFDC3EB1D5362C90867E4491ECAF52B5 /* Analytics-Module.h */,
+				318ABFC15841604466ECAF48E96DC327 /* Core.h */,
+				D2BFF09EA160EAB26C123F8F40943E14 /* Core-Module.h */,
+				19B9E7611562C81082F0FE1429B109B0 /* SignIn-Module.h */,
+				40D1449DA3F31E3244696D2C3090D07F /* Frameworks */,
 			);
-			path = FirebaseCore;
+			name = Core;
 			sourceTree = "<group>";
 		};
-		A0CB0B66C7D8D68BB5741C6E706BD86D /* Frameworks */ = {
+		7FFE5040AC8E55909A2BAE361A1BB583 /* Pods-Slate Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				BFAE0ECE3203876B6184AB435654116C /* GGLAnalytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A56145DE0DD7DF7362DA2DA6951E7CA8 /* GoogleToolboxForMac */ = {
-			isa = PBXGroup;
-			children = (
-				64A304D89B0DCD57BC902E655D119F7C /* Defines */,
-				2E6971F6E29C1918C2C0A40751482440 /* NSData+zlib */,
-				CE9E8F402C90CEF2FB1DED88C8B6C531 /* Support Files */,
-			);
-			path = GoogleToolboxForMac;
-			sourceTree = "<group>";
-		};
-		A88F03A171CC8B43D0A118AA5F05C8F8 /* FirebaseInstanceID */ = {
-			isa = PBXGroup;
-			children = (
-				521F243A09EC0138E5D1E2D2503B7ADB /* Frameworks */,
-			);
-			path = FirebaseInstanceID;
-			sourceTree = "<group>";
-		};
-		A9A71140E2512D680A1E02AAA51F5906 /* Pods-Slate Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				03362A806697C697ABAEE2C8834A5B71 /* Info.plist */,
-				1D25C5E3C496A076F60FC83CA22539B2 /* Pods-Slate Calendar.modulemap */,
-				5437E44C3C88A6E6136902B00883620E /* Pods-Slate Calendar-acknowledgements.markdown */,
-				6B56BF28DBD87D91C077612D6FCDDC10 /* Pods-Slate Calendar-acknowledgements.plist */,
-				98089C117D8D1121C6861798FEC0BC4B /* Pods-Slate Calendar-dummy.m */,
-				E44F5894D514BD537E2AE4D47738B3D9 /* Pods-Slate Calendar-frameworks.sh */,
-				4F54446DC045D7648DD26ABFDB6E3DCA /* Pods-Slate Calendar-resources.sh */,
-				876D4D378FE80717085E7924CE15278C /* Pods-Slate Calendar-umbrella.h */,
-				CDA6FD970AFF7DC91846D028A4286DE9 /* Pods-Slate Calendar.debug.xcconfig */,
-				7B5F68503EFC06BD86ED0B975DB5DCD6 /* Pods-Slate Calendar.release.xcconfig */,
+				83A3D58083DFB18835A8650F211BE6FF /* Info.plist */,
+				000FAE34F9826F3B8B851669D81675EA /* Pods-Slate Calendar.modulemap */,
+				D8D8F8729D1E66BCDCFFE069926C9132 /* Pods-Slate Calendar-acknowledgements.markdown */,
+				862EF812620E680CD482FE97DB0D1E97 /* Pods-Slate Calendar-acknowledgements.plist */,
+				E83F5F3EAAA6A98FB02CA684495D3D35 /* Pods-Slate Calendar-dummy.m */,
+				B0A71CD8F56422D0ECE5C42349BFE1C0 /* Pods-Slate Calendar-frameworks.sh */,
+				D3AC53C7A8175155B805876003FD4719 /* Pods-Slate Calendar-resources.sh */,
+				7E947F71434CD7419D4318A1B1AC92DE /* Pods-Slate Calendar-umbrella.h */,
+				0D26A8BB74977685922A0A1D469653DB /* Pods-Slate Calendar.debug.xcconfig */,
+				4CC71DE563B9CE6CE66BDB13364BBFC0 /* Pods-Slate Calendar.release.xcconfig */,
 			);
 			name = "Pods-Slate Calendar";
 			path = "Target Support Files/Pods-Slate Calendar";
 			sourceTree = "<group>";
 		};
-		ADFE3C03BDE48F848E1E7732284F8814 /* Frameworks */ = {
+		A85FEB3E3A2718274C61072C4465FB0B /* Google */ = {
 			isa = PBXGroup;
 			children = (
-				771B04B33DA3C436BF3AF1CB885284B5 /* GooglePlaces.framework */,
+				D16DF07B6993645F9BF860A8FB46002C /* Analytics */,
+				7EB0B36A542F3A56D0AA5F4298A594D7 /* Core */,
+			);
+			name = Google;
+			path = Google;
+			sourceTree = "<group>";
+		};
+		A97FCCA9AE1859223EA2EB2E82C4B7F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B3F1987455107A3B1A0DEF1C196743D /* GoogleMaps.framework */,
+				A92A023F7D65D221841C4295A79940E9 /* GoogleMapsCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B6F788EE350BE826213FCF63FF008AFE /* Core */ = {
+		B56934518A8AF16084D9A6190CDCCDA5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3709D3118CA5963980A599D18C6A6AEF /* Analytics-Module.h */,
-				25D70F2A042D18148D43DD692D40CE14 /* Core.h */,
-				EDC11407F6ACB9A1B45328EA177CCF99 /* Core-Module.h */,
-				00B21E6E17C4748FDAB3665765367EFB /* SignIn-Module.h */,
-				BF98EE7E3D87233FFA640A8DAB0A67DA /* Frameworks */,
+				26DE378970E144929375A810C97BA75C /* GoogleMaps.bundle */,
 			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		BAF6826FCF5566B0EDD4A56AAD56B009 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A5DF271F64F2B6BADE826A9AA276FD44 /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BB10F6B6D535BE80920EA4B8856ED2BD /* FirebaseAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				BAF6826FCF5566B0EDD4A56AAD56B009 /* Frameworks */,
-			);
-			path = FirebaseAnalytics;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BF98EE7E3D87233FFA640A8DAB0A67DA /* Frameworks */ = {
+		BF2156249230FD0DE5D25C71D2254857 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7491829C643D2ED6A1A80049854A06D3 /* GGLCore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C0665782270351BB0D70FB5A4AA047F6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				20F5BDD8A56419FFFB36AC965EEDD94B /* GoogleMapsBase.framework */,
+				3F09590C2134502C6B3504F44CAC7162 /* FirebaseAnalytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -420,71 +413,130 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C9FC14C94FCB67FA8F9E3CCE8E52EA80 /* Pods-Slate CalendarUITests */ = {
+		CE816DD8B6BC97B11BA879EE71744597 /* GoogleToolboxForMac */ = {
 			isa = PBXGroup;
 			children = (
-				CD62EBD3AB36BFE40CA0DCDC4350575C /* Info.plist */,
-				9404A8F2FFEF5E965D8716C87D6FBD88 /* Pods-Slate CalendarUITests.modulemap */,
-				3355FB18C84842DFCDD9A6DFABB2E1F7 /* Pods-Slate CalendarUITests-acknowledgements.markdown */,
-				6221C40A090565D14BF4AB75D523977D /* Pods-Slate CalendarUITests-acknowledgements.plist */,
-				D609A6C96ECFC4A423527CDF8940E2F8 /* Pods-Slate CalendarUITests-dummy.m */,
-				26650BECD0C841D298E6A447DE25F868 /* Pods-Slate CalendarUITests-frameworks.sh */,
-				F7B5BFD79ED7DB86404FDB3B92330B79 /* Pods-Slate CalendarUITests-resources.sh */,
-				E5D530C811E29051C3F45CE4C5C7C30F /* Pods-Slate CalendarUITests-umbrella.h */,
-				E71A88964A780417B5CA5D51B1213088 /* Pods-Slate CalendarUITests.debug.xcconfig */,
-				02DEE7BE01CB9FF12A21A04CC32EE20E /* Pods-Slate CalendarUITests.release.xcconfig */,
+				5570423BB78B3502FCAF385F425D4B99 /* Defines */,
+				50EE9B5AA01A37AF036DD3EC3579F99B /* NSData+zlib */,
+				1CA8D6AF12A01F8CCBB522579ED99CE0 /* Support Files */,
+			);
+			name = GoogleToolboxForMac;
+			path = GoogleToolboxForMac;
+			sourceTree = "<group>";
+		};
+		D13D2DF5A1A1CB80BFD41F496FBA4EEE /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				F7C3D1315E54D4C6F5C872D1A380A2E6 /* Frameworks */,
+				F010D614F713D9E8EF101E10145E20D6 /* Resources */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
+			sourceTree = "<group>";
+		};
+		D16DF07B6993645F9BF860A8FB46002C /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				5B5904EC790F8D381BC2849499EF0194 /* Analytics.h */,
+				60D34856A1A4FD27F4DBFF2F46D485A4 /* Frameworks */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		D50848BD9277BEBEF62226E52124AF6E /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				3B5BCC3749852C0F975C2EBAC56D26C7 /* Frameworks */,
+			);
+			name = FirebaseInstanceID;
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		D81D985B1577A3CE4840FEFD062541FE /* Pods-Slate CalendarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				714263E03370869EC081AD672C48D09B /* Info.plist */,
+				F0EB519B9B2FF5F9983DFA6A457CD09E /* Pods-Slate CalendarUITests.modulemap */,
+				B1B06E7C74BDF65283EFAE32AF88B3F4 /* Pods-Slate CalendarUITests-acknowledgements.markdown */,
+				309869AD8DE722B1924CA58E0AB87BF5 /* Pods-Slate CalendarUITests-acknowledgements.plist */,
+				F39BA1E156191B2200DFA4E3AA4C9449 /* Pods-Slate CalendarUITests-dummy.m */,
+				D358A8236353CFD4F8121C9DF1543D60 /* Pods-Slate CalendarUITests-frameworks.sh */,
+				7097D37DC994A3F50D5D21AD20FCCE85 /* Pods-Slate CalendarUITests-resources.sh */,
+				F8802CC662CA4B3067B0344C9ABDFC1D /* Pods-Slate CalendarUITests-umbrella.h */,
+				26073644614662106191B392156B121C /* Pods-Slate CalendarUITests.debug.xcconfig */,
+				70E65CF2B1661D8F43A3D91E619A1EB6 /* Pods-Slate CalendarUITests.release.xcconfig */,
 			);
 			name = "Pods-Slate CalendarUITests";
 			path = "Target Support Files/Pods-Slate CalendarUITests";
 			sourceTree = "<group>";
 		};
-		CE9E8F402C90CEF2FB1DED88C8B6C531 /* Support Files */ = {
+		F010D614F713D9E8EF101E10145E20D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0AE27BB23994FF5818441FDDD55A895A /* GoogleToolboxForMac.modulemap */,
-				8786355F03CAF4206F50EBD836886975 /* GoogleToolboxForMac.xcconfig */,
-				DB1498DCE4970FFD400CB3E8AFBA0BA5 /* GoogleToolboxForMac-dummy.m */,
-				0CB1F82736776FE9E3AE37253E22D38B /* GoogleToolboxForMac-prefix.pch */,
-				A0A7FFCEA8A3F5D5B5F148EEF31F6A61 /* GoogleToolboxForMac-umbrella.h */,
-				7B212242FDCEEF649849B7C51B2F150F /* Info.plist */,
+				CBC3F58D32FD1403A8805C73302C8891 /* GooglePlaces.bundle */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleToolboxForMac";
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		FB5B30E39CC1A13583114BF2874C6DEF /* GooglePlaces */ = {
+		F1D93D35316AB92655AD0C7EEE1FE0AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ADFE3C03BDE48F848E1E7732284F8814 /* Frameworks */,
-				2743047CC5D81E0A1870429EC3AE9C99 /* Resources */,
-			);
-			path = GooglePlaces;
-			sourceTree = "<group>";
-		};
-		FEC866A482E725CE5F5F00C91FDDCF93 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4762A496222397ECE7268B553869FFD8 /* FirebaseCore.framework */,
+				A6A58D9086D97CBE60950683807DAE58 /* libGoogleAnalytics.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5372ECA512177049BD510B059E117CA /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				1BCFBB7DDD687AD58E493D1DB481D83B /* Frameworks */,
+			);
+			name = FirebaseCore;
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
+		F7C3D1315E54D4C6F5C872D1A380A2E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				191B9AE95F844E2BF23D237B4A21C829 /* GooglePlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9D6D8850D9D29F253469D99DAF9CF45 /* Pods-Slate CalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				544285F01A30690C59E029FAA6FC58E5 /* Info.plist */,
+				A70F60D8D9DAE542EB257D462D751E5C /* Pods-Slate CalendarTests.modulemap */,
+				E54E3A7499C00DAEAFBC22A6A43959C1 /* Pods-Slate CalendarTests-acknowledgements.markdown */,
+				3F1C655EE895586FDEB485564EA64746 /* Pods-Slate CalendarTests-acknowledgements.plist */,
+				72E0F5DF8EA1466F7ADC7B8237D09FC9 /* Pods-Slate CalendarTests-dummy.m */,
+				ED5E9B835780D90DD0BD76868E62F15D /* Pods-Slate CalendarTests-frameworks.sh */,
+				95A3C22A732B192FE51F81286870000D /* Pods-Slate CalendarTests-resources.sh */,
+				C6093D22262A8614E5B8F7DBDE63FF3E /* Pods-Slate CalendarTests-umbrella.h */,
+				655E977B0C772DB38F071E370E493A0F /* Pods-Slate CalendarTests.debug.xcconfig */,
+				E877AFBB85538DA0387675230816CA78 /* Pods-Slate CalendarTests.release.xcconfig */,
+			);
+			name = "Pods-Slate CalendarTests";
+			path = "Target Support Files/Pods-Slate CalendarTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		009A11CF44E0408C7536864B7FA0A3FC /* Headers */ = {
+		3DB7663F2AB7DB17D1A8D42F2830D5FF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08F771014E85CB7E3FAB67359E0C6505 /* Pods-Slate CalendarUITests-umbrella.h in Headers */,
+				84E46DB0D00E07133318F51F5BF4ED8C /* Pods-Slate CalendarUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D29965ECB86EC16414B8954859BBFE45 /* Headers */ = {
+		525D34D9F4FF6C415A0C3BCAA44A5EE4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE7CD1BE57850A8B3F6570E39D7FADC7 /* Pods-Slate CalendarTests-umbrella.h in Headers */,
+				29AB833072872E9A75BA65F7694E6A63 /* Pods-Slate CalendarTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +565,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C43D9CA5106C6CCEF973B7EDF833947B /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */;
 			buildPhases = (
-				63D7DA997053F6B5D01DE8CB5817CB51 /* Sources */,
+				C0C85C89DA0DB2FE53558D6EE98F2692 /* Sources */,
 				F9BC43EEAF05BCB201B3D28C244AA7E1 /* Frameworks */,
 				FDA600FDC48ED17BA03DA2D85D4EDA97 /* Headers */,
 			);
@@ -526,21 +578,40 @@
 			productReference = 0A2E34879E6FBF9CA43B850E524C4A79 /* GoogleToolboxForMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3316DB4439051F9C258A6B503084503E /* Pods-Slate CalendarTests */ = {
+		32165AC6FA6F799F6795BCEBBDDE75B0 /* Pods-Slate CalendarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0244DC6A91F28104DF30B5CC6238F400 /* Build configuration list for PBXNativeTarget "Pods-Slate CalendarTests" */;
+			buildConfigurationList = A9BA90DA5A11ED1E08D1FB7A56968410 /* Build configuration list for PBXNativeTarget "Pods-Slate CalendarTests" */;
 			buildPhases = (
-				94F2B9FAA59AE6A982A1FB17D3921DC2 /* Sources */,
-				ECC8957FA8501240C206217DD0F03011 /* Frameworks */,
-				D29965ECB86EC16414B8954859BBFE45 /* Headers */,
+				DAE23720F35DFC8AA0A477874B672CF6 /* Sources */,
+				5807E1349E8F288EB0B8971D26993818 /* Frameworks */,
+				525D34D9F4FF6C415A0C3BCAA44A5EE4 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				228BF87A52C3CABBAAD0DFCEBBAACB41 /* PBXTargetDependency */,
 			);
 			name = "Pods-Slate CalendarTests";
 			productName = "Pods-Slate CalendarTests";
 			productReference = 531B611E913CE325FD77C6E29E932A49 /* Pods_Slate_CalendarTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		95E1CD52F651D5256362D6F1AA22EC8F /* Pods-Slate CalendarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 304BD7BD077E28EF85F43F025A5E04AB /* Build configuration list for PBXNativeTarget "Pods-Slate CalendarUITests" */;
+			buildPhases = (
+				D44893BA4850AE3D0FDE27DC9AA603E9 /* Sources */,
+				FCEBB6C491AB8C56211D613ABE599E21 /* Frameworks */,
+				3DB7663F2AB7DB17D1A8D42F2830D5FF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8311D0B0B64BD417479E4B58920545E1 /* PBXTargetDependency */,
+			);
+			name = "Pods-Slate CalendarUITests";
+			productName = "Pods-Slate CalendarUITests";
+			productReference = 193EEF2C7805FC919DD86C90B602C937 /* Pods_Slate_CalendarUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9DC856A6476F37565FDC1635B89504DF /* Pods-Slate Calendar */ = {
@@ -561,39 +632,21 @@
 			productReference = 1ABE9259A503D2D99BF4B5F14179891D /* Pods_Slate_Calendar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AA61CF8B1B2E9EEC8E4DD04780C8BBEE /* Pods-Slate CalendarUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BD9C3C3A8DBE48E19F6007EAF3CB9C32 /* Build configuration list for PBXNativeTarget "Pods-Slate CalendarUITests" */;
-			buildPhases = (
-				0A055EA60B40DFD760BD6D610E72C5C1 /* Sources */,
-				582E3FAE7EAC951A80C7D8A300A28924 /* Frameworks */,
-				009A11CF44E0408C7536864B7FA0A3FC /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-Slate CalendarUITests";
-			productName = "Pods-Slate CalendarUITests";
-			productReference = 193EEF2C7805FC919DD86C90B602C937 /* Pods_Slate_CalendarUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1030;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = en;
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = C2727219CE885E2D078C0E9FE4723317 /* Products */;
@@ -602,35 +655,35 @@
 			targets = (
 				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
 				9DC856A6476F37565FDC1635B89504DF /* Pods-Slate Calendar */,
-				3316DB4439051F9C258A6B503084503E /* Pods-Slate CalendarTests */,
-				AA61CF8B1B2E9EEC8E4DD04780C8BBEE /* Pods-Slate CalendarUITests */,
+				32165AC6FA6F799F6795BCEBBDDE75B0 /* Pods-Slate CalendarTests */,
+				95E1CD52F651D5256362D6F1AA22EC8F /* Pods-Slate CalendarUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0A055EA60B40DFD760BD6D610E72C5C1 /* Sources */ = {
+		C0C85C89DA0DB2FE53558D6EE98F2692 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833DF43EB1EE22154F63F330248A5276 /* Pods-Slate CalendarUITests-dummy.m in Sources */,
+				A6540A6A4481C4B815BC996D421CA7B7 /* GoogleToolboxForMac-dummy.m in Sources */,
+				126DDCD98E96355396A20E168A316639 /* GTMNSData+zlib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63D7DA997053F6B5D01DE8CB5817CB51 /* Sources */ = {
+		D44893BA4850AE3D0FDE27DC9AA603E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */,
-				F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */,
+				D1EF7C638479C7D93975F1A48C778398 /* Pods-Slate CalendarUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94F2B9FAA59AE6A982A1FB17D3921DC2 /* Sources */ = {
+		DAE23720F35DFC8AA0A477874B672CF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A14EB4F22A7AEC626BC0B4FA7CCB458 /* Pods-Slate CalendarTests-dummy.m in Sources */,
+				904F0B6809A5C268D3D0F71A19294614 /* Pods-Slate CalendarTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,42 +698,53 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		228BF87A52C3CABBAAD0DFCEBBAACB41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Slate Calendar";
+			target = 9DC856A6476F37565FDC1635B89504DF /* Pods-Slate Calendar */;
+			targetProxy = FFA6286EB4F4D0B29D96AAC8FF435764 /* PBXContainerItemProxy */;
+		};
 		667852EC971902302F06CAD419C3EC96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GoogleToolboxForMac;
 			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
 			targetProxy = BE3A00CFA71EA31637D107F8C8A612EE /* PBXContainerItemProxy */;
 		};
+		8311D0B0B64BD417479E4B58920545E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Slate Calendar";
+			target = 9DC856A6476F37565FDC1635B89504DF /* Pods-Slate Calendar */;
+			targetProxy = 6C0E7DDD1C613AE5F390283EE0CBAB6B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		50A2CE5BFBC0D5076FBFD25DA94E5FFC /* Debug */ = {
+		008FFC2EF89FD735FEC1AE97762FC30F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FEB535CF0CE958B565747F374D578FD /* Pods-Slate CalendarTests.debug.xcconfig */;
+			baseConfigurationReference = 0D26A8BB74977685922A0A1D469653DB /* Pods-Slate Calendar.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Slate CalendarTests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Slate Calendar/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Slate CalendarTests/Pods-Slate CalendarTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MODULEMAP_FILE = "Target Support Files/Pods-Slate Calendar/Pods-Slate Calendar.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Slate_CalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -689,22 +753,24 @@
 			};
 			name = Debug;
 		};
-		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+		08638A96A528B1EC32DE62F8A728389D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -712,17 +778,213 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		1F902091D239D94B34BF6FD5D0C7E221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70E65CF2B1661D8F43A3D91E619A1EB6 /* Pods-Slate CalendarUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Slate CalendarUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Slate CalendarUITests/Pods-Slate CalendarUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		50A973BB5059B599335B98354D72034E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57057F47EE235E924877B8584C5961F9 /* GoogleToolboxForMac.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				PRODUCT_MODULE_NAME = GoogleToolboxForMac;
+				PRODUCT_NAME = GoogleToolboxForMac;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		707B3DABC5562DC54362E882F3AB4B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26073644614662106191B392156B121C /* Pods-Slate CalendarUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Slate CalendarUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Slate CalendarUITests/Pods-Slate CalendarUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		83A1627B41377712ED56A93ADB19E6CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 655E977B0C772DB38F071E370E493A0F /* Pods-Slate CalendarTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Slate CalendarTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Slate CalendarTests/Pods-Slate CalendarTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -731,308 +993,118 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		6AC818AAAF087CCD7D0649DF308EF8CF /* Debug */ = {
+		B799A6DC3BB927577A9FB3F82B751313 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDA6FD970AFF7DC91846D028A4286DE9 /* Pods-Slate Calendar.debug.xcconfig */;
+			baseConfigurationReference = 57057F47EE235E924877B8584C5961F9 /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Slate Calendar/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Slate Calendar/Pods-Slate Calendar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Slate_Calendar;
+				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
+				PRODUCT_MODULE_NAME = GoogleToolboxForMac;
+				PRODUCT_NAME = GoogleToolboxForMac;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		B03B6F366931C562085DC0D27620747D /* Debug */ = {
+		BB04420CCF8940DCA0A556795BD547F7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E71A88964A780417B5CA5D51B1213088 /* Pods-Slate CalendarUITests.debug.xcconfig */;
+			baseConfigurationReference = E877AFBB85538DA0387675230816CA78 /* Pods-Slate CalendarTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Slate CalendarUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Slate CalendarUITests/Pods-Slate CalendarUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Slate_CalendarUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B1B385079A4768848270F9270DF31D9D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02DEE7BE01CB9FF12A21A04CC32EE20E /* Pods-Slate CalendarUITests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Slate CalendarUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Slate CalendarUITests/Pods-Slate CalendarUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Slate_CalendarUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C265AA9F36557B8B652C50D3AAF46AE2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C193F4871E91594A0EEE79FF371D9461 /* Pods-Slate CalendarTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-Slate CalendarTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Slate CalendarTests/Pods-Slate CalendarTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Slate_CalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		D60CD877A708870E2BE96B83BA32F883 /* Debug */ = {
+		D5C70F55DAA27C123019ABA7275F9E9F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8786355F03CAF4206F50EBD836886975 /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = 4CC71DE563B9CE6CE66BDB13364BBFC0 /* Pods-Slate Calendar.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GoogleToolboxForMac;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D99E33870D90CF97B5651453A2896246 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B5F68503EFC06BD86ED0B975DB5DCD6 /* Pods-Slate Calendar.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-Slate Calendar/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Slate Calendar/Pods-Slate Calendar.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Slate_Calendar;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F066921CBDBDB5F45795E50FBC5AC972 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8786355F03CAF4206F50EBD836886975 /* GoogleToolboxForMac.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GoogleToolboxForMac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = GoogleToolboxForMac;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1041,20 +1113,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0244DC6A91F28104DF30B5CC6238F400 /* Build configuration list for PBXNativeTarget "Pods-Slate CalendarTests" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				50A2CE5BFBC0D5076FBFD25DA94E5FFC /* Debug */,
-				C265AA9F36557B8B652C50D3AAF46AE2 /* Release */,
+				9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */,
+				08638A96A528B1EC32DE62F8A728389D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		304BD7BD077E28EF85F43F025A5E04AB /* Build configuration list for PBXNativeTarget "Pods-Slate CalendarUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
-				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+				707B3DABC5562DC54362E882F3AB4B06 /* Debug */,
+				1F902091D239D94B34BF6FD5D0C7E221 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1062,17 +1134,17 @@
 		7C912910DB7951DC78098528AA46D20F /* Build configuration list for PBXNativeTarget "Pods-Slate Calendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6AC818AAAF087CCD7D0649DF308EF8CF /* Debug */,
-				D99E33870D90CF97B5651453A2896246 /* Release */,
+				008FFC2EF89FD735FEC1AE97762FC30F /* Debug */,
+				D5C70F55DAA27C123019ABA7275F9E9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD9C3C3A8DBE48E19F6007EAF3CB9C32 /* Build configuration list for PBXNativeTarget "Pods-Slate CalendarUITests" */ = {
+		A9BA90DA5A11ED1E08D1FB7A56968410 /* Build configuration list for PBXNativeTarget "Pods-Slate CalendarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B03B6F366931C562085DC0D27620747D /* Debug */,
-				B1B385079A4768848270F9270DF31D9D /* Release */,
+				83A1627B41377712ED56A93ADB19E6CE /* Debug */,
+				BB04420CCF8940DCA0A556795BD547F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1080,8 +1152,8 @@
 		C43D9CA5106C6CCEF973B7EDF833947B /* Build configuration list for PBXNativeTarget "GoogleToolboxForMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D60CD877A708870E2BE96B83BA32F883 /* Debug */,
-				F066921CBDBDB5F45795E50FBC5AC972 /* Release */,
+				B799A6DC3BB927577A9FB3F82B751313 /* Debug */,
+				50A973BB5059B599335B98354D72034E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

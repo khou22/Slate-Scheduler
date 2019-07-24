@@ -2,9 +2,9 @@ PODS:
   - FirebaseAnalytics (3.9.0):
     - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseCore (3.6.0):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
   - FirebaseInstanceID (1.0.10):
     - FirebaseCore (~> 3.6)
   - Google/Analytics (3.1.0):
@@ -13,16 +13,32 @@ PODS:
   - Google/Core (3.1.0):
     - FirebaseAnalytics (~> 3.2)
   - GoogleAnalytics (3.17.0)
-  - GoogleMaps/Base (2.3.0)
-  - GooglePlaces (2.3.0):
-    - GoogleMaps/Base (= 2.3.0)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleMaps (3.2.0):
+    - GoogleMaps/Maps (= 3.2.0)
+  - GoogleMaps/Base (3.2.0)
+  - GoogleMaps/Maps (3.2.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.2.0):
+    - GoogleMaps/Base (= 3.2.0)
+  - GoogleToolboxForMac/Defines (2.2.1)
+  - "GoogleToolboxForMac/NSData+zlib (2.2.1)":
+    - GoogleToolboxForMac/Defines (= 2.2.1)
 
 DEPENDENCIES:
   - Google/Analytics
+  - GoogleMaps
   - GooglePlaces
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - Google
+    - GoogleAnalytics
+    - GoogleMaps
+    - GooglePlaces
+    - GoogleToolboxForMac
 
 SPEC CHECKSUMS:
   FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
@@ -30,10 +46,10 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
   Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
-  GoogleMaps: 340a6a0bebd17c2db8abcd3921976c7c53c86cb8
-  GooglePlaces: 74d322c74184ea4576184089b496d291cf0dcd38
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GoogleMaps: 5046d7edfe381c1a0b20fdaf293915a375c3122b
+  GooglePlaces: 41bc2e480816b1234a48f4bec92e1c886f37cfe1
+  GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
 
-PODFILE CHECKSUM: d258b290026290656042d2c77afc33c70ed549f3
+PODFILE CHECKSUM: 4963fd49bfbe77e1953c888534b829d8359b8a49
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.5.3
