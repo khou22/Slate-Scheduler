@@ -15,6 +15,7 @@ class StepSlider: UISlider {
     private var animationTime: Double = 0.25 // Default is 0.25
     
     // Call when released - animate to rounded value
+    // Use `Touch Up Inside`
     public func released() {
         let setTo: Float = roundf(value / stepValue) * stepValue
         UIView.animate(withDuration: animationTime, animations: { () in
